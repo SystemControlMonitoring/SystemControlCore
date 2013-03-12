@@ -159,3 +159,4 @@ Global symbol "$searchstring" requires explicit package name at /kSCcore/MOD/liv
 Compilation failed in require at /kSCcore/WEB/lda/xml/index.pl line 7.
 BEGIN failed--compilation aborted at /kSCcore/WEB/lda/xml/index.pl line 7.
 [Tue Mar 12 16:11:49.400522 2013] [cgid:error] [pid 28775:tid 140289266099968] [client 172.23.7.23:54026] End of script output before headers: index.pl
+[Tue Mar 12 20:03:38.035288 2013] [cgid:error] [pid 24077:tid 140289150711552] [client 172.23.0.254:64387] End of script output before headers: index.pl

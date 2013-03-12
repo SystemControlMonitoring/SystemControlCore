@@ -170,6 +170,49 @@ sub EncodeBase64u6 {
     return ($encoded ."Ab6Dej");
 }
 #
+sub EncodeHtml {
+    my $out = shift;
+    $out =~ s/Ä/&Auml;/g;
+    $out =~ s/\x{008e}/&Auml;/g;
+    $out =~ s/Ö/&Ouml;/g;
+    $out =~ s/\x{0099}/&Ouml;/g;
+    $out =~ s/Ü/&Uuml;/g;
+    $out =~ s/\x{009a}/&Uuml;/g;
+    $out =~ s/ä/&auml;/g;
+    $out =~ s/\x{0084}/&auml;/g;
+    $out =~ s/ö/&ouml;/g;
+    $out =~ s/\x{0094}/&ouml;/g;
+    $out =~ s/ü/&uuml;/g;
+    $out =~ s/\x{0081}/&uuml;/g;
+    $out =~ s/ß/&szlig;/g;
+    $out =~ s/\x{00e1}/&szlig;/g;
+    return ($out);
+}
+#
+sub EncodeXML {
+    my $out = shift;
+    $out =~ s/Ä/&#196;/g;
+    $out =~ s/\x{008e}/&#196;/g;
+    $out =~ s/Ö/&#214;/g;
+    $out =~ s/\x{0099}/&#214;/g;
+    $out =~ s/Ü/&#220;/g;
+    $out =~ s/\x{009a}/&#220;/g;
+    $out =~ s/ä/&#228;/g;
+    $out =~ s/\x{0084}/&#228;/g;
+    $out =~ s/ö/&#246;/g;
+    $out =~ s/\x{0094}/&#246;/g;
+    $out =~ s/ü/&#252;/g;
+    $out =~ s/\x{0081}/&#252;/g;
+    $out =~ s/ß/&#223;/g;
+    $out =~ s/\x{00e1}/&#223;/g;
+    $out =~ s/</&lt;/g;
+    $out =~ s/>/&gt;/g;
+    $out =~ s/&/&amp;/g;
+    $out =~ s/\"/&quot;/g;
+    $out =~ s/\'/&apos;/g;
+    return ($out);
+}
+#
 close ($CF);
 close STDERR;
 #

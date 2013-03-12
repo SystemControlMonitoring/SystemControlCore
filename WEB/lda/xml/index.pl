@@ -18,6 +18,7 @@ open STDERR, '>>/kSCcore/LOG/error.log';
 sub HostFullInfo {
     my $uid = shift;
     my @HIF = kSClive::HostFullInfo($uid);
+    my @SFL = kSClive::ServiceFullList($uid);
     print kSChtml::ContentType("xml");
     print "<HOSTLIST>\n";
     for (my $c=0;$c<scalar(@{$HIF[0]});$c++) {
@@ -32,8 +33,23 @@ sub HostFullInfo {
 	print "      <SRV_CR>". $HIF[0][$c][6] ."</SRV_CR>\n";
 	print "      <SRV_UN>". $HIF[0][$c][7] ."</SRV_UN>\n";
 	print "      <SRV_PE>". $HIF[0][$c][8] ."</SRV_PE>\n";
-	print "      <SERVICES>\n";
-	print "      </SERVICES>\n";
+	print "      <SERVICELIST>\n";
+	for (my $k=0;$k<scalar(@{$SFL[0]});$k++) {
+	    if ($SFL[0][$k][0] eq $HIF[0][$c][0]) {
+		print "         <SERVICE>\n";
+		print "            <NAME>". $SFL[0][$k][1] ."</NAME>\n";
+		print "            <STATE>". $SFL[0][$k][2] ."</STATE>\n";
+		print "            <LAST_CHECK_UTIME>". $SFL[0][$k][3] ."</LAST_CHECK_UTIME>\n";
+		print "            <LAST_CHECK_ISO>". kSCbasic::ConvertUt2Ts($SFL[0][$k][3]) ."</LAST_CHECK_ISO>\n";
+		print "            <OUTPUT>". kSCbasic::EncodeXML($SFL[0][$k][4]) ."</OUTPUT>\n";
+		print "            <LONG_OUTPUT>". kSCbasic::EncodeXML($SFL[0][$k][5]) ."</LONG_OUTPUT>\n";
+		print "            <ACK>". $SFL[0][$k][6] ."</ACK>\n";
+		print "            <NEXT_CHECK_UTIME>". $SFL[0][$k][7] ."</NEXT_CHECK_UTIME>\n";
+		print "            <NEXT_CHECK_ISO>". kSCbasic::ConvertUt2Ts($SFL[0][$k][7]) ."</NEXT_CHECK_ISO>\n";
+		print "         </SERVICE>\n";
+	    }
+	}
+	print "      </SERVICELIST>\n";
 	print "   </HOST>\n";
     }
     print "</HOSTLIST>\n";

@@ -375,9 +375,17 @@ sub HbgUnAckDt {
 }
 #
 sub HostService {
+    # Liste Alle Services zu einem gesuchten Host
     my $uid = shift;
     my $searchstring = shift;
-    my $out = $ml->selectall_arrayref("GET services\nColumns: host_name host_state host_custom_variable_values display_name state last_check last_state plugin_output long_plugin_output acknowledged next_check\nFilter: host_name = ". $searchstring ."\nAuthUser: ". $uid);
+    my $out = $ml->selectall_arrayref("GET services\nColumns: display_name state last_check plugin_output long_plugin_output acknowledged next_check\nFilter: host_name = ". $searchstring ."\nAuthUser: ". $uid);
+    return ($out);
+}
+#
+sub ServiceFullList {
+    # Liste Alle Services zu einem gesuchten Host
+    my $uid = shift;
+    my $out = $ml->selectall_arrayref("GET services\nColumns: host_name display_name state last_check plugin_output long_plugin_output acknowledged next_check\nAuthUser: ". $uid);
     return ($out);
 }
 #
