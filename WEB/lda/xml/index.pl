@@ -32,6 +32,8 @@ sub HostFullInfo {
 	print "      <SRV_CR>". $HIF[0][$c][6] ."</SRV_CR>\n";
 	print "      <SRV_UN>". $HIF[0][$c][7] ."</SRV_UN>\n";
 	print "      <SRV_PE>". $HIF[0][$c][8] ."</SRV_PE>\n";
+	print "      <SERVICES>\n";
+	print "      </SERVICES>\n";
 	print "   </HOST>\n";
     }
     print "</HOSTLIST>\n";

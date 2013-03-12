@@ -86,97 +86,136 @@ sub HostFullInfo {
 #
 sub HostUp {
     # Alle Hosts mit Status UP 
-    "GET hosts\nColumns: host_name state custom_variable_values last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: state = 0\nAuthUser: " + getUser() + "\n"; 
+    my $uid = shift;
+    my $out = $ml->selectall_arrayref("GET hosts\nColumns: host_name last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: state = 0\nAuthUser: ". $uid);
+    return ($out);
 }
 #
 sub HostDo {
     # Alle Hosts mit Status DOWN 
-    "GET hosts\nColumns: host_name state custom_variable_values last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: state = 1\nAuthUser: " + getUser() + "\n"; 
+    my $uid = shift;
+    my $out = $ml->selectall_arrayref("GET hosts\nColumns: host_name last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: state = 1\nAuthUser: ". $uid); 
+    return ($out);
 }
 #
 sub HostUn {
     # Alle Hosts mit Status UNREACHABLE 
-    "GET hosts\nColumns: host_name state custom_variable_values last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: state = 2\nAuthUser: " + getUser() + "\n"; 
+    my $uid = shift;
+    my $out = $ml->selectall_arrayref("GET hosts\nColumns: host_name last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: state = 2\nAuthUser: ". $uid); 
+    return ($out);
 }
 #
 sub HostNok {
     # Alle Hosts die NICHT-OK sind 
-    "GET hosts\nColumns: host_name state custom_variable_values last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: state > 0\nAuthUser: " + getUser() + "\n"; 
+    my $uid = shift;
+    my $out = $ml->selectall_arrayref("GET hosts\nColumns: host_name state last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: state > 0\nAuthUser: ". $uid); 
+    return ($out);
 }
 #
 sub HostNokNodt {
     # Alle Hosts die NICHT-OK sind und nicht in einer DOWNTIME = Aktive Probleme 
-    "GET hosts\nColumns: host_name state custom_variable_values last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: state > 0\nFilter: scheduled_downtime_depth = 0\nAuthUser: " + getUser() + "\n"; 
+    my $uid = shift;
+    my $out = $ml->selectall_arrayref("GET hosts\nColumns: host_name state last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: state > 0\nFilter: scheduled_downtime_depth = 0\nAuthUser: ". $uid); 
+    return ($out);
 }
 #
 sub HostNokDt {
     # Alle Hosts die NICHT-OK sind und in einer DOWNTIME = Passive Probleme 
-    "GET hosts\nColumns: host_name state custom_variable_values last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: state > 0\nFilter: scheduled_downtime_depth > 0\nAuthUser: " + getUser() + "\n"; 
+    my $uid = shift;
+    my $out = $ml->selectall_arrayref("GET hosts\nColumns: host_name state last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: state > 0\nFilter: scheduled_downtime_depth > 0\nAuthUser: ". $uid); 
+    return ($out);
 }
 #
 sub HostDoNoack {
     # Alle Hosts DOWN - NOACK 
-    "GET hosts\nColumns: host_name state custom_variable_values last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: state = 1\nFilter: acknowledged = 0\nAuthUser: " + getUser() + "\n"; 
+    my $uid = shift;
+    my $out = $ml->selectall_arrayref("GET hosts\nColumns: host_name state last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: state = 1\nFilter: acknowledged = 0\nAuthUser: ". $uid); 
+    return ($out);
 }
 #
 sub HostDoAck {
     # Alle Hosts DOWN - ACK 
-    "GET hosts\nColumns: host_name state custom_variable_values last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: state = 1\nFilter: acknowledged > 0\nAuthUser: " + getUser() + "\n"; 
+    my $uid = shift;
+    my $out = $ml->selectall_arrayref("GET hosts\nColumns: host_name state last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: state = 1\nFilter: acknowledged > 0\nAuthUser: ". $uid); 
+    return ($out);
 }
 #
 sub HostUnNoack {
     # Alle Hosts UNREACHABLE - NOACK 
-    "GET hosts\nColumns: host_name state custom_variable_values last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: state = 2\nFilter: acknowledged = 0\nAuthUser: " + getUser() + "\n"; 
+    my $uid = shift;
+    my $out = $ml->selectall_arrayref("GET hosts\nColumns: host_name state last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: state = 2\nFilter: acknowledged = 0\nAuthUser: ". $uid); 
+    return ($out);
 }
 #
 sub HostUnAck {
     # Alle Hosts UNREACHABLE - ACK 
-    "GET hosts\nColumns: host_name state custom_variable_values last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: state = 2\nFilter: acknowledged > 0\nAuthUser: " + getUser() + "\n"; 
+    my $uid = shift;
+    my $out = $ml->selectall_arrayref("GET hosts\nColumns: host_name state last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: state = 2\nFilter: acknowledged > 0\nAuthUser: ". $uid); 
+    return ($out);
 }
 #
 sub HostDoNoackNodt {
     # Alle Hosts DOWN - NOACK, nicht in Downtime 
-    "GET hosts\nColumns: host_name state custom_variable_values last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: state = 1\nFilter: scheduled_downtime_depth = 0\nFilter: acknowledged = 0\nAuthUser: " + getUser() + "\n"; 
+    my $uid = shift;
+    my $out = $ml->selectall_arrayref("GET hosts\nColumns: host_name state last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: state = 1\nFilter: scheduled_downtime_depth = 0\nFilter: acknowledged = 0\nAuthUser: ". $uid); 
+    return ($out);
 }
 #
 sub HostDoAckNodt {
     # Alle Hosts DOWN - ACK, nicht in Downtime 
-    "GET hosts\nColumns: host_name state custom_variable_values last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: state = 1\nFilter: scheduled_downtime_depth = 0\nFilter: acknowledged > 0\nAuthUser: " + getUser() + "\n"; 
+    my $uid = shift;
+    my $out = $ml->selectall_arrayref("GET hosts\nColumns: host_name state last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: state = 1\nFilter: scheduled_downtime_depth = 0\nFilter: acknowledged > 0\nAuthUser: ". $uid); 
+    return ($out);
 }
 #
 sub HostDoNoackDt {
     # Alle Hosts DOWN - NOACK, in Downtime 
-    "GET hosts\nColumns: host_name state custom_variable_values last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: state = 1\nFilter: scheduled_downtime_depth > 0\nFilter: acknowledged = 0\nAuthUser: " + getUser() + "\n"; 
+    my $uid = shift;
+    my $out = $ml->selectall_arrayref("GET hosts\nColumns: host_name state last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: state = 1\nFilter: scheduled_downtime_depth > 0\nFilter: acknowledged = 0\nAuthUser: ". $uid); 
+    return ($out);
 }
 #
 sub HostDoAckDt {
     # Alle Hosts DOWN - ACK, in Downtime 
-    "GET hosts\nColumns: host_name state custom_variable_values last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: state = 1\nFilter: scheduled_downtime_depth > 0\nFilter: acknowledged > 0\nAuthUser: " + getUser() + "\n"; 
+    my $uid = shift;
+    my $out = $ml->selectall_arrayref("GET hosts\nColumns: host_name state last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: state = 1\nFilter: scheduled_downtime_depth > 0\nFilter: acknowledged > 0\nAuthUser: ". $uid); 
+    return ($out);
 }
 #
 sub HostUnNoackNodt {
     # Alle Hosts UNREACHABLE - NOACK, nicht in Downtime 
-    "GET hosts\nColumns: host_name state custom_variable_values last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: state = 2\nFilter: scheduled_downtime_depth = 0\nFilter: acknowledged = 0\nAuthUser: " + getUser() + "\n"; 
+    my $uid = shift;
+    my $out = $ml->selectall_arrayref("GET hosts\nColumns: host_name state last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: state = 2\nFilter: scheduled_downtime_depth = 0\nFilter: acknowledged = 0\nAuthUser: ". $uid); 
+    return ($out);
 }
 #
 sub HostUnAckNodt {
     # Alle Hosts UNREACHABLE - ACK, nicht in Downtime 
-    "GET hosts\nColumns: host_name state custom_variable_values last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: state = 2\nFilter: scheduled_downtime_depth = 0\nFilter: acknowledged > 0\nAuthUser: " + getUser() + "\n"; 
+    my $uid = shift;
+    my $out = $ml->selectall_arrayref("GET hosts\nColumns: host_name state last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: state = 2\nFilter: scheduled_downtime_depth = 0\nFilter: acknowledged > 0\nAuthUser: ". $uid); 
+    return ($out);
 }
 #
 sub HostUnNoackDt {
     # Alle Hosts UNREACHABLE - NOACK, in Downtime 
-    "GET hosts\nColumns: host_name state custom_variable_values last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: state = 2\nFilter: scheduled_downtime_depth > 0\nFilter: acknowledged = 0\nAuthUser: " + getUser() + "\n"; 
+    my $uid = shift;
+    my $out = $ml->selectall_arrayref("GET hosts\nColumns: host_name state last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: state = 2\nFilter: scheduled_downtime_depth > 0\nFilter: acknowledged = 0\nAuthUser: ". $uid); 
+    return ($out);
 }
 #
 sub HostUnAckDt {
     # Alle Hosts UNREACHABLE - ACK, in Downtime 
-    "GET hosts\nColumns: host_name state custom_variable_values last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: state = 2\nFilter: scheduled_downtime_depth > 0\nFilter: acknowledged > 0\nAuthUser: " + getUser() + "\n"; 
+    my $uid = shift;
+    my $out = $ml->selectall_arrayref("GET hosts\nColumns: host_name state last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: state = 2\nFilter: scheduled_downtime_depth > 0\nFilter: acknowledged > 0\nAuthUser: ". $uid); 
+    return ($out);
 }
 #
 sub SearchHost {
     # Alle eingerichteten Hosts 
-    "GET hosts\nColumns: host_name state custom_variable_values last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: host_name ~~ " + searchstring + "\nAuthUser: " + getUser() + "\n";
+    my $uid = shift;
+    my $searchstring = shift;
+    my $out = $ml->selectall_arrayref("GET hosts\nColumns: host_name state last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: host_name ~~ ". $searchstring ."\nAuthUser: ". $uid);
+    return ($out);
 }
 #########################################################
 #                                                       #
@@ -185,99 +224,162 @@ sub SearchHost {
 #########################################################
 sub HbgAllHosts {
     # Von der Hostgruppenauswahl 
-    "GET hostsbygroup\nColumns: host_name state custom_variable_values last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: hostgroup_name = " + searchstring + "\nAuthUser: " + getUser() + "\n"; 
+    my $uid = shift;
+    my $searchstring = shift;
+    my $out = $ml->selectall_arrayref("GET hostsbygroup\nColumns: host_name state last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: hostgroup_name = ". $searchstring ."\nAuthUser: ". $uid); 
+    return ($out);
 }
 #
 sub HbgOk {
     # Alle Hosts mit Status UP 
-    "GET hostsbygroup\nColumns: host_name state custom_variable_values last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: hostgroup_name = " + searchstring + "\nFilter: state = 0\nAuthUser: " + getUser() + "\n"; 
+    my $uid = shift;
+    my $searchstring = shift;
+    my $out = $ml->selectall_arrayref("GET hostsbygroup\nColumns: host_name state last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: hostgroup_name = ". $searchstring ."\nFilter: state = 0\nAuthUser: ". $uid); 
+    return ($out);
 }
 #
 sub HbgDo {
     # Alle Hosts mit Status DOWN 
-    "GET hostsbygroup\nColumns: host_name state custom_variable_values last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: hostgroup_name = " + searchstring + "\nFilter: state = 1\nAuthUser: " + getUser() + "\n"; 
+    my $uid = shift;
+    my $searchstring = shift;
+    my $out = $ml->selectall_arrayref("GET hostsbygroup\nColumns: host_name state last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: hostgroup_name = ". $searchstring ."\nFilter: state = 1\nAuthUser: ". $uid); 
+    return ($out);
 }
 #
 sub HbgUn {
     # Alle Hosts mit Status UNREACHABLE 
-    "GET hostsbygroup\nColumns: host_name state custom_variable_values last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: hostgroup_name = " + searchstring + "\nFilter: state = 2\nAuthUser: " + getUser() + "\n"; 
+    my $uid = shift;
+    my $searchstring = shift;
+    my $out = $ml->selectall_arrayref("GET hostsbygroup\nColumns: host_name state last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: hostgroup_name = ". $searchstring ."\nFilter: state = 2\nAuthUser: ". $uid); 
+    return ($out);
 }
 #
 sub HbgNok {
     # Alle Hosts die NICHT-OK sind 
-    "GET hostsbygroup\nColumns: host_name state custom_variable_values last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: hostgroup_name = " + searchstring + "\nFilter: state > 0\nAuthUser: " + getUser() + "\n"; 
+    my $uid = shift;
+    my $searchstring = shift;
+    my $out = $ml->selectall_arrayref("GET hostsbygroup\nColumns: host_name state last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: hostgroup_name = ". $searchstring ."\nFilter: state > 0\nAuthUser: ". $uid); 
+    return ($out);
 }
 #
 sub HbgNokNodt {
     # Alle Hosts die NICHT-OK sind und nicht in einer DOWNTIME = Aktive Probleme 
-    "GET hostsbygroup\nColumns: host_name state custom_variable_values last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: hostgroup_name = " + searchstring + "\nFilter: state > 0\nFilter: scheduled_downtime_depth = 0\nAuthUser: " + getUser() + "\n"; 
+    my $uid = shift;
+    my $searchstring = shift;
+    my $out = $ml->selectall_arrayref("GET hostsbygroup\nColumns: host_name state last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: hostgroup_name = ". $searchstring ."\nFilter: state > 0\nFilter: scheduled_downtime_depth = 0\nAuthUser: ". $uid); 
+    return ($out);
 }
 #
 sub HbgNokDt {
     # Alle Hosts die NICHT-OK sind und in einer DOWNTIME = Passive Probleme 
-    "GET hostsbygroup\nColumns: host_name state custom_variable_values last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: hostgroup_name = " + searchstring + "\nFilter: state > 0\nFilter: scheduled_downtime_depth > 0\nAuthUser: " + getUser() + "\n"; 
+    my $uid = shift;
+    my $searchstring = shift;
+    my $out = $ml->selectall_arrayref("GET hostsbygroup\nColumns: host_name state last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: hostgroup_name = ". $searchstring ."\nFilter: state > 0\nFilter: scheduled_downtime_depth > 0\nAuthUser: ". $uid); 
+    return ($out);
 }
 #
 sub HbgDoNoack {
     # Alle Hosts DOWN - NOACK 
-    "GET hostsbygroup\nColumns: host_name state custom_variable_values last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: hostgroup_name = " + searchstring + "\nFilter: state = 1\nFilter: acknowledged = 0\nAuthUser: " + getUser() + "\n"; 
+    my $uid = shift;
+    my $searchstring = shift;
+    my $out = $ml->selectall_arrayref("GET hostsbygroup\nColumns: host_name state last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: hostgroup_name = ". $searchstring ."\nFilter: state = 1\nFilter: acknowledged = 0\nAuthUser: ". $uid); 
+    return ($out);
 }
 #
 sub HbgDoAck {
     # Alle Hosts DOWN - ACK 
-    "GET hostsbygroup\nColumns: host_name state custom_variable_values last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: hostgroup_name = " + searchstring + "\nFilter: state = 1\nFilter: acknowledged > 0\nAuthUser: " + getUser() + "\n"; 
+    my $uid = shift;
+    my $searchstring = shift;
+    my $out = $ml->selectall_arrayref("GET hostsbygroup\nColumns: host_name state last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: hostgroup_name = ". $searchstring ."\nFilter: state = 1\nFilter: acknowledged > 0\nAuthUser: ". $uid); 
+    return ($out);
 }
 #
 sub HbgUnNoack {
     # Alle Hosts UNREACHABLE - NOACK 
-    "GET hostsbygroup\nColumns: host_name state custom_variable_values last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: hostgroup_name = " + searchstring + "\nFilter: state = 2\nFilter: acknowledged = 0\nAuthUser: " + getUser() + "\n"; 
+    my $uid = shift;
+    my $searchstring = shift;
+    my $out = $ml->selectall_arrayref("GET hostsbygroup\nColumns: host_name state last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: hostgroup_name = ". $searchstring ."\nFilter: state = 2\nFilter: acknowledged = 0\nAuthUser: ". $uid); 
+    return ($out);
 }
 #
 sub HbgUnAck {
     # Alle Hosts UNREACHABLE - ACK 
-    "GET hostsbygroup\nColumns: host_name state custom_variable_values last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: hostgroup_name = " + searchstring + "\nFilter: state = 2\nFilter: acknowledged > 0\nAuthUser: " + getUser() + "\n"; 
+    my $uid = shift;
+    my $searchstring = shift;
+    my $out = $ml->selectall_arrayref("GET hostsbygroup\nColumns: host_name state last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: hostgroup_name = ". $searchstring ."\nFilter: state = 2\nFilter: acknowledged > 0\nAuthUser: ". $uid); 
+    return ($out);
 }
 #
 sub HbgDoNoackNodt {
     # Alle Hosts DOWN - NOACK, nicht in Downtime 
-    "GET hostsbygroup\nColumns: host_name state custom_variable_values last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: hostgroup_name = " + searchstring + "\nFilter: state = 1\nFilter: scheduled_downtime_depth = 0\nFilter: acknowledged = 0\nAuthUser: " + getUser() + "\n"; 
+    my $uid = shift;
+    my $searchstring = shift;
+    my $out = $ml->selectall_arrayref("GET hostsbygroup\nColumns: host_name state last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: hostgroup_name = ". $searchstring ."\nFilter: state = 1\nFilter: scheduled_downtime_depth = 0\nFilter: acknowledged = 0\nAuthUser: ". $uid); 
+    return ($out);
 }
 #
 sub HbgDoAckNodt {
     # Alle Hosts DOWN - ACK, nicht in Downtime 
-    "GET hostsbygroup\nColumns: host_name state custom_variable_values last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: hostgroup_name = " + searchstring + "\nFilter: state = 1\nFilter: scheduled_downtime_depth = 0\nFilter: acknowledged > 0\nAuthUser: " + getUser() + "\n"; 
+    my $uid = shift;
+    my $searchstring = shift;
+    my $out = $ml->selectall_arrayref("GET hostsbygroup\nColumns: host_name state last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: hostgroup_name = ". $searchstring ."\nFilter: state = 1\nFilter: scheduled_downtime_depth = 0\nFilter: acknowledged > 0\nAuthUser: ". $uid); 
+    return ($out);
 }
 #
 sub HbgDoNoackDt {
     # Alle Hosts DOWN - NOACK, in Downtime 
-    "GET hostsbygroup\nColumns: host_name state custom_variable_values last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: hostgroup_name = " + searchstring + "\nFilter: state = 1\nFilter: scheduled_downtime_depth > 0\nFilter: acknowledged = 0\nAuthUser: " + getUser() + "\n"; 
+    my $uid = shift;
+    my $searchstring = shift;
+    my $out = $ml->selectall_arrayref("GET hostsbygroup\nColumns: host_name state last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: hostgroup_name = ". $searchstring ."\nFilter: state = 1\nFilter: scheduled_downtime_depth > 0\nFilter: acknowledged = 0\nAuthUser: ". $uid); 
+    return ($out);
 }
 #
 sub HbgDoAckDt {
     # Alle Hosts DOWN - ACK, in Downtime 
-    "GET hostsbygroup\nColumns: host_name state custom_variable_values last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: hostgroup_name = " + searchstring + "\nFilter: state = 1\nFilter: scheduled_downtime_depth > 0\nFilter: acknowledged > 0\nAuthUser: " + getUser() + "\n"; 
+    my $uid = shift;
+    my $searchstring = shift;
+    my $out = $ml->selectall_arrayref("GET hostsbygroup\nColumns: host_name state last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: hostgroup_name = ". $searchstring ."\nFilter: state = 1\nFilter: scheduled_downtime_depth > 0\nFilter: acknowledged > 0\nAuthUser: ". $uid); 
+    return ($out);
 }
 #
 sub HbgUnNoackNodt {
     # Alle Hosts UNREACHABLE - NOACK, nicht in Downtime 
-    "GET hostsbygroup\nColumns: host_name state custom_variable_values last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: hostgroup_name = " + searchstring + "\nFilter: state = 2\nFilter: scheduled_downtime_depth = 0\nFilter: acknowledged = 0\nAuthUser: " + getUser() + "\n"; 
+    my $uid = shift;
+    my $searchstring = shift;
+    my $out = $ml->selectall_arrayref("GET hostsbygroup\nColumns: host_name state last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: hostgroup_name = ". $searchstring ."\nFilter: state = 2\nFilter: scheduled_downtime_depth = 0\nFilter: acknowledged = 0\nAuthUser: ". $uid); 
+    return ($out);
 }
 #
 sub HbgUnAckNodt {
     # Alle Hosts UNREACHABLE - ACK, nicht in Downtime 
-    "GET hostsbygroup\nColumns: host_name state custom_variable_values last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: hostgroup_name = " + searchstring + "\nFilter: state = 2\nFilter: scheduled_downtime_depth = 0\nFilter: acknowledged > 0\nAuthUser: " + getUser() + "\n"; 
+    my $uid = shift;
+    my $searchstring = shift;
+    my $out = $ml->selectall_arrayref("GET hostsbygroup\nColumns: host_name state last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: hostgroup_name = ". $searchstring ."\nFilter: state = 2\nFilter: scheduled_downtime_depth = 0\nFilter: acknowledged > 0\nAuthUser: ". $uid); 
+    return ($out);
 }
 #
 sub HbgUnNoackDt {
     # Alle Hosts UNREACHABLE - NOACK, in Downtime 
-    "GET hostsbygroup\nColumns: host_name state custom_variable_values last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: hostgroup_name = " + searchstring + "\nFilter: state = 2\nFilter: scheduled_downtime_depth > 0\nFilter: acknowledged = 0\nAuthUser: " + getUser() + "\n"; 
+    my $uid = shift;
+    my $searchstring = shift;
+    my $out = $ml->selectall_arrayref("GET hostsbygroup\nColumns: host_name state last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: hostgroup_name = ". $searchstring ."\nFilter: state = 2\nFilter: scheduled_downtime_depth > 0\nFilter: acknowledged = 0\nAuthUser: ". $uid); 
+    return ($out);
 }
 #
 sub HbgUnAckDt {
     # Alle Hosts UNREACHABLE - ACK, in Downtime 
-    "GET hostsbygroup\nColumns: host_name state custom_variable_values last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: hostgroup_name = " + searchstring + "\nFilter: state = 2\nFilter: scheduled_downtime_depth > 0\nFilter: acknowledged > 0\nAuthUser: " + getUser() + "\n"; 
+    my $uid = shift;
+    my $searchstring = shift;
+    my $out = $ml->selectall_arrayref("GET hostsbygroup\nColumns: host_name state last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: hostgroup_name = ". $searchstring ."\nFilter: state = 2\nFilter: scheduled_downtime_depth > 0\nFilter: acknowledged > 0\nAuthUser: ". $uid);
+    return ($out);
 }
 #
+sub HostService {
+    my $uid = shift;
+    my $searchstring = shift;
+    my $out = $ml->selectall_arrayref("GET services\nColumns: host_name host_state host_custom_variable_values display_name state last_check last_state plugin_output long_plugin_output acknowledged next_check\nFilter: host_name = ". $searchstring ."\nAuthUser: ". $uid);
+    return ($out);
+}
 #
 close ($CF);
 close STDERR;

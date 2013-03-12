@@ -90,3 +90,72 @@ Execution of /kSCcore/WEB/index.pl aborted due to compilation errors.
 [Tue Mar 12 09:51:55.863432 2013] [cgid:error] [pid 28775:tid 140289224140544] [client 172.23.7.23:53396] End of script output before headers: index.pl
 [Tue Mar 12 09:52:59.157558 2013] [cgid:error] [pid 28775:tid 140289213650688] [client 172.23.7.23:53454] End of script output before headers: index.pl
 [Tue Mar 12 10:11:36.787259 2013] [cgid:error] [pid 28775:tid 140289360508672] [client 172.23.7.23:54494] End of script output before headers: index.pl
+Global symbol "$searchstring" requires explicit package name at /kSCcore/MOD/live/kSClive.pm line 216.
+Global symbol "$searchstring" requires explicit package name at /kSCcore/MOD/live/kSClive.pm line 227.
+Global symbol "$searchstring" requires explicit package name at /kSCcore/MOD/live/kSClive.pm line 234.
+Global symbol "$searchstring" requires explicit package name at /kSCcore/MOD/live/kSClive.pm line 241.
+Global symbol "$searchstring" requires explicit package name at /kSCcore/MOD/live/kSClive.pm line 248.
+Global symbol "$searchstring" requires explicit package name at /kSCcore/MOD/live/kSClive.pm line 255.
+Global symbol "$searchstring" requires explicit package name at /kSCcore/MOD/live/kSClive.pm line 262.
+Global symbol "$searchstring" requires explicit package name at /kSCcore/MOD/live/kSClive.pm line 269.
+Global symbol "$searchstring" requires explicit package name at /kSCcore/MOD/live/kSClive.pm line 276.
+Global symbol "$searchstring" requires explicit package name at /kSCcore/MOD/live/kSClive.pm line 283.
+Global symbol "$searchstring" requires explicit package name at /kSCcore/MOD/live/kSClive.pm line 290.
+Global symbol "$searchstring" requires explicit package name at /kSCcore/MOD/live/kSClive.pm line 297.
+Global symbol "$searchstring" requires explicit package name at /kSCcore/MOD/live/kSClive.pm line 304.
+Global symbol "$searchstring" requires explicit package name at /kSCcore/MOD/live/kSClive.pm line 311.
+Global symbol "$searchstring" requires explicit package name at /kSCcore/MOD/live/kSClive.pm line 318.
+Global symbol "$searchstring" requires explicit package name at /kSCcore/MOD/live/kSClive.pm line 325.
+Global symbol "$searchstring" requires explicit package name at /kSCcore/MOD/live/kSClive.pm line 332.
+Global symbol "$searchstring" requires explicit package name at /kSCcore/MOD/live/kSClive.pm line 339.
+Global symbol "$searchstring" requires explicit package name at /kSCcore/MOD/live/kSClive.pm line 346.
+Global symbol "$searchstring" requires explicit package name at /kSCcore/MOD/live/kSClive.pm line 353.
+Compilation failed in require at /kSCcore/WEB/lda/xml/index.pl line 7.
+BEGIN failed--compilation aborted at /kSCcore/WEB/lda/xml/index.pl line 7.
+[Tue Mar 12 16:05:35.595380 2013] [cgid:error] [pid 28775:tid 140289308059392] [client 172.23.7.23:53773] End of script output before headers: index.pl
+Global symbol "$searchstring" requires explicit package name at /kSCcore/MOD/live/kSClive.pm line 217.
+Global symbol "$searchstring" requires explicit package name at /kSCcore/MOD/live/kSClive.pm line 229.
+Global symbol "$searchstring" requires explicit package name at /kSCcore/MOD/live/kSClive.pm line 237.
+Global symbol "$searchstring" requires explicit package name at /kSCcore/MOD/live/kSClive.pm line 245.
+Global symbol "$searchstring" requires explicit package name at /kSCcore/MOD/live/kSClive.pm line 253.
+Global symbol "$searchstring" requires explicit package name at /kSCcore/MOD/live/kSClive.pm line 261.
+Global symbol "$searchstring" requires explicit package name at /kSCcore/MOD/live/kSClive.pm line 269.
+Global symbol "$searchstring" requires explicit package name at /kSCcore/MOD/live/kSClive.pm line 277.
+Global symbol "$searchstring" requires explicit package name at /kSCcore/MOD/live/kSClive.pm line 285.
+Global symbol "$searchstring" requires explicit package name at /kSCcore/MOD/live/kSClive.pm line 293.
+Global symbol "$searchstring" requires explicit package name at /kSCcore/MOD/live/kSClive.pm line 301.
+Global symbol "$searchstring" requires explicit package name at /kSCcore/MOD/live/kSClive.pm line 309.
+Global symbol "$searchstring" requires explicit package name at /kSCcore/MOD/live/kSClive.pm line 317.
+Global symbol "$searchstring" requires explicit package name at /kSCcore/MOD/live/kSClive.pm line 325.
+Global symbol "$searchstring" requires explicit package name at /kSCcore/MOD/live/kSClive.pm line 333.
+Global symbol "$searchstring" requires explicit package name at /kSCcore/MOD/live/kSClive.pm line 341.
+Global symbol "$searchstring" requires explicit package name at /kSCcore/MOD/live/kSClive.pm line 349.
+Global symbol "$searchstring" requires explicit package name at /kSCcore/MOD/live/kSClive.pm line 357.
+Global symbol "$searchstring" requires explicit package name at /kSCcore/MOD/live/kSClive.pm line 365.
+Global symbol "$searchstring" requires explicit package name at /kSCcore/MOD/live/kSClive.pm line 373.
+Compilation failed in require at /kSCcore/WEB/lda/xml/index.pl line 7.
+BEGIN failed--compilation aborted at /kSCcore/WEB/lda/xml/index.pl line 7.
+[Tue Mar 12 16:11:48.428232 2013] [cgid:error] [pid 28775:tid 140289255610112] [client 172.23.7.23:54024] End of script output before headers: index.pl
+Global symbol "$searchstring" requires explicit package name at /kSCcore/MOD/live/kSClive.pm line 217.
+Global symbol "$searchstring" requires explicit package name at /kSCcore/MOD/live/kSClive.pm line 229.
+Global symbol "$searchstring" requires explicit package name at /kSCcore/MOD/live/kSClive.pm line 237.
+Global symbol "$searchstring" requires explicit package name at /kSCcore/MOD/live/kSClive.pm line 245.
+Global symbol "$searchstring" requires explicit package name at /kSCcore/MOD/live/kSClive.pm line 253.
+Global symbol "$searchstring" requires explicit package name at /kSCcore/MOD/live/kSClive.pm line 261.
+Global symbol "$searchstring" requires explicit package name at /kSCcore/MOD/live/kSClive.pm line 269.
+Global symbol "$searchstring" requires explicit package name at /kSCcore/MOD/live/kSClive.pm line 277.
+Global symbol "$searchstring" requires explicit package name at /kSCcore/MOD/live/kSClive.pm line 285.
+Global symbol "$searchstring" requires explicit package name at /kSCcore/MOD/live/kSClive.pm line 293.
+Global symbol "$searchstring" requires explicit package name at /kSCcore/MOD/live/kSClive.pm line 301.
+Global symbol "$searchstring" requires explicit package name at /kSCcore/MOD/live/kSClive.pm line 309.
+Global symbol "$searchstring" requires explicit package name at /kSCcore/MOD/live/kSClive.pm line 317.
+Global symbol "$searchstring" requires explicit package name at /kSCcore/MOD/live/kSClive.pm line 325.
+Global symbol "$searchstring" requires explicit package name at /kSCcore/MOD/live/kSClive.pm line 333.
+Global symbol "$searchstring" requires explicit package name at /kSCcore/MOD/live/kSClive.pm line 341.
+Global symbol "$searchstring" requires explicit package name at /kSCcore/MOD/live/kSClive.pm line 349.
+Global symbol "$searchstring" requires explicit package name at /kSCcore/MOD/live/kSClive.pm line 357.
+Global symbol "$searchstring" requires explicit package name at /kSCcore/MOD/live/kSClive.pm line 365.
+Global symbol "$searchstring" requires explicit package name at /kSCcore/MOD/live/kSClive.pm line 373.
+Compilation failed in require at /kSCcore/WEB/lda/xml/index.pl line 7.
+BEGIN failed--compilation aborted at /kSCcore/WEB/lda/xml/index.pl line 7.
+[Tue Mar 12 16:11:49.400522 2013] [cgid:error] [pid 28775:tid 140289266099968] [client 172.23.7.23:54026] End of script output before headers: index.pl
