@@ -1,0 +1,11 @@
+#! /bin/sh
+#
+# Created by configure
+
+"./configure" \
+"--with-included-apr" \
+"--prefix=/kSCcore/WSV" \
+"--exec-prefix=/kSCcore/WSV" \
+"--enable-mods-shared=all" \
+"--enable-so" \
+"$@"

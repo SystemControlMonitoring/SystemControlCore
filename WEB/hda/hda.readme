@@ -1,0 +1,11 @@
+<!--HDA_VERSION:2.110313-->
+
+Modul: Historic Data Access<br>
+Version: 2.110313<br></br>
+<i>Format: JSON</i><br>
+<font size=2>Query: /hda/json/</font><br>
+<br>
+<i>Format: XML</i><br>
+<font size=2>Query: /hda/xml/</font><br>
+<br></br>
+<hr><br></br>

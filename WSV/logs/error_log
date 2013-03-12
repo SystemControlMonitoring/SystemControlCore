@@ -1,0 +1,92 @@
+[Mon Mar 11 14:20:53.159897 2013] [mpm_event:notice] [pid 22004:tid 139982088947456] AH00489: Apache/2.4.3 (Unix) configured -- resuming normal operations
+[Mon Mar 11 14:20:53.160013 2013] [core:notice] [pid 22004:tid 139982088947456] AH00094: Command line: '/kSCcore/WSV/bin/httpd'
+[Mon Mar 11 14:33:56.292485 2013] [mpm_event:notice] [pid 22004:tid 139982088947456] AH00491: caught SIGTERM, shutting down
+[Mon Mar 11 14:39:07.790969 2013] [mpm_event:notice] [pid 22935:tid 140184771819264] AH00489: Apache/2.4.3 (Unix) configured -- resuming normal operations
+[Mon Mar 11 14:39:07.791090 2013] [core:notice] [pid 22935:tid 140184771819264] AH00094: Command line: '/kSCcore/WSV/bin/httpd'
+[Mon Mar 11 14:39:49.555396 2013] [autoindex:error] [pid 22939:tid 140184701970176] [client 172.23.7.23:65090] AH01276: Cannot serve directory /kSCcore/WEB/: No matching DirectoryIndex (index.html) found, and server-generated directory index forbidden by Options directive
+[Mon Mar 11 14:40:24.034783 2013] [autoindex:error] [pid 22939:tid 140184712460032] [client 172.23.7.23:65115] AH01276: Cannot serve directory /kSCcore/WEB/: No matching DirectoryIndex (index.html) found, and server-generated directory index forbidden by Options directive
+[Mon Mar 11 14:40:25.521406 2013] [autoindex:error] [pid 22939:tid 140184680990464] [client 172.23.7.23:65117] AH01276: Cannot serve directory /kSCcore/WEB/: No matching DirectoryIndex (index.html) found, and server-generated directory index forbidden by Options directive
+[Mon Mar 11 14:40:26.017899 2013] [autoindex:error] [pid 22939:tid 140184660010752] [client 172.23.7.23:65118] AH01276: Cannot serve directory /kSCcore/WEB/: No matching DirectoryIndex (index.html) found, and server-generated directory index forbidden by Options directive
+[Mon Mar 11 14:40:27.169589 2013] [autoindex:error] [pid 22939:tid 140184567932672] [client 172.23.7.23:65119] AH01276: Cannot serve directory /kSCcore/WEB/: No matching DirectoryIndex (index.html) found, and server-generated directory index forbidden by Options directive
+[Mon Mar 11 14:40:27.601261 2013] [autoindex:error] [pid 22939:tid 140184546952960] [client 172.23.7.23:65120] AH01276: Cannot serve directory /kSCcore/WEB/: No matching DirectoryIndex (index.html) found, and server-generated directory index forbidden by Options directive
+[Mon Mar 11 14:40:27.777266 2013] [autoindex:error] [pid 22937:tid 140184712460032] [client 172.23.7.23:65121] AH01276: Cannot serve directory /kSCcore/WEB/: No matching DirectoryIndex (index.html) found, and server-generated directory index forbidden by Options directive
+[Mon Mar 11 14:42:36.181944 2013] [mpm_event:notice] [pid 22935:tid 140184771819264] AH00491: caught SIGTERM, shutting down
+[Mon Mar 11 14:42:38.569273 2013] [mpm_event:notice] [pid 23294:tid 139763765831424] AH00489: Apache/2.4.3 (Unix) configured -- resuming normal operations
+[Mon Mar 11 14:42:38.577660 2013] [core:notice] [pid 23294:tid 139763765831424] AH00094: Command line: '/kSCcore/WSV/bin/httpd'
+[Mon Mar 11 14:42:41.695254 2013] [cgid:error] [pid 23298:tid 139763706472192] [client 172.23.7.23:65202] AH01262: Options ExecCGI is off in this directory: /kSCcore/WEB/index.pl
+[Mon Mar 11 14:42:42.525430 2013] [cgid:error] [pid 23298:tid 139763695982336] [client 172.23.7.23:65202] AH01262: Options ExecCGI is off in this directory: /kSCcore/WEB/index.pl
+[Mon Mar 11 14:42:42.716796 2013] [cgid:error] [pid 23298:tid 139763685492480] [client 172.23.7.23:65202] AH01262: Options ExecCGI is off in this directory: /kSCcore/WEB/index.pl
+[Mon Mar 11 14:42:42.892863 2013] [cgid:error] [pid 23298:tid 139763604518656] [client 172.23.7.23:65202] AH01262: Options ExecCGI is off in this directory: /kSCcore/WEB/index.pl
+[Mon Mar 11 14:42:43.069162 2013] [cgid:error] [pid 23298:tid 139763594028800] [client 172.23.7.23:65202] AH01262: Options ExecCGI is off in this directory: /kSCcore/WEB/index.pl
+[Mon Mar 11 14:43:10.541374 2013] [cgid:error] [pid 23298:tid 139763583538944] [client 172.23.7.23:65221] AH01262: Options ExecCGI is off in this directory: /kSCcore/WEB/index.pl
+[Mon Mar 11 14:43:11.964924 2013] [cgid:error] [pid 23298:tid 139763562559232] [client 172.23.7.23:65222] AH01262: Options ExecCGI is off in this directory: /kSCcore/WEB/index.pl
+[Mon Mar 11 14:43:12.380914 2013] [cgid:error] [pid 23298:tid 139763541579520] [client 172.23.7.23:65223] AH01262: Options ExecCGI is off in this directory: /kSCcore/WEB/index.pl
+[Mon Mar 11 14:43:12.557567 2013] [cgid:error] [pid 23298:tid 139763520599808] [client 172.23.7.23:65224] AH01262: Options ExecCGI is off in this directory: /kSCcore/WEB/index.pl
+[Mon Mar 11 14:43:13.006633 2013] [cgid:error] [pid 23298:tid 139763510109952] [client 172.23.7.23:65224] AH01262: Options ExecCGI is off in this directory: /kSCcore/WEB/index.pl
+[Mon Mar 11 14:58:02.835144 2013] [mpm_event:notice] [pid 23294:tid 139763765831424] AH00491: caught SIGTERM, shutting down
+[Mon Mar 11 14:58:04.370114 2013] [ssl:notice] [pid 24074:tid 140289549174528] AH01886: SSL FIPS mode disabled
+[Mon Mar 11 14:58:04.422708 2013] [ssl:notice] [pid 24075:tid 140289549174528] AH01886: SSL FIPS mode disabled
+[Mon Mar 11 14:58:04.433363 2013] [ssl:warn] [pid 24075:tid 140289549174528] AH01873: Init: Session Cache is not configured [hint: SSLSessionCache]
+[Mon Mar 11 14:58:04.434369 2013] [mpm_event:notice] [pid 24075:tid 140289549174528] AH00489: Apache/2.4.3 (Unix) OpenSSL/1.0.0-fips configured -- resuming normal operations
+[Mon Mar 11 14:58:04.434395 2013] [core:notice] [pid 24075:tid 140289549174528] AH00094: Command line: '/kSCcore/WSV/bin/httpd'
+String found where operator expected at /kSCcore/WEB/index.pl line 2, near "echo "hallo welt.""
+	(Do you need to predeclare echo?)
+syntax error at /kSCcore/WEB/index.pl line 2, near "echo "hallo welt.""
+Execution of /kSCcore/WEB/index.pl aborted due to compilation errors.
+[Mon Mar 11 14:58:07.476712 2013] [cgid:error] [pid 24080:tid 140289402468096] [client 172.23.7.23:49451] End of script output before headers: index.pl
+[Mon Mar 11 14:59:47.110143 2013] [cgid:error] [pid 24080:tid 140289391978240] [client 172.23.7.23:49516] End of script output before headers: index.pl
+[Mon Mar 11 14:59:48.436554 2013] [cgid:error] [pid 24080:tid 140289381488384] [client 172.23.7.23:49517] End of script output before headers: index.pl
+[Mon Mar 11 14:59:48.929695 2013] [cgid:error] [pid 24080:tid 140289360508672] [client 172.23.7.23:49519] End of script output before headers: index.pl
+[Mon Mar 11 15:01:23.584994 2013] [cgid:error] [pid 24479:tid 140289549174528] (13)Permission denied: AH01241: exec of '/kSCcore/WEB/index.pl' failed
+[Mon Mar 11 15:01:23.585368 2013] [cgid:error] [pid 24080:tid 140289329039104] [client 172.23.7.23:49578] End of script output before headers: index.pl
+[Mon Mar 11 15:01:24.640073 2013] [cgid:error] [pid 24480:tid 140289549174528] (13)Permission denied: AH01241: exec of '/kSCcore/WEB/index.pl' failed
+[Mon Mar 11 15:01:24.640390 2013] [cgid:error] [pid 24080:tid 140289318549248] [client 172.23.7.23:49579] End of script output before headers: index.pl
+[Mon Mar 11 15:01:24.831830 2013] [cgid:error] [pid 24481:tid 140289549174528] (13)Permission denied: AH01241: exec of '/kSCcore/WEB/index.pl' failed
+[Mon Mar 11 15:01:24.832158 2013] [cgid:error] [pid 24080:tid 140289308059392] [client 172.23.7.23:49582] End of script output before headers: index.pl
+[Mon Mar 11 15:01:25.698178 2013] [cgid:error] [pid 24482:tid 140289549174528] (13)Permission denied: AH01241: exec of '/kSCcore/WEB/index.pl' failed
+[Mon Mar 11 15:01:25.698503 2013] [cgid:error] [pid 24080:tid 140289297569536] [client 172.23.7.23:49586] End of script output before headers: index.pl
+[Mon Mar 11 15:01:54.816319 2013] [cgid:error] [pid 24496:tid 140289549174528] (13)Permission denied: AH01241: exec of '/kSCcore/WEB/index.pl' failed
+[Mon Mar 11 15:01:54.816714 2013] [cgid:error] [pid 24078:tid 140289402468096] [client 172.23.7.23:49601] End of script output before headers: index.pl
+[Mon Mar 11 15:02:00.051395 2013] [cgid:error] [pid 24499:tid 140289549174528] (13)Permission denied: AH01241: exec of '/kSCcore/WEB/index.pl' failed
+[Mon Mar 11 15:02:00.051732 2013] [cgid:error] [pid 24078:tid 140289391978240] [client 172.23.7.23:49607] End of script output before headers: index.pl
+[Mon Mar 11 15:02:32.304282 2013] [cgid:error] [pid 24516:tid 140289549174528] (13)Permission denied: AH01241: exec of '/kSCcore/WEB/index.pl' failed
+[Mon Mar 11 15:02:32.304625 2013] [cgid:error] [pid 24080:tid 140289287079680] [client 172.23.7.23:49627] End of script output before headers: index.pl
+[Mon Mar 11 15:02:32.750221 2013] [cgid:error] [pid 24517:tid 140289549174528] (13)Permission denied: AH01241: exec of '/kSCcore/WEB/index.pl' failed
+[Mon Mar 11 15:02:32.750565 2013] [cgid:error] [pid 24077:tid 140289391978240] [client 172.23.7.23:49628] End of script output before headers: index.pl
+[Mon Mar 11 15:02:32.942240 2013] [cgid:error] [pid 24518:tid 140289549174528] (13)Permission denied: AH01241: exec of '/kSCcore/WEB/index.pl' failed
+[Mon Mar 11 15:02:32.942609 2013] [cgid:error] [pid 24080:tid 140289276589824] [client 172.23.7.23:49629] End of script output before headers: index.pl
+[Mon Mar 11 15:02:33.120293 2013] [cgid:error] [pid 24519:tid 140289549174528] (13)Permission denied: AH01241: exec of '/kSCcore/WEB/index.pl' failed
+[Mon Mar 11 15:02:33.120640 2013] [cgid:error] [pid 24077:tid 140289402468096] [client 172.23.7.23:49630] End of script output before headers: index.pl
+[Mon Mar 11 15:02:33.293839 2013] [cgid:error] [pid 24520:tid 140289549174528] (13)Permission denied: AH01241: exec of '/kSCcore/WEB/index.pl' failed
+[Mon Mar 11 15:02:33.294198 2013] [cgid:error] [pid 24080:tid 140289266099968] [client 172.23.7.23:49631] End of script output before headers: index.pl
+[Mon Mar 11 15:02:33.453814 2013] [cgid:error] [pid 24521:tid 140289549174528] (13)Permission denied: AH01241: exec of '/kSCcore/WEB/index.pl' failed
+[Mon Mar 11 15:02:33.454165 2013] [cgid:error] [pid 24080:tid 140289255610112] [client 172.23.7.23:49632] End of script output before headers: index.pl
+[Mon Mar 11 15:02:33.598154 2013] [cgid:error] [pid 24522:tid 140289549174528] (13)Permission denied: AH01241: exec of '/kSCcore/WEB/index.pl' failed
+[Mon Mar 11 15:02:33.598480 2013] [cgid:error] [pid 24080:tid 140289245120256] [client 172.23.7.23:49633] End of script output before headers: index.pl
+[Mon Mar 11 15:02:33.742072 2013] [cgid:error] [pid 24523:tid 140289549174528] (13)Permission denied: AH01241: exec of '/kSCcore/WEB/index.pl' failed
+[Mon Mar 11 15:02:33.742398 2013] [cgid:error] [pid 24080:tid 140289234630400] [client 172.23.7.23:49634] End of script output before headers: index.pl
+[Mon Mar 11 15:02:33.951646 2013] [cgid:error] [pid 24524:tid 140289549174528] (13)Permission denied: AH01241: exec of '/kSCcore/WEB/index.pl' failed
+[Mon Mar 11 15:02:33.951999 2013] [cgid:error] [pid 24080:tid 140289224140544] [client 172.23.7.23:49635] End of script output before headers: index.pl
+[Mon Mar 11 15:03:12.125937 2013] [cgid:error] [pid 24637:tid 140289549174528] (13)Permission denied: AH01241: exec of '/kSCcore/WEB/index.pl' failed
+[Mon Mar 11 15:03:12.126274 2013] [cgid:error] [pid 24080:tid 140289213650688] [client 172.23.7.23:49662] End of script output before headers: index.pl
+[Mon Mar 11 15:03:12.526138 2013] [cgid:error] [pid 24638:tid 140289549174528] (13)Permission denied: AH01241: exec of '/kSCcore/WEB/index.pl' failed
+[Mon Mar 11 15:03:12.526472 2013] [cgid:error] [pid 24080:tid 140289192670976] [client 172.23.7.23:49664] End of script output before headers: index.pl
+[Mon Mar 11 15:03:12.701036 2013] [cgid:error] [pid 24639:tid 140289549174528] (13)Permission denied: AH01241: exec of '/kSCcore/WEB/index.pl' failed
+[Mon Mar 11 15:03:12.701361 2013] [cgid:error] [pid 24080:tid 140289182181120] [client 172.23.7.23:49665] End of script output before headers: index.pl
+[Mon Mar 11 15:26:09.218495 2013] [cgid:error] [pid 24080:tid 140289370998528] [client 172.23.7.23:50755] malformed header from script 'index.pl': Bad header: /kSCcore/WEB/index.pl
+[Mon Mar 11 16:59:28.984465 2013] [cgid:error] [pid 28775:tid 140289245120256] [client 172.23.7.23:54947] End of script output before headers: index.pl
+[Tue Mar 12 08:45:55.772919 2013] [cgid:error] [pid 28775:tid 140289171691264] [client 172.23.7.23:50104] End of script output before headers: index.pl
+[Tue Mar 12 08:48:20.699308 2013] [cgid:error] [pid 24077:tid 140289287079680] [client 172.23.7.23:50227] End of script output before headers: index.pl
+[Tue Mar 12 08:48:33.690474 2013] [cgid:error] [pid 28775:tid 140289182181120] [client 172.23.7.23:50238] End of script output before headers: index.pl
+[Tue Mar 12 09:43:43.707768 2013] [cgid:error] [pid 28775:tid 140289297569536] [client 172.23.7.23:52924] End of script output before headers: index.pl
+[Tue Mar 12 09:43:58.443633 2013] [cgid:error] [pid 28775:tid 140289287079680] [client 172.23.7.23:52935] End of script output before headers: index.pl
+[Tue Mar 12 09:44:17.895431 2013] [cgid:error] [pid 28775:tid 140289308059392] [client 172.23.7.23:52956] End of script output before headers: index.pl
+[Tue Mar 12 09:45:30.719864 2013] [cgid:error] [pid 24080:tid 140289329039104] [client 172.23.7.23:53023] End of script output before headers: index.pl
+[Tue Mar 12 09:46:37.392634 2013] [cgid:error] [pid 24077:tid 140289266099968] [client 172.23.7.23:53088] End of script output before headers: index.pl
+[Tue Mar 12 09:47:01.641671 2013] [cgid:error] [pid 28775:tid 140289255610112] [client 172.23.7.23:53107] End of script output before headers: index.pl
+[Tue Mar 12 09:47:58.747456 2013] [cgid:error] [pid 28775:tid 140289266099968] [client 172.23.7.23:53173] End of script output before headers: index.pl
+[Tue Mar 12 09:48:01.584727 2013] [cgid:error] [pid 24078:tid 140289255610112] [client 172.23.7.23:53177] End of script output before headers: index.pl
+[Tue Mar 12 09:48:02.163625 2013] [cgid:error] [pid 28775:tid 140289245120256] [client 172.23.7.23:53179] End of script output before headers: index.pl
+[Tue Mar 12 09:51:55.863432 2013] [cgid:error] [pid 28775:tid 140289224140544] [client 172.23.7.23:53396] End of script output before headers: index.pl
+[Tue Mar 12 09:52:59.157558 2013] [cgid:error] [pid 28775:tid 140289213650688] [client 172.23.7.23:53454] End of script output before headers: index.pl
+[Tue Mar 12 10:11:36.787259 2013] [cgid:error] [pid 28775:tid 140289360508672] [client 172.23.7.23:54494] End of script output before headers: index.pl

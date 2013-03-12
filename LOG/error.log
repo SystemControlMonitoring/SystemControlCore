@@ -1,0 +1,1 @@
+Use of uninitialized value $QUERY_STRING in string ne at /kSCcore/MOD/basic/kSCbasic.pm line 91.
