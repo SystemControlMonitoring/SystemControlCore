@@ -132,6 +132,7 @@ sub GetUrlKeyValue {
 sub PrintUrlKeyValue {
     my $out = shift;
     my $i = 0;
+    my $return;
     foreach my $var (sort(keys(%ENV))) {
         my $val = $ENV{$var};
         $val =~ s|\n|\\n|g;
@@ -143,17 +144,31 @@ sub PrintUrlKeyValue {
     		foreach (@QS) {
     		    my @KV = split("=", $_);
     		    if ( ($out eq "xml") || ($out eq "XML") ) {
-    			print "<KEY_". $i .">". $KV[0] ."</KEY_". $i .">\n<VALUE_". $i .">". $KV[1] ."</VALUE_". $i .">\n";
+    			if ( scalar(@KV) > 2 ) {
+    			    $return.="<key_". $i .">". $KV[0] ."</key_". $i .">\n<value_". $i .">". $KV[1] ."=". $KV[2] ."</value_". $i .">\n";
+    			} else {
+    			    $return.="<key_". $i .">". $KV[0] ."</key_". $i .">\n<value_". $i .">". $KV[1] ."</value_". $i .">\n";
+    			}
     		    } elsif ( ($out eq "json") || ($out eq "JSON") ) {
-    			print "\"KEY_". $i ."\":\"". $KV[0] ."\",\"VALUE_". $i ."\":\"". $KV[1] ."\",";
+    			if ( scalar(@KV) > 2 ) {
+    			    $return.="\"KEY_". $i ."\":\"". $KV[0] ."\",\"VALUE_". $i ."\":\"". $KV[1] ."=". $KV[2] ."\",";
+    			} else {
+    			    $return.="\"KEY_". $i ."\":\"". $KV[0] ."\",\"VALUE_". $i ."\":\"". $KV[1] ."\",";
+    			}
+    			
     		    } else {
-    			print " -> ". $KV[0] ." = ". $KV[1] ."\n";
+    			if ( scalar(@KV) > 2 ) {
+    			    $return.=" -> ". $KV[0] ." = ". $KV[1] ."=". $KV[2] ."\n";
+    			} else {
+    			    $return.=" -> ". $KV[0] ." = ". $KV[1] ."\n";
+    			}
     		    }
     		    $i++;
     		}
     	    }
     	}
     }
+    return ($return);
 }
 #
 sub DecodeBase64u6 {
@@ -170,7 +185,7 @@ sub EncodeBase64u6 {
     return ($encoded ."Ab6Dej");
 }
 #
-sub EncodeHtml {
+sub EncodeHTML {
     my $out = shift;
     $out =~ s/Ä/&Auml;/g;
     $out =~ s/\x{008e}/&Auml;/g;
@@ -211,6 +226,21 @@ sub EncodeXML {
     $out =~ s/\"/&quot;/g;
     $out =~ s/\'/&apos;/g;
     return ($out);
+}
+#
+sub ErrorCode {
+    my $out = shift;
+    my $eco = shift;
+    my $c = "ERROR_". $eco;
+    my $EM;
+    if ( ($out eq "xml") || ($out eq "XML") ) {
+	$EM.="<message>". $properties->getProperty($c) ."</message>\n";
+    } elsif ( ($out eq "json") || ($out eq "JSON") ) {
+	$EM.="\"MESSAGE\":\"". $properties->getProperty($c) ."\"";
+    } else {
+	$EM.=" -> ". $properties->getProperty($c);
+    }
+    return ($EM);
 }
 #
 close ($CF);
