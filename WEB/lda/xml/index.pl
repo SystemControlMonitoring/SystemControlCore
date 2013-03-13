@@ -4,16 +4,15 @@
 use lib '/kSCcore/MOD/live';
 use lib '/kSCcore/MOD/html';
 use lib '/kSCcore/MOD/basic';
+use lib '/kSCcore/MOD/postgre';
+# Include Library
 use kSClive;
 use kSChtml;
 use kSCbasic;
+use kSCpostgre;
 use warnings;
 use strict;
 use Data::Dumper;
-#
-#
-# Redirect Error Output
-open STDERR, '>>/kSCcore/LOG/error.log';
 #
 sub HostFullInfo {
     my $uid = shift;
@@ -58,6 +57,22 @@ sub HostFullInfo {
     }
     print "</hostlist>\n";
 }
+#
+sub AllHosts {
+    my $uid = shift;
+    my $htyp = shift;
+    my @AH = kSClive::AllHosts($uid);
+    print kSChtml::ContentType("xml");
+    print "<hostlist>\n";
+    for (my $c=0;$c<scalar(@{$AH[0]});$c++) {
+	print "   <host>\n";
+	print "      <name>". $HIF[0][$c][0] ."</name>\n";
+	print "      <state>". $HIF[0][$c][2] ."</state>\n";
+	print "   </host>\n";
+    }
+    print "</hostlist>\n";
+    #print kSCpostgre::WhichHostIcon($htyp);
+}
 # e = encoded, m = module
 if (kSCbasic::CheckUrlKeyValue("e","1","n") == 0) {
     if (kSCbasic::CheckUrlKeyValue("m","HostFullInfo","y") == 0) {
@@ -73,6 +88,8 @@ if (kSCbasic::CheckUrlKeyValue("e","1","n") == 0) {
 } elsif (kSCbasic::CheckUrlKeyValue("e","0","n") == 0) {
     if (kSCbasic::CheckUrlKeyValue("m","HostFullInfo","n") == 0) {
 	HostFullInfo(kSCbasic::GetUrlKeyValue("u"));
+    } elsif (kSCbasic::CheckUrlKeyValue("m","AllHosts","n") == 0) {
+	AllHosts(kSCbasic::GetUrlKeyValue("u"),kSCbasic::GetUrlKeyValue("ht"));
     } else {
 	print kSChtml::ContentType("xml");
 	print "<error_2>\n<module>kSCbasic::CheckUrlKeyValue</module>\n<problem>m=?</problem>";
@@ -89,5 +106,3 @@ if (kSCbasic::CheckUrlKeyValue("e","1","n") == 0) {
     print kSCbasic::PrintUrlKeyValue("xml");
     print "\n</urlpara>\n</error_0>\n";
 }
-#
-close STDERR;

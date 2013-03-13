@@ -231,7 +231,7 @@ sub EncodeXML {
 sub ErrorCode {
     my $out = shift;
     my $eco = shift;
-    my $c = "ERROR_". $eco;
+    my $c = "mess.ERROR_". $eco;
     my $EM;
     if ( ($out eq "xml") || ($out eq "XML") ) {
 	$EM.="<message>". $properties->getProperty($c) ."</message>\n";
@@ -241,6 +241,11 @@ sub ErrorCode {
 	$EM.=" -> ". $properties->getProperty($c);
     }
     return ($EM);
+}
+#
+sub GetHostIcon {
+    my $class = shift;
+    return ($class);
 }
 #
 close ($CF);

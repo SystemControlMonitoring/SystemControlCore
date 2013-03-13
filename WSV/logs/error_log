@@ -162,3 +162,22 @@ BEGIN failed--compilation aborted at /kSCcore/WEB/lda/xml/index.pl line 7.
 [Tue Mar 12 20:03:38.035288 2013] [cgid:error] [pid 24077:tid 140289150711552] [client 172.23.0.254:64387] End of script output before headers: index.pl
 [Wed Mar 13 09:06:29.280979 2013] [autoindex:error] [pid 28775:tid 140289203160832] [client 172.23.7.60:34417] AH01276: Cannot serve directory /kSCcore/WEB/hda/xml/: No matching DirectoryIndex (index.php,index.pl,index.cgi,index.asp,index.shtml,index.html,index.htm,default.php,default.pl,default.cgi,default.asp,default.shtml,default.html,default.htm,home.php,home.pl,home.cgi,home.asp,home.shtml,home.html,home.htm,Console.cpl) found, and server-generated directory index forbidden by Options directive
 [Wed Mar 13 11:10:42.729387 2013] [cgid:error] [pid 28775:tid 140289360508672] [client 172.23.7.23:56066] End of script output before headers: index.pl
+[Wed Mar 13 15:58:51.824245 2013] [cgid:error] [pid 28775:tid 140289182181120] [client 172.23.7.23:56698] End of script output before headers: index.pl
+[Wed Mar 13 16:18:48.974545 2013] [cgid:error] [pid 28775:tid 140289370998528] [client 172.23.7.23:57774] End of script output before headers: index.pl
+[Wed Mar 13 16:20:04.204531 2013] [cgid:error] [pid 24077:tid 140289266099968] [client 172.23.7.23:57831] End of script output before headers: index.pl
+[Wed Mar 13 16:20:05.927689 2013] [cgid:error] [pid 28775:tid 140289391978240] [client 172.23.7.23:57839] End of script output before headers: index.pl
+[Wed Mar 13 16:20:06.478098 2013] [cgid:error] [pid 24078:tid 140289287079680] [client 172.23.7.23:57843] End of script output before headers: index.pl
+[Wed Mar 13 16:20:48.715106 2013] [cgid:error] [pid 28775:tid 140289360508672] [client 172.23.7.23:57878] End of script output before headers: index.pl
+[Wed Mar 13 16:38:37.381524 2013] [cgid:error] [pid 28775:tid 140289245120256] [client 172.23.7.23:58923] End of script output before headers: index.pl
+[Wed Mar 13 16:46:10.829751 2013] [mpm_event:notice] [pid 24075:tid 140289549174528] AH00491: caught SIGTERM, shutting down
+[Wed Mar 13 16:46:12.190928 2013] [ssl:notice] [pid 11021:tid 139995880326912] AH01886: SSL FIPS mode disabled
+[Wed Mar 13 16:46:12.212724 2013] [ssl:notice] [pid 11022:tid 139995880326912] AH01886: SSL FIPS mode disabled
+[Wed Mar 13 16:46:12.293668 2013] [ssl:warn] [pid 11022:tid 139995880326912] AH01873: Init: Session Cache is not configured [hint: SSLSessionCache]
+[Wed Mar 13 16:46:12.294718 2013] [mpm_event:notice] [pid 11022:tid 139995880326912] AH00489: Apache/2.4.3 (Unix) OpenSSL/1.0.0-fips configured -- resuming normal operations
+[Wed Mar 13 16:46:12.294748 2013] [core:notice] [pid 11022:tid 139995880326912] AH00094: Command line: '/kSCcore/WSV/bin/httpd'
+[Wed Mar 13 16:46:30.501388 2013] [cgid:error] [pid 11024:tid 139995734079232] [client 172.23.7.23:59464] End of script output before headers: index.pl
+[Wed Mar 13 16:47:26.179076 2013] [cgid:error] [pid 11025:tid 139995723589376] [client 172.23.7.23:59505] End of script output before headers: index.pl
+[Wed Mar 13 16:47:44.770030 2013] [cgid:error] [pid 11024:tid 139995723589376] [client 172.23.7.23:59525] End of script output before headers: index.pl
+[Wed Mar 13 16:48:18.909365 2013] [cgid:error] [pid 11027:tid 139995723589376] [client 172.23.7.23:59556] End of script output before headers: index.pl
+[Wed Mar 13 16:57:59.508517 2013] [cgid:error] [pid 11027:tid 139995671140096] [client 172.23.7.23:60028] End of script output before headers: index.pl
+[Wed Mar 13 17:41:18.327768 2013] [cgid:error] [pid 12193:tid 139995492812544] [client 172.23.7.23:62465] End of script output before headers: index.pl
