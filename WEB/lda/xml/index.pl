@@ -64,30 +64,30 @@ if (kSCbasic::CheckUrlKeyValue("e","1","n") == 0) {
 	HostFullInfo(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")));
     } else {
 	print kSChtml::ContentType("xml");
-	print "<error>\n<module>kSCbasic::CheckUrlKeyValue</module>\n<problem>m=?</problem>";
+	print "<error_1>\n<module>kSCbasic::CheckUrlKeyValue</module>\n<problem>m=?</problem>";
 	print kSCbasic::ErrorCode("xml","1");
 	print "<urlpara>";
 	print kSCbasic::PrintUrlKeyValue("xml");
-	print "\n</urlpara>\n</error>\n";
+	print "\n</urlpara>\n</error_1>\n";
     }
 } elsif (kSCbasic::CheckUrlKeyValue("e","0","n") == 0) {
     if (kSCbasic::CheckUrlKeyValue("m","HostFullInfo","n") == 0) {
 	HostFullInfo(kSCbasic::GetUrlKeyValue("u"));
     } else {
 	print kSChtml::ContentType("xml");
-	print "<error>\n<module>kSCbasic::CheckUrlKeyValue</module>\n<problem>m=?</problem>";
+	print "<error_2>\n<module>kSCbasic::CheckUrlKeyValue</module>\n<problem>m=?</problem>";
 	print kSCbasic::ErrorCode("xml","2");
 	print "<urlpara>";
 	print kSCbasic::PrintUrlKeyValue("xml");
-	print "\n</urlpara>\n</error>\n";
+	print "\n</urlpara>\n</error_2>\n";
     }
 } else {
     print kSChtml::ContentType("xml");
-    print "<error>\n<module>kSCbasic::CheckUrlKeyValue</module>\n<problem>e=?</problem>";
+    print "<error_0>\n<module>kSCbasic::CheckUrlKeyValue</module>\n<problem>e=?</problem>";
     print kSCbasic::ErrorCode("xml","0");
     print "<urlpara>";
     print kSCbasic::PrintUrlKeyValue("xml");
-    print "\n</urlpara>\n</error>\n";
+    print "\n</urlpara>\n</error_0>\n";
 }
 #
 close STDERR;

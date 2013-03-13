@@ -55,6 +55,7 @@ if (kSCbasic::CheckUrlKeyValue("cv","g") == 0) {
 	    print $_ ."\n";
 	}
     }
+    print "<center><font size=2>SIV.AG</font></center><br></br>\n";
 }
 #
 close STDERR;

@@ -1,8 +1,8 @@
-<!--LDA_VERSION:2.120313-->
+<!--LDA_VERSION:2.130313-->
 
 Modul: Live Data Access<br>
-Version: 2.120313<br>
-Bemerkungen:<br>
+Version: 2.130313<br>
+Comments:<br>
 <font size=2>
 <ul>
     <li>Base70 enable / disable (e=0/1)</li>
@@ -11,14 +11,14 @@ Bemerkungen:<br>
 <i>Format: JSON</i><br>
 <font size=2>Query:<br>
 <ul>
-    <li>HostFullInfo - /lda/json/?e=1&m=SG9zdEZ1bGxJbmZv123456&u=c2JhcmVzZWw=123456</li>
+    <li>HostFullInfo - Overview of hosts with Services URL: /lda/json/?e=1&m=SG9zdEZ1bGxJbmZv123456&u=c2JhcmVzZWw=123456</li>
 </ul>
 </font>
 <br>
 <i>Format: XML</i><br>
 <font size=2>Query:<br>
 <ul>
-    <li>HostFullInfo -[ /lda/xml/?e=1&m=SG9zdEZ1bGxJbmZv123456&u=c2JhcmVzZWw=123456 ]- Eine Übersicht über alle eingerichteten Hosts und dessen Services.</li>
+    <li>HostFullInfo - Overview of hosts with Services URL: /lda/xml/?e=1&m=SG9zdEZ1bGxJbmZv123456&u=c2JhcmVzZWw=123456</li>
 </ul>
 </font>
 <br></br>

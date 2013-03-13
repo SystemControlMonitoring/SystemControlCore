@@ -42,7 +42,7 @@ if (kSCbasic::CheckUrlKeyValue("e","1","n") == 0) {
 	HostFullInfo(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")));
     } else {
 	my $out = kSChtml::ContentType("json");
-	$out.="{\"E4\":{\"MODULE\":\"kSCbasic::CheckUrlKeyValue,\"PROBLEM\":\"m=?\",";
+	$out.="{\"ERROR_1\":{\"MODULE\":\"kSCbasic::CheckUrlKeyValue,\"PROBLEM\":\"m=?\",";
 	$out.= kSCbasic::ErrorCode("json","1");
 	$out.=",\"URLPARA\":{";
 	$out.= substr(kSCbasic::PrintUrlKeyValue("json"), 0, -1);
@@ -54,7 +54,7 @@ if (kSCbasic::CheckUrlKeyValue("e","1","n") == 0) {
 	HostFullInfo(kSCbasic::GetUrlKeyValue("u"));
     } else {
 	my $out = kSChtml::ContentType("json");
-	$out.="{\"E5\":{\"MODULE\":\"kSCbasic::CheckUrlKeyValue,\"PROBLEM\":\"m=?\",";
+	$out.="{\"ERROR_2\":{\"MODULE\":\"kSCbasic::CheckUrlKeyValue,\"PROBLEM\":\"m=?\",";
 	$out.= kSCbasic::ErrorCode("json","2");
 	$out.=",\"URLPARA\":{";
 	$out.= substr(kSCbasic::PrintUrlKeyValue("json"), 0, -1);
@@ -63,7 +63,7 @@ if (kSCbasic::CheckUrlKeyValue("e","1","n") == 0) {
     }
 } else {
     my $out = kSChtml::ContentType("json");
-    $out.="{\"E3\":{\"MODULE\":\"kSCbasic::CheckUrlKeyValue,\"PROBLEM\":\"e=?\",";
+    $out.="{\"ERROR_0\":{\"MODULE\":\"kSCbasic::CheckUrlKeyValue,\"PROBLEM\":\"e=?\",";
     $out.= kSCbasic::ErrorCode("json","0");
     $out.=",\"URLPARA\":{";
     $out.= substr(kSCbasic::PrintUrlKeyValue("json"), 0, -1);
