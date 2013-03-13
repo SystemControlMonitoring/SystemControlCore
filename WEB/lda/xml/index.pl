@@ -20,39 +20,43 @@ sub HostFullInfo {
     my @HIF = kSClive::HostFullInfo($uid);
     my @SFL = kSClive::ServiceFullList($uid);
     print kSChtml::ContentType("xml");
-    print "<HOSTLIST>\n";
+    print "<hostlist>\n";
     for (my $c=0;$c<scalar(@{$HIF[0]});$c++) {
-	print "   <HOST>\n";
-	print "      <NAME>". $HIF[0][$c][0] ."</NAME>\n";
-	print "      <ADDRESS>". $HIF[0][$c][1] ."</ADDRESS>\n";
-	print "      <STATE>". $HIF[0][$c][2] ."</STATE>\n";
-	print "      <LAST_CHECK_UTIME>". $HIF[0][$c][3] ."</LAST_CHECK_UTIME>\n";
-	print "      <LAST_CHECK_ISO>". kSCbasic::ConvertUt2Ts($HIF[0][$c][3]) ."</LAST_CHECK_ISO>\n";
-	print "      <SRV_OK>". $HIF[0][$c][4] ."</SRV_OK>\n";
-	print "      <SRV_WA>". $HIF[0][$c][5] ."</SRV_WA>\n";
-	print "      <SRV_CR>". $HIF[0][$c][6] ."</SRV_CR>\n";
-	print "      <SRV_UN>". $HIF[0][$c][7] ."</SRV_UN>\n";
-	print "      <SRV_PE>". $HIF[0][$c][8] ."</SRV_PE>\n";
-	print "      <SERVICELIST>\n";
+	print "   <host>\n";
+	print "      <name>". $HIF[0][$c][0] ."</name>\n";
+	print "      <address>". $HIF[0][$c][1] ."</address>\n";
+	print "      <state>". $HIF[0][$c][2] ."</state>\n";
+	print "      <last_check_utime>". $HIF[0][$c][3] ."</last_check_utime>\n";
+	print "      <last_check_iso>". kSCbasic::ConvertUt2Ts($HIF[0][$c][3]) ."</last_check_iso>\n";
+	print "      <srv_ok>". $HIF[0][$c][4] ."</srv_ok>\n";
+	print "      <srv_wa>". $HIF[0][$c][5] ."</srv_wa>\n";
+	print "      <srv_cr>". $HIF[0][$c][6] ."</srv_cr>\n";
+	print "      <srv_un>". $HIF[0][$c][7] ."</srv_un>\n";
+	print "      <srv_pe>". $HIF[0][$c][8] ."</srv_pe>\n";
+	print "      <ack>". $HIF[0][$c][9] ."</ack>\n";
+	print "      <output>". kSCbasic::EncodeXML($HIF[0][$c][10]) ."</output>\n";
+	print "      <next_check_utime>". $HIF[0][$c][11] ."</next_check_utime>\n";
+	print "      <next_check_iso>". kSCbasic::ConvertUt2Ts($HIF[0][$c][11]) ."</next_check_iso>\n";
+	print "      <servicelist>\n";
 	for (my $k=0;$k<scalar(@{$SFL[0]});$k++) {
 	    if ($SFL[0][$k][0] eq $HIF[0][$c][0]) {
-		print "         <SERVICE>\n";
-		print "            <NAME>". $SFL[0][$k][1] ."</NAME>\n";
-		print "            <STATE>". $SFL[0][$k][2] ."</STATE>\n";
-		print "            <LAST_CHECK_UTIME>". $SFL[0][$k][3] ."</LAST_CHECK_UTIME>\n";
-		print "            <LAST_CHECK_ISO>". kSCbasic::ConvertUt2Ts($SFL[0][$k][3]) ."</LAST_CHECK_ISO>\n";
-		print "            <OUTPUT>". kSCbasic::EncodeXML($SFL[0][$k][4]) ."</OUTPUT>\n";
-		print "            <LONG_OUTPUT>". kSCbasic::EncodeXML($SFL[0][$k][5]) ."</LONG_OUTPUT>\n";
-		print "            <ACK>". $SFL[0][$k][6] ."</ACK>\n";
-		print "            <NEXT_CHECK_UTIME>". $SFL[0][$k][7] ."</NEXT_CHECK_UTIME>\n";
-		print "            <NEXT_CHECK_ISO>". kSCbasic::ConvertUt2Ts($SFL[0][$k][7]) ."</NEXT_CHECK_ISO>\n";
-		print "         </SERVICE>\n";
+		print "         <service>\n";
+		print "            <name>". $SFL[0][$k][1] ."</name>\n";
+		print "            <state>". $SFL[0][$k][2] ."</state>\n";
+		print "            <last_check_utime>". $SFL[0][$k][3] ."</last_check_utime>\n";
+		print "            <last_check_iso>". kSCbasic::ConvertUt2Ts($SFL[0][$k][3]) ."</last_check_iso>\n";
+		print "            <output>". kSCbasic::EncodeXML($SFL[0][$k][4]) ."</output>\n";
+		print "            <long_output>". kSCbasic::EncodeXML($SFL[0][$k][5]) ."</long_output>\n";
+		print "            <ack>". $SFL[0][$k][6] ."</ack>\n";
+		print "            <next_check_utime>". $SFL[0][$k][7] ."</next_check_utime>\n";
+		print "            <next_check_iso>". kSCbasic::ConvertUt2Ts($SFL[0][$k][7]) ."</next_check_iso>\n";
+		print "         </service>\n";
 	    }
 	}
-	print "      </SERVICELIST>\n";
-	print "   </HOST>\n";
+	print "      </servicelist>\n";
+	print "   </host>\n";
     }
-    print "</HOSTLIST>\n";
+    print "</hostlist>\n";
 }
 # e = encoded, m = module
 if (kSCbasic::CheckUrlKeyValue("e","1","n") == 0) {
@@ -60,24 +64,24 @@ if (kSCbasic::CheckUrlKeyValue("e","1","n") == 0) {
 	HostFullInfo(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")));
     } else {
 	print kSChtml::ContentType("xml");
-	print "<FEHLER>\n<MESSAGE>Falsches Modul in kSCbasic::CheckUrlKeyValue(\"m\",\"?\") .</MESSAGE>";
+	print "<error>\n<message>Falsches Modul in kSCbasic::CheckUrlKeyValue(\"m\",\"?\") .</message>";
 	print kSCbasic::PrintUrlKeyValue("xml");
-	print "\n</FEHLER>\n";
+	print "\n</error>\n";
     }
 } elsif (kSCbasic::CheckUrlKeyValue("e","0","n") == 0) {
     if (kSCbasic::CheckUrlKeyValue("m","HostFullInfo","n") == 0) {
 	HostFullInfo(kSCbasic::GetUrlKeyValue("u"));
     } else {
 	print kSChtml::ContentType("xml");
-	print "<FEHLER>\n<MESSAGE>Falsches Modul in kSCbasic::CheckUrlKeyValue(\"m\",\"?\") .</MESSAGE>";
+	print "<error>\n<message>Falsches Modul in kSCbasic::CheckUrlKeyValue(\"m\",\"?\") .</message>";
 	print kSCbasic::PrintUrlKeyValue("xml");
-	print "\n</FEHLER>\n";
+	print "\n</error>\n";
     }
 } else {
     print kSChtml::ContentType("xml");
-    print "<FEHLER>\n<MESSAGE>Falsches Modul in kSCbasic::CheckUrlKeyValue(\"e\",\"?\") .</MESSAGE>\n";
+    print "<error>\n<message>Falsches Modul in kSCbasic::CheckUrlKeyValue(\"e\",\"?\") .</message>\n";
     print kSCbasic::PrintUrlKeyValue("xml");
-    print "\n</FEHLER>\n";
+    print "\n</error>\n";
 }
 #
 close STDERR;

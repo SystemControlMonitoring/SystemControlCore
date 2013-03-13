@@ -80,7 +80,7 @@ my $ml = Monitoring::Livestatus->new(
 #########################################################
 sub HostFullInfo {
     my $uid = shift;
-    my $out = $ml->selectall_arrayref("GET hosts\nColumns: host_name address state last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nAuthUser: ". $uid);
+    my $out = $ml->selectall_arrayref("GET hosts\nColumns: host_name address state last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending acknowledged plugin_output next_check\nAuthUser: ". $uid);
     return ($out);
 }
 #
@@ -382,6 +382,11 @@ sub HostService {
     return ($out);
 }
 #
+#########################################################
+#                                                       #
+#                      Service                          #
+#                                                       #
+#########################################################
 sub ServiceFullList {
     # Liste Alle Services zu einem gesuchten Host
     my $uid = shift;
