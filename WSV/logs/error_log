@@ -181,3 +181,5 @@ BEGIN failed--compilation aborted at /kSCcore/WEB/lda/xml/index.pl line 7.
 [Wed Mar 13 16:48:18.909365 2013] [cgid:error] [pid 11027:tid 139995723589376] [client 172.23.7.23:59556] End of script output before headers: index.pl
 [Wed Mar 13 16:57:59.508517 2013] [cgid:error] [pid 11027:tid 139995671140096] [client 172.23.7.23:60028] End of script output before headers: index.pl
 [Wed Mar 13 17:41:18.327768 2013] [cgid:error] [pid 12193:tid 139995492812544] [client 172.23.7.23:62465] End of script output before headers: index.pl
+[Wed Mar 13 19:41:18.203483 2013] [cgid:error] [pid 11024:tid 139995566241536] [client 172.23.0.254:17355] End of script output before headers: index.pl
+[Wed Mar 13 20:03:32.744121 2013] [cgid:error] [pid 11024:tid 139995555751680] [client 172.23.0.254:18521] End of script output before headers: index.pl

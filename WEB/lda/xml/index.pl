@@ -60,18 +60,27 @@ sub HostFullInfo {
 #
 sub AllHosts {
     my $uid = shift;
-    my $htyp = shift;
     my @AH = kSClive::AllHosts($uid);
     print kSChtml::ContentType("xml");
     print "<hostlist>\n";
     for (my $c=0;$c<scalar(@{$AH[0]});$c++) {
 	print "   <host>\n";
-	print "      <name>". $HIF[0][$c][0] ."</name>\n";
-	print "      <state>". $HIF[0][$c][2] ."</state>\n";
+	print "      <name>". $AH[0][$c][0] ."</name>\n";
+	print "      <state>". $AH[0][$c][2] ."</state>\n";
+	print "      <custom_var>". uc($AH[0][$c][1][0]) ."</custom_var>\n";
+	my @tmp = split(" ", $AH[0][$c][1][0]);
+	if (kSCbasic::GetHostIcon(kSCpostgre::WhichHostIcon($tmp[0])) ne "") {
+	    print "      <icon>". kSCbasic::GetHostIcon(kSCpostgre::WhichHostIcon($tmp[0])) ."</icon>\n";
+	} elsif (kSCbasic::GetHostIcon(kSCpostgre::WhichHostIcon($tmp[1])) ne "") {
+	    print "      <icon>". kSCbasic::GetHostIcon(kSCpostgre::WhichHostIcon($tmp[1])) ."</icon>\n";
+	} elsif (kSCbasic::GetHostIcon(kSCpostgre::WhichHostIcon($tmp[2])) ne "") {
+	    print "      <icon>". kSCbasic::GetHostIcon(kSCpostgre::WhichHostIcon($tmp[2])) ."</icon>\n";
+	} else {
+	    print "      <icon>No</icon>\n";
+	}
 	print "   </host>\n";
     }
     print "</hostlist>\n";
-    #print kSCpostgre::WhichHostIcon($htyp);
 }
 # e = encoded, m = module
 if (kSCbasic::CheckUrlKeyValue("e","1","n") == 0) {
@@ -89,7 +98,7 @@ if (kSCbasic::CheckUrlKeyValue("e","1","n") == 0) {
     if (kSCbasic::CheckUrlKeyValue("m","HostFullInfo","n") == 0) {
 	HostFullInfo(kSCbasic::GetUrlKeyValue("u"));
     } elsif (kSCbasic::CheckUrlKeyValue("m","AllHosts","n") == 0) {
-	AllHosts(kSCbasic::GetUrlKeyValue("u"),kSCbasic::GetUrlKeyValue("ht"));
+    	AllHosts(kSCbasic::GetUrlKeyValue("u"));
     } else {
 	print kSChtml::ContentType("xml");
 	print "<error_2>\n<module>kSCbasic::CheckUrlKeyValue</module>\n<problem>m=?</problem>";

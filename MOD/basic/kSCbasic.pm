@@ -245,7 +245,8 @@ sub ErrorCode {
 #
 sub GetHostIcon {
     my $class = shift;
-    return ($class);
+    #return ($properties->getProperty("icon.". $class);
+    return ($properties->getProperty("icon.". $class .""));
 }
 #
 close ($CF);

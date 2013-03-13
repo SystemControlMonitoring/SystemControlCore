@@ -46,7 +46,7 @@ sub WhichHostIcon {
     my $HTYPICON;
     my $dbh = DBConnect();
     my $sth = $dbh->prepare("select HTYPICON from class_hosttypes where HTYPSN=?");
-    $sth->execute($htypsn);
+    $sth->execute(uc($htypsn));
     while ( (my $IDen) = $sth->fetchrow_array() ) {
         $HTYPICON = $IDen;
     }
