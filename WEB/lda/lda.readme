@@ -1,26 +1,26 @@
 <!--LDA_VERSION:2.140313-->
 
-Modul: Live Data Access<br>
-Version: 2.140313<br>
+Modul: <i><b>Live Data Access</b></i><br>
+Version: <i><b>2.140313</b></i><br>
 Comments:<br>
 <font size=2>
 <ul>
     <li>Base70 enable / disable (e=0/1)</li>
 </ul>
 </font>
-<i>Format: JSON</i><br>
+Format: <i><b>JSON</b></i><br>
 <font size=2>Query:<br>
 <ul>
-    <li>HostFullInfo - Overview of hosts with Services URL: <a href="/lda/json/?e=1&m=SG9zdEZ1bGxJbmZv123456&u=c2JhcmVzZWw=123456">/lda/json/?e=1&m=SG9zdEZ1bGxJbmZv123456&u=c2JhcmVzZWw=123456</a></li>
-    <li>AllHosts - Overview of hosts, with ICON Path URL: <a href="/lda/json/?e=1&m=QWxsSG9zdHM=123456&u=c2JhcmVzZWw=123456">/lda/json/?e=1&m=QWxsSG9zdHM=123456&u=c2JhcmVzZWw=123456</a></li>
+    <li><b>HostFullInfo</b> - Overview of hosts with Services URL: <a href="/lda/json/?e=1&m=SG9zdEZ1bGxJbmZv123456&u=c2JhcmVzZWw=123456">/lda/json/?e=1&m=SG9zdEZ1bGxJbmZv123456&u=c2JhcmVzZWw=123456</a></li>
+    <li><b>AllHosts</b> - Overview of hosts, with ICON Path URL: <a href="/lda/json/?e=1&m=QWxsSG9zdHM=123456&u=c2JhcmVzZWw=123456">/lda/json/?e=1&m=QWxsSG9zdHM=123456&u=c2JhcmVzZWw=123456</a></li>
 </ul>
 </font>
 <br>
-<i>Format: XML</i><br>
+Format: <i><b>XML</b></i><br>
 <font size=2>Query:<br>
 <ul>
-    <li>HostFullInfo - Overview of hosts with Services URL: <a href="/lda/xml/?e=1&m=SG9zdEZ1bGxJbmZv123456&u=c2JhcmVzZWw=123456">/lda/xml/?e=1&m=SG9zdEZ1bGxJbmZv123456&u=c2JhcmVzZWw=123456</a></li>
-    <li>AllHosts - Overview of hosts, with ICON Path URL: <a href="/lda/xml/?e=1&m=QWxsSG9zdHM=123456&u=c2JhcmVzZWw=123456">/lda/xml/?e=1&m=QWxsSG9zdHM=123456&u=c2JhcmVzZWw=123456</a></li>
+    <li><b>HostFullInfo</b> - Overview of hosts with Services URL: <a href="/lda/xml/?e=1&m=SG9zdEZ1bGxJbmZv123456&u=c2JhcmVzZWw=123456">/lda/xml/?e=1&m=SG9zdEZ1bGxJbmZv123456&u=c2JhcmVzZWw=123456</a></li>
+    <li><b>AllHosts</b> - Overview of hosts, with ICON Path URL: <a href="/lda/xml/?e=1&m=QWxsSG9zdHM=123456&u=c2JhcmVzZWw=123456">/lda/xml/?e=1&m=QWxsSG9zdHM=123456&u=c2JhcmVzZWw=123456</a></li>
 </ul>
 </font>
 <br></br>
