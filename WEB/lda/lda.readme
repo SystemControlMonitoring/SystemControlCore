@@ -1,7 +1,7 @@
-<!--LDA_VERSION:2.130313-->
+<!--LDA_VERSION:2.140313-->
 
 Modul: Live Data Access<br>
-Version: 2.130313<br>
+Version: 2.140313<br>
 Comments:<br>
 <font size=2>
 <ul>
@@ -11,14 +11,16 @@ Comments:<br>
 <i>Format: JSON</i><br>
 <font size=2>Query:<br>
 <ul>
-    <li>HostFullInfo - Overview of hosts with Services URL: /lda/json/?e=1&m=SG9zdEZ1bGxJbmZv123456&u=c2JhcmVzZWw=123456</li>
+    <li>HostFullInfo - Overview of hosts with Services URL: <a href="/lda/json/?e=1&m=SG9zdEZ1bGxJbmZv123456&u=c2JhcmVzZWw=123456">/lda/json/?e=1&m=SG9zdEZ1bGxJbmZv123456&u=c2JhcmVzZWw=123456</a></li>
+    <li>AllHosts - Overview of hosts, with ICON Path URL: <a href="/lda/json/?e=1&m=QWxsSG9zdHM=123456&u=c2JhcmVzZWw=123456">/lda/json/?e=1&m=QWxsSG9zdHM=123456&u=c2JhcmVzZWw=123456</a></li>
 </ul>
 </font>
 <br>
 <i>Format: XML</i><br>
 <font size=2>Query:<br>
 <ul>
-    <li>HostFullInfo - Overview of hosts with Services URL: /lda/xml/?e=1&m=SG9zdEZ1bGxJbmZv123456&u=c2JhcmVzZWw=123456</li>
+    <li>HostFullInfo - Overview of hosts with Services URL: <a href="/lda/xml/?e=1&m=SG9zdEZ1bGxJbmZv123456&u=c2JhcmVzZWw=123456">/lda/xml/?e=1&m=SG9zdEZ1bGxJbmZv123456&u=c2JhcmVzZWw=123456</a></li>
+    <li>AllHosts - Overview of hosts, with ICON Path URL: <a href="/lda/xml/?e=1&m=QWxsSG9zdHM=123456&u=c2JhcmVzZWw=123456">/lda/xml/?e=1&m=QWxsSG9zdHM=123456&u=c2JhcmVzZWw=123456</a></li>
 </ul>
 </font>
 <br></br>

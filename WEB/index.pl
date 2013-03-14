@@ -7,8 +7,6 @@ use lib '/kSCcore/MOD/html';
 use kSCbasic;
 use kSChtml;
 use Cwd qw(realpath);
-# Redirect Error Output
-open STDERR, '>>/kSCcore/LOG/error.log';
 #
 my $scriptpath = substr(realpath($0), 0, -9);
 #
@@ -23,7 +21,7 @@ if (kSCbasic::CheckUrlKeyValue("cv","g") == 0) {
 	    if ( $_ =~ /<!--KERNEL_VERSION/ ) {
 		$_ =~ s/[\r\n\t]+//g;
 		$_ = substr($_, index($_, ":")+1, index($_, "--")-5);
-		print "{\"KERNEL_VERSION\":\"". $_ ."\"}\n";
+		print "{\"KERNEL_VERSION\":\"". $_ ."\"}";
 	    }
 	}
     }
@@ -52,10 +50,9 @@ if (kSCbasic::CheckUrlKeyValue("cv","g") == 0) {
 	my @raw_data=<DAT>;
 	close(DAT);
 	foreach (@raw_data) {
-	    print $_ ."\n";
+	    print $_;
 	}
     }
     print "<center><font size=2>SIV.AG</font></center><br></br>\n";
 }
 #
-close STDERR;

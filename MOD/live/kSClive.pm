@@ -86,7 +86,7 @@ sub HostFullInfo {
 #
 sub AllHosts {
     my $uid = shift;
-    my $out = $ml->selectall_arrayref("GET hosts\nColumns: host_name custom_variable_values state last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nAuthUser: ". $uid);
+    my $out = $ml->selectall_arrayref("GET hosts\nColumns: host_name custom_variable_values state last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending acknowledged next_check\nAuthUser: ". $uid);
     return ($out);
 }
 #

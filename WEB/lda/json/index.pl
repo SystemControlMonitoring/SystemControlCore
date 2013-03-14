@@ -4,16 +4,23 @@
 use lib '/kSCcore/MOD/live';
 use lib '/kSCcore/MOD/html';
 use lib '/kSCcore/MOD/basic';
+use lib '/kSCcore/MOD/postgre';
+# Include Library
 use kSClive;
 use kSChtml;
 use kSCbasic;
+use kSCpostgre;
 use warnings;
 use strict;
 use Data::Dumper;
 #
 #
-# Redirect Error Output
-open STDERR, '>>/kSCcore/LOG/error.log';
+#
+#
+#
+#
+#
+# Functions
 #
 sub HostFullInfo {
     my $uid = shift;
@@ -34,41 +41,74 @@ sub HostFullInfo {
 	$out.="}},";
     }
     $out = substr($out, 0, -1);
-    print "{". $out ."}\n";
+    print "{". $out ."}";
 }
+#
+sub AllHosts {
+    my $uid = shift;
+    my @AH = kSClive::AllHosts($uid);
+    my %AHI = kSCpostgre::AllHostIcons();
+    print kSChtml::ContentType("json");
+    my $out;
+    for (my $c=0;$c<scalar(@{$AH[0]});$c++) {
+	$out.="\"HOST_". $c ."\":{\"NAME\":\"". $AH[0][$c][0] ."\",\"STATE\":\"". $AH[0][$c][2] ."\",\"CUSTOM_VAR\":\"". uc($AH[0][$c][1][0]) ."\",";
+        my @tmp = split(" ", uc($AH[0][$c][1][0]));
+        if (kSCbasic::GetHostIcon($AHI{$tmp[0]}) ne "") {
+            $out.="\"ICON\":\"". kSCbasic::GetHostIcon($AHI{$tmp[0]}) ."\"";
+        } elsif (kSCbasic::GetHostIcon($AHI{$tmp[1]}) ne "") {
+            $out.="\"ICON\":\"". kSCbasic::GetHostIcon($AHI{$tmp[1]}) ."\"";
+        } elsif (kSCbasic::GetHostIcon($AHI{$tmp[2]}) ne "") {
+            $out.="\"ICON\":\"". kSCbasic::GetHostIcon($AHI{$tmp[2]}) ."\"";
+        } elsif (kSCbasic::GetHostIcon($AHI{$tmp[3]}) ne "") {
+            $out.="\"ICON\":\"". kSCbasic::GetHostIcon($AHI{$tmp[3]}) ."\"";
+        } elsif (kSCbasic::GetHostIcon($AHI{$tmp[4]}) ne "") {
+            $out.="\"ICON\":\"". kSCbasic::GetHostIcon($AHI{$tmp[4]}) ."\"";
+        } elsif (kSCbasic::GetHostIcon($AHI{$tmp[5]}) ne "") {
+            $out.="\"ICON\":\"". kSCbasic::GetHostIcon($AHI{$tmp[5]}) ."\"";
+        } else {
+            $out.="\"ICON\":\"". kSCbasic::GetHostIcon("ho") ."\"";
+        }
+	$out.=",\"LAST_CHECK_UTIME\":\"". $AH[0][$c][3] ."\",\"LAST_CHECK_ISO\":\"". kSCbasic::ConvertUt2Ts($AH[0][$c][3]) ."\",\"SRV_OK\":\"". $AH[0][$c][4] ."\",\"SRV_WA\":\"". $AH[0][$c][5] ."\",\"SRV_CR\":\"". $AH[0][$c][6] ."\",\"SRV_UN\":\"". $AH[0][$c][7] ."\",\"SRV_PE\":\"". $AH[0][$c][8] ."\",\"ACK\":\"". $AH[0][$c][9] ."\",\"NEXT_CHECK_UTIME\":\"". $AH[0][$c][10] ."\",\"NEXT_CHECK_ISO\":\"". kSCbasic::ConvertUt2Ts($AH[0][$c][10]) ."\"},";
+    }
+    $out = substr($out, 0, -1);
+    print "{". $out ."}";
+}
+#
+#
+#
+#
+#
+#
+#
+#
+# Output
+#
 # e = encoded, m = module
 if (kSCbasic::CheckUrlKeyValue("e","1","n") == 0) {
     if (kSCbasic::CheckUrlKeyValue("m","HostFullInfo","y") == 0) {
 	HostFullInfo(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")));
+    } elsif (kSCbasic::CheckUrlKeyValue("m","AllHosts","y") == 0) {
+        AllHosts(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")));
     } else {
 	my $out = kSChtml::ContentType("json");
-	$out.="{\"ERROR_1\":{\"MODULE\":\"kSCbasic::CheckUrlKeyValue,\"PROBLEM\":\"m=?\",";
-	$out.= kSCbasic::ErrorCode("json","1");
-	$out.=",\"URLPARA\":{";
-	$out.= substr(kSCbasic::PrintUrlKeyValue("json"), 0, -1);
-	$out.="}}";
+	$out.= kSCbasic::ErrorMessage("json","1");
 	print $out;
     }
 } elsif (kSCbasic::CheckUrlKeyValue("e","0","n") == 0) {
     if (kSCbasic::CheckUrlKeyValue("m","HostFullInfo","n") == 0) {
 	HostFullInfo(kSCbasic::GetUrlKeyValue("u"));
+    } elsif (kSCbasic::CheckUrlKeyValue("m","AllHosts","n") == 0) {
+        AllHosts(kSCbasic::GetUrlKeyValue("u"));
     } else {
 	my $out = kSChtml::ContentType("json");
-	$out.="{\"ERROR_2\":{\"MODULE\":\"kSCbasic::CheckUrlKeyValue,\"PROBLEM\":\"m=?\",";
-	$out.= kSCbasic::ErrorCode("json","2");
-	$out.=",\"URLPARA\":{";
-	$out.= substr(kSCbasic::PrintUrlKeyValue("json"), 0, -1);
-	$out.="}}";
+	$out.= kSCbasic::ErrorMessage("json","2");
 	print $out;
     }
 } else {
     my $out = kSChtml::ContentType("json");
-    $out.="{\"ERROR_0\":{\"MODULE\":\"kSCbasic::CheckUrlKeyValue,\"PROBLEM\":\"e=?\",";
-    $out.= kSCbasic::ErrorCode("json","0");
-    $out.=",\"URLPARA\":{";
-    $out.= substr(kSCbasic::PrintUrlKeyValue("json"), 0, -1);
-    $out.="}}";
+    $out.= kSCbasic::ErrorMessage("json","0");
     print $out;
 }
 #
-close STDERR;
+# End
+#

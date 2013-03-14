@@ -25,17 +25,6 @@ $properties->load($CF);
 #                       Functions                       #
 #                                                       #
 #########################################################
-#
-# vi /var/lib/pgsql/data/pg_hba.conf
-#
-## "local" is for Unix domain socket connections only
-##local   kscdb       kscdb                             trust
-#local   all         all                               trust
-## IPv4 local connections:
-#host    kscdb       kscdb       127.0.0.1/32          trust
-## IPv6 local connections:
-#host    all         all         ::1/128               trust
-#
 sub DBConnect {
     my $dbh = DBI->connect("dbi:Pg:dbname=". $properties->getProperty("db.name") .";host=". $properties->getProperty("db.host") .";port=". $properties->getProperty("db.port") .";", $properties->getProperty("db.user"), $properties->getProperty("db.pass")) or die "[". (localtime) ."] Unable to connect: $DBI::errstr\n";
     return ($dbh);
@@ -51,6 +40,23 @@ sub WhichHostIcon {
         $HTYPICON = $IDen;
     }
     return ($HTYPICON);
+    $sth->finish;
+    $dbh->disconnect;
+}
+#
+sub AllHostIcons {
+    # Assoziatives Array KEY => VALUE
+    my $HTYPICON;
+    my %out=();
+    my $dbh = DBConnect();
+    my $sth = $dbh->prepare("select HTYPSN,HTYPICON from class_hosttypes");
+    $sth->execute();
+    while ( (my $SN,my $IC) = $sth->fetchrow_array() ) {
+        #$HTYPICON = $IDen;
+        $out{$SN} = $IC;
+        #print $IC.":".$SN."\n";
+    }
+    return (%out);
     $sth->finish;
     $dbh->disconnect;
 }

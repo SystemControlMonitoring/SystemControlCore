@@ -90,12 +90,16 @@ sub CheckUrlKeyValue {
     		    my @KV = split("=", $_);
     		    my $value;
     		    if ($b64u6 eq "y") {
-    			$value = DecodeBase64u6($KV[1]);
+    			if ( scalar(@KV) > 2 ) {
+    		    	    $value = DecodeBase64u6($KV[1] ."=". $KV[2]);
+    		    	} else {
+    		    	    $value = DecodeBase64u6($KV[1]);
+    		    	}
     		    } else {
-    			$value = $KV[1];
+    		        $value = $KV[1];
     		    }
     		    if ( ($KV[0] eq $key) && ($value eq $vlu) ) {
-    			$i++;
+    		        $i++;
     		    }
     		}
     	    }
@@ -243,9 +247,30 @@ sub ErrorCode {
     return ($EM);
 }
 #
+sub ErrorMessage {
+    my $ty = shift;
+    my $ec = shift;
+    my $out;
+    if ( ($ty eq "xml") || ($ty eq "XML") ) {
+        $out.="<error_". $ec .">\n<module>kSCbasic::CheckUrlKeyValue</module>";
+        $out.= ErrorCode("xml",$ec);
+        $out.="<urlpara>";
+        $out.= PrintUrlKeyValue("xml");
+	$out.="\n</urlpara>\n</error_". $ec .">\n";
+    } elsif ( ($ty eq "json") || ($ty eq "JSON") ) {
+	$out.="{\"ERROR_". $ec ."\":{\"MODULE\":\"kSCbasic::CheckUrlKeyValue,";
+	$out.= ErrorCode("json",$ec);
+	$out.=",\"URLPARA\":{";
+	$out.= substr(PrintUrlKeyValue("json"), 0, -1);
+	$out.="}}";
+    } else {
+	$out.="Error 500";
+    }
+    return ($out);
+}
+#
 sub GetHostIcon {
     my $class = shift;
-    #return ($properties->getProperty("icon.". $class);
     return ($properties->getProperty("icon.". $class .""));
 }
 #
