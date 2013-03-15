@@ -11,8 +11,6 @@ use Config::Properties;
 use MIME::Base64 ();
 # Name
 package kSCbasic;
-# Redirect Error Output
-open STDERR, '>>/kSCcore/LOG/error.log';
 #########################################################
 #                                                       #
 #                  Read Configuration                   #
@@ -275,6 +273,5 @@ sub GetHostIcon {
 }
 #
 close ($CF);
-close STDERR;
 #
 1;

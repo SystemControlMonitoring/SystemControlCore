@@ -186,3 +186,63 @@ BEGIN failed--compilation aborted at /kSCcore/WEB/lda/xml/index.pl line 7.
 [Thu Mar 14 12:54:25.696665 2013] [cgid:error] [pid 12193:tid 139995681629952] [client 172.23.7.23:55881] End of script output before headers: index.pl
 [Thu Mar 14 12:55:21.580334 2013] [cgid:error] [pid 12193:tid 139995692119808] [client 172.23.7.23:55913] End of script output before headers: index.pl
 [Fri Mar 15 10:10:07.380747 2013] [cgid:error] [pid 12193:tid 139995702609664] [client 172.23.7.23:52253] End of script output before headers: index.pl
+[Fri Mar 15 15:18:52.579438 2013] [mpm_event:notice] [pid 11022:tid 139995880326912] AH00491: caught SIGTERM, shutting down
+[Fri Mar 15 15:22:52.858522 2013] [ssl:notice] [pid 5320:tid 140103383951104] AH01886: SSL FIPS mode disabled
+[Fri Mar 15 15:22:52.898872 2013] [ssl:notice] [pid 5321:tid 140103383951104] AH01886: SSL FIPS mode disabled
+[Fri Mar 15 15:22:52.950588 2013] [ssl:warn] [pid 5321:tid 140103383951104] AH01873: Init: Session Cache is not configured [hint: SSLSessionCache]
+[Fri Mar 15 15:22:52.953561 2013] [mpm_event:notice] [pid 5321:tid 140103383951104] AH00489: Apache/2.4.3 (Unix) OpenSSL/1.0.0-fips configured -- resuming normal operations
+[Fri Mar 15 15:22:52.957575 2013] [core:notice] [pid 5321:tid 140103383951104] AH00094: Command line: '/kSCcore/WSV/bin/httpd'
+[Fri Mar 15 15:24:03.473763 2013] [cgid:error] [pid 5326:tid 140103175370496] [client 172.23.7.23:56993] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 15:24:11.922728 2013] [cgid:error] [pid 5326:tid 140103164880640] [client 172.23.7.23:57001] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 15:24:13.302207 2013] [cgid:error] [pid 5326:tid 140103154390784] [client 172.23.7.23:57002] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 15:25:31.537299 2013] [cgid:error] [pid 5326:tid 140103143900928] [client 172.23.7.23:57066] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 15:25:32.117334 2013] [cgid:error] [pid 5326:tid 140103133411072] [client 172.23.7.23:57067] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 15:25:32.860822 2013] [cgid:error] [pid 5326:tid 140103122921216] [client 172.23.7.23:57068] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 15:51:42.792508 2013] [cgid:error] [pid 5326:tid 140103112431360] [client 172.23.7.23:58326] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 15:53:28.048716 2013] [cgid:error] [pid 5326:tid 140103091451648] [client 172.23.7.23:58410] End of script output before headers: index.pl
+[Fri Mar 15 15:54:51.904564 2013] [cgid:error] [pid 5777:tid 140103175370496] [client 172.23.7.23:58475] End of script output before headers: index.pl
+[Fri Mar 15 15:54:59.329986 2013] [cgid:error] [pid 5777:tid 140103154390784] [client 172.23.7.23:58483] End of script output before headers: index.pl
+Use of uninitialized value in scalar assignment at /usr/local/share/perl5/Monitoring/Livestatus/MULTI.pm line 559, <$CF> line 105.
+Thread 2 terminated abnormally: Unable to create sub named "" at /usr/local/share/perl5/Monitoring/Livestatus/MULTI.pm line 559, <$CF> line 105.
+[Fri Mar 15 18:26:55.313026 2013] [cgid:error] [pid 5777:tid 140103070471936] [client 172.23.0.254:35146] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 18:28:49.685341 2013] [cgid:error] [pid 5326:tid 140103049492224] [client 172.23.0.254:35248] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 18:31:56.616110 2013] [cgid:error] [pid 5777:tid 140103059982080] [client 172.23.0.254:35616] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 18:31:57.242184 2013] [cgid:error] [pid 5326:tid 140103039002368] [client 172.23.0.254:35618] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+print() on unopened filehandle Dumper at /kSCcore/MOD/live/kSClive.pm line 77, <$CF> line 105.
+Name "kSClive::Dumper" used only once: possible typo at /kSCcore/MOD/live/kSClive.pm line 77.
+print() on unopened filehandle Dumper at /kSCcore/MOD/live/kSClive.pm line 77, <$CF> line 105.
+Name "kSClive::Dumper" used only once: possible typo at /kSCcore/MOD/live/kSClive.pm line 77.
+print() on unopened filehandle Dumper at /kSCcore/MOD/live/kSClive.pm line 77, <$CF> line 105.
+Name "kSClive::Dumper" used only once: possible typo at /kSCcore/MOD/live/kSClive.pm line 77.
+print() on unopened filehandle Dumper at /kSCcore/MOD/live/kSClive.pm line 79, <$CF> line 105.
+Name "kSClive::Dumper" used only once: possible typo at /kSCcore/MOD/live/kSClive.pm line 79.
+print() on unopened filehandle Dumper at /kSCcore/MOD/live/kSClive.pm line 79, <$CF> line 105.
+Name "kSClive::Dumper" used only once: possible typo at /kSCcore/MOD/live/kSClive.pm line 79.
+print() on unopened filehandle Dumper at /kSCcore/MOD/live/kSClive.pm line 79, <$CF> line 105.
+Name "kSClive::Dumper" used only once: possible typo at /kSCcore/MOD/live/kSClive.pm line 79.
+print() on unopened filehandle Dumper at /kSCcore/MOD/live/kSClive.pm line 79, <$CF> line 105.
+Name "kSClive::Dumper" used only once: possible typo at /kSCcore/MOD/live/kSClive.pm line 79.
+print() on unopened filehandle Dumper at /kSCcore/MOD/live/kSClive.pm line 78, <$CF> line 105.
+Name "kSClive::Dumper" used only once: possible typo at /kSCcore/MOD/live/kSClive.pm line 78.
+print() on unopened filehandle Dumper at /kSCcore/MOD/live/kSClive.pm line 78, <$CF> line 105.
+Name "kSClive::Dumper" used only once: possible typo at /kSCcore/MOD/live/kSClive.pm line 78.
+print() on unopened filehandle Dumper at /kSCcore/MOD/live/kSClive.pm line 78, <$CF> line 105.
+Name "kSClive::Dumper" used only once: possible typo at /kSCcore/MOD/live/kSClive.pm line 78.
+[Fri Mar 15 18:41:43.790262 2013] [cgid:error] [pid 5777:tid 140103122921216] [client 172.23.0.254:36220] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 18:50:41.942207 2013] [cgid:error] [pid 5324:tid 140103101941504] [client 172.23.0.254:36740] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 18:50:54.975228 2013] [cgid:error] [pid 5777:tid 140103143900928] [client 172.23.0.254:36756] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 18:54:26.314389 2013] [cgid:error] [pid 5777:tid 140103112431360] [client 172.23.0.254:36962] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 18:54:26.855065 2013] [cgid:error] [pid 5777:tid 140103091451648] [client 172.23.0.254:36964] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 18:54:27.221249 2013] [cgid:error] [pid 5777:tid 140103080961792] [client 172.23.0.254:36966] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 18:54:27.369525 2013] [cgid:error] [pid 5324:tid 140103091451648] [client 172.23.0.254:36968] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 18:54:27.496247 2013] [cgid:error] [pid 5777:tid 140103101941504] [client 172.23.0.254:36970] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 18:59:08.422207 2013] [cgid:error] [pid 5777:tid 140103070471936] [client 172.23.0.254:37442] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+Use of uninitialized value in scalar assignment at /usr/local/share/perl5/Monitoring/Livestatus/MULTI.pm line 559, <$CF> line 105.
+Thread 2 terminated abnormally: Unable to create sub named "" at /usr/local/share/perl5/Monitoring/Livestatus/MULTI.pm line 559, <$CF> line 105.
+[Fri Mar 15 19:01:30.092470 2013] [cgid:error] [pid 5777:tid 140103059982080] [client 172.23.0.254:37596] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 19:01:30.683433 2013] [cgid:error] [pid 5323:tid 140103070471936] [client 172.23.0.254:37598] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 19:01:30.894619 2013] [cgid:error] [pid 5777:tid 140103049492224] [client 172.23.0.254:37600] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 19:01:31.052731 2013] [cgid:error] [pid 5777:tid 140103039002368] [client 172.23.0.254:37602] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 19:01:31.202605 2013] [cgid:error] [pid 5777:tid 140103018022656] [client 172.23.0.254:37604] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 19:01:31.773610 2013] [cgid:error] [pid 5326:tid 140103018022656] [client 172.23.0.254:37606] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 19:02:01.949733 2013] [cgid:error] [pid 5777:tid 140103007532800] [client 172.23.0.254:37612] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/

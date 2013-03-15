@@ -10,8 +10,6 @@ use LWP::Simple;
 use Config::Properties;
 # Name
 package kSChtml;
-# Redirect Error Output
-open STDERR, '>>/kSCcore/LOG/error.log';
 #########################################################
 #                                                       #
 #                  Read Configuration                   #
@@ -44,6 +42,5 @@ sub ContentType {
 #
 #
 close ($CF);
-close STDERR;
 #
 1;

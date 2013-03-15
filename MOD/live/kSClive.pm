@@ -11,8 +11,6 @@ use LWP::Simple;
 use Config::Properties;
 # Name
 package kSClive;
-# Redirect Error Output
-open STDERR, '>>/kSCcore/LOG/error.log';
 #########################################################
 #                                                       #
 #                  Read Configuration                   #
@@ -27,10 +25,11 @@ $properties->load($CF);
 #                                                       #
 #########################################################
 my $ml = Monitoring::Livestatus->new(
-    name	=> $properties->getProperty('live.name'),
-    verbose 	=> $properties->getProperty('live.vbos'),
-    keepalive	=> $properties->getProperty('live.kplv'),
-    peer	=> [
+    name		=> $properties->getProperty('live.name'),
+    verbose 		=> $properties->getProperty('live.vbos'),
+    keepalive		=> $properties->getProperty('live.kplv'),
+    errors_are_fatal 	=> $properties->getProperty('live.eraf'),
+    peer		=> [
 	{
     	    name => $properties->getProperty('live.peer.1.name'),
     	    peer => $properties->getProperty('live.peer.1.addr'),
@@ -412,6 +411,5 @@ sub ServiceFullList {
 }
 #
 close ($CF);
-close STDERR;
 #
 1;

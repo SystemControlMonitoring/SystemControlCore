@@ -124,3 +124,368 @@ Accept-Encoding: gzip, deflate
 Connection: keep-alive
 Cache-Control: max-age=0
 %response
+%% [Fri Mar 15 15:24:03 2013] GET /lda/xml/index.pl?e=1&m=QWxsRGF0YWJhc2VzHd7h33&u=c2JhcmVzZWw=OUd83D HTTP/1.1
+%% 500 /kSCcore/WEB/lda/xml/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de,en;q=0.7,en-us;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://172.23.10.249:6565/
+%response
+%% [Fri Mar 15 15:24:11 2013] GET /lda/xml/index.pl?e=1&m=QWxsSG9zdHM=Qwhdz4&u=c2JhcmVzZWw=Ljkdjh HTTP/1.1
+%% 500 /kSCcore/WEB/lda/xml/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de,en;q=0.7,en-us;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://172.23.10.249:6565/
+%response
+%% [Fri Mar 15 15:24:13 2013] GET /lda/xml/index.pl?e=1&m=SG9zdEZ1bGxJbmZvLkd8n3&u=c2JhcmVzZWw=Lkdi34 HTTP/1.1
+%% 500 /kSCcore/WEB/lda/xml/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de,en;q=0.7,en-us;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://172.23.10.249:6565/
+%response
+%% [Fri Mar 15 15:25:31 2013] GET /lda/json/index.pl?e=1&m=QWxsRGF0YWJhc2VzZhd873&u=c2JhcmVzZWw=Kjd743 HTTP/1.1
+%% 500 /kSCcore/WEB/lda/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de,en;q=0.7,en-us;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://172.23.10.249:6565/
+%response
+%% [Fri Mar 15 15:25:32 2013] GET /lda/json/index.pl?e=1&m=QWxsSG9zdHM=Uhd739&u=c2JhcmVzZWw=Jdn34h HTTP/1.1
+%% 500 /kSCcore/WEB/lda/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de,en;q=0.7,en-us;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://172.23.10.249:6565/
+%response
+%% [Fri Mar 15 15:25:32 2013] GET /lda/json/index.pl?e=1&m=SG9zdEZ1bGxJbmZvHd78h3&u=c2JhcmVzZWw=Adhfg3 HTTP/1.1
+%% 500 /kSCcore/WEB/lda/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de,en;q=0.7,en-us;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://172.23.10.249:6565/
+%response
+%% [Fri Mar 15 15:51:42 2013] GET /lda/xml/index.pl?e=1&m=QWxsRGF0YWJhc2VzHd7h33&u=c2JhcmVzZWw=OUd83D HTTP/1.1
+%% 500 /kSCcore/WEB/lda/xml/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de,en;q=0.7,en-us;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://172.23.10.249:6565/
+%response
+%% [Fri Mar 15 15:53:28 2013] GET /lda/xml/index.pl?e=0&m=HostFullInfo&u=sbaresel HTTP/1.1
+%% 500 /kSCcore/WEB/lda/xml/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de,en;q=0.7,en-us;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+%response
+%% [Fri Mar 15 15:54:51 2013] GET /lda/xml/index.pl?e=0&m=AllHosts HTTP/1.1
+%% 500 /kSCcore/WEB/lda/xml/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de,en;q=0.7,en-us;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+%response
+%% [Fri Mar 15 15:54:59 2013] GET /lda/xml/index.pl?e=0&m=AllHosts&u=sbaresel HTTP/1.1
+%% 500 /kSCcore/WEB/lda/xml/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de,en;q=0.7,en-us;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+%response
+%% [Fri Mar 15 18:26:55 2013] GET /lda/xml/index.pl?e=1&m=QWxsRGF0YWJhc2VzHd7h33&u=c2JhcmVzZWw=OUd83D HTTP/1.1
+%% 500 /kSCcore/WEB/lda/xml/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de-de,de;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Referer: http://172.23.10.249:6565/
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+%response
+%% [Fri Mar 15 18:28:49 2013] GET /lda/xml/index.pl?e=1&m=QWxsRGF0YWJhc2VzHd7h33&u=c2JhcmVzZWw=OUd83D HTTP/1.1
+%% 500 /kSCcore/WEB/lda/xml/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de-de,de;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Referer: http://172.23.10.249:6565/
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+%response
+%% [Fri Mar 15 18:31:56 2013] GET /lda/xml/index.pl?e=1&m=QWxsRGF0YWJhc2VzHd7h33&u=c2JhcmVzZWw=OUd83D HTTP/1.1
+%% 500 /kSCcore/WEB/lda/xml/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de-de,de;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Referer: http://172.23.10.249:6565/
+Connection: keep-alive
+Cache-Control: max-age=0
+%response
+%% [Fri Mar 15 18:31:57 2013] GET /lda/xml/index.pl?e=1&m=QWxsRGF0YWJhc2VzHd7h33&u=c2JhcmVzZWw=OUd83D HTTP/1.1
+%% 500 /kSCcore/WEB/lda/xml/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de-de,de;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Referer: http://172.23.10.249:6565/
+Connection: keep-alive
+Cache-Control: max-age=0
+%response
+%% [Fri Mar 15 18:41:43 2013] GET /lda/xml/index.pl?e=1&m=QWxsRGF0YWJhc2VzHd7h33&u=c2JhcmVzZWw=OUd83D HTTP/1.1
+%% 500 /kSCcore/WEB/lda/xml/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de-de,de;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Referer: http://172.23.10.249:6565/
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+%response
+%% [Fri Mar 15 18:50:41 2013] GET /lda/xml/index.pl?e=1&m=QWxsRGF0YWJhc2VzHd7h33&u=c2JhcmVzZWw=OUd83D HTTP/1.1
+%% 500 /kSCcore/WEB/lda/xml/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de-de,de;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Referer: http://172.23.10.249:6565/
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+%response
+%% [Fri Mar 15 18:50:54 2013] GET /lda/xml/index.pl?e=1&m=QWxsRGF0YWJhc2VzHd7h33&u=c2JhcmVzZWw=OUd83D HTTP/1.1
+%% 500 /kSCcore/WEB/lda/xml/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de-de,de;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Referer: http://172.23.10.249:6565/
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+%response
+%% [Fri Mar 15 18:54:26 2013] GET /lda/xml/index.pl?e=1&m=QWxsRGF0YWJhc2VzHd7h33&u=c2JhcmVzZWw=OUd83D HTTP/1.1
+%% 500 /kSCcore/WEB/lda/xml/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de-de,de;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Referer: http://172.23.10.249:6565/
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+%response
+%% [Fri Mar 15 18:54:26 2013] GET /lda/xml/index.pl?e=1&m=QWxsRGF0YWJhc2VzHd7h33&u=c2JhcmVzZWw=OUd83D HTTP/1.1
+%% 500 /kSCcore/WEB/lda/xml/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de-de,de;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Referer: http://172.23.10.249:6565/
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+%response
+%% [Fri Mar 15 18:54:27 2013] GET /lda/xml/index.pl?e=1&m=QWxsRGF0YWJhc2VzHd7h33&u=c2JhcmVzZWw=OUd83D HTTP/1.1
+%% 500 /kSCcore/WEB/lda/xml/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de-de,de;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Referer: http://172.23.10.249:6565/
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+%response
+%% [Fri Mar 15 18:54:27 2013] GET /lda/xml/index.pl?e=1&m=QWxsRGF0YWJhc2VzHd7h33&u=c2JhcmVzZWw=OUd83D HTTP/1.1
+%% 500 /kSCcore/WEB/lda/xml/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de-de,de;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Referer: http://172.23.10.249:6565/
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+%response
+%% [Fri Mar 15 18:54:27 2013] GET /lda/xml/index.pl?e=1&m=QWxsRGF0YWJhc2VzHd7h33&u=c2JhcmVzZWw=OUd83D HTTP/1.1
+%% 500 /kSCcore/WEB/lda/xml/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de-de,de;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Referer: http://172.23.10.249:6565/
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+%response
+%% [Fri Mar 15 18:59:08 2013] GET /lda/xml/index.pl?e=1&m=QWxsRGF0YWJhc2VzHd7h33&u=c2JhcmVzZWw=OUd83D HTTP/1.1
+%% 500 /kSCcore/WEB/lda/xml/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de-de,de;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Referer: http://172.23.10.249:6565/
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+%response
+%% [Fri Mar 15 19:01:30 2013] GET /lda/xml/index.pl?e=1&m=QWxsRGF0YWJhc2VzHd7h33&u=c2JhcmVzZWw=OUd83D HTTP/1.1
+%% 500 /kSCcore/WEB/lda/xml/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de-de,de;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Referer: http://172.23.10.249:6565/
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+%response
+%% [Fri Mar 15 19:01:30 2013] GET /lda/xml/index.pl?e=1&m=QWxsRGF0YWJhc2VzHd7h33&u=c2JhcmVzZWw=OUd83D HTTP/1.1
+%% 500 /kSCcore/WEB/lda/xml/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de-de,de;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Referer: http://172.23.10.249:6565/
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+%response
+%% [Fri Mar 15 19:01:30 2013] GET /lda/xml/index.pl?e=1&m=QWxsRGF0YWJhc2VzHd7h33&u=c2JhcmVzZWw=OUd83D HTTP/1.1
+%% 500 /kSCcore/WEB/lda/xml/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de-de,de;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Referer: http://172.23.10.249:6565/
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+%response
+%% [Fri Mar 15 19:01:31 2013] GET /lda/xml/index.pl?e=1&m=QWxsRGF0YWJhc2VzHd7h33&u=c2JhcmVzZWw=OUd83D HTTP/1.1
+%% 500 /kSCcore/WEB/lda/xml/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de-de,de;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Referer: http://172.23.10.249:6565/
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+%response
+%% [Fri Mar 15 19:01:31 2013] GET /lda/xml/index.pl?e=1&m=QWxsRGF0YWJhc2VzHd7h33&u=c2JhcmVzZWw=OUd83D HTTP/1.1
+%% 500 /kSCcore/WEB/lda/xml/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de-de,de;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Referer: http://172.23.10.249:6565/
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+%response
+%% [Fri Mar 15 19:01:31 2013] GET /lda/xml/index.pl?e=1&m=QWxsRGF0YWJhc2VzHd7h33&u=c2JhcmVzZWw=OUd83D HTTP/1.1
+%% 500 /kSCcore/WEB/lda/xml/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de-de,de;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Referer: http://172.23.10.249:6565/
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+%response
+%% [Fri Mar 15 19:02:01 2013] GET /lda/xml/index.pl?e=1&m=QWxsRGF0YWJhc2VzHd7h33&u=c2JhcmVzZWw=OUd83D HTTP/1.1
+%% 500 /kSCcore/WEB/lda/xml/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de-de,de;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Referer: http://172.23.10.249:6565/
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+%response
