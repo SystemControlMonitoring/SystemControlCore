@@ -74,6 +74,27 @@ sub AllHosts {
     print "{". $out ."}";
 }
 #
+sub AllDatabases {
+    my $uid = shift;
+    my @AD = kSClive::AllDatabases($uid);
+    print kSChtml::ContentType("json");
+    my $out;
+    for (my $c=0;$c<scalar(@{$AD[0]});$c++) {
+	$out.="\"DATABASE_". $c ."\":{";
+        if ($AD[0][$c][0] =~ /_DBST_/i) {
+            $out.="\"NAME\":\"". uc(substr($AD[0][$c][0], 10)) ."\"";
+        } elsif ($AD[0][$c][0] =~ /_DBSTATUS/i) {
+            $AD[0][$c][0] =~ s/_DBSTATUS//g;
+            $out.="\"NAME\":\"". uc(substr($AD[0][$c][0],7))  ."\"";
+        } else {
+            $out.="\"NAME\":\"". $AD[0][$c][0] ."\"";
+        }
+        $out.=",\"HOST\":\"". $AD[0][$c][1] ."\",\"STATE\":\"". $AD[0][$c][2] ."\",\"LAST_CHECK_UTIME\":\"". $AD[0][$c][3] ."\",\"LAST_CHECK_ISO\":\"". kSCbasic::ConvertUt2Ts($AD[0][$c][3]) ."\"},";
+    }
+    $out = substr($out, 0, -1);
+    print "{". $out ."}";
+}
+#
 #
 #
 #
@@ -89,6 +110,8 @@ if (kSCbasic::CheckUrlKeyValue("e","1","n") == 0) {
 	HostFullInfo(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")));
     } elsif (kSCbasic::CheckUrlKeyValue("m","AllHosts","y") == 0) {
         AllHosts(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")));
+    } elsif (kSCbasic::CheckUrlKeyValue("m","AllDatabases","y") == 0) {
+        AllDatabases(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")));
     } else {
 	my $out = kSChtml::ContentType("json");
 	$out.= kSCbasic::ErrorMessage("json","1");
@@ -99,6 +122,8 @@ if (kSCbasic::CheckUrlKeyValue("e","1","n") == 0) {
 	HostFullInfo(kSCbasic::GetUrlKeyValue("u"));
     } elsif (kSCbasic::CheckUrlKeyValue("m","AllHosts","n") == 0) {
         AllHosts(kSCbasic::GetUrlKeyValue("u"));
+    } elsif (kSCbasic::CheckUrlKeyValue("m","AllDatabases","n") == 0) {
+        AllDatabases(kSCbasic::GetUrlKeyValue("u"));
     } else {
 	my $out = kSChtml::ContentType("json");
 	$out.= kSCbasic::ErrorMessage("json","2");

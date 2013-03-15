@@ -147,6 +147,8 @@ if (kSCbasic::CheckUrlKeyValue("e","1","n") == 0) {
 	HostFullInfo(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")));
     } elsif (kSCbasic::CheckUrlKeyValue("m","AllHosts","y") == 0) {
     	AllHosts(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")));
+    } elsif (kSCbasic::CheckUrlKeyValue("m","AllDatabases","y") == 0) {
+    	AllDatabases(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")));
     } else {
 	print kSChtml::ContentType("xml");
 	print kSCbasic::ErrorMessage("xml","1");
