@@ -246,3 +246,83 @@ Thread 2 terminated abnormally: Unable to create sub named "" at /usr/local/shar
 [Fri Mar 15 19:01:31.202605 2013] [cgid:error] [pid 5777:tid 140103018022656] [client 172.23.0.254:37604] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
 [Fri Mar 15 19:01:31.773610 2013] [cgid:error] [pid 5326:tid 140103018022656] [client 172.23.0.254:37606] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
 [Fri Mar 15 19:02:01.949733 2013] [cgid:error] [pid 5777:tid 140103007532800] [client 172.23.0.254:37612] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 19:37:14.578289 2013] [cgid:error] [pid 5777:tid 140102997042944] [client 172.23.0.254:40894] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 19:37:15.110307 2013] [cgid:error] [pid 5777:tid 140102976063232] [client 172.23.0.254:40898] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 19:37:15.731137 2013] [cgid:error] [pid 5777:tid 140102986553088] [client 172.23.0.254:40904] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 19:39:59.771979 2013] [cgid:error] [pid 5323:tid 140103059982080] [client 172.23.0.254:41026] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 19:41:47.551839 2013] [mpm_event:notice] [pid 5321:tid 140103383951104] AH00491: caught SIGTERM, shutting down
+[Fri Mar 15 19:41:54.909043 2013] [ssl:notice] [pid 12122:tid 139940013283072] AH01886: SSL FIPS mode disabled
+[Fri Mar 15 19:41:54.929407 2013] [ssl:notice] [pid 12123:tid 139940013283072] AH01886: SSL FIPS mode disabled
+[Fri Mar 15 19:41:54.956352 2013] [ssl:warn] [pid 12123:tid 139940013283072] AH01873: Init: Session Cache is not configured [hint: SSLSessionCache]
+[Fri Mar 15 19:41:54.957349 2013] [mpm_event:notice] [pid 12123:tid 139940013283072] AH00489: Apache/2.4.3 (Unix) OpenSSL/1.0.0-fips configured -- resuming normal operations
+[Fri Mar 15 19:41:54.957379 2013] [core:notice] [pid 12123:tid 139940013283072] AH00094: Command line: '/kSCcore/WSV/bin/httpd'
+[Fri Mar 15 19:41:57.822570 2013] [cgid:error] [pid 12126:tid 139939890726656] [client 172.23.0.254:41146] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 19:42:09.285071 2013] [mpm_event:notice] [pid 12123:tid 139940013283072] AH00491: caught SIGTERM, shutting down
+[Fri Mar 15 19:42:16.626707 2013] [ssl:notice] [pid 12226:tid 140638892386048] AH01886: SSL FIPS mode disabled
+[Fri Mar 15 19:42:16.667297 2013] [ssl:notice] [pid 12227:tid 140638892386048] AH01886: SSL FIPS mode disabled
+[Fri Mar 15 19:42:16.725454 2013] [ssl:warn] [pid 12227:tid 140638892386048] AH01873: Init: Session Cache is not configured [hint: SSLSessionCache]
+[Fri Mar 15 19:42:16.726455 2013] [mpm_event:notice] [pid 12227:tid 140638892386048] AH00489: Apache/2.4.3 (Unix) OpenSSL/1.0.0-fips configured -- resuming normal operations
+[Fri Mar 15 19:42:16.726485 2013] [core:notice] [pid 12227:tid 140638892386048] AH00094: Command line: '/kSCcore/WSV/bin/httpd'
+[Fri Mar 15 19:42:19.561205 2013] [cgid:error] [pid 12232:tid 140638769829632] [client 172.23.0.254:41154] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 19:42:20.092535 2013] [cgid:error] [pid 12232:tid 140638759339776] [client 172.23.0.254:41156] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 19:42:20.302023 2013] [cgid:error] [pid 12232:tid 140638748849920] [client 172.23.0.254:41160] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 19:42:20.438513 2013] [cgid:error] [pid 12232:tid 140638738360064] [client 172.23.0.254:41162] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 19:43:51.504433 2013] [mpm_event:notice] [pid 12227:tid 140638892386048] AH00491: caught SIGTERM, shutting down
+[Fri Mar 15 19:43:53.738868 2013] [ssl:notice] [pid 12380:tid 140026623444736] AH01886: SSL FIPS mode disabled
+[Fri Mar 15 19:43:53.774496 2013] [ssl:notice] [pid 12381:tid 140026623444736] AH01886: SSL FIPS mode disabled
+[Fri Mar 15 19:43:53.841212 2013] [ssl:warn] [pid 12381:tid 140026623444736] AH01873: Init: Session Cache is not configured [hint: SSLSessionCache]
+[Fri Mar 15 19:43:53.842196 2013] [mpm_event:notice] [pid 12381:tid 140026623444736] AH00489: Apache/2.4.3 (Unix) OpenSSL/1.0.0-fips configured -- resuming normal operations
+[Fri Mar 15 19:43:53.842232 2013] [core:notice] [pid 12381:tid 140026623444736] AH00094: Command line: '/kSCcore/WSV/bin/httpd'
+[Fri Mar 15 19:43:55.863837 2013] [cgid:error] [pid 12386:tid 140026500888320] [client 172.23.0.254:41280] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 19:43:56.861541 2013] [cgid:error] [pid 12470:tid 140026490398464] [client 172.23.0.254:41282] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 19:43:57.059222 2013] [cgid:error] [pid 12470:tid 140026500888320] [client 172.23.0.254:41284] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 19:43:57.282640 2013] [cgid:error] [pid 12470:tid 140026402830080] [client 172.23.0.254:41286] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 19:43:57.593555 2013] [cgid:error] [pid 12384:tid 140026500888320] [client 172.23.0.254:41288] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 19:43:57.750629 2013] [cgid:error] [pid 12470:tid 140026381850368] [client 172.23.0.254:41290] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 19:45:15.991064 2013] [cgid:error] [pid 12470:tid 140026392340224] [client 172.23.0.254:41336] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 19:45:40.067922 2013] [cgid:error] [pid 12470:tid 140026360870656] [client 172.23.0.254:41348] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 19:46:43.818525 2013] [cgid:error] [pid 12470:tid 140026371360512] [client 172.23.0.254:41442] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 19:47:23.748636 2013] [cgid:error] [pid 12470:tid 140026350380800] [client 172.23.0.254:41492] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 19:49:19.368263 2013] [cgid:error] [pid 12386:tid 140026490398464] [client 172.23.0.254:41594] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 19:51:43.541298 2013] [cgid:error] [pid 12384:tid 140026490398464] [client 172.23.0.254:41714] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 19:51:44.878641 2013] [cgid:error] [pid 12470:tid 140026318911232] [client 172.23.0.254:41716] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 19:51:45.494560 2013] [cgid:error] [pid 12470:tid 140026339890944] [client 172.23.0.254:41718] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 19:51:46.006427 2013] [cgid:error] [pid 12470:tid 140026308421376] [client 172.23.0.254:41720] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 19:51:46.223602 2013] [cgid:error] [pid 12386:tid 140026402830080] [client 172.23.0.254:41722] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 19:51:46.422728 2013] [cgid:error] [pid 12470:tid 140026329401088] [client 172.23.0.254:41724] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 19:53:14.060116 2013] [cgid:error] [pid 12470:tid 140026287441664] [client 172.23.0.254:41792] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 19:55:11.653845 2013] [cgid:error] [pid 12384:tid 140026402830080] [client 172.23.0.254:41918] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 19:55:40.038703 2013] [cgid:error] [pid 12386:tid 140026392340224] [client 172.23.0.254:41964] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 19:55:41.011521 2013] [cgid:error] [pid 12470:tid 140026276951808] [client 172.23.0.254:41968] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 19:56:13.553333 2013] [cgid:error] [pid 12470:tid 140026266461952] [client 172.23.0.254:42064] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 19:56:41.999519 2013] [cgid:error] [pid 12470:tid 140026297931520] [client 172.23.0.254:42078] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 19:57:09.993470 2013] [cgid:error] [pid 12470:tid 140026255972096] [client 172.23.0.254:42090] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 19:57:34.672812 2013] [cgid:error] [pid 12470:tid 140026245482240] [client 172.23.0.254:42104] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 19:59:01.694672 2013] [cgid:error] [pid 12470:tid 140026224502528] [client 172.23.0.254:42194] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 19:59:21.981938 2013] [cgid:error] [pid 12470:tid 140026234992384] [client 172.23.0.254:42204] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 20:01:12.805348 2013] [cgid:error] [pid 12470:tid 140026214012672] [client 172.23.0.254:42284] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 20:01:24.142160 2013] [cgid:error] [pid 12470:tid 140026193032960] [client 172.23.0.254:42286] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 20:02:00.818765 2013] [cgid:error] [pid 12470:tid 140026182543104] [client 172.23.0.254:42316] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 20:02:13.369846 2013] [cgid:error] [pid 12386:tid 140026381850368] [client 172.23.0.254:42318] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 20:02:26.528287 2013] [cgid:error] [pid 12470:tid 140026172053248] [client 172.23.0.254:42322] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 20:02:33.720623 2013] [cgid:error] [pid 12470:tid 140026203522816] [client 172.23.0.254:42330] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 20:02:39.497446 2013] [cgid:error] [pid 12470:tid 140026490398464] [client 172.23.0.254:42334] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 20:03:43.019497 2013] [cgid:error] [pid 12470:tid 140026500888320] [client 172.23.0.254:42374] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 20:04:11.089392 2013] [cgid:error] [pid 12470:tid 140026402830080] [client 172.23.0.254:42388] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 20:04:21.150477 2013] [cgid:error] [pid 12470:tid 140026381850368] [client 172.23.0.254:42430] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 20:04:28.019821 2013] [cgid:error] [pid 12470:tid 140026392340224] [client 172.23.0.254:42458] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 20:04:46.569225 2013] [cgid:error] [pid 12470:tid 140026360870656] [client 172.23.0.254:42460] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 20:04:55.211156 2013] [cgid:error] [pid 12470:tid 140026371360512] [client 172.23.0.254:42464] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 20:05:22.443492 2013] [cgid:error] [pid 12470:tid 140026350380800] [client 172.23.0.254:42524] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 20:06:58.082609 2013] [cgid:error] [pid 12470:tid 140026318911232] [client 172.23.0.254:42588] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 20:07:06.278841 2013] [cgid:error] [pid 12470:tid 140026339890944] [client 172.23.0.254:42596] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 20:07:38.008658 2013] [cgid:error] [pid 12386:tid 140026371360512] [client 172.23.0.254:42618] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 20:08:22.949805 2013] [cgid:error] [pid 12383:tid 140026500888320] [client 172.23.0.254:42652] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 20:08:28.783031 2013] [cgid:error] [pid 12470:tid 140026308421376] [client 172.23.0.254:42658] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 20:08:37.352238 2013] [cgid:error] [pid 12470:tid 140026329401088] [client 172.23.0.254:42680] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 20:09:21.560682 2013] [cgid:error] [pid 12470:tid 140026287441664] [client 172.23.0.254:42730] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 20:10:52.689863 2013] [cgid:error] [pid 12470:tid 140026276951808] [client 172.23.0.254:42786] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 20:11:47.003020 2013] [cgid:error] [pid 12470:tid 140026266461952] [client 172.23.0.254:42816] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 20:12:09.733596 2013] [cgid:error] [pid 12470:tid 140026297931520] [client 172.23.0.254:42824] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 20:12:24.608572 2013] [cgid:error] [pid 12470:tid 140026255972096] [client 172.23.0.254:42828] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+[Fri Mar 15 20:12:48.488603 2013] [cgid:error] [pid 12470:tid 140026245482240] [client 172.23.0.254:42840] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
