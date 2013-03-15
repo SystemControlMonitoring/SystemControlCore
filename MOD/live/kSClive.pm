@@ -90,6 +90,17 @@ sub AllHosts {
     return ($out);
 }
 #
+sub AllDatabases {
+    my $uid = shift;
+    my $out = $ml->selectall_arrayref("GET services\nColumns: display_name host_name state last_check\nFilter: display_name ~~ DBST\nFilter: display_name ~~ DBSTATUS\nOr: 2\nAuthUser: ". $uid);
+    return ($out);
+}
+#
+#
+#
+#
+#
+#
 sub HostUp {
     # Alle Hosts mit Status UP 
     my $uid = shift;

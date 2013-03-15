@@ -113,3 +113,14 @@ Connection: keep-alive
 Pragma: no-cache
 Cache-Control: no-cache
 %response
+%% [Fri Mar 15 10:10:07 2013] GET /lda/xml/index.pl?e=0&m=AllDatabases&u=sbaresel HTTP/1.1
+%% 500 /kSCcore/WEB/lda/xml/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de,en;q=0.7,en-us;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Cache-Control: max-age=0
+%response

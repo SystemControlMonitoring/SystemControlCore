@@ -108,6 +108,30 @@ sub AllHosts {
     print "</hostlist>\n";
 }
 #
+sub AllDatabases {
+    my $uid = shift;
+    my @AD = kSClive::AllDatabases($uid);
+    print kSChtml::ContentType("xml");
+    print "<databaselist>\n";
+    for (my $c=0;$c<scalar(@{$AD[0]});$c++) {
+	print "   <database>\n";
+	if ($AD[0][$c][0] =~ /_DBST_/i) {
+	    print "      <name>". uc(substr($AD[0][$c][0], 10)) ."</name>\n";
+	} elsif ($AD[0][$c][0] =~ /_DBSTATUS/i) {
+	    $AD[0][$c][0] =~ s/_DBSTATUS//g;
+	    print "      <name>". uc(substr($AD[0][$c][0],7))  ."</name>\n";
+	} else {
+	    print "      <name>". $AD[0][$c][0] ."</name>\n";
+	}
+	print "      <host>". $AD[0][$c][1] ."</host>\n";
+	print "      <state>". $AD[0][$c][2] ."</state>\n";
+	print "      <last_check_utime>". $AD[0][$c][3] ."</last_check_utime>\n";
+	print "      <last_check_iso>". kSCbasic::ConvertUt2Ts($AD[0][$c][3]) ."</last_check_iso>\n";
+	print "   </database>\n";
+    }
+    print "</databaselist>\n";
+}
+#
 #
 #
 #
@@ -132,6 +156,8 @@ if (kSCbasic::CheckUrlKeyValue("e","1","n") == 0) {
 	HostFullInfo(kSCbasic::GetUrlKeyValue("u"));
     } elsif (kSCbasic::CheckUrlKeyValue("m","AllHosts","n") == 0) {
     	AllHosts(kSCbasic::GetUrlKeyValue("u"));
+    } elsif (kSCbasic::CheckUrlKeyValue("m","AllDatabases","n") == 0) {
+    	AllDatabases(kSCbasic::GetUrlKeyValue("u"));
     } else {
 	print kSChtml::ContentType("xml");
 	print kSCbasic::ErrorMessage("xml","2");
