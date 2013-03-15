@@ -26,8 +26,13 @@ $properties->load($CF);
 #                                                       #
 #########################################################
 sub DBConnect {
-    my $dbh = DBI->connect("dbi:Pg:dbname=". $properties->getProperty("db.name") .";host=". $properties->getProperty("db.host") .";port=". $properties->getProperty("db.port") .";", $properties->getProperty("db.user"), $properties->getProperty("db.pass")) or die "[". (localtime) ."] Unable to connect: $DBI::errstr\n";
+    my $dbh = DBI->connect("dbi:Pg:dbname=". $properties->getProperty("db.name") .";host=". $properties->getProperty("db.host") .";port=". $properties->getProperty("db.port") .";", $properties->getProperty("db.user"), $properties->getProperty("db.pass")) or die "[". (localtime) ."] Unable to connect Database: $DBI::errstr\n";
     return ($dbh);
+}
+#
+sub REPOConnect {
+    my $repo = DBI->connect("dbi:Pg:dbname=". $properties->getProperty("repo.name") .";host=". $properties->getProperty("repo.host") .";port=". $properties->getProperty("repo.port") .";", $properties->getProperty("repo.user"), $properties->getProperty("repo.pass")) or die "[". (localtime) ."] Unable to connect Repository: $DBI::errstr\n";
+    return ($repo);
 }
 #
 sub WhichHostIcon {
