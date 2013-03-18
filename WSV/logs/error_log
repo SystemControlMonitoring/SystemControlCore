@@ -753,3 +753,4 @@ Unmatched ( in regex; marked by <-- HERE in m/( <-- HERE / at /kSCcore/MOD/basic
 Compilation failed in require at /kSCcore/WEB/lda/json/index.pl line 11.
 BEGIN failed--compilation aborted at /kSCcore/WEB/lda/json/index.pl line 11.
 [Mon Mar 18 13:37:31.599764 2013] [cgid:error] [pid 12383:tid 140026203522816] [client 172.23.7.23:64034] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+Use of uninitialized value $b64u6 in string eq at /kSCcore/MOD/basic/kSCbasic.pm line 90.
