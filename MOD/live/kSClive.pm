@@ -95,6 +95,17 @@ sub AllDatabases {
     return ($out);
 }
 #
+sub TaovServices {
+    my $uid = shift;
+    my $out = $ml->selectall_arrayref("GET services\nStats: state = 0\nStats: host_state = 0\nStatsAnd: 2\nStats: state = 1\nStats: host_state = 0\nStatsAnd: 2\nStats: state = 1\nStats: acknowledged = 0\nStats: host_state = 0\nStatsAnd: 3\nStats: state = 1\nStats: acknowledged = 1\nStats: host_state = 0\nStatsAnd: 3\nStats: state = 1\nStats: acknowledged = 0\nStats: host_state > 0\nStatsAnd: 3\nStats: state = 2\nStats: host_state = 0\nStatsAnd: 2\nStats: state = 2\nStats: acknowledged = 0\nStats: host_state = 0\nStatsAnd: 3\nStats: state = 2\nStats: acknowledged = 1\nStats: host_state = 0\nStatsAnd: 3\nStats: state = 2\nStats: acknowledged = 0\nStats: host_state > 0\nStatsAnd: 3\nStats: state = 3\nStats: host_state = 0\nStatsAnd: 2\nStats: state = 3\nStats: acknowledged = 0\nStats: host_state = 0\nStatsAnd: 3\nStats: state = 3\nStats: acknowledged = 1\nStats: host_state = 0\nStatsAnd: 3\nStats: state = 3\nStats: acknowledged = 0\nStats: host_state > 0\nStatsAnd: 3\nStats: sum host_num_services_pending\nAuthUser: ". $uid);
+    return ($out);
+}
+#
+sub TaovHosts {
+    my $uid = shift;
+    my $out = $ml->selectall_arrayref("GET hosts\nStats: state = 0\nStats: state = 1\nStats: state = 1\nStats: acknowledged = 0\nStatsAnd: 2\nStats: state = 1\nStats: acknowledged = 1\nStatsAnd: 2\nStats: state = 2\nStats: state = 2\nStats: acknowledged = 0\nStatsAnd: 2\nStats: state = 2\nStats: acknowledged = 1\nStatsAnd: 2\nAuthUser: ". $uid);
+    return ($out);
+}
 #
 #
 #

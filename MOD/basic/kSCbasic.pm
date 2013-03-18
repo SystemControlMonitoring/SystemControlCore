@@ -197,12 +197,19 @@ sub EncodeHTML {
     $out =~ s/\x{009a}/&Uuml;/g;
     $out =~ s/ä/&auml;/g;
     $out =~ s/\x{0084}/&auml;/g;
+    $out =~ s/\x{4d20}/&auml;/g;
     $out =~ s/ö/&ouml;/g;
     $out =~ s/\x{0094}/&ouml;/g;
     $out =~ s/ü/&uuml;/g;
     $out =~ s/\x{0081}/&uuml;/g;
     $out =~ s/ß/&szlig;/g;
     $out =~ s/\x{00e1}/&szlig;/g;
+    $out =~ s/\'/&apos;/g;
+    $out =~ s/\\/\\\\/g; # Backslash
+    $out =~ s/\"/&quot;/g; # AnfÃ¼hrungszeichen
+    $out =~ s/\(/&lang;/g;  # Klammer Offen
+    $out =~ s/\)/&rang,/g;  # Klammer SchlieÃŸen
+    $out =~ s/,/./g;
     return ($out);
 }
 #

@@ -326,3 +326,430 @@ Thread 2 terminated abnormally: Unable to create sub named "" at /usr/local/shar
 [Fri Mar 15 20:12:09.733596 2013] [cgid:error] [pid 12470:tid 140026297931520] [client 172.23.0.254:42824] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
 [Fri Mar 15 20:12:24.608572 2013] [cgid:error] [pid 12470:tid 140026255972096] [client 172.23.0.254:42828] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
 [Fri Mar 15 20:12:48.488603 2013] [cgid:error] [pid 12470:tid 140026245482240] [client 172.23.0.254:42840] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+Use of uninitialized value $b64u6 in string eq at /kSCcore/MOD/basic/kSCbasic.pm line 90.
+Use of uninitialized value $b64u6 in string eq at /kSCcore/MOD/basic/kSCbasic.pm line 90.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/xml/index.pl line 81.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/xml/index.pl line 81.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/xml/index.pl line 81.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/xml/index.pl line 81.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/xml/index.pl line 81.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/xml/index.pl line 81.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/xml/index.pl line 81.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/xml/index.pl line 81.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/xml/index.pl line 81.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/xml/index.pl line 81.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/xml/index.pl line 81.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/xml/index.pl line 81.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/xml/index.pl line 81.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/xml/index.pl line 81.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/xml/index.pl line 81.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/xml/index.pl line 81.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/xml/index.pl line 81.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/xml/index.pl line 81.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/xml/index.pl line 81.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/xml/index.pl line 81.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/xml/index.pl line 81.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/xml/index.pl line 81.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/xml/index.pl line 81.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/xml/index.pl line 81.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/xml/index.pl line 81.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/xml/index.pl line 81.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/xml/index.pl line 81.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/xml/index.pl line 81.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/xml/index.pl line 81.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/xml/index.pl line 81.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/xml/index.pl line 81.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/xml/index.pl line 81.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/xml/index.pl line 81.
+Use of uninitialized value $tmp[0] in hash element at /kSCcore/WEB/lda/xml/index.pl line 81.
+Use of uninitialized value in scalar assignment at /kSCcore/MOD/basic/kSCbasic.pm line 271.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/xml/index.pl line 81.
+Use of uninitialized value $tmp[1] in hash element at /kSCcore/WEB/lda/xml/index.pl line 83.
+Use of uninitialized value in scalar assignment at /kSCcore/MOD/basic/kSCbasic.pm line 271.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/xml/index.pl line 83.
+Use of uninitialized value $tmp[2] in hash element at /kSCcore/WEB/lda/xml/index.pl line 85.
+Use of uninitialized value in scalar assignment at /kSCcore/MOD/basic/kSCbasic.pm line 271.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/xml/index.pl line 85.
+Use of uninitialized value $tmp[3] in hash element at /kSCcore/WEB/lda/xml/index.pl line 87.
+Use of uninitialized value in scalar assignment at /kSCcore/MOD/basic/kSCbasic.pm line 271.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/xml/index.pl line 87.
+Use of uninitialized value $tmp[4] in hash element at /kSCcore/WEB/lda/xml/index.pl line 89.
+Use of uninitialized value in scalar assignment at /kSCcore/MOD/basic/kSCbasic.pm line 271.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/xml/index.pl line 89.
+Use of uninitialized value $tmp[5] in hash element at /kSCcore/WEB/lda/xml/index.pl line 91.
+Use of uninitialized value in scalar assignment at /kSCcore/MOD/basic/kSCbasic.pm line 271.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/xml/index.pl line 91.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/xml/index.pl line 81.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/xml/index.pl line 81.
+Use of uninitialized value $b64u6 in string eq at /kSCcore/MOD/basic/kSCbasic.pm line 90.
+Use of uninitialized value $b64u6 in string eq at /kSCcore/MOD/basic/kSCbasic.pm line 90.
+Use of uninitialized value $b64u6 in string eq at /kSCcore/MOD/basic/kSCbasic.pm line 90.
+[Mon Mar 18 10:33:14.647741 2013] [cgid:error] [pid 12470:tid 140026172053248] [client 172.23.7.23:54606] End of script output before headers: index.pl
+Global symbol "@AD" requires explicit package name at /kSCcore/WEB/lda/xml/index.pl line 140.
+Execution of /kSCcore/WEB/lda/xml/index.pl aborted due to compilation errors.
+[Mon Mar 18 10:35:04.897596 2013] [cgid:error] [pid 12470:tid 140026203522816] [client 172.23.7.23:54696] End of script output before headers: index.pl
+Global symbol "@AD" requires explicit package name at /kSCcore/WEB/lda/xml/index.pl line 142.
+Execution of /kSCcore/WEB/lda/xml/index.pl aborted due to compilation errors.
+[Mon Mar 18 10:37:09.278706 2013] [cgid:error] [pid 12384:tid 140026297931520] [client 172.23.7.23:54799] End of script output before headers: index.pl
+Use of uninitialized value $srvnackcr in addition (+) at /kSCcore/WEB/lda/xml/index.pl line 146.
+Use of uninitialized value $srvnackcr in addition (+) at /kSCcore/WEB/lda/xml/index.pl line 146.
+Use of uninitialized value $srvnackcr in addition (+) at /kSCcore/WEB/lda/xml/index.pl line 146.
+Use of uninitialized value $srvnackcr in addition (+) at /kSCcore/WEB/lda/xml/index.pl line 146.
+Use of uninitialized value $srvnacr in addition (+) at /kSCcore/WEB/lda/xml/index.pl line 146.
+Use of uninitialized value $srvnacr in addition (+) at /kSCcore/WEB/lda/xml/index.pl line 148.
+Use of uninitialized value $srvacr in addition (+) at /kSCcore/WEB/lda/xml/index.pl line 149.
+Use of uninitialized value $srvnacr in addition (+) at /kSCcore/WEB/lda/xml/index.pl line 148.
+Use of uninitialized value $srvacr in addition (+) at /kSCcore/WEB/lda/xml/index.pl line 149.
+Use of uninitialized value $srvnacr in addition (+) at /kSCcore/WEB/lda/xml/index.pl line 148.
+Use of uninitialized value $srvacr in addition (+) at /kSCcore/WEB/lda/xml/index.pl line 149.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $tmp[0] in hash element at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value in scalar assignment at /kSCcore/MOD/basic/kSCbasic.pm line 271.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $tmp[1] in hash element at /kSCcore/WEB/lda/json/index.pl line 61.
+Use of uninitialized value in scalar assignment at /kSCcore/MOD/basic/kSCbasic.pm line 271.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 61.
+Use of uninitialized value $tmp[2] in hash element at /kSCcore/WEB/lda/json/index.pl line 63.
+Use of uninitialized value in scalar assignment at /kSCcore/MOD/basic/kSCbasic.pm line 271.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 63.
+Use of uninitialized value $tmp[3] in hash element at /kSCcore/WEB/lda/json/index.pl line 65.
+Use of uninitialized value in scalar assignment at /kSCcore/MOD/basic/kSCbasic.pm line 271.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 65.
+Use of uninitialized value $tmp[4] in hash element at /kSCcore/WEB/lda/json/index.pl line 67.
+Use of uninitialized value in scalar assignment at /kSCcore/MOD/basic/kSCbasic.pm line 271.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 67.
+Use of uninitialized value $tmp[5] in hash element at /kSCcore/WEB/lda/json/index.pl line 69.
+Use of uninitialized value in scalar assignment at /kSCcore/MOD/basic/kSCbasic.pm line 271.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 69.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $tmp[0] in hash element at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value in scalar assignment at /kSCcore/MOD/basic/kSCbasic.pm line 271.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $tmp[1] in hash element at /kSCcore/WEB/lda/json/index.pl line 61.
+Use of uninitialized value in scalar assignment at /kSCcore/MOD/basic/kSCbasic.pm line 271.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 61.
+Use of uninitialized value $tmp[2] in hash element at /kSCcore/WEB/lda/json/index.pl line 63.
+Use of uninitialized value in scalar assignment at /kSCcore/MOD/basic/kSCbasic.pm line 271.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 63.
+Use of uninitialized value $tmp[3] in hash element at /kSCcore/WEB/lda/json/index.pl line 65.
+Use of uninitialized value in scalar assignment at /kSCcore/MOD/basic/kSCbasic.pm line 271.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 65.
+Use of uninitialized value $tmp[4] in hash element at /kSCcore/WEB/lda/json/index.pl line 67.
+Use of uninitialized value in scalar assignment at /kSCcore/MOD/basic/kSCbasic.pm line 271.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 67.
+Use of uninitialized value $tmp[5] in hash element at /kSCcore/WEB/lda/json/index.pl line 69.
+Use of uninitialized value in scalar assignment at /kSCcore/MOD/basic/kSCbasic.pm line 271.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 69.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $tmp[0] in hash element at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value in scalar assignment at /kSCcore/MOD/basic/kSCbasic.pm line 271.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $tmp[1] in hash element at /kSCcore/WEB/lda/json/index.pl line 61.
+Use of uninitialized value in scalar assignment at /kSCcore/MOD/basic/kSCbasic.pm line 271.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 61.
+Use of uninitialized value $tmp[2] in hash element at /kSCcore/WEB/lda/json/index.pl line 63.
+Use of uninitialized value in scalar assignment at /kSCcore/MOD/basic/kSCbasic.pm line 271.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 63.
+Use of uninitialized value $tmp[3] in hash element at /kSCcore/WEB/lda/json/index.pl line 65.
+Use of uninitialized value in scalar assignment at /kSCcore/MOD/basic/kSCbasic.pm line 271.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 65.
+Use of uninitialized value $tmp[4] in hash element at /kSCcore/WEB/lda/json/index.pl line 67.
+Use of uninitialized value in scalar assignment at /kSCcore/MOD/basic/kSCbasic.pm line 271.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 67.
+Use of uninitialized value $tmp[5] in hash element at /kSCcore/WEB/lda/json/index.pl line 69.
+Use of uninitialized value in scalar assignment at /kSCcore/MOD/basic/kSCbasic.pm line 271.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 69.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Use of uninitialized value $class in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 272.
+Use of uninitialized value in string ne at /kSCcore/WEB/lda/json/index.pl line 59.
+Unmatched ( in regex; marked by <-- HERE in m/( <-- HERE / at /kSCcore/MOD/basic/kSCbasic.pm line 210.
+Compilation failed in require at /kSCcore/WEB/lda/json/index.pl line 11.
+BEGIN failed--compilation aborted at /kSCcore/WEB/lda/json/index.pl line 11.
+[Mon Mar 18 13:37:28.462983 2013] [cgid:error] [pid 12470:tid 140026234992384] [client 172.23.7.23:64023] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+Unmatched ( in regex; marked by <-- HERE in m/( <-- HERE / at /kSCcore/MOD/basic/kSCbasic.pm line 210.
+Compilation failed in require at /kSCcore/WEB/lda/json/index.pl line 11.
+BEGIN failed--compilation aborted at /kSCcore/WEB/lda/json/index.pl line 11.
+[Mon Mar 18 13:37:29.645400 2013] [cgid:error] [pid 12470:tid 140026214012672] [client 172.23.7.23:64029] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+Unmatched ( in regex; marked by <-- HERE in m/( <-- HERE / at /kSCcore/MOD/basic/kSCbasic.pm line 210.
+Compilation failed in require at /kSCcore/WEB/lda/json/index.pl line 11.
+BEGIN failed--compilation aborted at /kSCcore/WEB/lda/json/index.pl line 11.
+[Mon Mar 18 13:37:30.044916 2013] [cgid:error] [pid 12470:tid 140026193032960] [client 172.23.7.23:64030] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+Unmatched ( in regex; marked by <-- HERE in m/( <-- HERE / at /kSCcore/MOD/basic/kSCbasic.pm line 210.
+Compilation failed in require at /kSCcore/WEB/lda/json/index.pl line 11.
+BEGIN failed--compilation aborted at /kSCcore/WEB/lda/json/index.pl line 11.
+[Mon Mar 18 13:37:30.444721 2013] [cgid:error] [pid 12470:tid 140026182543104] [client 172.23.7.23:64031] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+Unmatched ( in regex; marked by <-- HERE in m/( <-- HERE / at /kSCcore/MOD/basic/kSCbasic.pm line 210.
+Compilation failed in require at /kSCcore/WEB/lda/json/index.pl line 11.
+BEGIN failed--compilation aborted at /kSCcore/WEB/lda/json/index.pl line 11.
+[Mon Mar 18 13:37:30.813466 2013] [cgid:error] [pid 12470:tid 140026172053248] [client 172.23.7.23:64032] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+Unmatched ( in regex; marked by <-- HERE in m/( <-- HERE / at /kSCcore/MOD/basic/kSCbasic.pm line 210.
+Compilation failed in require at /kSCcore/WEB/lda/json/index.pl line 11.
+BEGIN failed--compilation aborted at /kSCcore/WEB/lda/json/index.pl line 11.
+[Mon Mar 18 13:37:31.182069 2013] [cgid:error] [pid 12470:tid 140026203522816] [client 172.23.7.23:64033] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/
+Unmatched ( in regex; marked by <-- HERE in m/( <-- HERE / at /kSCcore/MOD/basic/kSCbasic.pm line 210.
+Compilation failed in require at /kSCcore/WEB/lda/json/index.pl line 11.
+BEGIN failed--compilation aborted at /kSCcore/WEB/lda/json/index.pl line 11.
+[Mon Mar 18 13:37:31.599764 2013] [cgid:error] [pid 12383:tid 140026203522816] [client 172.23.7.23:64034] End of script output before headers: index.pl, referer: http://172.23.10.249:6565/

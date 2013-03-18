@@ -63,7 +63,7 @@ sub HostFullInfo {
 	print "      </servicelist>\n";
 	print "   </host>\n";
     }
-    print "</hostlist>\n";
+    print "</hostlist>";
 }
 #
 sub AllHosts {
@@ -105,7 +105,7 @@ sub AllHosts {
 	print "      <next_check_iso>". kSCbasic::ConvertUt2Ts($AH[0][$c][10]) ."</next_check_iso>\n";
 	print "   </host>\n";
     }
-    print "</hostlist>\n";
+    print "</hostlist>";
 }
 #
 sub AllDatabases {
@@ -121,7 +121,8 @@ sub AllDatabases {
 	    $AD[0][$c][0] =~ s/_DBSTATUS//g;
 	    print "      <name>". uc(substr($AD[0][$c][0],7))  ."</name>\n";
 	} else {
-	    print "      <name>". $AD[0][$c][0] ."</name>\n";
+	    print
+	     "      <name>". $AD[0][$c][0] ."</name>\n";
 	}
 	print "      <host>". $AD[0][$c][1] ."</host>\n";
 	print "      <state>". $AD[0][$c][2] ."</state>\n";
@@ -129,7 +130,90 @@ sub AllDatabases {
 	print "      <last_check_iso>". kSCbasic::ConvertUt2Ts($AD[0][$c][3]) ."</last_check_iso>\n";
 	print "   </database>\n";
     }
-    print "</databaselist>\n";
+    print "</databaselist>";
+}
+#
+sub SlimTaov {
+    my $uid = shift;
+    my @TAOV = kSClive::TaovServices($uid);
+    my @HTOV = kSClive::TaovHosts($uid);
+    my $hstok=0; my $hstcr=0; my $hstun=0;
+    my $hstnacr=0; my $hstnaun=0;
+    my $hstacr=0; my $hstaun=0;
+    my $srvok=0; my $srvwa=0; my $srvcr=0; my $srvun=0;
+    my $srvnawa=0; my $srvnacr=0; my $srvnaun=0;
+    my $srvawa=0; my $srvacr=0; my $srvaun=0;
+    my $srvnawaoff=0; my $srvnacroff=0; my $srvnaunoff=0;
+    my $pending=0;
+    print kSChtml::ContentType("xml");
+    for (my $c=0;$c<scalar(@{$HTOV[0]});$c++) {
+	$hstok = $HTOV[0][$c][0] + $hstok;
+	$hstcr = $HTOV[0][$c][1] + $hstcr;
+	$hstnacr = $HTOV[0][$c][2] + $hstnacr;
+	$hstacr = $HTOV[0][$c][3] + $hstacr;
+	$hstun = $HTOV[0][$c][4] + $hstun;
+	$hstnaun = $HTOV[0][$c][5] + $hstnaun;
+	$hstaun = $HTOV[0][$c][6] + $hstaun;
+    }
+    for (my $c=0;$c<scalar(@{$TAOV[0]});$c++) {
+	$srvok = $TAOV[0][$c][0] + $srvok;
+	$srvwa = $TAOV[0][$c][1] + $srvwa;
+	$srvnawa = $TAOV[0][$c][2] + $srvnawa;
+	$srvawa = $TAOV[0][$c][3] + $srvawa;
+	$srvnawaoff = $TAOV[0][$c][4] + $srvnawaoff;
+	$srvcr = $TAOV[0][$c][5] + $srvcr;
+	$srvnacr = $TAOV[0][$c][6] + $srvnacr;
+	$srvacr = $TAOV[0][$c][7] + $srvacr;
+	$srvnacroff = $TAOV[0][$c][8] + $srvnacroff;
+	$srvun = $TAOV[0][$c][9] + $srvun;
+	$srvnaun = $TAOV[0][$c][10] + $srvnaun;
+	$srvaun = $TAOV[0][$c][11] + $srvaun;
+	$srvnaunoff = $TAOV[0][$c][12] + $srvnaunoff;
+	$pending = $TAOV[0][$c][13] + $pending;
+    }
+    print "<taov>\n";
+    print "   <host>\n";
+    print "      <ok>\n";
+    print "         <c>". $hstok ."</c>\n";
+    print "      </ok>\n";
+    print "      <cr>\n";
+    print "         <c>". $hstcr ."</c>\n";
+    print "         <na>". $hstnacr ."</na>\n";
+    print "         <a>". $hstacr ."</a>\n";
+    print "      </cr>\n";
+    print "      <un>\n";
+    print "         <c>". $hstun ."</c>\n";
+    print "         <na>". $hstnaun ."</na>\n";
+    print "         <a>". $hstaun ."</a>\n";
+    print "      </un>\n";
+    print "   </host>\n";
+    print "   <services>\n";
+    print "      <ok>\n";
+    print "         <on>". $srvok ."</on>\n";
+    print "      </ok>\n";
+    print "      <warning>\n";
+    print "         <on>". $srvwa ."</on>\n";
+    print "         <na_on>". $srvnawa ."</na_on>\n";
+    print "         <a_on>". $srvawa ."</a_on>\n";
+    print "         <na_off>". $srvnawaoff ."</na_off>\n";
+    print "      </warning>\n";
+    print "      <critical>\n";
+    print "         <on>". $srvcr ."</on>\n";
+    print "         <na_on>". $srvnacr ."</na_on>\n";
+    print "         <a_on>". $srvacr ."</a_on>\n";
+    print "         <na_off>". $srvnacroff ."</na_off>\n";
+    print "      </critical>\n";
+    print "      <unknown>\n";
+    print "         <on>". $srvun ."</on>\n";
+    print "         <na_on>". $srvnaun ."</na_on>\n";
+    print "         <a_on>". $srvaun ."</a_on>\n";
+    print "         <na_off>". $srvnaunoff ."</na_off>\n";
+    print "      </unknown>\n";
+    print "      <pending>\n";
+    print "         <on>". $pending ."</on>";
+    print "      </pending>\n";
+    print "   </services>\n";
+    print "</taov>";
 }
 #
 #
@@ -149,6 +233,8 @@ if (kSCbasic::CheckUrlKeyValue("e","1","n") == 0) {
     	AllHosts(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")));
     } elsif (kSCbasic::CheckUrlKeyValue("m","AllDatabases","y") == 0) {
     	AllDatabases(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")));
+    } elsif (kSCbasic::CheckUrlKeyValue("m","SlimTaov","y") == 0) {
+    	SlimTaov(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")));
     } else {
 	print kSChtml::ContentType("xml");
 	print kSCbasic::ErrorMessage("xml","1");
@@ -160,6 +246,8 @@ if (kSCbasic::CheckUrlKeyValue("e","1","n") == 0) {
     	AllHosts(kSCbasic::GetUrlKeyValue("u"));
     } elsif (kSCbasic::CheckUrlKeyValue("m","AllDatabases","n") == 0) {
     	AllDatabases(kSCbasic::GetUrlKeyValue("u"));
+    } elsif (kSCbasic::CheckUrlKeyValue("m","SlimTaov","n") == 0) {
+    	SlimTaov(kSCbasic::GetUrlKeyValue("u"));
     } else {
 	print kSChtml::ContentType("xml");
 	print kSCbasic::ErrorMessage("xml","2");
