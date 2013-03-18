@@ -25,6 +25,7 @@ Format: <i><b>XML</b></i><br>
     <li><b>AllHosts</b> - Overview of hosts, with ICON Path URL: <a href="/lda/xml/?e=1&m=QWxsSG9zdHM=Qwhdz4&u=c2JhcmVzZWw=Ljkdjh">/lda/xml/?e=1&m=QWxsSG9zdHM=Qwhdz4&u=c2JhcmVzZWw=Ljkdjh</a></li>
     <li><b>AllDatabases</b> - Overview of oracle database URL: <a href="/lda/xml/?e=1&m=QWxsRGF0YWJhc2VzHd7h33&u=c2JhcmVzZWw=OUd83D">/lda/xml/?e=1&m=QWxsRGF0YWJhc2VzHd7h33&u=c2JhcmVzZWw=OUd83D</a></li>
     <li><b>SlimTaov</b> - Tactival Overview of Host and Service State URL: <a href="/lda/xml/?e=1&m=U2xpbVRhb3Y=Hkd83k&u=c2JhcmVzZWw=LKHld3">/lda/xml/?e=1&m=U2xpbVRhb3Y=Hkd83k&u=c2JhcmVzZWw=LKHld3</a></li>
+    <li><b>ShowCritical</b> - List all Critical Services and Hosts URL: <a href="/lda/xml/?e=1&m=U2hvd0NyaXRpY2FsHjdz6d&u=c2JhcmVzZWw=Okdhwu">/lda/xml/?e=1&m=U2hvd0NyaXRpY2FsHjdz6d&u=c2JhcmVzZWw=Okdhwu</a></li>
 </ul>
 </font>
 <br></br>

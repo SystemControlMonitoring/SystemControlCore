@@ -1386,3 +1386,57 @@ Connection: keep-alive
 Referer: http://172.23.10.249:6565/
 Cache-Control: max-age=0
 %response
+%% [Mon Mar 18 18:02:26 2013] GET /lda/xml/index.pl?e=0&m=ShowCritical&u=sbaresel HTTP/1.1
+%% 500 /kSCcore/WEB/lda/xml/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de-de,de;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+%response
+%% [Mon Mar 18 18:05:17 2013] GET /lda/xml/index.pl?e=0&m=ShowCritical&u=sbaresel HTTP/1.1
+%% 500 /kSCcore/WEB/lda/xml/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de-de,de;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Cache-Control: max-age=0
+%response
+%% [Mon Mar 18 18:05:32 2013] GET /lda/xml/index.pl?e=0&m=ShowCritical&u=sbaresel HTTP/1.1
+%% 500 /kSCcore/WEB/lda/xml/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de-de,de;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Cache-Control: max-age=0
+%response
+%% [Mon Mar 18 18:05:33 2013] GET /lda/xml/index.pl?e=0&m=ShowCritical&u=sbaresel HTTP/1.1
+%% 500 /kSCcore/WEB/lda/xml/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de-de,de;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Cache-Control: max-age=0
+%response
+%% [Mon Mar 18 19:42:24 2013] GET /lda/xml/index.pl?e=0&m=ShowCritical&u=sbaresel HTTP/1.1
+%% 500 /kSCcore/WEB/lda/xml/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de-de,de;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Cache-Control: max-age=0
+%response

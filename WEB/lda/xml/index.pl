@@ -176,16 +176,16 @@ sub SlimTaov {
     print "      <ok>\n";
     print "         <c>". $hstok ."</c>\n";
     print "      </ok>\n";
-    print "      <cr>\n";
+    print "      <critical>\n";
     print "         <c>". $hstcr ."</c>\n";
     print "         <na>". $hstnacr ."</na>\n";
     print "         <a>". $hstacr ."</a>\n";
-    print "      </cr>\n";
-    print "      <un>\n";
+    print "      </critical>\n";
+    print "      <unreachable>\n";
     print "         <c>". $hstun ."</c>\n";
     print "         <na>". $hstnaun ."</na>\n";
     print "         <a>". $hstaun ."</a>\n";
-    print "      </un>\n";
+    print "      </unreachable>\n";
     print "   </host>\n";
     print "   <services>\n";
     print "      <ok>\n";
@@ -216,6 +216,39 @@ sub SlimTaov {
     print "</taov>";
 }
 #
+sub ShowCritical {
+    my $uid = shift;
+    my $row = shift;
+    my @SCS = kSClive::ShowCriticalServices($uid);
+    my @SCH = kSClive::ShowCriticalHosts($uid);
+    my @temp;
+    print kSChtml::ContentType("xml");
+    for (my $c=0;$c<scalar(@{$SCS[0]});$c++) {
+	push @temp, [$SCS[0][$c][0],$SCS[0][$c][1],$SCS[0][$c][2],$SCS[0][$c][3],$SCS[0][$c][4],$SCS[0][$c][5]];
+    }
+    for (my $c=0;$c<scalar(@{$SCH[0]});$c++) {
+	push @temp, [$SCH[0][$c][0],$SCH[0][$c][1],$SCH[0][$c][2],$SCH[0][$c][3],$SCH[0][$c][4],$SCH[0][$c][5]];
+    }
+    my @tmp = reverse sort {$a->[0] cmp $b->[0]} @temp;
+    print "<critical>\n";
+    for (my $c=0;$c<scalar(@tmp);$c++) {
+	print "   <entry>";
+	print "      <timestamp_utime>". $tmp[$c][0] ."</timestamp_utime>";
+	print "      <timestamp_iso>". kSCbasic::ConvertUt2Ts($tmp[$c][0]) ."</timestamp_iso>";
+	print "      <display_name>". $tmp[$c][1] ."</display_name>";
+	print "      <host_name>". $tmp[$c][2] ."</host_name>";
+	print "      <service_state>". $tmp[$c][3] ."</service_state>";
+	print "      <host_state>". $tmp[$c][4] ."</host_state>";
+	if ($row > 0) {
+	    print "      <output>". substr(kSCbasic::EncodeXML($tmp[$c][5]), 0, $row) ." [...]</output>";
+	} else {
+	    print "      <output>". kSCbasic::EncodeXML($tmp[$c][5]) ."</output>";
+	}
+	print "   </entry>";
+    }
+    print "</critical>";
+}
+#
 #
 #
 #
@@ -235,6 +268,8 @@ if (kSCbasic::CheckUrlKeyValue("e","1","n") == 0) {
     	AllDatabases(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")));
     } elsif (kSCbasic::CheckUrlKeyValue("m","SlimTaov","y") == 0) {
     	SlimTaov(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")));
+    } elsif (kSCbasic::CheckUrlKeyValue("m","ShowCritical","y") == 0) {
+    	ShowCritical(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("r")));
     } else {
 	print kSChtml::ContentType("xml");
 	print kSCbasic::ErrorMessage("xml","1");
@@ -248,6 +283,8 @@ if (kSCbasic::CheckUrlKeyValue("e","1","n") == 0) {
     	AllDatabases(kSCbasic::GetUrlKeyValue("u"));
     } elsif (kSCbasic::CheckUrlKeyValue("m","SlimTaov","n") == 0) {
     	SlimTaov(kSCbasic::GetUrlKeyValue("u"));
+    } elsif (kSCbasic::CheckUrlKeyValue("m","ShowCritical","n") == 0) {
+    	ShowCritical(kSCbasic::GetUrlKeyValue("u"),kSCbasic::GetUrlKeyValue("r"));
     } else {
 	print kSChtml::ContentType("xml");
 	print kSCbasic::ErrorMessage("xml","2");
