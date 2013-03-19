@@ -260,6 +260,50 @@ sub ShowCritical {
     print "</critical>";
 }
 #
+sub Liveticker {
+    my $uid = shift;
+    my $row = shift;
+    my $lns = shift;
+    my @SCS = kSClive::ShowNewCriticalServices($uid);
+    my @SCH = kSClive::ShowNewCriticalHosts($uid);
+    my @temp;
+    print kSChtml::ContentType("xml");
+    for (my $c=0;$c<scalar(@{$SCS[0]});$c++) {
+	push @temp, [$SCS[0][$c][0],$SCS[0][$c][1],$SCS[0][$c][2],$SCS[0][$c][3],$SCS[0][$c][4],$SCS[0][$c][5]];
+    }
+    for (my $c=0;$c<scalar(@{$SCH[0]});$c++) {
+	push @temp, [$SCH[0][$c][0],$SCH[0][$c][1],$SCH[0][$c][2],$SCH[0][$c][3],$SCH[0][$c][4],$SCH[0][$c][5]];
+    }
+    my @tmp = reverse sort {$a->[0] cmp $b->[0]} @temp;
+    print "<liveticker>\n";
+    my $cc;
+    if ($lns > 0) {
+	$cc = $lns;
+    } else {
+	$cc = scalar(@tmp);
+    }
+    for (my $c=0;$c<$cc;$c++) {
+	print "   <entry>";
+	print "      <timestamp_utime>". $tmp[$c][0] ."</timestamp_utime>";
+	print "      <timestamp_iso>". kSCbasic::ConvertUt2Ts($tmp[$c][0]) ."</timestamp_iso>";
+	print "      <display_name>". $tmp[$c][1] ."</display_name>";
+	print "      <host_name>". $tmp[$c][2] ."</host_name>";
+	print "      <service_state>". kSCbasic::GetStatusIcon($tmp[$c][3],"service") ."</service_state>";
+	if ($tmp[$c][4] eq "0") {
+	    print "      <host_state>HOST ONLINE</host_state>";
+	} else {
+	    print "      <host_state>HOST OFFLINE</host_state>";
+	}
+	if ($row > 0) {
+	    print "      <output>". substr(kSCbasic::EncodeXML($tmp[$c][5]), 0, $row) ." [...]</output>";
+	} else {
+	    print "      <output>". kSCbasic::EncodeXML($tmp[$c][5]) ."</output>";
+	}
+	print "   </entry>";
+    }
+    print "</liveticker>";
+}
+#
 #
 #
 #
@@ -296,6 +340,8 @@ if (kSCbasic::CheckUrlKeyValue("e","1","n") == 0) {
     	SlimTaov(kSCbasic::GetUrlKeyValue("u"));
     } elsif (kSCbasic::CheckUrlKeyValue("m","ShowCritical","n") == 0) {
     	ShowCritical(kSCbasic::GetUrlKeyValue("u"),kSCbasic::GetUrlKeyValue("r"),kSCbasic::GetUrlKeyValue("l"));
+    } elsif (kSCbasic::CheckUrlKeyValue("m","Liveticker","n") == 0) {
+    	Liveticker(kSCbasic::GetUrlKeyValue("u"));
     } else {
 	print kSChtml::ContentType("xml");
 	print kSCbasic::ErrorMessage("xml","2");

@@ -285,6 +285,18 @@ sub GetStatusIcon {
     return ($properties->getProperty($type .".icon.". $class .""));
 }
 #
+sub ShowEnv {
+    my $script = shift;
+    print "#################################################################\n";
+    print "# Script: ". $script ." running.\n";
+    print "#################################################################\n";
+    print "PID=$$\n\n";
+}
+#
+sub GetPid {
+    print $$;
+}
+#
 close ($CF);
 #
 1;

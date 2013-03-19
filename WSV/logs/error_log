@@ -1386,3 +1386,291 @@ Argument "" isn't numeric in numeric gt (>) at /kSCcore/WEB/lda/json/index.pl li
 Argument "" isn't numeric in numeric gt (>) at /kSCcore/WEB/lda/json/index.pl line 172.
 Argument "" isn't numeric in numeric gt (>) at /kSCcore/WEB/lda/json/index.pl line 160.
 Argument "" isn't numeric in numeric gt (>) at /kSCcore/WEB/lda/json/index.pl line 172.
+Argument "" isn't numeric in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 236.
+Argument "" isn't numeric in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 253.
+Argument "" isn't numeric in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 236.
+Argument "" isn't numeric in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 253.
+Argument "" isn't numeric in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 236.
+Argument "" isn't numeric in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 253.
+Argument "" isn't numeric in numeric gt (>) at /kSCcore/WEB/lda/json/index.pl line 160.
+Argument "" isn't numeric in numeric gt (>) at /kSCcore/WEB/lda/json/index.pl line 172.
+Argument "" isn't numeric in numeric gt (>) at /kSCcore/WEB/lda/json/index.pl line 160.
+Argument "" isn't numeric in numeric gt (>) at /kSCcore/WEB/lda/json/index.pl line 172.
+Argument "" isn't numeric in numeric gt (>) at /kSCcore/WEB/lda/json/index.pl line 160.
+Argument "" isn't numeric in numeric gt (>) at /kSCcore/WEB/lda/json/index.pl line 172.
+Argument "" isn't numeric in numeric gt (>) at /kSCcore/WEB/lda/json/index.pl line 160.
+Argument "" isn't numeric in numeric gt (>) at /kSCcore/WEB/lda/json/index.pl line 172.
+Argument "" isn't numeric in numeric gt (>) at /kSCcore/WEB/lda/json/index.pl line 160.
+Argument "" isn't numeric in numeric gt (>) at /kSCcore/WEB/lda/json/index.pl line 172.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Wide character in print at /kSCcore/WEB/lda/xml/index.pl line 56.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+[Tue Mar 19 14:48:01.645409 2013] [cgid:error] [pid 12470:tid 140026287441664] [client 172.23.7.23:64897] End of script output before headers: index.pl
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Global symbol "@temp" requires explicit package name at /kSCcore/WEB/lda/xml/index.pl line 268.
+Global symbol "@temp" requires explicit package name at /kSCcore/WEB/lda/xml/index.pl line 271.
+Execution of /kSCcore/WEB/lda/xml/index.pl aborted due to compilation errors.
+[Tue Mar 19 14:49:45.850735 2013] [cgid:error] [pid 12470:tid 140026266461952] [client 172.23.7.23:64961] End of script output before headers: index.pl
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Subroutine ShowCritical redefined at /kSCcore/WEB/lda/xml/index.pl line 263.
+Use of uninitialized value $lns in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 280.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $lns in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 280.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $lns in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 280.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $lns in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 280.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $lns in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 280.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $lns in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 280.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $lns in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 280.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $lns in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 280.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $lns in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 280.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $lns in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 280.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $lns in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 280.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $lns in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 280.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $lns in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 280.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $lns in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 280.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $lns in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 280.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $lns in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 280.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $lns in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 280.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $lns in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 280.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $lns in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 280.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $lns in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 280.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $lns in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 280.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $lns in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 280.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.
+Use of uninitialized value $row in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 297.

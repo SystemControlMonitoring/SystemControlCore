@@ -119,6 +119,18 @@ sub ShowCriticalServices {
     return ($out);
 }
 #
+sub ShowNewCriticalHosts {
+    my $uid = shift;
+    my $out = $ml->selectall_arrayref("GET hosts\nColumns: last_check display_name host_name state host_state plugin_output\nFilter: scheduled_downtime_depth = 0\nFilter: host_scheduled_downtime_depth = 0\nFilter: acknowledged = 0\nFilter: host_acknowledged = 0\nFilter: last_state = 0\nFilter: state > 0\nAuthUser: ". $uid);
+    return ($out);
+}
+#
+sub ShowNewCriticalServices {
+    my $uid = shift;
+    my $out = $ml->selectall_arrayref("GET services\nColumns: last_check display_name host_name state host_state plugin_output\nFilter: scheduled_downtime_depth = 0\nFilter: host_scheduled_downtime_depth = 0\nFilter: acknowledged = 0\nFilter: host_acknowledged = 0\nFilter: last_state = 0\nFilter: state > 0\nAuthUser: ". $uid);
+    return ($out);
+}
+#
 #
 #
 #
