@@ -279,6 +279,12 @@ sub GetHostIcon {
     return ($properties->getProperty("icon.". $class .""));
 }
 #
+sub GetStatusIcon {
+    my $class = shift;
+    my $type = shift;
+    return ($properties->getProperty($type .".icon.". $class .""));
+}
+#
 close ($CF);
 #
 1;

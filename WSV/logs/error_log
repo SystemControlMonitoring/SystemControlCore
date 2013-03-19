@@ -1154,3 +1154,235 @@ Argument "2013-03-18 19:59:09" isn't numeric in sort at /kSCcore/WEB/lda/xml/ind
 Argument "2013-03-18 19:59:09" isn't numeric in sort at /kSCcore/WEB/lda/xml/index.pl line 231.
 Argument "2013-03-18 20:09:22" isn't numeric in sort at /kSCcore/WEB/lda/xml/index.pl line 231.
 Argument "" isn't numeric in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 242.
+Argument "" isn't numeric in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 242.
+Argument "" isn't numeric in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 242.
+Argument "" isn't numeric in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 242.
+Argument "" isn't numeric in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 242.
+Argument "" isn't numeric in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 242.
+Use of uninitialized value $lns in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 236.
+Argument "" isn't numeric in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 249.
+Argument "" isn't numeric in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 236.
+Argument "" isn't numeric in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 249.
+Argument "" isn't numeric in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 236.
+Argument "" isn't numeric in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 249.
+Argument "" isn't numeric in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 249.
+Argument "" isn't numeric in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 249.
+Argument "" isn't numeric in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 249.
+Argument "" isn't numeric in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 249.
+Argument "" isn't numeric in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 249.
+Argument "" isn't numeric in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 249.
+Argument "" isn't numeric in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 249.
+Argument "" isn't numeric in numeric gt (>) at /kSCcore/WEB/lda/json/index.pl line 160.
+Argument "" isn't numeric in numeric gt (>) at /kSCcore/WEB/lda/json/index.pl line 167.
+Argument "" isn't numeric in numeric gt (>) at /kSCcore/WEB/lda/json/index.pl line 160.
+Argument "" isn't numeric in numeric gt (>) at /kSCcore/WEB/lda/json/index.pl line 167.
+Argument "" isn't numeric in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 236.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Argument "" isn't numeric in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 253.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Use of uninitialized value $type in concatenation (.) or string at /kSCcore/MOD/basic/kSCbasic.pm line 285.
+Use of uninitialized value in concatenation (.) or string at /kSCcore/WEB/lda/xml/index.pl line 247.
+Argument "" isn't numeric in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 236.
+Argument "" isn't numeric in numeric gt (>) at /kSCcore/WEB/lda/xml/index.pl line 253.
+Argument "" isn't numeric in numeric gt (>) at /kSCcore/WEB/lda/json/index.pl line 160.
+Argument "" isn't numeric in numeric gt (>) at /kSCcore/WEB/lda/json/index.pl line 172.
+Argument "" isn't numeric in numeric gt (>) at /kSCcore/WEB/lda/json/index.pl line 160.
+Argument "" isn't numeric in numeric gt (>) at /kSCcore/WEB/lda/json/index.pl line 172.
+Argument "" isn't numeric in numeric gt (>) at /kSCcore/WEB/lda/json/index.pl line 160.
+Argument "" isn't numeric in numeric gt (>) at /kSCcore/WEB/lda/json/index.pl line 172.

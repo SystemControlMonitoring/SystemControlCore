@@ -219,6 +219,7 @@ sub SlimTaov {
 sub ShowCritical {
     my $uid = shift;
     my $row = shift;
+    my $lns = shift;
     my @SCS = kSClive::ShowCriticalServices($uid);
     my @SCH = kSClive::ShowCriticalHosts($uid);
     my @temp;
@@ -231,14 +232,24 @@ sub ShowCritical {
     }
     my @tmp = reverse sort {$a->[0] cmp $b->[0]} @temp;
     print "<critical>\n";
-    for (my $c=0;$c<scalar(@tmp);$c++) {
+    my $cc;
+    if ($lns > 0) {
+	$cc = $lns;
+    } else {
+	$cc = scalar(@tmp);
+    }
+    for (my $c=0;$c<$cc;$c++) {
 	print "   <entry>";
 	print "      <timestamp_utime>". $tmp[$c][0] ."</timestamp_utime>";
 	print "      <timestamp_iso>". kSCbasic::ConvertUt2Ts($tmp[$c][0]) ."</timestamp_iso>";
 	print "      <display_name>". $tmp[$c][1] ."</display_name>";
 	print "      <host_name>". $tmp[$c][2] ."</host_name>";
-	print "      <service_state>". $tmp[$c][3] ."</service_state>";
-	print "      <host_state>". $tmp[$c][4] ."</host_state>";
+	print "      <service_state>". kSCbasic::GetStatusIcon($tmp[$c][3],"service") ."</service_state>";
+	if ($tmp[$c][4] eq "0") {
+	    print "      <host_state>HOST ONLINE</host_state>";
+	} else {
+	    print "      <host_state>HOST OFFLINE</host_state>";
+	}
 	if ($row > 0) {
 	    print "      <output>". substr(kSCbasic::EncodeXML($tmp[$c][5]), 0, $row) ." [...]</output>";
 	} else {
@@ -269,7 +280,7 @@ if (kSCbasic::CheckUrlKeyValue("e","1","n") == 0) {
     } elsif (kSCbasic::CheckUrlKeyValue("m","SlimTaov","y") == 0) {
     	SlimTaov(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")));
     } elsif (kSCbasic::CheckUrlKeyValue("m","ShowCritical","y") == 0) {
-    	ShowCritical(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("r")));
+    	ShowCritical(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("r")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("l")));
     } else {
 	print kSChtml::ContentType("xml");
 	print kSCbasic::ErrorMessage("xml","1");
@@ -284,7 +295,7 @@ if (kSCbasic::CheckUrlKeyValue("e","1","n") == 0) {
     } elsif (kSCbasic::CheckUrlKeyValue("m","SlimTaov","n") == 0) {
     	SlimTaov(kSCbasic::GetUrlKeyValue("u"));
     } elsif (kSCbasic::CheckUrlKeyValue("m","ShowCritical","n") == 0) {
-    	ShowCritical(kSCbasic::GetUrlKeyValue("u"),kSCbasic::GetUrlKeyValue("r"));
+    	ShowCritical(kSCbasic::GetUrlKeyValue("u"),kSCbasic::GetUrlKeyValue("r"),kSCbasic::GetUrlKeyValue("l"));
     } else {
 	print kSChtml::ContentType("xml");
 	print kSCbasic::ErrorMessage("xml","2");

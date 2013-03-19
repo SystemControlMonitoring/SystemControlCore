@@ -140,6 +140,46 @@ sub SlimTaov {
     print "{\"HOST\":{\"OK\":{\"COUNT\":\"". $hstok ."\"},\"CRITICAL\":{\"COUNT\":\"". $hstcr ."\",\"NACK\":\"". $hstnacr ."\",\"ACK\":\"". $hstacr ."\"},\"UNREACHABLE\":{\"COUNT\":\"". $hstun ."\",\"NACK\":\"". $hstnaun ."\",\"ACK\":\"". $hstaun ."\"}},\"SERVICE\":{\"OK\":{\"COUNT_ON\":\"". $srvok ."\"},\"WARNING\":{\"COUNT_ON\":\"". $srvwa ."\",\"NACK_ON\":\"". $srvnawa ."\",\"ACK_ON\":\"". $srvawa ."\",\"NACK_OFF\":\"". $srvnawaoff ."\"},\"CRITICAL\":{\"COUNT_ON\":\"". $srvcr ."\",\"NACK_ON\":\"". $srvnacr ."\",\"ACK_ON\":\"". $srvacr ."\",\"NACK_OFF\":\"". $srvnacroff ."\"},\"UNKNOWN\":{\"COUNT_ON\":\"". $srvun ."\",\"NACK_ON\":\"". $srvnaun ."\",\"ACK_ON\":\"". $srvaun ."\",\"NACK_OFF\":\"". $srvnaunoff ."\"},\"PENDING\":{\"COUNT_ON\":\"". $pending ."\"}}}";
 }
 #
+sub ShowCritical {
+    my $uid = shift;
+    my $row = shift;
+    my $lns = shift;
+    my @SCS = kSClive::ShowCriticalServices($uid);
+    my @SCH = kSClive::ShowCriticalHosts($uid);
+    my @temp;
+    print kSChtml::ContentType("json");
+    for (my $c=0;$c<scalar(@{$SCS[0]});$c++) {
+        push @temp, [$SCS[0][$c][0],$SCS[0][$c][1],$SCS[0][$c][2],$SCS[0][$c][3],$SCS[0][$c][4],$SCS[0][$c][5]];
+    }
+    for (my $c=0;$c<scalar(@{$SCH[0]});$c++) {
+        push @temp, [$SCH[0][$c][0],$SCH[0][$c][1],$SCH[0][$c][2],$SCH[0][$c][3],$SCH[0][$c][4],$SCH[0][$c][5]];
+    }
+    my @tmp = reverse sort {$a->[0] cmp $b->[0]} @temp;
+    my $cc;
+    my $out;
+    if ($lns > 0) {
+        $cc = $lns;
+    } else {
+        $cc = scalar(@tmp);
+    }
+    for (my $c=0;$c<$cc;$c++) {
+        $out.="{\"TIMESTAMP_UTIME\":\"". $tmp[$c][0] ."\",\"TIMESTAMP_ISO\":\"". kSCbasic::ConvertUt2Ts($tmp[$c][0]) ."\",\"DISPLAY_NAME\":\"". $tmp[$c][1] ."\",\"HOST_NAME\":\"". $tmp[$c][2] ."\",\"SERVICE_STATE\":\"". kSCbasic::GetStatusIcon($tmp[$c][3],"service") ."\",";
+        if ($tmp[$c][4] eq "0") {
+    	    $out.="\"HOST_STATE\":\"HOST ONLINE\",";
+    	} else {
+    	    $out.="\"HOST_STATE\":\"HOST OFFLINE\",";
+    	}
+        if ($row > 0) {
+            $out.="\"OUTPUT\":\"". substr(kSCbasic::EncodeHTML($tmp[$c][5]), 0, $row) ." [...]\"";
+        } else {
+            $out.="\"OUTPUT\":\"". kSCbasic::EncodeHTML($tmp[$c][5]) ."\"";
+        }
+        $out.="},";
+    }
+    $out = substr($out, 0, -1);
+    print "[". $out ."]";
+}
+#
 #
 #
 #
@@ -159,6 +199,8 @@ if (kSCbasic::CheckUrlKeyValue("e","1","n") == 0) {
         AllDatabases(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")));
     } elsif (kSCbasic::CheckUrlKeyValue("m","SlimTaov","y") == 0) {
         SlimTaov(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")));
+    } elsif (kSCbasic::CheckUrlKeyValue("m","ShowCritical","y") == 0) {
+        ShowCritical(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("r")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("l")));
     } else {
 	my $out = kSChtml::ContentType("json");
 	$out.= kSCbasic::ErrorMessage("json","1");
@@ -173,6 +215,8 @@ if (kSCbasic::CheckUrlKeyValue("e","1","n") == 0) {
         AllDatabases(kSCbasic::GetUrlKeyValue("u"));
     } elsif (kSCbasic::CheckUrlKeyValue("m","SlimTaov","n") == 0) {
         SlimTaov(kSCbasic::GetUrlKeyValue("u"));
+    } elsif (kSCbasic::CheckUrlKeyValue("m","ShowCritical","n") == 0) {
+        ShowCritical(kSCbasic::GetUrlKeyValue("u"),kSCbasic::GetUrlKeyValue("r"),kSCbasic::GetUrlKeyValue("l"));
     } else {
 	my $out = kSChtml::ContentType("json");
 	$out.= kSCbasic::ErrorMessage("json","2");
