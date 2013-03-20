@@ -180,6 +180,72 @@ sub ShowCritical {
     print "[". $out ."]";
 }
 #
+sub Liveticker {
+    my $uid = shift;
+    my $row = shift;
+    my $lns = shift;
+    my $cut = time;
+    my @SCS = kSClive::ShowNewCriticalServices($uid);
+    my @SCH = kSClive::ShowNewCriticalHosts($uid);
+    my %AHI = kSCpostgre::AllHostIcons();
+    my @temp;
+    print kSChtml::ContentType("json");
+    for (my $c=0;$c<scalar(@{$SCS[0]});$c++) {
+        push @temp, [$SCS[0][$c][0],$SCS[0][$c][1],$SCS[0][$c][2],$SCS[0][$c][3],$SCS[0][$c][4],$SCS[0][$c][5],$SCS[0][$c][6]];
+    }
+    for (my $c=0;$c<scalar(@{$SCH[0]});$c++) {
+        push @temp, [$SCH[0][$c][0],$SCH[0][$c][1],$SCH[0][$c][2],$SCH[0][$c][3],$SCH[0][$c][4],$SCH[0][$c][5],$SCH[0][$c][6]];
+    }
+    my @tmp = reverse sort {$a->[0] cmp $b->[0]} @temp;
+    my $out;
+    my $cc;
+    if ($lns > 0) {
+        $cc = $lns;
+    } else {
+        $cc = scalar(@tmp);
+    }
+    for (my $c=0;$c<$cc;$c++) {
+	$out.="{\"TIMESTAMP_UTIME\":\"". $tmp[$c][0] ."\",\"TIMESTAMP_ISO\":\"". kSCbasic::ConvertUt2Ts($tmp[$c][0]) ."\",";
+        if ( $cut-300 < $tmp[$c][0] ) {
+            $out.="\"INCIDENT\":\"NEW\",";
+        } else {
+            $out.="\"INCIDENT\":\"NOTICED\",";
+        }
+        $out.="\"DISPLAY_NAME\":\"". $tmp[$c][1] ."\",\"HOST_NAME\":\"". $tmp[$c][2] ."\",\"SERVICE_STATE\":\"". kSCbasic::GetStatusIcon($tmp[$c][3],"service") ."\",";
+        if ($tmp[$c][4] eq "0") {
+            $out.="\"HOST_STATE\":\"HOST ONLINE\",";
+        } else {
+    	    $out.="\"HOST_STATE\":\"HOST OFFLINE\",";
+        }
+        $out.="\"CUSTOM_VAR\":\"". uc($tmp[$c][5][0]) ."\",";
+        my @tp = split(" ", uc($tmp[$c][5][0]));
+        if (kSCbasic::GetHostIcon($AHI{$tp[0]}) ne "") {
+            $out.="\"ICON\":\"". kSCbasic::GetHostIcon($AHI{$tp[0]}) ."\",";
+        } elsif (kSCbasic::GetHostIcon($AHI{$tp[1]}) ne "") {
+            $out.="\"ICON\":\"". kSCbasic::GetHostIcon($AHI{$tp[1]}) ."\",";
+        } elsif (kSCbasic::GetHostIcon($AHI{$tp[2]}) ne "") {
+            $out.="\"ICON\":\"". kSCbasic::GetHostIcon($AHI{$tp[2]}) ."\",";
+        } elsif (kSCbasic::GetHostIcon($AHI{$tp[3]}) ne "") {
+            $out.="\"ICON\":\"". kSCbasic::GetHostIcon($AHI{$tp[3]}) ."\",";
+        } elsif (kSCbasic::GetHostIcon($AHI{$tp[4]}) ne "") {
+            $out.="\"ICON\":\"". kSCbasic::GetHostIcon($AHI{$tp[4]}) ."\",";
+        } elsif (kSCbasic::GetHostIcon($AHI{$tp[5]}) ne "") {
+            $out.="\"ICON\":\"". kSCbasic::GetHostIcon($AHI{$tp[5]}) ."\",";
+        } else {
+            $out.="\"ICON\":\"". kSCbasic::GetHostIcon("ho") ."\",";
+        }
+        if ($row > 0) {
+            $out.="\"OUTPUT\":\"". substr(kSCbasic::EncodeHTML($tmp[$c][6]), 0, $row) ." [...]\"";
+        } else {
+            $out.="\"OUTPUT\":\"". kSCbasic::EncodeHTML($tmp[$c][6]) ."\"";
+        }
+        $out.="},";
+    }
+    $out = substr($out, 0, -1);
+    print "[". $out ."]";
+
+}
+#
 #
 #
 #
@@ -201,6 +267,8 @@ if (kSCbasic::CheckUrlKeyValue("e","1","n") == 0) {
         SlimTaov(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")));
     } elsif (kSCbasic::CheckUrlKeyValue("m","ShowCritical","y") == 0) {
         ShowCritical(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("r")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("l")));
+    } elsif (kSCbasic::CheckUrlKeyValue("m","Liveticker","y") == 0) {
+        Liveticker(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")));
     } else {
 	my $out = kSChtml::ContentType("json");
 	$out.= kSCbasic::ErrorMessage("json","1");
@@ -217,6 +285,8 @@ if (kSCbasic::CheckUrlKeyValue("e","1","n") == 0) {
         SlimTaov(kSCbasic::GetUrlKeyValue("u"));
     } elsif (kSCbasic::CheckUrlKeyValue("m","ShowCritical","n") == 0) {
         ShowCritical(kSCbasic::GetUrlKeyValue("u"),kSCbasic::GetUrlKeyValue("r"),kSCbasic::GetUrlKeyValue("l"));
+    } elsif (kSCbasic::CheckUrlKeyValue("m","Liveticker","n") == 0) {
+        Liveticker(kSCbasic::GetUrlKeyValue("u"));
     } else {
 	my $out = kSChtml::ContentType("json");
 	$out.= kSCbasic::ErrorMessage("json","2");

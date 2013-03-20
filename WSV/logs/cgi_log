@@ -1461,3 +1461,36 @@ Accept-Encoding: gzip, deflate
 Connection: keep-alive
 Cache-Control: max-age=0
 %response
+%% [Wed Mar 20 09:47:49 2013] GET /lda/xml/index.pl?e=0&m=Liveticker&u=sbaresel HTTP/1.1
+%% 500 /kSCcore/WEB/lda/xml/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de,en;q=0.7,en-us;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Cache-Control: max-age=0
+%response
+%% [Wed Mar 20 09:48:38 2013] GET /lda/xml/index.pl?e=0&m=Liveticker&u=sbaresel HTTP/1.1
+%% 500 /kSCcore/WEB/lda/xml/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de,en;q=0.7,en-us;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Cache-Control: max-age=0
+%response
+%% [Wed Mar 20 09:57:51 2013] GET /lda/xml/index.pl?e=0&m=Liveticker&u=sbaresel HTTP/1.1
+%% 500 /kSCcore/WEB/lda/xml/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de,en;q=0.7,en-us;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Cache-Control: max-age=0
+%response

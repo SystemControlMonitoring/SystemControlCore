@@ -88,8 +88,18 @@ sub CheckUrlKeyValue {
     		    my @KV = split("=", $_);
     		    my $value;
     		    if ($b64u6 eq "y") {
-    			if ( scalar(@KV) > 2 ) {
+    			if ( scalar(@KV) == 3 ) {
     		    	    $value = DecodeBase64u6($KV[1] ."=". $KV[2]);
+    		    	} elsif ( scalar(@KV) == 4 ) {
+    		    	    $value = DecodeBase64u6($KV[1] ."=". $KV[2] ."=". $KV[3]);
+    		    	} elsif ( scalar(@KV) == 5 ) {
+    		    	    $value = DecodeBase64u6($KV[1] ."=". $KV[2] ."=". $KV[3] ."=". $KV[4]);
+    		    	} elsif ( scalar(@KV) == 6 ) {
+    		    	    $value = DecodeBase64u6($KV[1] ."=". $KV[2] ."=". $KV[3] ."=". $KV[4] ."=". $KV[5]);
+    		    	} elsif ( scalar(@KV) == 7 ) {
+    		    	    $value = DecodeBase64u6($KV[1] ."=". $KV[2] ."=". $KV[3] ."=". $KV[4] ."=". $KV[5] ."=". $KV[6]);
+    		    	} elsif ( scalar(@KV) == 8 ) {
+    		    	    $value = DecodeBase64u6($KV[1] ."=". $KV[2] ."=". $KV[3] ."=". $KV[4] ."=". $KV[5] ."=". $KV[6] ."=". $KV[7]);
     		    	} else {
     		    	    $value = DecodeBase64u6($KV[1]);
     		    	}
@@ -119,8 +129,18 @@ sub GetUrlKeyValue {
     		foreach (@QS) {
     		    my @KV = split("=", $_);
     		    if ($KV[0] eq $key) {
-    			if ( scalar(@KV) > 2 ) {
+    			if ( scalar(@KV) == 3 ) {
     			    return ($KV[1] ."=". $KV[2]);
+    			} elsif ( scalar(@KV) == 4 ) {
+    			    return ($KV[1] ."=". $KV[2] ."=". $KV[3]);
+    			} elsif ( scalar(@KV) == 5 ) {
+    			    return ($KV[1] ."=". $KV[2] ."=". $KV[3] ."=". $KV[4]);
+    			} elsif ( scalar(@KV) == 6 ) {
+    			    return ($KV[1] ."=". $KV[2] ."=". $KV[3] ."=". $KV[4] ."=". $KV[5]);
+    			} elsif ( scalar(@KV) == 7 ) {
+    			    return ($KV[1] ."=". $KV[2] ."=". $KV[3] ."=". $KV[4] ."=". $KV[5] ."=". $KV[6]);
+    			} elsif ( scalar(@KV) == 8 ) {
+    			    return ($KV[1] ."=". $KV[2] ."=". $KV[3] ."=". $KV[4] ."=". $KV[5] ."=". $KV[6] ."=". $KV[7]);
     			} else {
     			    return ($KV[1]);
     			}
@@ -146,21 +166,50 @@ sub PrintUrlKeyValue {
     		foreach (@QS) {
     		    my @KV = split("=", $_);
     		    if ( ($out eq "xml") || ($out eq "XML") ) {
-    			if ( scalar(@KV) > 2 ) {
+    			if ( scalar(@KV) == 3 ) {
     			    $return.="<key_". $i .">". $KV[0] ."</key_". $i .">\n<value_". $i .">". $KV[1] ."=". $KV[2] ."</value_". $i .">\n";
+    			} elsif ( scalar(@KV) == 4 ) {
+    			    $return.="<key_". $i .">". $KV[0] ."</key_". $i .">\n<value_". $i .">". $KV[1] ."=". $KV[2] ."=". $KV[3] ."</value_". $i .">\n";
+    			} elsif ( scalar(@KV) == 5 ) {
+    			    $return.="<key_". $i .">". $KV[0] ."</key_". $i .">\n<value_". $i .">". $KV[1] ."=". $KV[2] ."=". $KV[3] ."=". $KV[4] ."</value_". $i .">\n";
+    			} elsif ( scalar(@KV) == 6 ) {
+    			    $return.="<key_". $i .">". $KV[0] ."</key_". $i .">\n<value_". $i .">". $KV[1] ."=". $KV[2] ."=". $KV[3] ."=". $KV[4] ."=". $KV[5] ."</value_". $i .">\n";
+    			} elsif ( scalar(@KV) == 7 ) {
+    			    $return.="<key_". $i .">". $KV[0] ."</key_". $i .">\n<value_". $i .">". $KV[1] ."=". $KV[2] ."=". $KV[3] ."=". $KV[4] ."=". $KV[5] ."=". $KV[6] ."</value_". $i .">\n";
+    			} elsif ( scalar(@KV) == 8 ) {
+    			    $return.="<key_". $i .">". $KV[0] ."</key_". $i .">\n<value_". $i .">". $KV[1] ."=". $KV[2] ."=". $KV[3] ."=". $KV[4] ."=". $KV[5] ."=". $KV[6] ."=". $KV[7] ."</value_". $i .">\n";
     			} else {
     			    $return.="<key_". $i .">". $KV[0] ."</key_". $i .">\n<value_". $i .">". $KV[1] ."</value_". $i .">\n";
     			}
     		    } elsif ( ($out eq "json") || ($out eq "JSON") ) {
-    			if ( scalar(@KV) > 2 ) {
+    			if ( scalar(@KV) == 3 ) {
     			    $return.="\"KEY_". $i ."\":\"". $KV[0] ."\",\"VALUE_". $i ."\":\"". $KV[1] ."=". $KV[2] ."\",";
+    			} elsif ( scalar(@KV) == 4 ) {
+    			    $return.="\"KEY_". $i ."\":\"". $KV[0] ."\",\"VALUE_". $i ."\":\"". $KV[1] ."=". $KV[2] ."=". $KV[3] ."\",";
+    			} elsif ( scalar(@KV) == 5 ) {
+    			    $return.="\"KEY_". $i ."\":\"". $KV[0] ."\",\"VALUE_". $i ."\":\"". $KV[1] ."=". $KV[2] ."=". $KV[3] ."=". $KV[4] ."\",";
+    			} elsif ( scalar(@KV) == 6 ) {
+    			    $return.="\"KEY_". $i ."\":\"". $KV[0] ."\",\"VALUE_". $i ."\":\"". $KV[1] ."=". $KV[2] ."=". $KV[3] ."=". $KV[4] ."=". $KV[5] ."\",";
+    			} elsif ( scalar(@KV) == 7 ) {
+    			    $return.="\"KEY_". $i ."\":\"". $KV[0] ."\",\"VALUE_". $i ."\":\"". $KV[1] ."=". $KV[2] ."=". $KV[3] ."=". $KV[4] ."=". $KV[5] ."=". $KV[6] ."\",";
+    			} elsif ( scalar(@KV) == 8 ) {
+    			    $return.="\"KEY_". $i ."\":\"". $KV[0] ."\",\"VALUE_". $i ."\":\"". $KV[1] ."=". $KV[2] ."=". $KV[3] ."=". $KV[4] ."=". $KV[5] ."=". $KV[6] ."=". $KV[7] ."\",";
     			} else {
     			    $return.="\"KEY_". $i ."\":\"". $KV[0] ."\",\"VALUE_". $i ."\":\"". $KV[1] ."\",";
     			}
-    			
     		    } else {
-    			if ( scalar(@KV) > 2 ) {
+    			if ( scalar(@KV) == 3 ) {
     			    $return.=" -> ". $KV[0] ." = ". $KV[1] ."=". $KV[2] ."\n";
+    			} elsif ( scalar(@KV) == 4 ) {
+    			    $return.=" -> ". $KV[0] ." = ". $KV[1] ."=". $KV[2] ."=". $KV[3] ."\n";
+    			} elsif ( scalar(@KV) == 5 ) {
+    			    $return.=" -> ". $KV[0] ." = ". $KV[1] ."=". $KV[2] ."=". $KV[3] ."=". $KV[4] ."\n";
+    			} elsif ( scalar(@KV) == 6 ) {
+    			    $return.=" -> ". $KV[0] ." = ". $KV[1] ."=". $KV[2] ."=". $KV[3] ."=". $KV[4] ."=". $KV[5] ."\n";
+    			} elsif ( scalar(@KV) == 7 ) {
+    			    $return.=" -> ". $KV[0] ." = ". $KV[1] ."=". $KV[2] ."=". $KV[3] ."=". $KV[4] ."=". $KV[5] ."=". $KV[6] ."\n";
+    			} elsif ( scalar(@KV) == 8 ) {
+    			    $return.=" -> ". $KV[0] ." = ". $KV[1] ."=". $KV[2] ."=". $KV[3] ."=". $KV[4] ."=". $KV[5] ."=". $KV[6] ."=". $KV[7] ."\n";
     			} else {
     			    $return.=" -> ". $KV[0] ." = ". $KV[1] ."\n";
     			}
