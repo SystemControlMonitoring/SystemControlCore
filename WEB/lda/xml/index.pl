@@ -239,23 +239,23 @@ sub ShowCritical {
 	$cc = scalar(@tmp);
     }
     for (my $c=0;$c<$cc;$c++) {
-	print "   <entry>";
-	print "      <timestamp_utime>". $tmp[$c][0] ."</timestamp_utime>";
-	print "      <timestamp_iso>". kSCbasic::ConvertUt2Ts($tmp[$c][0]) ."</timestamp_iso>";
-	print "      <display_name>". $tmp[$c][1] ."</display_name>";
-	print "      <host_name>". $tmp[$c][2] ."</host_name>";
-	print "      <service_state>". kSCbasic::GetStatusIcon($tmp[$c][3],"service") ."</service_state>";
+	print "   <entry>\n";
+	print "      <timestamp_utime>". $tmp[$c][0] ."</timestamp_utime>\n";
+	print "      <timestamp_iso>". kSCbasic::ConvertUt2Ts($tmp[$c][0]) ."</timestamp_iso>\n";
+	print "      <display_name>". $tmp[$c][1] ."</display_name>\n";
+	print "      <host_name>". $tmp[$c][2] ."</host_name>\n";
+	print "      <service_state>". kSCbasic::GetStatusIcon($tmp[$c][3],"service") ."</service_state>\n";
 	if ($tmp[$c][4] eq "0") {
-	    print "      <host_state>HOST ONLINE</host_state>";
+	    print "      <host_state>HOST ONLINE</host_state>\n";
 	} else {
-	    print "      <host_state>HOST OFFLINE</host_state>";
+	    print "      <host_state>HOST OFFLINE</host_state>\n";
 	}
 	if ($row > 0) {
-	    print "      <output>". substr(kSCbasic::EncodeXML($tmp[$c][5]), 0, $row) ." [...]</output>";
+	    print "      <output>". substr(kSCbasic::EncodeXML($tmp[$c][5]), 0, $row) ." [...]</output>\n";
 	} else {
-	    print "      <output>". kSCbasic::EncodeXML($tmp[$c][5]) ."</output>";
+	    print "      <output>". kSCbasic::EncodeXML($tmp[$c][5]) ."</output>\n";
 	}
-	print "   </entry>";
+	print "   </entry>\n";
     }
     print "</critical>";
 }
@@ -291,21 +291,21 @@ sub Liveticker {
 	$cc = scalar(@tmp);
     }
     for (my $c=0;$c<$cc;$c++) {
-	print "   <entry>";
-	print "      <timestamp_utime>". $tmp[$c][0] ."</timestamp_utime>";
-	print "      <timestamp_iso>". kSCbasic::ConvertUt2Ts($tmp[$c][0]) ."</timestamp_iso>";
+	print "   <entry>\n";
+	print "      <timestamp_utime>". $tmp[$c][0] ."</timestamp_utime>\n";
+	print "      <timestamp_iso>". kSCbasic::ConvertUt2Ts($tmp[$c][0]) ."</timestamp_iso>\n";
 	if ( $cut-300 < $tmp[$c][0] ) {
-	    print "      <incident>NEW</incident>";
+	    print "      <incident>NEW</incident>\n";
 	} else {
-	    print "      <incident>NOTICED</incident>";
+	    print "      <incident>NOTICED</incident>\n";
 	}
-	print "      <display_name>". $tmp[$c][1] ."</display_name>";
-	print "      <host_name>". $tmp[$c][2] ."</host_name>";
-	print "      <service_state>". kSCbasic::GetStatusIcon($tmp[$c][3],"service") ."</service_state>";
+	print "      <display_name>". $tmp[$c][1] ."</display_name>\n";
+	print "      <host_name>". $tmp[$c][2] ."</host_name>\n";
+	print "      <service_state>". kSCbasic::GetStatusIcon($tmp[$c][3],"service") ."</service_state>\n";
 	if ($tmp[$c][4] eq "0") {
-	    print "      <host_state>HOST ONLINE</host_state>";
+	    print "      <host_state>HOST ONLINE</host_state>\n";
 	} else {
-	    print "      <host_state>HOST OFFLINE</host_state>";
+	    print "      <host_state>HOST OFFLINE</host_state>\n";
 	}
 	print "      <custom_var>". uc($tmp[$c][5][0]) ."</custom_var>\n";
 	my @tp = split(" ", uc($tmp[$c][5][0]));
@@ -325,11 +325,11 @@ sub Liveticker {
 	    print "      <icon>". kSCbasic::GetHostIcon("ho") ."</icon>\n";
 	}
 	if ($row > 0) {
-	    print "      <output>". substr(kSCbasic::EncodeXML($tmp[$c][6]), 0, $row) ." [...]</output>";
+	    print "      <output>". substr(kSCbasic::EncodeXML($tmp[$c][6]), 0, $row) ." [...]</output>\n";
 	} else {
-	    print "      <output>". kSCbasic::EncodeXML($tmp[$c][6]) ."</output>";
+	    print "      <output>". kSCbasic::EncodeXML($tmp[$c][6]) ."</output>\n";
 	}
-	print "   </entry>";
+	print "   </entry>\n";
     }
     print "</liveticker>";
 }

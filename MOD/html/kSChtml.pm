@@ -27,14 +27,25 @@ sub ContentType {
     my $ct = shift;
     my $output;
     if ( ($ct eq "xml") || ($ct eq "XML") ) {
-	$output.="Content-type: application/xml; charset=utf-8\n";
-	$output.="\n";
+	$output.="Access-Control-Allow-Origin: *\n";
+	$output.="Access-Control-Allow-Methods: *\n";
+	$output.="Cache-Control: no-cache, no-store, max-age=0, must-revalidate\n";
+	$output.="Content-type: application/xml; charset=utf-8\n\n";
 	$output.="<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
     } elsif ( ($ct eq "json") || ($ct eq "JSON") ) {
+	$output.="Access-Control-Allow-Origin: *\n";
+	$output.="Access-Control-Allow-Methods: *\n";
+	$output.="Cache-Control: no-cache, no-store, max-age=0, must-revalidate\n";
 	$output.="Content-type: application/json; charset=utf-8\n\n";
     } elsif ( ($ct eq "text") || ($ct eq "TEXT") ) {
+	$output.="Access-Control-Allow-Origin: *\n";
+	$output.="Access-Control-Allow-Methods: *\n";
+	$output.="Cache-Control: no-cache, no-store, max-age=0, must-revalidate\n";
 	$output.="Content-type: text/plain; charset=utf-8\n\n";
     } elsif ( ($ct eq "html") || ($ct eq "HTML") ) {
+	$output.="Access-Control-Allow-Origin: *\n";
+	$output.="Access-Control-Allow-Methods: *\n";
+	$output.="Cache-Control: no-cache, no-store, max-age=0, must-revalidate\n";
 	$output.="Content-type: text/html; charset=utf-8\n\n";
 	$output.="<!DOCTYPE html>\n";
     }

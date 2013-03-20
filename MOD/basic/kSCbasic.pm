@@ -257,7 +257,7 @@ sub EncodeHTML {
     $out =~ s/\\/\\\\/g; # Backslash
     $out =~ s/\"/&quot;/g; # Anführungszeichen
     $out =~ s/\(/&lang;/g;  # Klammer Offen
-    $out =~ s/\)/&rang,/g;  # Klammer Schließen
+    $out =~ s/\)/&rang;/g;  # Klammer Schließen
     $out =~ s/,/./g;
     return ($out);
 }
