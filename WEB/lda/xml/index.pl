@@ -271,10 +271,16 @@ sub Liveticker {
     my @temp;
     print kSChtml::ContentType("xml");
     for (my $c=0;$c<scalar(@{$SCS[0]});$c++) {
-	push @temp, [$SCS[0][$c][0],$SCS[0][$c][1],$SCS[0][$c][2],$SCS[0][$c][3],$SCS[0][$c][4],$SCS[0][$c][5],$SCS[0][$c][6]];
+	# 30 min.
+	if ( $cut-1800 < $SCS[0][$c][0] ) {
+	    push @temp, [$SCS[0][$c][0],$SCS[0][$c][1],$SCS[0][$c][2],$SCS[0][$c][3],$SCS[0][$c][4],$SCS[0][$c][5],$SCS[0][$c][6]];
+	}
     }
     for (my $c=0;$c<scalar(@{$SCH[0]});$c++) {
-	push @temp, [$SCH[0][$c][0],$SCH[0][$c][1],$SCH[0][$c][2],$SCH[0][$c][3],$SCH[0][$c][4],$SCH[0][$c][5],$SCH[0][$c][6]];
+	# 30 min
+	if ( $cut-1800 < $SCH[0][$c][0] ) {
+	    push @temp, [$SCH[0][$c][0],$SCH[0][$c][1],$SCH[0][$c][2],$SCH[0][$c][3],$SCH[0][$c][4],$SCH[0][$c][5],$SCH[0][$c][6]];
+	}
     }
     my @tmp = reverse sort {$a->[0] cmp $b->[0]} @temp;
     print "<liveticker>\n";
