@@ -26,7 +26,6 @@ sub HostFullInfo {
     my $uid = shift;
     my @HIF = kSClive::HostFullInfo($uid);
     my @SFL = kSClive::ServiceFullList($uid);
-    print kSChtml::ContentType("json");
     my $out;
     for (my $c=0;$c<scalar(@{$HIF[0]});$c++) {
 	my $m=0;
@@ -43,6 +42,7 @@ sub HostFullInfo {
 	$out.="]},";
     }
     $out = substr($out, 0, -1);
+    print kSChtml::ContentType("json");
     print "[". $out ."]";
 }
 #
@@ -50,7 +50,6 @@ sub AllHosts {
     my $uid = shift;
     my @AH = kSClive::AllHosts($uid);
     my %AHI = kSCpostgre::AllHostIcons();
-    print kSChtml::ContentType("json");
     my $out;
     for (my $c=0;$c<scalar(@{$AH[0]});$c++) {
 	#$out.="\"HOST_". $c ."\":{\"NAME\":\"". $AH[0][$c][0] ."\",\"STATE\":\"". $AH[0][$c][2] ."\",\"CUSTOM_VAR\":\"". uc($AH[0][$c][1][0]) ."\",";
@@ -74,13 +73,13 @@ sub AllHosts {
 	$out.=",\"LAST_CHECK_UTIME\":\"". $AH[0][$c][3] ."\",\"LAST_CHECK_ISO\":\"". kSCbasic::ConvertUt2Ts($AH[0][$c][3]) ."\",\"SRV_OK\":\"". $AH[0][$c][4] ."\",\"SRV_WA\":\"". $AH[0][$c][5] ."\",\"SRV_CR\":\"". $AH[0][$c][6] ."\",\"SRV_UN\":\"". $AH[0][$c][7] ."\",\"SRV_PE\":\"". $AH[0][$c][8] ."\",\"ACK\":\"". $AH[0][$c][9] ."\",\"NEXT_CHECK_UTIME\":\"". $AH[0][$c][10] ."\",\"NEXT_CHECK_ISO\":\"". kSCbasic::ConvertUt2Ts($AH[0][$c][10]) ."\"},";
     }
     $out = substr($out, 0, -1);
+    print kSChtml::ContentType("json");
     print "[". $out ."]";
 }
 #
 sub AllDatabases {
     my $uid = shift;
     my @AD = kSClive::AllDatabases($uid);
-    print kSChtml::ContentType("json");
     my $out;
     for (my $c=0;$c<scalar(@{$AD[0]});$c++) {
 	#$out.="\"DATABASE_". $c ."\":{";
@@ -96,6 +95,7 @@ sub AllDatabases {
         $out.=",\"HOST\":\"". $AD[0][$c][1] ."\",\"STATE\":\"". $AD[0][$c][2] ."\",\"LAST_CHECK_UTIME\":\"". $AD[0][$c][3] ."\",\"LAST_CHECK_ISO\":\"". kSCbasic::ConvertUt2Ts($AD[0][$c][3]) ."\"},";
     }
     $out = substr($out, 0, -1);
+    print kSChtml::ContentType("json");
     print "[". $out ."]";
 }
 #
@@ -111,7 +111,6 @@ sub SlimTaov {
     my $srvawa=0; my $srvacr=0; my $srvaun=0;
     my $srvnawaoff=0; my $srvnacroff=0; my $srvnaunoff=0;
     my $pending=0;
-    print kSChtml::ContentType("json");
     for (my $c=0;$c<scalar(@{$HTOV[0]});$c++) {
         $hstok = $HTOV[0][$c][0] + $hstok;
         $hstcr = $HTOV[0][$c][1] + $hstcr;
@@ -137,6 +136,7 @@ sub SlimTaov {
         $srvnaunoff = $TAOV[0][$c][12] + $srvnaunoff;
         $pending = $TAOV[0][$c][13] + $pending;
     }
+    print kSChtml::ContentType("json");
     print "{\"HOST\":{\"OK\":{\"COUNT\":\"". $hstok ."\"},\"CRITICAL\":{\"COUNT\":\"". $hstcr ."\",\"NACK\":\"". $hstnacr ."\",\"ACK\":\"". $hstacr ."\"},\"UNREACHABLE\":{\"COUNT\":\"". $hstun ."\",\"NACK\":\"". $hstnaun ."\",\"ACK\":\"". $hstaun ."\"}},\"SERVICE\":{\"OK\":{\"COUNT_ON\":\"". $srvok ."\"},\"WARNING\":{\"COUNT_ON\":\"". $srvwa ."\",\"NACK_ON\":\"". $srvnawa ."\",\"ACK_ON\":\"". $srvawa ."\",\"NACK_OFF\":\"". $srvnawaoff ."\"},\"CRITICAL\":{\"COUNT_ON\":\"". $srvcr ."\",\"NACK_ON\":\"". $srvnacr ."\",\"ACK_ON\":\"". $srvacr ."\",\"NACK_OFF\":\"". $srvnacroff ."\"},\"UNKNOWN\":{\"COUNT_ON\":\"". $srvun ."\",\"NACK_ON\":\"". $srvnaun ."\",\"ACK_ON\":\"". $srvaun ."\",\"NACK_OFF\":\"". $srvnaunoff ."\"},\"PENDING\":{\"COUNT_ON\":\"". $pending ."\"}}}";
 }
 #
@@ -147,7 +147,6 @@ sub ShowCritical {
     my @SCS = kSClive::ShowCriticalServices($uid);
     my @SCH = kSClive::ShowCriticalHosts($uid);
     my @temp;
-    print kSChtml::ContentType("json");
     for (my $c=0;$c<scalar(@{$SCS[0]});$c++) {
         push @temp, [$SCS[0][$c][0],$SCS[0][$c][1],$SCS[0][$c][2],$SCS[0][$c][3],$SCS[0][$c][4],$SCS[0][$c][5]];
     }
@@ -177,54 +176,33 @@ sub ShowCritical {
         $out.="},";
     }
     $out = substr($out, 0, -1);
+    print kSChtml::ContentType("json");
     print "[". $out ."]";
 }
 #
-sub Liveticker {
+sub SelectLiveticker {
     my $uid = shift;
     my $row = shift;
     my $lns = shift;
     my $cut = time;
-    my @SCS = kSClive::ShowNewCriticalServices($uid);
-    my @SCH = kSClive::ShowNewCriticalHosts($uid);
     my %AHI = kSCpostgre::AllHostIcons();
-    my @temp;
-    print kSChtml::ContentType("json");
-    for (my $c=0;$c<scalar(@{$SCS[0]});$c++) {
-	# 30 min
-	if ( $cut-1800 < $SCS[0][$c][0] ) {
-    	    push @temp, [$SCS[0][$c][0],$SCS[0][$c][1],$SCS[0][$c][2],$SCS[0][$c][3],$SCS[0][$c][4],$SCS[0][$c][5],$SCS[0][$c][6]];
-    	}
-    }
-    for (my $c=0;$c<scalar(@{$SCH[0]});$c++) {
-	# 30 min
-	if ( $cut-1800 < $SCH[0][$c][0] ) {
-    	    push @temp, [$SCH[0][$c][0],$SCH[0][$c][1],$SCH[0][$c][2],$SCH[0][$c][3],$SCH[0][$c][4],$SCH[0][$c][5],$SCH[0][$c][6]];
-    	}
-    }
-    my @tmp = reverse sort {$a->[0] cmp $b->[0]} @temp;
     my $out;
-    my $cc;
-    if ($lns > 0) {
-        $cc = $lns;
-    } else {
-        $cc = scalar(@tmp);
-    }
-    for (my $c=0;$c<$cc;$c++) {
-	$out.="{\"TIMESTAMP_UTIME\":\"". $tmp[$c][0] ."\",\"TIMESTAMP_ISO\":\"". kSCbasic::ConvertUt2Ts($tmp[$c][0]) ."\",";
-        if ( $cut-300 < $tmp[$c][0] ) {
+    my $sth = kSCpostgre::SelectLiveticker($uid);
+    while ( (my $hn,my $cv, my $hs,my $sn,my $st,my $ot,my $ts) = $sth->fetchrow_array()) {
+	$out.="{\"TIMESTAMP_UTIME\":\"". $ts ."\",\"TIMESTAMP_ISO\":\"". kSCbasic::ConvertUt2Ts($ts) ."\",";
+        if ( $cut-300 < $ts ) {
             $out.="\"INCIDENT\":\"NEW\",";
         } else {
             $out.="\"INCIDENT\":\"NOTICED\",";
         }
-        $out.="\"DISPLAY_NAME\":\"". $tmp[$c][1] ."\",\"HOST_NAME\":\"". $tmp[$c][2] ."\",\"SERVICE_STATE\":\"". kSCbasic::GetStatusIcon($tmp[$c][3],"service") ."\",";
-        if ($tmp[$c][4] eq "0") {
+        $out.="\"DISPLAY_NAME\":\"". $sn ."\",\"HOST_NAME\":\"". $hn ."\",\"SERVICE_STATE\":\"". kSCbasic::GetStatusIcon($st,"service") ."\",";
+        if ($hs eq "0") {
             $out.="\"HOST_STATE\":\"HOST ONLINE\",";
         } else {
     	    $out.="\"HOST_STATE\":\"HOST OFFLINE\",";
         }
-        $out.="\"CUSTOM_VAR\":\"". uc($tmp[$c][5][0]) ."\",";
-        my @tp = split(" ", uc($tmp[$c][5][0]));
+        $out.="\"CUSTOM_VAR\":\"". uc($cv) ."\",";
+        my @tp = split(" ", uc($cv));
         if (kSCbasic::GetHostIcon($AHI{$tp[0]}) ne "") {
             $out.="\"ICON\":\"". kSCbasic::GetHostIcon($AHI{$tp[0]}) ."\",";
         } elsif (kSCbasic::GetHostIcon($AHI{$tp[1]}) ne "") {
@@ -241,15 +219,31 @@ sub Liveticker {
             $out.="\"ICON\":\"". kSCbasic::GetHostIcon("ho") ."\",";
         }
         if ($row > 0) {
-            $out.="\"OUTPUT\":\"". substr(kSCbasic::EncodeHTML($tmp[$c][6]), 0, $row) ." [...]\"";
+            $out.="\"OUTPUT\":\"". substr(kSCbasic::EncodeHTML($ot), 0, $row) ." [...]\"";
         } else {
-            $out.="\"OUTPUT\":\"". kSCbasic::EncodeHTML($tmp[$c][6]) ."\"";
+            $out.="\"OUTPUT\":\"". kSCbasic::EncodeHTML($ot) ."\"";
         }
         $out.="},";
     }
     $out = substr($out, 0, -1);
+    print kSChtml::ContentType("json");
     print "[". $out ."]";
-
+}
+#
+sub FillLiveticker {
+    my $uid = shift;
+    # Services
+    my @SCS = kSClive::ShowNewCriticalServices($uid);
+    for (my $c=0;$c<scalar(@{$SCS[0]});$c++) {
+        kSCpostgre::FillLiveticker($uid,$SCS[0][$c][2],$SCS[0][$c][5][0],$SCS[0][$c][4],$SCS[0][$c][1],$SCS[0][$c][3],kSCbasic::EncodeXML($SCS[0][$c][6]));
+    }
+    # Host
+    my @SCH = kSClive::ShowNewCriticalHosts($uid);
+    for (my $c=0;$c<scalar(@{$SCH[0]});$c++) {
+        kSCpostgre::FillLiveticker($uid,$SCH[0][$c][2],$SCH[0][$c][5][0],$SCH[0][$c][4],$SCH[0][$c][1],$SCH[0][$c][3],kSCbasic::EncodeXML($SCH[0][$c][6]));
+    }
+    print kSChtml::ContentType("json");
+    print "{\"EXEC\":\"UPDATED\"}";
 }
 #
 #
@@ -273,8 +267,10 @@ if (kSCbasic::CheckUrlKeyValue("e","1","n") == 0) {
         SlimTaov(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")));
     } elsif (kSCbasic::CheckUrlKeyValue("m","ShowCritical","y") == 0) {
         ShowCritical(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("r")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("l")));
-    } elsif (kSCbasic::CheckUrlKeyValue("m","Liveticker","y") == 0) {
-        Liveticker(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")));
+    } elsif (kSCbasic::CheckUrlKeyValue("m","SelectLiveticker","y") == 0) {
+        SelectLiveticker(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")));
+    } elsif (kSCbasic::CheckUrlKeyValue("m","FillLiveticker","y") == 0) {
+        FillLiveticker(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")));
     } else {
 	my $out = kSChtml::ContentType("json");
 	$out.= kSCbasic::ErrorMessage("json","1");
@@ -291,8 +287,10 @@ if (kSCbasic::CheckUrlKeyValue("e","1","n") == 0) {
         SlimTaov(kSCbasic::GetUrlKeyValue("u"));
     } elsif (kSCbasic::CheckUrlKeyValue("m","ShowCritical","n") == 0) {
         ShowCritical(kSCbasic::GetUrlKeyValue("u"),kSCbasic::GetUrlKeyValue("r"),kSCbasic::GetUrlKeyValue("l"));
-    } elsif (kSCbasic::CheckUrlKeyValue("m","Liveticker","n") == 0) {
-        Liveticker(kSCbasic::GetUrlKeyValue("u"));
+    } elsif (kSCbasic::CheckUrlKeyValue("m","SelectLiveticker","n") == 0) {
+        SelectLiveticker(kSCbasic::GetUrlKeyValue("u"));
+    } elsif (kSCbasic::CheckUrlKeyValue("m","FillLiveticker","n") == 0) {
+        FillLiveticker(kSCbasic::GetUrlKeyValue("u"));
     } else {
 	my $out = kSChtml::ContentType("json");
 	$out.= kSCbasic::ErrorMessage("json","2");

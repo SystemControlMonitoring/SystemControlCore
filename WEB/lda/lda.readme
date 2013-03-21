@@ -1,7 +1,7 @@
-<!--LDA_VERSION:2.200313-->
+<!--LDA_VERSION:2.210313-->
 
 Modul: <i><b>Live Data Access</b></i><br>
-Version: <i><b>2.200313</b></i><br>
+Version: <i><b>2.210313</b></i><br>
 Comments:<br>
 <font size=2>
 <ul>
@@ -16,7 +16,8 @@ Format: <i><b>JSON</b></i><br>
     <li><b>AllDatabases</b> - Overview of oracle database URL: <a href="/lda/json/?e=1&m=QWxsRGF0YWJhc2VzZhd873&u=c2JhcmVzZWw=Kjd743">/lda/json/?e=1&m=QWsRGF0YWJhc2VzZhd873&u=c2JhcmVzZWw=Kjd743</a></li>
     <li><b>SlimTaov</b> - Tactival Overview of Host and Service State URL: <a href="/lda/json/?e=1&m=U2xpbVRhb3Y=Hkd83k&u=c2JhcmVzZWw=LKHld3">/lda/json/?e=1&m=U2xpbVRhb3Y=Hkd83k&u=c2JhcmVzZWw=LKHld3</a></li>
     <li><b>ShowCritical</b> - List all Critical Services and Hosts Option: -l (limit Query Elements) -r (limit Output size) URL: <a href="/lda/json/?e=1&m=U2hvd0NyaXRpY2FsHjdz6d&u=c2JhcmVzZWw=J9d83D">/lda/json/?e=1&m=U2hvd0NyaXRpY2FsHjdz6d&u=c2JhcmVzZWw=J9d83D</a></li>
-    <li><b>Liveticker</b> - Current Critical Services and Hosts URL: <a href="/lda/json/?e=1&m=TGl2ZXRpY2tlcg==RpY2Fs&u=c2JhcmVzZWw=LKHld3">/lda/json/?e=1&m=TGl2ZXRpY2tlcg==RpY2Fs&u=c2JhcmVzZWw=LKHld3</a></li>
+    <li><b>SelectLiveticker</b> - Get Current Critical Services and Hosts URL: <a href="/lda/json/?e=1&m=U2VsZWN0TGl2ZXRpY2tlcg==RpKlFs&u=c2JhcmVzZWw=LKHld3">/lda/json/?e=1&m=U2VsZWN0TGl2ZXRpY2tlcg==RpKlFs&u=c2JhcmVzZWw=LKHld3</a></li>
+    <li><b>FillLiveticker</b> - Update Critical Services and Hosts in Datasource URL: <a href="/lda/json/?e=1&m=RmlsbExpdmV0aWNrZXI=RpY2Fs&u=c2JhcmVzZWw=LKHld3">/lda/json/?e=1&m=RmlsbExpdmV0aWNrZXI=RpY2Fs&u=c2JhcmVzZWw=LKHld3</a></li>
 </ul>
 </font>
 <br>
@@ -28,7 +29,8 @@ Format: <i><b>XML</b></i><br>
     <li><b>AllDatabases</b> - Overview of oracle database URL: <a href="/lda/xml/?e=1&m=QWxsRGF0YWJhc2VzHd7h33&u=c2JhcmVzZWw=OUd83D">/lda/xml/?e=1&m=QWxsRGF0YWJhc2VzHd7h33&u=c2JhcmVzZWw=OUd83D</a></li>
     <li><b>SlimTaov</b> - Tactival Overview of Host and Service State URL: <a href="/lda/xml/?e=1&m=U2xpbVRhb3Y=Hkd83k&u=c2JhcmVzZWw=LKHld3">/lda/xml/?e=1&m=U2xpbVRhb3Y=Hkd83k&u=c2JhcmVzZWw=LKHld3</a></li>
     <li><b>ShowCritical</b> - List all Critical Services and Hosts Option: -l (limit Query Elements) -r (limit Output size) URL: <a href="/lda/xml/?e=1&m=U2hvd0NyaXRpY2FsHjdz6d&u=c2JhcmVzZWw=Okdhwu">/lda/xml/?e=1&m=U2hvd0NyaXRpY2FsHjdz6d&u=c2JhcmVzZWw=Okdhwu</a></li>
-    <li><b>Liveticker</b> - Current Critical Services and Hosts URL: <a href="/lda/xml/?e=1&m=TGl2ZXRpY2tlcg==RpY2Fs&u=c2JhcmVzZWw=LKHld3">/lda/xml/?e=1&m=TGl2ZXRpY2tlcg==RpY2Fs&u=c2JhcmVzZWw=LKHld3</a></li>
+    <li><b>SelectLiveticker</b> - Get Current Critical Services and Hosts URL: <a href="/lda/xml/?e=1&m=U2VsZWN0TGl2ZXRpY2tlcg==RpKlFs&u=c2JhcmVzZWw=LKHld3">/lda/xml/?e=1&m=U2VsZWN0TGl2ZXRpY2tlcg==RpKlFs&u=c2JhcmVzZWw=LKHld3</a></li>
+    <li><b>FillLiveticker</b> - Update Critical Services and Hosts in Datasource URL: <a href="/lda/xml/?e=1&m=RmlsbExpdmV0aWNrZXI=Hzd7UD&u=c2JhcmVzZWw=LKHjd3">/lda/xml/?e=1&m=RmlsbExpdmV0aWNrZXI=Hzd7UD&u=c2JhcmVzZWw=LKHjd3</a></li>
 </ul>
 </font>
 <br></br>

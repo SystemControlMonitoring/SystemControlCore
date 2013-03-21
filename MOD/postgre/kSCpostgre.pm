@@ -100,7 +100,7 @@ sub CleanLiveticker {
 sub SelectLiveticker {
     my $uid = shift;
     my $dbh = DBConnect();
-    my $sth = $dbh->prepare("SELECT decode(lthn,'base64'),decode(ltcv,'base64'),decode(lths,'base64'),decode(ltsn,'base64'),decode(ltst,'base64'),decode(ltot,'base64'),ltts FROM perf_liveticker WHERE ltus = encode('". $uid ."','base64')") or die "[". (localtime) ."] Liveticker Select Failed: $DBI::errstr\n";
+    my $sth = $dbh->prepare("SELECT decode(lthn,'base64'),decode(ltcv,'base64'),decode(lths,'base64'),decode(ltsn,'base64'),decode(ltst,'base64'),decode(ltot,'base64'),ltts FROM perf_liveticker WHERE ltus = encode('". $uid ."','base64') ORDER BY ltts DESC") or die "[". (localtime) ."] Liveticker Select Failed: $DBI::errstr\n";
     $sth->execute();
     return ($sth);
     $sth->finish;

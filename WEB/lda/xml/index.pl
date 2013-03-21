@@ -260,80 +260,6 @@ sub ShowCritical {
     print "</critical>";
 }
 #
-sub Liveticker {
-    my $uid = shift;
-    my $row = shift;
-    my $lns = shift;
-    my $cut = time;
-    my @SCS = kSClive::ShowNewCriticalServices($uid);
-    my @SCH = kSClive::ShowNewCriticalHosts($uid);
-    my %AHI = kSCpostgre::AllHostIcons();
-    my @temp;
-    print kSChtml::ContentType("xml");
-    for (my $c=0;$c<scalar(@{$SCS[0]});$c++) {
-	# 30 min.
-	if ( $cut-1800 < $SCS[0][$c][0] ) {
-	    push @temp, [$SCS[0][$c][0],$SCS[0][$c][1],$SCS[0][$c][2],$SCS[0][$c][3],$SCS[0][$c][4],$SCS[0][$c][5],$SCS[0][$c][6]];
-	}
-    }
-    for (my $c=0;$c<scalar(@{$SCH[0]});$c++) {
-	# 30 min
-	if ( $cut-1800 < $SCH[0][$c][0] ) {
-	    push @temp, [$SCH[0][$c][0],$SCH[0][$c][1],$SCH[0][$c][2],$SCH[0][$c][3],$SCH[0][$c][4],$SCH[0][$c][5],$SCH[0][$c][6]];
-	}
-    }
-    my @tmp = reverse sort {$a->[0] cmp $b->[0]} @temp;
-    print "<liveticker>\n";
-    my $cc;
-    if ($lns > 0) {
-	$cc = $lns;
-    } else {
-	$cc = scalar(@tmp);
-    }
-    for (my $c=0;$c<$cc;$c++) {
-	print "   <entry>\n";
-	print "      <timestamp_utime>". $tmp[$c][0] ."</timestamp_utime>\n";
-	print "      <timestamp_iso>". kSCbasic::ConvertUt2Ts($tmp[$c][0]) ."</timestamp_iso>\n";
-	if ( $cut-300 < $tmp[$c][0] ) {
-	    print "      <incident>NEW</incident>\n";
-	} else {
-	    print "      <incident>NOTICED</incident>\n";
-	}
-	print "      <display_name>". $tmp[$c][1] ."</display_name>\n";
-	print "      <host_name>". $tmp[$c][2] ."</host_name>\n";
-	print "      <service_state>". kSCbasic::GetStatusIcon($tmp[$c][3],"service") ."</service_state>\n";
-	if ($tmp[$c][4] eq "0") {
-	    print "      <host_state>HOST ONLINE</host_state>\n";
-	} else {
-	    print "      <host_state>HOST OFFLINE</host_state>\n";
-	}
-	print "      <custom_var>". uc($tmp[$c][5][0]) ."</custom_var>\n";
-	my @tp = split(" ", uc($tmp[$c][5][0]));
-	if (kSCbasic::GetHostIcon($AHI{$tp[0]}) ne "") {
-	    print "      <icon>". kSCbasic::GetHostIcon($AHI{$tp[0]}) ."</icon>\n";
-	} elsif (kSCbasic::GetHostIcon($AHI{$tp[1]}) ne "") {
-	    print "      <icon>". kSCbasic::GetHostIcon($AHI{$tp[1]}) ."</icon>\n";
-	} elsif (kSCbasic::GetHostIcon($AHI{$tp[2]}) ne "") {
-	    print "      <icon>". kSCbasic::GetHostIcon($AHI{$tp[2]}) ."</icon>\n";
-	} elsif (kSCbasic::GetHostIcon($AHI{$tp[3]}) ne "") {
-	    print "      <icon>". kSCbasic::GetHostIcon($AHI{$tp[3]}) ."</icon>\n";
-	} elsif (kSCbasic::GetHostIcon($AHI{$tp[4]}) ne "") {
-	    print "      <icon>". kSCbasic::GetHostIcon($AHI{$tp[4]}) ."</icon>\n";
-	} elsif (kSCbasic::GetHostIcon($AHI{$tp[5]}) ne "") {
-	    print "      <icon>". kSCbasic::GetHostIcon($AHI{$tp[5]}) ."</icon>\n";
-	} else {
-	    print "      <icon>". kSCbasic::GetHostIcon("ho") ."</icon>\n";
-	}
-	if ($row > 0) {
-	    print "      <output>". substr(kSCbasic::EncodeXML($tmp[$c][6]), 0, $row) ." [...]</output>\n";
-	} else {
-	    print "      <output>". kSCbasic::EncodeXML($tmp[$c][6]) ."</output>\n";
-	}
-	print "   </entry>\n";
-    }
-    print "</liveticker>";
-}
-#
 sub SelectLiveticker {
     my $uid = shift;
     my $row = shift;
@@ -400,7 +326,7 @@ sub FillLiveticker {
 	kSCpostgre::FillLiveticker($uid,$SCH[0][$c][2],$SCH[0][$c][5][0],$SCH[0][$c][4],$SCH[0][$c][1],$SCH[0][$c][3],kSCbasic::EncodeXML($SCH[0][$c][6]));
     }
     print kSChtml::ContentType("xml");
-    print "<exec>0</exec>";
+    print "<exec>UPDATED</exec>";
 }
 #
 #
@@ -424,8 +350,10 @@ if (kSCbasic::CheckUrlKeyValue("e","1","n") == 0) {
     	SlimTaov(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")));
     } elsif (kSCbasic::CheckUrlKeyValue("m","ShowCritical","y") == 0) {
     	ShowCritical(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("r")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("l")));
-    } elsif (kSCbasic::CheckUrlKeyValue("m","Liveticker","y") == 0) {
-    	Liveticker(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")));
+    } elsif (kSCbasic::CheckUrlKeyValue("m","SelectLiveticker","y") == 0) {
+    	SelectLiveticker(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")));
+    } elsif (kSCbasic::CheckUrlKeyValue("m","FillLiveticker","y") == 0) {
+    	FillLiveticker(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")));
     } else {
 	print kSChtml::ContentType("xml");
 	print kSCbasic::ErrorMessage("xml","1");

@@ -1516,3 +1516,38 @@ Accept-Language: de,en;q=0.7,en-us;q=0.3
 Accept-Encoding: gzip, deflate
 Connection: keep-alive
 %response
+%% [Thu Mar 21 19:39:12 2013] GET /lda/json/index.pl?e=1&m=TGl2ZXRpY2tlcg==RpY2Fs&u=c2JhcmVzZWw=LKHld3&_=1363891160151 HTTP/1.1
+%% 500 /kSCcore/WEB/lda/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0
+Accept: application/json, text/javascript, */*; q=0.01
+Accept-Language: de-de,de;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Referer: http://localhost:8080/kVASySystemControl/
+Origin: http://localhost:8080
+Connection: keep-alive
+%response
+%% [Thu Mar 21 19:47:31 2013] GET /lda/json/index.pl?e=1&m=U2VsZWN0TGl2ZXRpY2tlcg==RpKlFs&u=c2JhcmVzZWw=LKHld3 HTTP/1.1
+%% 500 /kSCcore/WEB/lda/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de-de,de;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Referer: http://172.23.10.249:6565/
+Connection: keep-alive
+%response
+%% [Thu Mar 21 19:50:19 2013] GET /lda/json/index.pl?e=1&m=U2VsZWN0TGl2ZXRpY2tlcg==RpKlFs&u=c2JhcmVzZWw=LKHld3 HTTP/1.1
+%% 500 /kSCcore/WEB/lda/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de-de,de;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Referer: http://172.23.10.249:6565/
+Connection: keep-alive
+Cache-Control: max-age=0
+%response
