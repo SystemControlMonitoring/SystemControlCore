@@ -66,6 +66,47 @@ sub AllHostIcons {
     $dbh->disconnect;
 }
 #
+sub FillLiveticker {
+    my $uid = shift;
+    my $hname = shift;
+    my $cusv = shift;
+    my $hstate = shift;
+    my $sname = shift;
+    my $sstate = shift;
+    my $output = shift;
+    my $utime = time;
+    my $dbh = DBConnect();
+    my $sth = $dbh->prepare("SELECT ltid FROM perf_liveticker WHERE ltus = encode('". $uid ."','base64') AND lthn = encode('". $hname ."','base64') AND ltcv = encode('". $cusv ."','base64') AND lths = encode('". $hstate ."','base64') AND ltsn = encode('". $sname ."','base64') AND ltst = encode('". $sstate ."','base64') AND ltot = encode('". $output ."','base64')") or die "[". (localtime) ."] Liveticker Fill Select Failed: $DBI::errstr\n";
+    $sth->execute();
+    if ($sth->rows == 1) {
+	# nothing to do
+    } else {
+	$dbh->do("INSERT INTO perf_liveticker(LTUS,LTHN,LTCV,LTHS,LTSN,LTST,LTOT,LTTS) values (encode('". $uid ."','base64'),encode('". $hname ."','base64'),encode('". $cusv ."','base64'),encode('". $hstate ."','base64'),encode('". $sname ."','base64'),encode('". $sstate ."','base64'),encode('". $output ."','base64'),'". $utime ."')") or die "[". (localtime) ."] Liveticker Fill Insert Failed: $DBI::errstr\n";
+    }
+    $sth->finish;
+    $dbh->disconnect;
+    return 0;
+}
+#
+sub CleanLiveticker {
+    # Delete entries older then 30min
+    my $utime = time;
+    my $dbh = DBConnect();
+    $dbh->do("DELETE FROM perf_liveticker WHERE LTTS < ". $utime-1800 ."") or die "[". (localtime) ."] Liveticker Cleaning Failed: $DBI::errstr\n";
+    $dbh->disconnect;
+    return 0;
+}
+#
+sub SelectLiveticker {
+    my $uid = shift;
+    my $dbh = DBConnect();
+    my $sth = $dbh->prepare("SELECT decode(lthn,'base64'),decode(ltcv,'base64'),decode(lths,'base64'),decode(ltsn,'base64'),decode(ltst,'base64'),decode(ltot,'base64'),ltts FROM perf_liveticker WHERE ltus = encode('". $uid ."','base64')") or die "[". (localtime) ."] Liveticker Select Failed: $DBI::errstr\n";
+    $sth->execute();
+    return ($sth);
+    $sth->finish;
+    $dbh->disconnect;
+}
+#
 close ($CF);
 #
 1;
