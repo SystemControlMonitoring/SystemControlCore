@@ -91,8 +91,9 @@ sub FillLiveticker {
 sub CleanLiveticker {
     # Delete entries older then 30min
     my $utime = time;
+    $utime = $utime - 1800;
     my $dbh = DBConnect();
-    $dbh->do("DELETE FROM perf_liveticker WHERE LTTS < ". $utime-1800 ."") or die "[". (localtime) ."] Liveticker Cleaning Failed: $DBI::errstr\n";
+    $dbh->do("DELETE FROM perf_liveticker WHERE LTTS < ". $utime ."") or die "[". (localtime) ."] Liveticker Cleaning Failed: $DBI::errstr\n";
     $dbh->disconnect;
     return 0;
 }
