@@ -108,6 +108,24 @@ sub SelectLiveticker {
     $dbh->disconnect;
 }
 #
+sub SelectDashboardAll {
+    my $uid = shift;
+    my $dbh = REPOConnect();
+    my $sth = $dbh->prepare("SELECT decode(tv1,'base64'),decode(tv2,'base64'),decode(tv3,'base64') FROM repo_config WHERE tus = encode('". $uid ."','base64') AND tmd = encode('dashboard','base64')") or die "[". (localtime) ."] Repo Select Failed: $DBI::errstr\n";
+    $sth->execute();
+    return ($sth);
+    $sth->finish;
+    $dbh->disconnect;
+}
+#
+sub InsertRepository {
+    # Insert into Web Repository
+    my $dbh = REPOConnect();
+    $dbh->do("INSERT INTO repo_config(tv1) values (encode('','base64')) ") or die "[". (localtime) ."] Liveticker Cleaning Failed: $DBI::errstr\n";
+    $dbh->disconnect;
+    return 0;
+}
+#
 close ($CF);
 #
 1;

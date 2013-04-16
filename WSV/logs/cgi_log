@@ -1551,3 +1551,39 @@ Referer: http://172.23.10.249:6565/
 Connection: keep-alive
 Cache-Control: max-age=0
 %response
+%% [Tue Apr 16 20:47:32 2013] GET /lda/json/index.pl?e=1&m=RmlsbExpdmV0aWNrZXI=RpY2Fs&u=c2JhcmVzZWw=LKHld3&_=1366138055087 HTTP/1.1
+%% 500 /kSCcore/WEB/lda/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:20.0) Gecko/20100101 Firefox/20.0
+Accept: application/json, text/javascript, */*; q=0.01
+Accept-Language: de-de,de;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Referer: http://172.23.3.177:8080/kVASySystemControl/
+Origin: http://172.23.3.177:8080
+Connection: keep-alive
+%response
+%% [Tue Apr 16 20:47:33 2013] GET /lda/json/index.pl?e=1&m=RmlsbExpdmV0aWNrZXI=RpY2Fs&u=c2JhcmVzZWw=LKHld3&_=1366138054309 HTTP/1.1
+%% 500 /kSCcore/WEB/lda/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0
+Accept: application/json, text/javascript, */*; q=0.01
+Accept-Language: de-de,de;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Referer: http://localhost:8080/kVASySystemControl/
+Origin: http://localhost:8080
+Connection: keep-alive
+%response
+%% [Tue Apr 16 20:50:07 2013] GET /lda/json/index.pl?e=1&m=RmlsbExpdmV0aWNrZXI=RpY2Fs&u=c2JhcmVzZWw=LKHld3&_=1366138210040 HTTP/1.1
+%% 500 /kSCcore/WEB/lda/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:20.0) Gecko/20100101 Firefox/20.0
+Accept: application/json, text/javascript, */*; q=0.01
+Accept-Language: de-de,de;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Referer: http://172.23.3.177:8080/kVASySystemControl/
+Origin: http://172.23.3.177:8080
+Connection: keep-alive
+%response
