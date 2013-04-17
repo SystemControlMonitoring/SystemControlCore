@@ -34,12 +34,12 @@ sub SelectDashboardAll {
 #
 sub InsertDashboardAll {
     my $uid = shift;
-    # USER,MODUL,KEY,VALUE1,VALUE2,VALUE3
-    kSCpostgre::InsertRepository($uid,"DASHBOARD","STARTER","Datenbanken",kSCbasic::EncodeHTML("Eine Übersicht über alle eingerichteten Datenbanken."),"db.jsp");
-    kSCpostgre::InsertRepository($uid,"DASHBOARD","STARTER","Forms/Reports",kSCbasic::EncodeHTML("Eine Übersicht über alle eingerichteten Forms/Reports Umgebungen."),"fr.jsp");
-    kSCpostgre::InsertRepository($uid,"DASHBOARD","STARTER","SOA/BAM",kSCbasic::EncodeHTML("Eine Übersicht über alle eingerichteten SOA/BAM Umgebungen."),"sb.jsp");
-    kSCpostgre::InsertRepository($uid,"DASHBOARD","STARTER","BI",kSCbasic::EncodeHTML("Eine Übersicht über alle eingerichteten BI Umgebungen."),"bi.jsp");
-    kSCpostgre::InsertRepository($uid,"DASHBOARD","STARTER","WebServices",kSCbasic::EncodeHTML("Eine Übersicht über alle eingerichteten WebServices."),"ws.jsp");
+    my $DashboardConfig = kSCbasic::GetDashboardConfig();
+    #
+    foreach my $key (keys %{$DashboardConfig}) {
+        my @temp = split(";", $DashboardConfig->{$key});
+	kSCpostgre::InsertRepository($uid,"DASHBOARD","STARTER",$temp[0],kSCbasic::EncodeHTML($temp[1]),$temp[2]);
+    }
     # Execution
     print kSChtml::ContentType("json");
     print "{\"INSERT\":\"COMPLETE\"}";

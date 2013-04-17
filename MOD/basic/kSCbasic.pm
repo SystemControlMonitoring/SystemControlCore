@@ -346,6 +346,11 @@ sub GetPid {
     print $$;
 }
 #
+sub GetDashboardConfig {
+    my $tree = $properties->splitToTree(qr/\./, 'dashboard-starter');
+    return $tree;
+}
+#
 close ($CF);
 #
 1;

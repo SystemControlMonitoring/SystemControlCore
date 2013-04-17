@@ -26,9 +26,8 @@ $properties->load($CF);
 #########################################################
 my $ml = Monitoring::Livestatus->new(
     name		=> $properties->getProperty('live.name'),
-    verbose 		=> $properties->getProperty('live.vbos'),
-    keepalive		=> $properties->getProperty('live.kplv'),
-    errors_are_fatal 	=> $properties->getProperty('live.eraf'),
+    verbose 		=> 0,
+    keepalive		=> 1,
     peer		=> [
 	{
     	    name => $properties->getProperty('live.peer.1.name'),
@@ -69,6 +68,46 @@ my $ml = Monitoring::Livestatus->new(
 	{
 	    name => $properties->getProperty('live.peer.10.name'),
 	    peer => $properties->getProperty('live.peer.10.addr'),
+	},
+	{
+    	    name => $properties->getProperty('live.peer.11.name'),
+    	    peer => $properties->getProperty('live.peer.11.addr'),
+	},
+	{
+	    name => $properties->getProperty('live.peer.12.name'),
+	    peer => $properties->getProperty('live.peer.12.addr'),
+	},
+	{
+	    name => $properties->getProperty('live.peer.13.name'),
+	    peer => $properties->getProperty('live.peer.13.addr'),
+	},
+	{
+	    name => $properties->getProperty('live.peer.14.name'),
+	    peer => $properties->getProperty('live.peer.14.addr'),
+	},
+	{
+	    name => $properties->getProperty('live.peer.15.name'),
+	    peer => $properties->getProperty('live.peer.15.addr'),
+	},
+	{
+	    name => $properties->getProperty('live.peer.16.name'),
+	    peer => $properties->getProperty('live.peer.16.addr'),
+	},
+	{
+	    name => $properties->getProperty('live.peer.17.name'),
+	    peer => $properties->getProperty('live.peer.17.addr'),
+	},
+	{
+	    name => $properties->getProperty('live.peer.18.name'),
+	    peer => $properties->getProperty('live.peer.18.addr'),
+	},
+	{
+	    name => $properties->getProperty('live.peer.19.name'),
+	    peer => $properties->getProperty('live.peer.19.addr'),
+	},
+	{
+	    name => $properties->getProperty('live.peer.20.name'),
+	    peer => $properties->getProperty('live.peer.20.addr'),
 	}
     ],
 );
