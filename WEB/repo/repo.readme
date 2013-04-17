@@ -7,14 +7,18 @@ Comments: -
 Format: <i><b>JSON</b></i><br>
 <font size=2>Query:<br>
 <ul>
+    <li><b>InsertDashboardAll</b> - Insert Standard Dashboard Links URL: <a href="/repo/json/?e=1&m=SW5zZXJ0RGFzaGJvYXJkQWxsKd8Hfg&u=c2JhcmVzZWw=Adhfg3">/repo/json/?e=1&m=SW5zZXJ0RGFzaGJvYXJkQWxsKd8Hfg&u=c2JhcmVzZWw=Adhfg3</a></li>
     <li><b>SelectDashboardAll</b> - List all Dashboard Links URL: <a href="/repo/json/?e=1&m=U2VsZWN0RGFzaGJvYXJkQWxsUhdjK8&u=c2JhcmVzZWw=Adhfg3">/repo/json/?e=1&m=U2VsZWN0RGFzaGJvYXJkQWxsUhdjK8&u=c2JhcmVzZWw=Adhfg3</a></li>
+    <li><b>DeleteDashboardAll</b> - Delete all Dashboard Links URL: <a href="/repo/json/?e=1&m=RGVsZXRlRGFzaGJvYXJkQWxsJkl8Hd&u=c2JhcmVzZWw=Adhfg3">/repo/json/?e=1&m=RGVsZXRlRGFzaGJvYXJkQWxsJkl8Hd&u=c2JhcmVzZWw=Adhfg3</a></li>
 </ul>
 </font>
 <br>
 Format: <i><b>XML</b></i><br>
 <font size=2>Query:<br>
 <ul>
+    <li><b>InsertDashboardAll</b> - Insert Standard Dashboard Links URL: <a href="/repo/xml/?e=1&m=SW5zZXJ0RGFzaGJvYXJkQWxsKd8Hfg&u=c2JhcmVzZWw=Adhfg3">/repo/xml/?e=1&m=SW5zZXJ0RGFzaGJvYXJkQWxsKd8Hfg&u=c2JhcmVzZWw=Adhfg3</a></li>
     <li><b>SelectDashboardAll</b> - List all Dashboard Links URL: <a href="/repo/xml/?e=1&m=U2VsZWN0RGFzaGJvYXJkQWxsUhdjK8&u=c2JhcmVzZWw=Adhfg3">/repo/xml/?e=1&m=U2VsZWN0RGFzaGJvYXJkQWxsUhdjK8&u=c2JhcmVzZWw=Adhfg3</a></li>
+    <li><b>DeleteDashboardAll</b> - Delete all Dashboard Links URL: <a href="/repo/xml/?e=1&m=RGVsZXRlRGFzaGJvYXJkQWxsJkl8Hd&u=c2JhcmVzZWw=Adhfg3">/repo/xml/?e=1&m=RGVsZXRlRGFzaGJvYXJkQWxsJkl8Hd&u=c2JhcmVzZWw=Adhfg3</a></li>
 </ul>
 </font>
 <br></br>

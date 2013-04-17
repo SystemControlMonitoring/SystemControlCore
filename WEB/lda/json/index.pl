@@ -235,12 +235,12 @@ sub FillLiveticker {
     # Services
     my @SCS = kSClive::ShowNewCriticalServices($uid);
     for (my $c=0;$c<scalar(@{$SCS[0]});$c++) {
-        kSCpostgre::FillLiveticker($uid,$SCS[0][$c][2],$SCS[0][$c][5][0],$SCS[0][$c][4],$SCS[0][$c][1],$SCS[0][$c][3],kSCbasic::EncodeXML($SCS[0][$c][6]));
+        kSCpostgre::FillLiveticker($uid,$SCS[0][$c][2],$SCS[0][$c][5][0],$SCS[0][$c][4],$SCS[0][$c][1],$SCS[0][$c][3],kSCbasic::EncodeHTML($SCS[0][$c][6]));
     }
     # Host
     my @SCH = kSClive::ShowNewCriticalHosts($uid);
     for (my $c=0;$c<scalar(@{$SCH[0]});$c++) {
-        kSCpostgre::FillLiveticker($uid,$SCH[0][$c][2],$SCH[0][$c][5][0],$SCH[0][$c][4],$SCH[0][$c][1],$SCH[0][$c][3],kSCbasic::EncodeXML($SCH[0][$c][6]));
+        kSCpostgre::FillLiveticker($uid,$SCH[0][$c][2],$SCH[0][$c][5][0],$SCH[0][$c][4],$SCH[0][$c][1],$SCH[0][$c][3],kSCbasic::EncodeHTML($SCH[0][$c][6]));
     }
     print kSChtml::ContentType("json");
     print "{\"EXEC\":\"UPDATED\"}";

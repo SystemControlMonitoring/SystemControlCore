@@ -1587,3 +1587,173 @@ Referer: http://172.23.3.177:8080/kVASySystemControl/
 Origin: http://172.23.3.177:8080
 Connection: keep-alive
 %response
+%% [Wed Apr 17 09:21:15 2013] GET /repo/json/index.pl?e=1&m=SW5zZXJ0RGFzaGJvYXJkQWxsKd8Hfg&u=c2JhcmVzZWw=Adhfg3 HTTP/1.1
+%% 500 /kSCcore/WEB/repo/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de,en;q=0.7,en-us;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://172.23.10.249:6565/
+%response
+%% [Wed Apr 17 09:29:09 2013] GET /repo/json/index.pl?e=1&m=SW5zZXJ0RGFzaGJvYXJkQWxsKd8Hfg&u=c2JhcmVzZWw=Adhfg3 HTTP/1.1
+%% 500 /kSCcore/WEB/repo/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de,en;q=0.7,en-us;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://172.23.10.249:6565/
+Pragma: no-cache
+Cache-Control: no-cache
+%response
+%% [Wed Apr 17 10:45:42 2013] GET /repo/json/index.pl?e=1&m=U2VsZWN0RGFzaGJvYXJkQWxsUhdjK8&u=c2JhcmVzZWw=Adhfg3 HTTP/1.1
+%% 500 /kSCcore/WEB/repo/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de,en;q=0.7,en-us;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://172.23.10.249:6565/
+Cache-Control: max-age=0
+%response
+%% [Wed Apr 17 10:45:43 2013] GET /repo/json/index.pl?e=1&m=U2VsZWN0RGFzaGJvYXJkQWxsUhdjK8&u=c2JhcmVzZWw=Adhfg3 HTTP/1.1
+%% 500 /kSCcore/WEB/repo/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de,en;q=0.7,en-us;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://172.23.10.249:6565/
+Cache-Control: max-age=0
+%response
+%% [Wed Apr 17 10:45:44 2013] GET /repo/json/index.pl?e=1&m=U2VsZWN0RGFzaGJvYXJkQWxsUhdjK8&u=c2JhcmVzZWw=Adhfg3 HTTP/1.1
+%% 500 /kSCcore/WEB/repo/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de,en;q=0.7,en-us;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://172.23.10.249:6565/
+Cache-Control: max-age=0
+%response
+%% [Wed Apr 17 10:45:45 2013] GET /repo/json/index.pl?e=1&m=U2VsZWN0RGFzaGJvYXJkQWxsUhdjK8&u=c2JhcmVzZWw=Adhfg3 HTTP/1.1
+%% 500 /kSCcore/WEB/repo/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de,en;q=0.7,en-us;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://172.23.10.249:6565/
+Cache-Control: max-age=0
+%response
+%% [Wed Apr 17 10:45:47 2013] GET /repo/json/index.pl?e=1&m=U2VsZWN0RGFzaGJvYXJkQWxsUhdjK8&u=c2JhcmVzZWw=Adhfg3 HTTP/1.1
+%% 500 /kSCcore/WEB/repo/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de,en;q=0.7,en-us;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://172.23.10.249:6565/
+Cache-Control: max-age=0
+%response
+%% [Wed Apr 17 10:45:48 2013] GET /repo/json/index.pl?e=1&m=U2VsZWN0RGFzaGJvYXJkQWxsUhdjK8&u=c2JhcmVzZWw=Adhfg3 HTTP/1.1
+%% 500 /kSCcore/WEB/repo/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de,en;q=0.7,en-us;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://172.23.10.249:6565/
+Cache-Control: max-age=0
+%response
+%% [Wed Apr 17 10:48:42 2013] GET /lda/json/index.pl?e=1&m=RmlsbExpdmV0aWNrZXI=RpY2Fs&u=c2JhcmVzZWw=LKHld3&_=1366188520753 HTTP/1.1
+%% 500 /kSCcore/WEB/lda/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0
+Accept: application/json, text/javascript, */*; q=0.01
+Accept-Language: de,en;q=0.7,en-us;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://172.23.3.177:8080/kVASySystemControl/
+Origin: http://172.23.3.177:8080
+%response
+%% [Wed Apr 17 10:54:09 2013] GET /repo/json/index.pl?e=1&m=SW5zZXJ0RGFzaGJvYXJkQWxsKd8Hfg&u=c2JhcmVzZWw=Adhfg3 HTTP/1.1
+%% 500 /kSCcore/WEB/repo/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de,en;q=0.7,en-us;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://172.23.10.249:6565/
+Pragma: no-cache
+Cache-Control: no-cache
+%response
+%% [Wed Apr 17 13:11:56 2013] GET /repo/json/index.pl?e=1&m=RGVsZXRlRGFzaGJvYXJkQWxsJkl8Hd&u=c2JhcmVzZWw=Adhfg3 HTTP/1.1
+%% 500 /kSCcore/WEB/repo/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de,en;q=0.7,en-us;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://172.23.10.249:6565/
+%response
+%% [Wed Apr 17 13:18:52 2013] GET /repo/json/index.pl?e=1&m=RGVsZXRlRGFzaGJvYXJkQWxsJkl8Hd&u=c2JhcmVzZWw=Adhfg3 HTTP/1.1
+%% 500 /kSCcore/WEB/repo/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de,en;q=0.7,en-us;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://172.23.10.249:6565/
+Pragma: no-cache
+Cache-Control: no-cache
+%response
+%% [Wed Apr 17 13:19:10 2013] GET /repo/json/index.pl?e=1&m=RGVsZXRlRGFzaGJvYXJkQWxsJkl8Hd&u=c2JhcmVzZWw=Adhfg3 HTTP/1.1
+%% 500 /kSCcore/WEB/repo/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de,en;q=0.7,en-us;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://172.23.10.249:6565/
+Pragma: no-cache
+Cache-Control: no-cache
+%response
+%% [Wed Apr 17 13:23:04 2013] GET /repo/json/index.pl?e=1&m=RGVsZXRlRGFzaGJvYXJkQWxsJkl8Hd&u=c2JhcmVzZWw=Adhfg3 HTTP/1.1
+%% 500 /kSCcore/WEB/repo/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de,en;q=0.7,en-us;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://172.23.10.249:6565/
+Cache-Control: max-age=0
+%response
