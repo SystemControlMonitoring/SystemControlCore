@@ -111,7 +111,7 @@ sub SelectLiveticker {
 sub SelectDashboardAll {
     my $uid = shift;
     my $dbh = REPOConnect();
-    my $sth = $dbh->prepare("SELECT decode(tv1,'base64'),decode(tv2,'base64'),decode(tv3,'base64') FROM repo_config WHERE tus = encode('". $uid ."','base64') AND tmd = encode('DASHBOARD','base64')") or die "[". (localtime) ."] Repo Select Failed: $DBI::errstr\n";
+    my $sth = $dbh->prepare("SELECT decode(tv1,'base64'),decode(tv2,'base64'),decode(tv3,'base64') FROM repo_config WHERE tus = encode('". $uid ."','base64') AND tmd = encode('DASHBOARD','base64') ORDER BY tid ASC") or die "[". (localtime) ."] Repo Select Failed: $DBI::errstr\n";
     $sth->execute();
     return ($sth);
     $sth->finish;
