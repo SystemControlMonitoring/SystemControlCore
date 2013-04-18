@@ -28,6 +28,7 @@ my $ml = Monitoring::Livestatus->new(
     name		=> $properties->getProperty('live.name'),
     verbose 		=> 0,
     keepalive		=> 1,
+    errors_are_fatal	=> 'off',
     peer		=> [
 	{
     	    name => $properties->getProperty('live.peer.1.name'),
@@ -482,6 +483,16 @@ sub ServiceFullList {
     my $uid = shift;
     my $out = $ml->selectall_arrayref("GET services\nColumns: host_name display_name state last_check plugin_output long_plugin_output acknowledged next_check\nAuthUser: ". $uid);
     return ($out);
+}
+#
+########################################################
+#                                                      #
+# Check Function of Backends                           #
+#                                                      #
+########################################################
+sub CheckIcingaBackendFunction {
+    my $check = $ml->selectall_hashref("GET hosts\nColumns: name", "name", { AddPeer => 1 } );
+    return ($check);
 }
 #
 close ($CF);

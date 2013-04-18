@@ -351,6 +351,11 @@ sub GetDashboardConfig {
     return $tree;
 }
 #
+sub GetIcingaBackendConfig {
+    my $gibc = $properties->splitToTree(qr/\./, 'live.peer');
+    return $gibc;
+}
+#
 close ($CF);
 #
 1;
