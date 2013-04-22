@@ -2455,3 +2455,60 @@ Connection: keep-alive
 Pragma: no-cache
 Cache-Control: no-cache
 %response
+%% [Mon Apr 22 18:26:06 2013] GET /l4ica/json/index.pl?e=0&m=CheckIcingaProcess HTTP/1.1
+%% 500 /kSCcore/WEB/l4ica/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:20.0) Gecko/20100101 Firefox/20.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de-de,de;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Cache-Control: max-age=0
+%response
+OK
+%stdout
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: *
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Content-type: text/plain; charset=utf-8
+
+9916
+(icinga)
+/usr/local/icinga/bin/icinga -d /usr/local/icinga/etc/icinga.cfg
+Interruptable Sleep.
+ccbeabbd1e1c2a8cafc1f211127bf669
+3b3ffd1a611c06c3da5397cfebbf326d
+%% [Mon Apr 22 19:28:16 2013] GET /l4ica/json/index.pl?e=0&m=CheckIcingaProcess HTTP/1.1
+%% 500 /kSCcore/WEB/l4ica/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:20.0) Gecko/20100101 Firefox/20.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de-de,de;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Cache-Control: max-age=0
+%response
+%% [Mon Apr 22 19:28:17 2013] GET /l4ica/json/index.pl?e=0&m=CheckIcingaProcess HTTP/1.1
+%% 500 /kSCcore/WEB/l4ica/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:20.0) Gecko/20100101 Firefox/20.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de-de,de;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Cache-Control: max-age=0
+%response
+%% [Mon Apr 22 19:29:04 2013] GET /l4ica/json/index.pl?e=0&m=CheckIcingaProcess HTTP/1.1
+%% 500 /kSCcore/WEB/l4ica/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:20.0) Gecko/20100101 Firefox/20.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de-de,de;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Cache-Control: max-age=0
+%response

@@ -9,6 +9,9 @@ use warnings;
 use LWP::Simple;
 use Config::Properties;
 use MIME::Base64 ();
+use Digest::MD5;
+use Cwd qw(realpath);
+use FileHash::Entry;
 # Name
 package kSCbasic;
 #########################################################
@@ -354,6 +357,32 @@ sub GetDashboardConfig {
 sub GetIcingaBackendConfig {
     my $gibc = $properties->splitToTree(qr/\./, 'live.peer');
     return $gibc;
+}
+#
+sub HashFromString {
+    my $md5_data = shift;
+    my $md5_hash = Digest::MD5::md5_hex( $md5_data );
+    return ($md5_hash);
+}
+#
+sub HashFromFile {
+    my $filename = shift;
+    open (my $fh, '<', $filename) or die "Can't open '$filename': $!";
+    binmode ($fh);
+    return (Digest::MD5->new->addfile($fh)->hexdigest);
+}
+#
+sub GetScriptPath {
+    return (Cwd::realpath($0));
+}
+#
+sub BuildScriptString {
+    my $InputFile = shift;
+    my $a = FileHash::Entry->alloc;
+    $a->initFromStat ($InputFile) or die "Build Script String - No such File or directory.";
+    my $ctime = $a->ctime;
+    my $out = $InputFile .":". $ctime;
+    return ($out);
 }
 #
 close ($CF);

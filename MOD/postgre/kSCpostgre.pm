@@ -152,6 +152,48 @@ sub DeleteFromRepository {
     return 0;
 }
 #
+sub CheckHash {
+    # Get Variables
+    #
+    # StringHash -> /Filepath/index.pl:ctime
+    my $StringHash = shift;
+    #
+    # FileHash -> Hash of Content of /Filepath/index.pl
+    my $FileHash = shift;
+    #
+    my $StoredFileHash="";
+    # Execution
+    my $dbh = DBConnect();
+    #
+    if ($properties->getProperty("initial-version") == 9999) {
+	return 0;
+    } else {
+	#
+	my $sth = $dbh->prepare("SELECT decode(value,'base64') FROM config WHERE key = encode('". $StringHash ."','base64')") or die "[". (localtime) ."] Check Hash Select Failed: $DBI::errstr\n";
+	$sth->execute();
+	if ($sth->rows == 1) {
+	    while ( (my $value) = $sth->fetchrow_array() ) {
+    		$StoredFileHash = $value;
+    	    }
+	} else {
+	    if ($properties->getProperty("initial-version") == 1) {
+		$dbh->do("INSERT INTO config(key,value) VALUES (encode('". $StringHash ."','base64'),encode('". $FileHash ."','base64')) ") or die "[". (localtime) ."] Check Hash Insert Failed: $DBI::errstr\n";
+		$StoredFileHash = $FileHash;
+	    }
+	}
+	$sth->finish;
+	$dbh->disconnect;
+	#
+	# Check selected Hash
+	if ($StoredFileHash eq $FileHash) {
+	    return 0;
+	} else {
+	    return 2;
+	}
+    }
+    #
+}
+#
 close ($CF);
 #
 1;

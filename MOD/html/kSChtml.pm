@@ -52,6 +52,15 @@ sub ContentType {
     return($output);
 }
 #
+sub ErrorFileChanged {
+    my $output;
+    $output.="<html><head><title>ERROR_PAGE - FILE_CHANGED</title></head><body>";
+    $output.="<h1>ERROR</h1>";
+    $output.="<p>File as changed.</p>";
+    $output.="<p>Please Contact Support.</p>";
+    $output.="</body></html>";
+    return ($output);
+}
 #
 close ($CF);
 #

@@ -4,15 +4,24 @@
 use lib '/kSCcore/MOD/html';
 use lib '/kSCcore/MOD/basic';
 use lib '/kSCcore/MOD/sysinfo';
+use lib '/kSCcore/MOD/postgre';
 # Include Library
 use kSChtml;
 use kSCbasic;
 use kSCsysinfo;
+use kSCpostgre;
 use warnings;
 use strict;
 use Data::Dumper;
 #
-#
+# Precheck
+if ( kSCpostgre::CheckHash(kSCbasic::HashFromString(kSCbasic::GetScriptPath()),kSCbasic::HashFromFile(kSCbasic::GetScriptPath()) ) == 0 ) {
+    # go on
+} else {
+    print kSChtml::ContentType("html");
+    print kSChtml::ErrorFileChanged();
+    exit 2;
+};
 #
 #
 #
@@ -31,6 +40,7 @@ sub CheckIcingaProcess {
 	    print kSCsysinfo::LinuxProcessState($stat->{$key}->{'state'}) ."\n";
         }
     }
+    print "Hello";
 }
 #
 #
