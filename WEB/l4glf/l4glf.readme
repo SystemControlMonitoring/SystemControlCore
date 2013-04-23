@@ -1,0 +1,15 @@
+<!--L4GLF_VERSION:2.130423-->
+
+Modul: <i><b>Look4Glassfish</b></i><br>
+Version: <i><b>2.130423</b></i><br>
+Comments: -
+<br></br>
+Format: <i><b>JSON</b></i><br>
+<font size=2>Query:<br>
+<ul>
+    <li><b>CheckGlassfishProcess</b> - Check Glassfish Processes running URL: <a href="/l4glf/json/?e=1&m=Q2hlY2tHbGFzc2Zpc2hQcm9jZXNzXZhj7k">/l4glf/json/?e=1&m=Q2hlY2tHbGFzc2Zpc2hQcm9jZXNzXZhj7k</a></li>
+    <li><b>CheckGlassfishOpenPorts</b> - Check Port 80/443 (SSL) open URL: <a href="/l4glf/json/?e=1&m=Q2hlY2tHbGFzc2Zpc2hPcGVuUG9ydHM=XVg88U">/l4glf/json/?e=1&m=Q2hlY2tHbGFzc2Zpc2hPcGVuUG9ydHM=XVg88U</a></li>
+</ul>
+</font>
+<br></br>
+<hr><br></br>

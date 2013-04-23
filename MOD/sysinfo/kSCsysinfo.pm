@@ -79,6 +79,24 @@ sub IcingaOpenPorts {
     return ($host_hr);
 }
 #
+sub PostgresOpenPorts {
+    #my $HOSTS = shift;
+    my %port_hash = ( tcp => { 5432    => {}, } );
+    my $timeout = 5;
+    my $HOSTS = "localhost";
+    my $host_hr = IO::Socket::PortState::check_ports($HOSTS,$timeout,\%port_hash);
+    return ($host_hr);
+}
+#
+sub GlassfishOpenPorts {
+    #my $HOSTS = shift;
+    my %port_hash = ( tcp => { 80    => {}, 443   => {}, } );
+    my $timeout = 5;
+    my $HOSTS = "localhost";
+    my $host_hr = IO::Socket::PortState::check_ports($HOSTS,$timeout,\%port_hash);
+    return ($host_hr);
+}
+#
 close ($CF);
 #
 1;
