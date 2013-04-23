@@ -2512,3 +2512,35 @@ Accept-Encoding: gzip, deflate
 Connection: keep-alive
 Cache-Control: max-age=0
 %response
+%% [Tue Apr 23 13:03:15 2013] GET /l4ica/json/index.pl?e=0&m=CheckIcingaProcess HTTP/1.1
+%% 500 /kSCcore/WEB/l4ica/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de,en;q=0.7,en-us;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Cache-Control: max-age=0
+%response
+%% [Tue Apr 23 16:03:23 2013] GET /l4ica/json/index.pl?e=0&m=CheckIcingaOpenPorts HTTP/1.1
+%% 500 /kSCcore/WEB/l4ica/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de,en;q=0.7,en-us;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Cache-Control: max-age=0
+%response
+%% [Tue Apr 23 16:11:51 2013] GET /l4ica/json/index.pl?e=0&m=CheckXinetdProcess HTTP/1.1
+%% 500 /kSCcore/WEB/l4ica/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de,en;q=0.7,en-us;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+%response

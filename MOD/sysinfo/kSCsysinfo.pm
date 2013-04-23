@@ -9,6 +9,8 @@ use warnings;
 use LWP::Simple;
 use Config::Properties;
 use Sys::Statistics::Linux::Processes;
+use Sys::Statistics::Linux::SockStats;
+use IO::Socket::PortState qw(check_ports);
 # Name
 package kSCsysinfo;
 # Redirect Error Output
@@ -26,7 +28,6 @@ $properties->load($CF);
 #                                                       #
 #########################################################
 sub LinuxProcesses {
-    my $owner = shift;
     # Load Libarary
     my $lxs = Sys::Statistics::Linux::Processes->new;
     # Initiate
@@ -58,6 +59,24 @@ sub LinuxProcessState {
         $rv = "N/A.";
     }
     return ($rv);
+}
+#
+sub LinuxSocket {
+    # Load Libarary
+    my $lxs = Sys::Statistics::Linux::SockStats->new;
+    # Execute
+    my $stat = $lxs->get;
+    # Return
+    return ($stat);
+}
+#
+sub IcingaOpenPorts {
+    #my $HOSTS = shift;
+    my %port_hash = ( tcp => { 6557    => {}, } );
+    my $timeout = 5;
+    my $HOSTS = "localhost";
+    my $host_hr = IO::Socket::PortState::check_ports($HOSTS,$timeout,\%port_hash);
+    return ($host_hr);
 }
 #
 close ($CF);

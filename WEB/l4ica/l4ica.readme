@@ -1,0 +1,16 @@
+<!--L4ICA_VERSION:2.130423-->
+
+Modul: <i><b>Look4Icinga</b></i><br>
+Version: <i><b>2.130423</b></i><br>
+Comments: -
+<br></br>
+Format: <i><b>JSON</b></i><br>
+<font size=2>Query:<br>
+<ul>
+    <li><b>CheckIcingaProcess</b> - Check Icinga Process running URL: <a href="/l4ica/json/?e=1&m=Q2hlY2tJY2luZ2FQcm9jZXNzKlkd89">/l4ica/json/?e=1&m=Q2hlY2tJY2luZ2FQcm9jZXNzKlkd89</a></li>
+    <li><b>CheckXinetdProcess</b> - Check Xinetd Process running URL: <a href="/l4ica/json/?e=1&m=Q2hlY2tYaW5ldGRQcm9jZXNzVjK74H">/l4ica/json/?e=1&m=Q2hlY2tYaW5ldGRQcm9jZXNzVjK74H</a></li>
+    <li><b>CheckIcingaOpenPorts</b> - Check Port 6557 open URL: <a href="/l4ica/json/?e=1&m=Q2hlY2tJY2luZ2FPcGVuUG9ydHM=Wk27Uu">/l4ica/json/?e=1&m=Q2hlY2tJY2luZ2FPcGVuUG9ydHM=Wk27Uu</a></li>
+</ul>
+</font>
+<br></br>
+<hr><br></br>
