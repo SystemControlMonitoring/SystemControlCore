@@ -1,7 +1,6 @@
 #!/usr/bin/perl
 #
 use strict;
-use warnings;
 use lib '/kSCcore/MOD/basic';
 use lib '/kSCcore/MOD/html';
 use lib '/kSCcore/MOD/live';

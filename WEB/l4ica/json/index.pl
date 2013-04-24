@@ -8,7 +8,6 @@ use lib '/kSCcore/MOD/sysinfo';
 use kSChtml;
 use kSCbasic;
 use kSCsysinfo;
-use warnings;
 use strict;
 use Data::Dumper;
 #

@@ -8,7 +8,6 @@ use lib '/kSCcore/MOD/sysinfo';
 use kSChtml;
 use kSCbasic;
 use kSCsysinfo;
-use warnings;
 use strict;
 use Data::Dumper;
 #
@@ -28,7 +27,7 @@ sub CheckPostgresProcess {
         }
     }
     print kSChtml::ContentType("json");
-    print "{\"ICINGA_PRC\":\"". $count ."\"}";
+    print "{\"POSTGRE_PRC\":\"". $count ."\"}";
 }
 #
 sub CheckPostgresOpenPorts {

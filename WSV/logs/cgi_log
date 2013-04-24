@@ -2544,3 +2544,543 @@ Accept-Language: de,en;q=0.7,en-us;q=0.3
 Accept-Encoding: gzip, deflate
 Connection: keep-alive
 %response
+%% [Wed Apr 24 14:39:50 2013] GET /chkcmp/json/index.pl?e=0&m=CheckProcess HTTP/1.1
+%% 500 /kSCcore/WEB/chkcmp/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de,en;q=0.7,en-us;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+%response
+%% [Wed Apr 24 14:40:20 2013] GET /chkcmp/json/index.pl?e=0&m=CheckProcess HTTP/1.1
+%% 500 /kSCcore/WEB/chkcmp/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de,en;q=0.7,en-us;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+%response
+%% [Wed Apr 24 14:40:51 2013] GET /chkcmp/json/index.pl?e=0&m=CheckProcess HTTP/1.1
+%% 500 /kSCcore/WEB/chkcmp/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de,en;q=0.7,en-us;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+%response
+%% [Wed Apr 24 14:41:13 2013] GET /chkcmp/json/index.pl?e=0&m=CheckProcess HTTP/1.1
+%% 500 /kSCcore/WEB/chkcmp/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de,en;q=0.7,en-us;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+%response
+%% [Wed Apr 24 14:41:19 2013] GET /chkcmp/json/index.pl?e=0&m=CheckProcess HTTP/1.1
+%% 500 /kSCcore/WEB/chkcmp/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de,en;q=0.7,en-us;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+%response
+%% [Wed Apr 24 15:06:56 2013] GET /chkcmp/json/index.pl?e=0&m=CheckProcess HTTP/1.1
+%% 500 /kSCcore/WEB/chkcmp/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de,en;q=0.7,en-us;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Cache-Control: max-age=0
+%response
+%% [Wed Apr 24 15:07:36 2013] GET /chkcmp/json/index.pl?e=0&m=CheckProcess HTTP/1.1
+%% 500 /kSCcore/WEB/chkcmp/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de,en;q=0.7,en-us;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Cache-Control: max-age=0
+%response
+%% [Wed Apr 24 15:08:43 2013] GET /chkcmp/json/index.pl?e=0&m=CheckProcess HTTP/1.1
+%% 500 /kSCcore/WEB/chkcmp/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de,en;q=0.7,en-us;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Cache-Control: max-age=0
+%response
+%% [Wed Apr 24 15:39:10 2013] GET /chkcmp/json/index.pl?e=0&m=CheckProcess HTTP/1.1
+%% 500 /kSCcore/WEB/chkcmp/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de,en;q=0.7,en-us;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Cache-Control: max-age=0
+%response
+%% [Wed Apr 24 15:43:04 2013] GET /chkcmp/json/index.pl?e=0&m=CheckProcess HTTP/1.1
+%% 500 /kSCcore/WEB/chkcmp/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de,en;q=0.7,en-us;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Cache-Control: max-age=0
+%response
+%% [Wed Apr 24 15:43:16 2013] GET /chkcmp/json/index.pl?e=0&m=CheckProcess HTTP/1.1
+%% 500 /kSCcore/WEB/chkcmp/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de,en;q=0.7,en-us;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+%response
+%% [Wed Apr 24 15:43:38 2013] GET /chkcmp/json/index.pl?e=0&m=CheckProcess HTTP/1.1
+%% 500 /kSCcore/WEB/chkcmp/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de,en;q=0.7,en-us;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Cache-Control: max-age=0
+%response
+%% [Wed Apr 24 16:11:51 2013] GET /chkcmp/json/index.pl?e=0&m=CheckProcess HTTP/1.1
+%% 500 /kSCcore/WEB/chkcmp/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de,en;q=0.7,en-us;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Cache-Control: max-age=0
+%response
+%% [Wed Apr 24 16:12:01 2013] GET /chkcmp/json/index.pl?e=0&m=CheckProcess HTTP/1.1
+%% 500 /kSCcore/WEB/chkcmp/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de,en;q=0.7,en-us;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Cache-Control: max-age=0
+%response
+%% [Wed Apr 24 16:21:54 2013] GET /chkcmp/json/index.pl?e=0&m=CheckProcess HTTP/1.1
+%% 500 /kSCcore/WEB/chkcmp/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de,en;q=0.7,en-us;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+%response
+%% [Wed Apr 24 16:22:38 2013] GET /chkcmp/json/index.pl?e=0&m=CheckProcess HTTP/1.1
+%% 500 /kSCcore/WEB/chkcmp/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de,en;q=0.7,en-us;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Cache-Control: max-age=0
+%response
+%% [Wed Apr 24 16:23:10 2013] GET /chkcmp/json/index.pl?e=0&m=CheckProcess HTTP/1.1
+%% 500 /kSCcore/WEB/chkcmp/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de,en;q=0.7,en-us;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Cache-Control: max-age=0
+%response
+%% [Wed Apr 24 16:28:28 2013] GET /lda/json/index.pl?e=1&m=U2VsZWN0TGl2ZXRpY2tlcg==RpKlFs&u=c2JhcmVzZWw=LKHld3&_=1366813707526 HTTP/1.1
+%% 500 /kSCcore/WEB/lda/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0
+Accept: application/json, text/javascript, */*; q=0.01
+Accept-Language: de,en;q=0.7,en-us;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://172.23.3.177:8080/kVASySystemControl/
+Origin: http://172.23.3.177:8080
+%response
+%% [Wed Apr 24 16:28:31 2013] GET /repo/json/index.pl?e=1&m=U2VsZWN0RGFzaGJvYXJkQWxsUhdjK8&u=c2JhcmVzZWw=LKHld3&_=1366813711402 HTTP/1.1
+%% 500 /kSCcore/WEB/repo/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0
+Accept: application/json, text/javascript, */*; q=0.01
+Accept-Language: de,en;q=0.7,en-us;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://172.23.3.177:8080/kVASySystemControl/
+Origin: http://172.23.3.177:8080
+Pragma: no-cache
+Cache-Control: no-cache
+%response
+%% [Wed Apr 24 16:28:32 2013] GET /lda/json/index.pl?e=1&m=U2VsZWN0TGl2ZXRpY2tlcg==RpKlFs&u=c2JhcmVzZWw=LKHld3&_=1366813711621 HTTP/1.1
+%% 500 /kSCcore/WEB/lda/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0
+Accept: application/json, text/javascript, */*; q=0.01
+Accept-Language: de,en;q=0.7,en-us;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://172.23.3.177:8080/kVASySystemControl/
+Origin: http://172.23.3.177:8080
+%response
+%% [Wed Apr 24 16:29:11 2013] GET /repo/json/index.pl?e=1&m=U2VsZWN0RGFzaGJvYXJkQWxsUhdjK8&u=c2JhcmVzZWw=LKHld3&_=1366813750870 HTTP/1.1
+%% 500 /kSCcore/WEB/repo/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0
+Accept: application/json, text/javascript, */*; q=0.01
+Accept-Language: de,en;q=0.7,en-us;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://172.23.3.177:8080/kVASySystemControl/
+Origin: http://172.23.3.177:8080
+Pragma: no-cache
+Cache-Control: no-cache
+%response
+%% [Wed Apr 24 16:29:11 2013] GET /lda/json/index.pl?e=1&m=U2VsZWN0TGl2ZXRpY2tlcg==RpKlFs&u=c2JhcmVzZWw=LKHld3&_=1366813751096 HTTP/1.1
+%% 500 /kSCcore/WEB/lda/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0
+Accept: application/json, text/javascript, */*; q=0.01
+Accept-Language: de,en;q=0.7,en-us;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://172.23.3.177:8080/kVASySystemControl/
+Origin: http://172.23.3.177:8080
+%response
+%% [Wed Apr 24 16:29:15 2013] GET /repo/json/index.pl?e=1&m=U2VsZWN0RGFzaGJvYXJkQWxsUhdjK8&u=c2JhcmVzZWw=LKHld3&_=1366813755230 HTTP/1.1
+%% 500 /kSCcore/WEB/repo/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0
+Accept: application/json, text/javascript, */*; q=0.01
+Accept-Language: de,en;q=0.7,en-us;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://172.23.3.177:8080/kVASySystemControl/
+Origin: http://172.23.3.177:8080
+Pragma: no-cache
+Cache-Control: no-cache
+%response
+%% [Wed Apr 24 16:29:15 2013] GET /lda/json/index.pl?e=1&m=U2VsZWN0TGl2ZXRpY2tlcg==RpKlFs&u=c2JhcmVzZWw=LKHld3&_=1366813755458 HTTP/1.1
+%% 500 /kSCcore/WEB/lda/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0
+Accept: application/json, text/javascript, */*; q=0.01
+Accept-Language: de,en;q=0.7,en-us;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://172.23.3.177:8080/kVASySystemControl/
+Origin: http://172.23.3.177:8080
+%response
+%% [Wed Apr 24 16:29:19 2013] GET /repo/json/index.pl?e=1&m=U2VsZWN0RGFzaGJvYXJkQWxsUhdjK8&u=c2JhcmVzZWw=LKHld3&_=1366813758822 HTTP/1.1
+%% 500 /kSCcore/WEB/repo/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0
+Accept: application/json, text/javascript, */*; q=0.01
+Accept-Language: de,en;q=0.7,en-us;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://172.23.3.177:8080/kVASySystemControl/
+Origin: http://172.23.3.177:8080
+Pragma: no-cache
+Cache-Control: no-cache
+%response
+%% [Wed Apr 24 16:29:19 2013] GET /lda/json/index.pl?e=1&m=U2VsZWN0TGl2ZXRpY2tlcg==RpKlFs&u=c2JhcmVzZWw=LKHld3&_=1366813759108 HTTP/1.1
+%% 500 /kSCcore/WEB/lda/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0
+Accept: application/json, text/javascript, */*; q=0.01
+Accept-Language: de,en;q=0.7,en-us;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://172.23.3.177:8080/kVASySystemControl/
+Origin: http://172.23.3.177:8080
+%response
+%% [Wed Apr 24 16:29:53 2013] GET /repo/json/index.pl?e=1&m=U2VsZWN0RGFzaGJvYXJkQWxsUhdjK8&u=c2JhcmVzZWw=LKHld3&_=1366813792658 HTTP/1.1
+%% 500 /kSCcore/WEB/repo/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0
+Accept: application/json, text/javascript, */*; q=0.01
+Accept-Language: de,en;q=0.7,en-us;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://172.23.3.177:8080/kVASySystemControl/
+Origin: http://172.23.3.177:8080
+Pragma: no-cache
+Cache-Control: no-cache
+%response
+%% [Wed Apr 24 16:29:53 2013] GET /lda/json/index.pl?e=1&m=U2VsZWN0TGl2ZXRpY2tlcg==RpKlFs&u=c2JhcmVzZWw=LKHld3&_=1366813792880 HTTP/1.1
+%% 500 /kSCcore/WEB/lda/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0
+Accept: application/json, text/javascript, */*; q=0.01
+Accept-Language: de,en;q=0.7,en-us;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://172.23.3.177:8080/kVASySystemControl/
+Origin: http://172.23.3.177:8080
+%response
+%% [Wed Apr 24 16:30:20 2013] GET /repo/json/index.pl?e=1&m=U2VsZWN0RGFzaGJvYXJkQWxsUhdjK8&u=c2JhcmVzZWw=LKHld3&_=1366813820108 HTTP/1.1
+%% 500 /kSCcore/WEB/repo/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0
+Accept: application/json, text/javascript, */*; q=0.01
+Accept-Language: de,en;q=0.7,en-us;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://172.23.3.177:8080/kVASySystemControl/
+Origin: http://172.23.3.177:8080
+%response
+%% [Wed Apr 24 16:30:20 2013] GET /lda/json/index.pl?e=1&m=U2VsZWN0TGl2ZXRpY2tlcg==RpKlFs&u=c2JhcmVzZWw=LKHld3&_=1366813820327 HTTP/1.1
+%% 500 /kSCcore/WEB/lda/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0
+Accept: application/json, text/javascript, */*; q=0.01
+Accept-Language: de,en;q=0.7,en-us;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://172.23.3.177:8080/kVASySystemControl/
+Origin: http://172.23.3.177:8080
+%response
+%% [Wed Apr 24 16:31:31 2013] GET /repo/json/index.pl?e=1&m=U2VsZWN0RGFzaGJvYXJkQWxsUhdjK8&u=c2JhcmVzZWw=LKHld3&_=1366813891239 HTTP/1.1
+%% 500 /kSCcore/WEB/repo/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0
+Accept: application/json, text/javascript, */*; q=0.01
+Accept-Language: de,en;q=0.7,en-us;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://172.23.3.177:8080/kVASySystemControl/
+Origin: http://172.23.3.177:8080
+Pragma: no-cache
+Cache-Control: no-cache
+%response
+%% [Wed Apr 24 16:31:31 2013] GET /lda/json/index.pl?e=1&m=U2VsZWN0TGl2ZXRpY2tlcg==RpKlFs&u=c2JhcmVzZWw=LKHld3&_=1366813891467 HTTP/1.1
+%% 500 /kSCcore/WEB/lda/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0
+Accept: application/json, text/javascript, */*; q=0.01
+Accept-Language: de,en;q=0.7,en-us;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://172.23.3.177:8080/kVASySystemControl/
+Origin: http://172.23.3.177:8080
+%response
+%% [Wed Apr 24 16:35:30 2013] GET /repo/json/index.pl?e=1&m=U2VsZWN0RGFzaGJvYXJkQWxsUhdjK8&u=c2JhcmVzZWw=LKHld3&_=1366814130005 HTTP/1.1
+%% 500 /kSCcore/WEB/repo/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0
+Accept: application/json, text/javascript, */*; q=0.01
+Accept-Language: de,en;q=0.7,en-us;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://172.23.3.177:8080/kVASySystemControl/
+Origin: http://172.23.3.177:8080
+Pragma: no-cache
+Cache-Control: no-cache
+%response
+%% [Wed Apr 24 16:35:30 2013] GET /lda/json/index.pl?e=1&m=U2VsZWN0TGl2ZXRpY2tlcg==RpKlFs&u=c2JhcmVzZWw=LKHld3&_=1366814130226 HTTP/1.1
+%% 500 /kSCcore/WEB/lda/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0
+Accept: application/json, text/javascript, */*; q=0.01
+Accept-Language: de,en;q=0.7,en-us;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Referer: http://172.23.3.177:8080/kVASySystemControl/
+Origin: http://172.23.3.177:8080
+%response
+%% [Wed Apr 24 17:58:42 2013] GET /repo/json/index.pl?e=1&m=U2VsZWN0RGFzaGJvYXJkQWxsUhdjK8&u=c2JhcmVzZWw=LKHld3&_=1366819127318 HTTP/1.1
+%% 500 /kSCcore/WEB/repo/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:20.0) Gecko/20100101 Firefox/20.0
+Accept: application/json, text/javascript, */*; q=0.01
+Accept-Language: de-de,de;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Referer: http://172.23.3.177:8080/kVASySystemControl/
+Origin: http://172.23.3.177:8080
+Connection: keep-alive
+%response
+%% [Wed Apr 24 17:58:43 2013] GET /lda/json/index.pl?e=1&m=U2VsZWN0TGl2ZXRpY2tlcg==RpKlFs&u=c2JhcmVzZWw=LKHld3&_=1366819127593 HTTP/1.1
+%% 500 /kSCcore/WEB/lda/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:20.0) Gecko/20100101 Firefox/20.0
+Accept: application/json, text/javascript, */*; q=0.01
+Accept-Language: de-de,de;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Referer: http://172.23.3.177:8080/kVASySystemControl/
+Origin: http://172.23.3.177:8080
+Connection: keep-alive
+%response
+%% [Wed Apr 24 18:03:51 2013] GET /repo/json/index.pl?e=1&m=U2VsZWN0RGFzaGJvYXJkQWxsUhdjK8&u=c2JhcmVzZWw=LKHld3&_=1366819436398 HTTP/1.1
+%% 500 /kSCcore/WEB/repo/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:20.0) Gecko/20100101 Firefox/20.0
+Accept: application/json, text/javascript, */*; q=0.01
+Accept-Language: de-de,de;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Referer: http://172.23.3.177:8080/kVASySystemControl/
+Origin: http://172.23.3.177:8080
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+%response
+%% [Wed Apr 24 18:03:52 2013] GET /lda/json/index.pl?e=1&m=U2VsZWN0TGl2ZXRpY2tlcg==RpKlFs&u=c2JhcmVzZWw=LKHld3&_=1366819436650 HTTP/1.1
+%% 500 /kSCcore/WEB/lda/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:20.0) Gecko/20100101 Firefox/20.0
+Accept: application/json, text/javascript, */*; q=0.01
+Accept-Language: de-de,de;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Referer: http://172.23.3.177:8080/kVASySystemControl/
+Origin: http://172.23.3.177:8080
+Connection: keep-alive
+%response
+%% [Wed Apr 24 18:04:50 2013] GET /repo/json/index.pl?e=1&m=U2VsZWN0RGFzaGJvYXJkQWxsUhdjK8&u=c2JhcmVzZWw=LKHld3&_=1366819494699 HTTP/1.1
+%% 500 /kSCcore/WEB/repo/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:20.0) Gecko/20100101 Firefox/20.0
+Accept: application/json, text/javascript, */*; q=0.01
+Accept-Language: de-de,de;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Referer: http://172.23.3.177:8080/kVASySystemControl/
+Origin: http://172.23.3.177:8080
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+%response
+%% [Wed Apr 24 18:04:50 2013] GET /lda/json/index.pl?e=1&m=U2VsZWN0TGl2ZXRpY2tlcg==RpKlFs&u=c2JhcmVzZWw=LKHld3&_=1366819494960 HTTP/1.1
+%% 500 /kSCcore/WEB/lda/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:20.0) Gecko/20100101 Firefox/20.0
+Accept: application/json, text/javascript, */*; q=0.01
+Accept-Language: de-de,de;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Referer: http://172.23.3.177:8080/kVASySystemControl/
+Origin: http://172.23.3.177:8080
+Connection: keep-alive
+%response
+%% [Wed Apr 24 18:09:39 2013] GET /repo/json/index.pl?e=1&m=U2VsZWN0RGFzaGJvYXJkQWxsUhdjK8&u=c2JhcmVzZWw=LKHld3&_=1366819783460 HTTP/1.1
+%% 500 /kSCcore/WEB/repo/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:20.0) Gecko/20100101 Firefox/20.0
+Accept: application/json, text/javascript, */*; q=0.01
+Accept-Language: de-de,de;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Referer: http://172.23.3.177:8080/kVASySystemControl/
+Origin: http://172.23.3.177:8080
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+%response
+%% [Wed Apr 24 18:09:39 2013] GET /lda/json/index.pl?e=1&m=U2VsZWN0TGl2ZXRpY2tlcg==RpKlFs&u=c2JhcmVzZWw=LKHld3&_=1366819783713 HTTP/1.1
+%% 500 /kSCcore/WEB/lda/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:20.0) Gecko/20100101 Firefox/20.0
+Accept: application/json, text/javascript, */*; q=0.01
+Accept-Language: de-de,de;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Referer: http://172.23.3.177:8080/kVASySystemControl/
+Origin: http://172.23.3.177:8080
+Connection: keep-alive
+%response
+%% [Wed Apr 24 18:22:05 2013] GET /repo/json/index.pl?e=1&m=U2VsZWN0RGFzaGJvYXJkQWxsUhdjK8&u=c2JhcmVzZWw=LKHld3&_=1366820530163 HTTP/1.1
+%% 500 /kSCcore/WEB/repo/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:20.0) Gecko/20100101 Firefox/20.0
+Accept: application/json, text/javascript, */*; q=0.01
+Accept-Language: de-de,de;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Referer: http://172.23.3.177:8080/kVASySystemControl/
+Origin: http://172.23.3.177:8080
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+%response
+%% [Wed Apr 24 18:22:11 2013] GET /repo/json/index.pl?e=1&m=U2VsZWN0RGFzaGJvYXJkQWxsUhdjK8&u=c2JhcmVzZWw=LKHld3&_=1366820535888 HTTP/1.1
+%% 500 /kSCcore/WEB/repo/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:20.0) Gecko/20100101 Firefox/20.0
+Accept: application/json, text/javascript, */*; q=0.01
+Accept-Language: de-de,de;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Referer: http://172.23.3.177:8080/kVASySystemControl/
+Origin: http://172.23.3.177:8080
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+%response

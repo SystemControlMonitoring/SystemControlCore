@@ -5,7 +5,6 @@
 #                                                       #
 #########################################################
 use strict;
-use warnings;
 use Monitoring::Livestatus;
 use LWP::Simple;
 use Config::Properties;

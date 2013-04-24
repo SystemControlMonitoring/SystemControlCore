@@ -5,7 +5,6 @@
 #                                                       #
 #########################################################
 use strict;
-use warnings;
 use LWP::Simple;
 use Config::Properties;
 use MIME::Base64 ();

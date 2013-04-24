@@ -8,7 +8,6 @@ use lib '/kSCcore/MOD/postgre';
 use kSChtml;
 use kSCbasic;
 use kSCpostgre;
-use warnings;
 use strict;
 use Data::Dumper;
 #

@@ -19,3 +19,10 @@
    ./daemon.pl --install -> Install Prerequisits
    ./daemon.pl --start   -> Start Application
 
+DBI connect('dbname=kscdb;host=localhost;port=5432;','kscdb',...) failed: konnte nicht mit dem Server verbinden: Verbindungsaufbau abgelehnt at /kSCcore/MOD/postgre/kSCpostgre.pm line 29
+[Wed Apr 24 16:33:10 2013] Unable to connect Database: konnte nicht mit dem Server verbinden: Verbindungsaufbau abgelehnt
+#################################################################
+# Script: Clean Liveticker Datasource running.
+#################################################################
+PID=23207
+

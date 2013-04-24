@@ -10,7 +10,6 @@ use kSClive;
 use kSChtml;
 use kSCbasic;
 use kSCpostgre;
-use warnings;
 use strict;
 use Data::Dumper;
 #
@@ -218,11 +217,11 @@ sub SelectLiveticker {
         } else {
             $out.="\"ICON\":\"". kSCbasic::GetHostIcon("ho") ."\",";
         }
-        if ($row > 0) {
-            $out.="\"OUTPUT\":\"". substr(kSCbasic::EncodeHTML($ot), 0, $row) ." [...]\"";
-        } else {
+        #if ($row > 0) {
+        #    $out.="\"OUTPUT\":\"". substr(kSCbasic::EncodeHTML($ot), 0, $row) ." [...]\"";
+        #} else {
             $out.="\"OUTPUT\":\"". kSCbasic::EncodeHTML($ot) ."\"";
-        }
+        #}
         $out.="},";
     }
     $out = substr($out, 0, -1);
