@@ -3084,3 +3084,329 @@ Connection: keep-alive
 Pragma: no-cache
 Cache-Control: no-cache
 %response
+%% [Fri Apr 26 13:51:22 2013] GET /chkcmp/json/index.pl?e=1&m=Q2hlY2tQcm9jZXNzLk76Zh&_=1366977082769 HTTP/1.1
+%% 500 /kSCcore/WEB/chkcmp/json/index.pl
+%request
+Host: 172.23.10.249:6565
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0
+Accept: application/json, text/javascript, */*; q=0.01
+Accept-Language: de-de,de;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Referer: http://localhost:8080/kVASySystemControl/
+Origin: http://localhost:8080
+Connection: keep-alive
+%response
+%% [Fri Apr 26 14:04:31 2013] GET /chkcmp/json/index.pl?e=1&m=Q2hlY2tQcm9jZXNzLk76Zh&_=1366977870134 HTTP/1.1
+%% 500 /kSCcore/WEB/chkcmp/json/index.pl
+%request
+Referer: http://172.23.3.177:8080/kVASySystemControl/
+Accept: application/json, text/javascript, */*; q=0.01
+Accept-Language: de-DE
+Origin: http://172.23.3.177:8080
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/6.0)
+Host: 172.23.10.249:6565
+Connection: Keep-Alive
+Cache-Control: no-cache
+%response
+%% [Mon Apr 29 14:21:14 2013] GET /lda/xml/index.pl?e=1&m=QWxsSG9zdHM=Uhd739&u=c2JhcmVzZWw=LKHld3 HTTP/1.1
+%% 500 /kSCcore/WEB/lda/xml/index.pl
+%request
+TE: deflate,gzip;q=0.3
+Connection: TE, close
+Host: 172.23.10.249:6565
+User-Agent: LWP::Simple/5.827 libwww-perl/5.833
+%response
+<hostlist>
+%stdout
+   <host>
+      <name>carlo-x.siv.de</name>
+      <state>0</state>
+      <custom_var>WEBS SIV</custom_var>
+      <icon>layout/images/www.png</icon>
+      <last_check_utime>1367238058</last_check_utime>
+      <last_check_iso>2013-04-29 14:20:58</last_check_iso>
+      <srv_ok>18</srv_ok>
+      <srv_wa>0</srv_wa>
+      <srv_cr>1</srv_cr>
+      <srv_un>0</srv_un>
+      <srv_pe>0</srv_pe>
+      <ack>0</ack>
+      <next_check_utime>1367238368</next_check_utime>
+      <next_check_iso>2013-04-29 14:26:08</next_check_iso>
+   </host>
+   <host>
+      <name>dblinux.siv.de</name>
+      <state>0</state>
+      <custom_var>KDBS SIV</custom_var>
+      <icon>layout/images/database.png</icon>
+      <last_check_utime>1367237888</last_check_utime>
+      <last_check_iso>2013-04-29 14:18:08</last_check_iso>
+      <srv_ok>21</srv_ok>
+      <srv_wa>0</srv_wa>
+      <srv_cr>15</srv_cr>
+      <srv_un>0</srv_un>
+      <srv_pe>0</srv_pe>
+      <ack>0</ack>
+      <next_check_utime>1367238198</next_check_utime>
+      <next_check_iso>2013-04-29 14:23:18</next_check_iso>
+   </host>
+   <host>
+      <name>dbwindo.siv.de</name>
+      <state>1</state>
+      <custom_var>KDBS SIV</custom_var>
+      <icon>layout/images/database.png</icon>
+      <last_check_utime>1367237948</last_check_utime>
+      <last_check_iso>2013-04-29 14:19:08</last_check_iso>
+      <srv_ok>29</srv_ok>
+      <srv_wa>1</srv_wa>
+      <srv_cr>4</srv_cr>
+      <srv_un>0</srv_un>
+      <srv_pe>0</srv_pe>
+      <ack>0</ack>
+      <next_check_utime>1367238258</next_check_utime>
+      <next_check_iso>2013-04-29 14:24:18</next_check_iso>
+   </host>
+   <host>
+      <name>vm-w2k3server.siv.de</name>
+      <state>0</state>
+      <custom_var>KBIS SIV</custom_var>
+      <icon>layout/images/pie.png</icon>
+      <last_check_utime>1367237958</last_check_utime>
+      <last_check_iso>2013-04-29 14:19:18</last_check_iso>
+      <srv_ok>31</srv_ok>
+      <srv_wa>0</srv_wa>
+      <srv_cr>3</srv_cr>
+      <srv_un>0</srv_un>
+      <srv_pe>0</srv_pe>
+      <ack>0</ack>
+      <next_check_utime>1367238268</next_check_utime>
+      <next_check_iso>2013-04-29 14:24:28</next_check_iso>
+   </host>
+   <host>
+      <name>bi-as-vertrieb.siv.de</name>
+      <state>0</state>
+      <custom_var>BI KSCBI SIV</custom_var>
+      <icon>layout/images/pie.png</icon>
+      <last_check_utime>1367238000</last_check_utime>
+      <last_check_iso>2013-04-29 14:20:00</last_check_iso>
+      <srv_ok>64</srv_ok>
+      <srv_wa>0</srv_wa>
+      <srv_cr>5</srv_cr>
+      <srv_un>0</srv_un>
+      <srv_pe>0</srv_pe>
+      <ack>0</ack>
+      <next_check_utime>1367238310</next_check_utime>
+      <next_check_iso>2013-04-29 14:25:10</next_check_iso>
+   </host>
+   <host>
+      <name>bi.siv.de</name>
+      <state>0</state>
+      <custom_var>BI KSCBI SIV</custom_var>
+      <icon>layout/images/pie.png</icon>
+      <last_check_utime>1367238000</last_check_utime>
+      <last_check_iso>2013-04-29 14:20:00</last_check_iso>
+      <srv_ok>75</srv_ok>
+      <srv_wa>0</srv_wa>
+      <srv_cr>5</srv_cr>
+      <srv_un>0</srv_un>
+      <srv_pe>0</srv_pe>
+      <ack>0</ack>
+      <next_check_utime>1367238311</next_check_utime>
+      <next_check_iso>2013-04-29 14:25:11</next_check_iso>
+   </host>
+   <host>
+      <name>cottbus-bi.kunden.siv</name>
+      <state>0</state>
+      <custom_var>BI KSCBI STWCOTTBUS</custom_var>
+      <icon>layout/images/pie.png</icon>
+      <last_check_utime>1367238000</last_check_utime>
+      <last_check_iso>2013-04-29 14:20:00</last_check_iso>
+      <srv_ok>77</srv_ok>
+      <srv_wa>1</srv_wa>
+      <srv_cr>2</srv_cr>
+      <srv_un>1</srv_un>
+      <srv_pe>0</srv_pe>
+      <ack>0</ack>
+      <next_check_utime>1367238318</next_check_utime>
+      <next_check_iso>2013-04-29 14:25:18</next_check_iso>
+   </host>
+   <host>
+      <name>cottbus-dwh.kunden.siv</name>
+      <state>0</state>
+      <custom_var>BI KSCDWH STWCOTTBUS</custom_var>
+      <icon>layout/images/database.png</icon>
+      <last_check_utime>1367238000</last_check_utime>
+      <last_check_iso>2013-04-29 14:20:00</last_check_iso>
+      <srv_ok>75</srv_ok>
+      <srv_wa>0</s
+rv_wa>
+      <srv_cr>1</srv_cr>
+      <srv_un>0</srv_un>
+      <srv_pe>0</srv_pe>
+      <ack>0</ack>
+      <next_check_utime>1367238315</next_check_utime>
+      <next_check_iso>2013-04-29 14:25:15</next_check_iso>
+   </host>
+   <host>
+      <name>gloeckle-bi-as.kunden.siv</name>
+      <state>0</state>
+      <custom_var>BI KSCBI GLOECKLE</custom_var>
+      <icon>layout/images/pie.png</icon>
+      <last_check_utime>1367238000</last_check_utime>
+      <last_check_iso>2013-04-29 14:20:00</last_check_iso>
+      <srv_ok>59</srv_ok>
+      <srv_wa>1</srv_wa>
+      <srv_cr>4</srv_cr>
+      <srv_un>7</srv_un>
+      <srv_pe>0</srv_pe>
+      <ack>0</ack>
+      <next_check_utime>1367238315</next_check_utime>
+      <next_check_iso>2013-04-29 14:25:15</next_check_iso>
+   </host>
+   <host>
+      <name>gloeckle-bi-db.kunden.siv</name>
+      <state>0</state>
+      <custom_var>BI KSCDWH GLOECKLE</custom_var>
+      <icon>layout/images/database.png</icon>
+      <last_check_utime>1367238000</last_check_utime>
+      <last_check_iso>2013-04-29 14:20:00</last_check_iso>
+      <srv_ok>68</srv_ok>
+      <srv_wa>0</srv_wa>
+      <srv_cr>0</srv_cr>
+      <srv_un>0</srv_un>
+      <srv_pe>0</srv_pe>
+      <ack>0</ack>
+      <next_check_utime>1367238313</next_check_utime>
+      <next_check_iso>2013-04-29 14:25:13</next_check_iso>
+   </host>
+   <host>
+      <name>neumuenster-db-dwh.kunden.siv</name>
+      <state>0</state>
+      <custom_var>BI KSCDWH STWNEUMUENSTER</custom_var>
+      <icon>layout/images/database.png</icon>
+      <last_check_utime>1367238000</last_check_utime>
+      <last_check_iso>2013-04-29 14:20:00</last_check_iso>
+      <srv_ok>116</srv_ok>
+      <srv_wa>0</srv_wa>
+      <srv_cr>5</srv_cr>
+      <srv_un>1</srv_un>
+      <srv_pe>0</srv_pe>
+      <ack>0</ack>
+      <next_check_utime>1367238314</next_check_utime>
+      <next_check_iso>2013-04-29 14:25:14</next_check_iso>
+   </host>
+   <host>
+      <name>neumuenster-wk-bi.kunden.siv</name>
+      <state>0</state>
+      <custom_var>BI KSCBI STWNEUMUENSTER</custom_var>
+      <icon>layout/images/pie.png</icon>
+      <last_check_utime>1367238000</last_check_utime>
+      <last_check_iso>2013-04-29 14:20:00</last_check_iso>
+      <srv_ok>78</srv_ok>
+      <srv_wa>0</srv_wa>
+      <srv_cr>4</srv_cr>
+      <srv_un>0</srv_un>
+      <srv_pe>0</srv_pe>
+      <ack>0</ack>
+      <next_check_utime>1367238312</next_check_utime>
+      <next_check_iso>2013-04-29 14:25:12</next_check_iso>
+   </host>
+   <host>
+      <name>obi01.siv.de</name>
+      <state>0</state>
+      <custom_var>BI KSCBI SIV</custom_var>
+      <icon>layout/images/pie.png</icon>
+      <last_check_utime>1367238000</last_check_utime>
+      <last_check_iso>2013-04-29 14:20:00</last_check_iso>
+      <srv_ok>69</srv_ok>
+      <srv_wa>0</srv_wa>
+      <srv_cr>4</srv_cr>
+      <srv_un>1</srv_un>
+      <srv_pe>0</srv_pe>
+      <ack>0</ack>
+      <next_check_utime>1367238309</next_check_utime>
+      <next_check_iso>2013-04-29 14:25:09</next_check_iso>
+   </host>
+   <host>
+      <name>parchim-bi-as.kunden.siv</name>
+      <state>0</state>
+      <custom_var>BI KSCBI PARCHIM</custom_var>
+      <icon>layout/images/pie.png</icon>
+      <last_check_utime>1367238000</last_check_utime>
+      <last_check_iso>2013-04-29 14:20:00</last_check_iso>
+      <srv_ok>74</srv_ok>
+      <srv_wa>0</srv_wa>
+      <srv_cr>5</srv_cr>
+      <srv_un>0</srv_un>
+      <srv_pe>0</srv_pe>
+      <ack>0</ack>
+      <next_check_utime>1367238317</next_check_utime>
+      <next_check_iso>2013-04-29 14:25:17</next_check_iso>
+   </host>
+   <host>
+      <name>parchim-db.kunden.siv</name>
+      <state>0</state>
+      <custom_var>BI KSCDWH PARCHIM DBB KSCDB PARCHIM</custom_var>
+      <icon>layout/images/database.png</icon>
+      <last_check_utime>1367238000</last_check_utime>
+      <last_check_iso>2013-04-29 14:20:00</last_check_iso>
+      <srv_ok>125</srv_ok>
+      <srv_wa>0</srv_wa>
+      <srv_cr>3</srv_cr>
+      <srv_un>0</srv_un>
+      <srv_pe>0</srv_pe>
+      <ack>0</ack>
+      <next_check_utime>1367238316</next_check_utime>
+      <next_check_iso>2013-04-29 14:25:16</next_check_iso>
+
+   </host>
+   <host>
+      <name>systemcontrol.siv.de</name>
+      <state>0</state>
+      <custom_var></custom_var>
+      <icon>layout/images/server.png</icon>
+      <last_check_utime>1367238000</last_check_utime>
+      <last_check_iso>2013-04-29 14:20:00</last_check_iso>
+      <srv_ok>19</srv_ok>
+      <srv_wa>0</srv_wa>
+      <srv_cr>0</srv_cr>
+      <srv_un>0</srv_un>
+      <srv_pe>0</srv_pe>
+      <ack>0</ack>
+      <next_check_utime>1367238309</next_check_utime>
+      <next_check_iso>2013-04-29 14:25:09</next_check_iso>
+   </host>
+   <host>
+      <name>vm-obiee-test.siv.de</name>
+      <state>0</state>
+      <custom_var>BI KSCBI SIV</custom_var>
+      <icon>layout/images/pie.png</icon>
+      <last_check_utime>1367238000</last_check_utime>
+      <last_check_iso>2013-04-29 14:20:00</last_check_iso>
+      <srv_ok>66</srv_ok>
+      <srv_wa>2</srv_wa>
+      <srv_cr>5</srv_cr>
+      <srv_un>0</srv_un>
+      <srv_pe>0</srv_pe>
+      <ack>0</ack>
+      <next_check_utime>1367238308</next_check_utime>
+      <next_check_iso>2013-04-29 14:25:08</next_check_iso>
+   </host>
+   <host>
+      <name>vm-w2k3server.siv.de</name>
+      <state>0</state>
+      <custom_var>BI KSCBI SIV</custom_var>
+      <icon>layout/images/pie.png</icon>
+      <last_check_utime>1367238000</last_check_utime>
+      <last_check_iso>2013-04-29 14:20:00</last_check_iso>
+      <srv_ok>67</srv_ok>
+      <srv_wa>0</srv_wa>
+      <srv_cr>4</srv_cr>
+      <srv_un>2</srv_un>
+      <srv_pe>0</srv_pe>
+      <ack>0</ack>
+      <next_check_utime>1367238307</next_check_utime>
+      <next_check_iso>2013-04-29 14:25:07</next_check_iso>
+   </host>
+</hostlist>

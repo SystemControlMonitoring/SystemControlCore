@@ -1,6 +1,7 @@
 #!/usr/bin/perl
 #
 # Include Library Path
+use FCGI;
 use lib '/kSCcore/MOD/live';
 use lib '/kSCcore/MOD/html';
 use lib '/kSCcore/MOD/basic';
@@ -13,6 +14,7 @@ use kSCpostgre;
 use strict;
 use Data::Dumper;
 #
+my $request = FCGI::Request();
 #
 #
 #
@@ -255,50 +257,52 @@ sub FillLiveticker {
 # Output
 #
 # e = encoded, m = module
-if (kSCbasic::CheckUrlKeyValue("e","1","n") == 0) {
-    if (kSCbasic::CheckUrlKeyValue("m","HostFullInfo","y") == 0) {
-	HostFullInfo(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")));
-    } elsif (kSCbasic::CheckUrlKeyValue("m","AllHosts","y") == 0) {
-        AllHosts(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")));
-    } elsif (kSCbasic::CheckUrlKeyValue("m","AllDatabases","y") == 0) {
-        AllDatabases(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")));
-    } elsif (kSCbasic::CheckUrlKeyValue("m","SlimTaov","y") == 0) {
-        SlimTaov(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")));
-    } elsif (kSCbasic::CheckUrlKeyValue("m","ShowCritical","y") == 0) {
-        ShowCritical(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("r")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("l")));
-    } elsif (kSCbasic::CheckUrlKeyValue("m","SelectLiveticker","y") == 0) {
-        SelectLiveticker(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")));
-    } elsif (kSCbasic::CheckUrlKeyValue("m","FillLiveticker","y") == 0) {
-        FillLiveticker(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")));
+while($request->Accept() >= 0) {
+    if (kSCbasic::CheckUrlKeyValue("e","1","n") == 0) {
+	if (kSCbasic::CheckUrlKeyValue("m","HostFullInfo","y") == 0) {
+	    HostFullInfo(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")));
+	} elsif (kSCbasic::CheckUrlKeyValue("m","AllHosts","y") == 0) {
+    	    AllHosts(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")));
+	} elsif (kSCbasic::CheckUrlKeyValue("m","AllDatabases","y") == 0) {
+    	    AllDatabases(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")));
+	} elsif (kSCbasic::CheckUrlKeyValue("m","SlimTaov","y") == 0) {
+    	    SlimTaov(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")));
+	} elsif (kSCbasic::CheckUrlKeyValue("m","ShowCritical","y") == 0) {
+    	    ShowCritical(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("r")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("l")));
+	} elsif (kSCbasic::CheckUrlKeyValue("m","SelectLiveticker","y") == 0) {
+    	    SelectLiveticker(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")));
+	} elsif (kSCbasic::CheckUrlKeyValue("m","FillLiveticker","y") == 0) {
+    	    FillLiveticker(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")));
+	} else {
+	    my $out = kSChtml::ContentType("json");
+	    $out.= kSCbasic::ErrorMessage("json","1");
+	    print $out;
+	}
+    } elsif (kSCbasic::CheckUrlKeyValue("e","0","n") == 0) {
+	if (kSCbasic::CheckUrlKeyValue("m","HostFullInfo","n") == 0) {
+	    HostFullInfo(kSCbasic::GetUrlKeyValue("u"));
+	} elsif (kSCbasic::CheckUrlKeyValue("m","AllHosts","n") == 0) {
+    	    AllHosts(kSCbasic::GetUrlKeyValue("u"));
+	} elsif (kSCbasic::CheckUrlKeyValue("m","AllDatabases","n") == 0) {
+    	    AllDatabases(kSCbasic::GetUrlKeyValue("u"));
+	} elsif (kSCbasic::CheckUrlKeyValue("m","SlimTaov","n") == 0) {
+    	    SlimTaov(kSCbasic::GetUrlKeyValue("u"));
+	} elsif (kSCbasic::CheckUrlKeyValue("m","ShowCritical","n") == 0) {
+    	    ShowCritical(kSCbasic::GetUrlKeyValue("u"),kSCbasic::GetUrlKeyValue("r"),kSCbasic::GetUrlKeyValue("l"));
+	} elsif (kSCbasic::CheckUrlKeyValue("m","SelectLiveticker","n") == 0) {
+    	    SelectLiveticker(kSCbasic::GetUrlKeyValue("u"));
+	} elsif (kSCbasic::CheckUrlKeyValue("m","FillLiveticker","n") == 0) {
+    	    FillLiveticker(kSCbasic::GetUrlKeyValue("u"));
+	} else {
+	    my $out = kSChtml::ContentType("json");
+	    $out.= kSCbasic::ErrorMessage("json","2");
+	    print $out;
+	}
     } else {
 	my $out = kSChtml::ContentType("json");
-	$out.= kSCbasic::ErrorMessage("json","1");
+	$out.= kSCbasic::ErrorMessage("json","0");
 	print $out;
     }
-} elsif (kSCbasic::CheckUrlKeyValue("e","0","n") == 0) {
-    if (kSCbasic::CheckUrlKeyValue("m","HostFullInfo","n") == 0) {
-	HostFullInfo(kSCbasic::GetUrlKeyValue("u"));
-    } elsif (kSCbasic::CheckUrlKeyValue("m","AllHosts","n") == 0) {
-        AllHosts(kSCbasic::GetUrlKeyValue("u"));
-    } elsif (kSCbasic::CheckUrlKeyValue("m","AllDatabases","n") == 0) {
-        AllDatabases(kSCbasic::GetUrlKeyValue("u"));
-    } elsif (kSCbasic::CheckUrlKeyValue("m","SlimTaov","n") == 0) {
-        SlimTaov(kSCbasic::GetUrlKeyValue("u"));
-    } elsif (kSCbasic::CheckUrlKeyValue("m","ShowCritical","n") == 0) {
-        ShowCritical(kSCbasic::GetUrlKeyValue("u"),kSCbasic::GetUrlKeyValue("r"),kSCbasic::GetUrlKeyValue("l"));
-    } elsif (kSCbasic::CheckUrlKeyValue("m","SelectLiveticker","n") == 0) {
-        SelectLiveticker(kSCbasic::GetUrlKeyValue("u"));
-    } elsif (kSCbasic::CheckUrlKeyValue("m","FillLiveticker","n") == 0) {
-        FillLiveticker(kSCbasic::GetUrlKeyValue("u"));
-    } else {
-	my $out = kSChtml::ContentType("json");
-	$out.= kSCbasic::ErrorMessage("json","2");
-	print $out;
-    }
-} else {
-    my $out = kSChtml::ContentType("json");
-    $out.= kSCbasic::ErrorMessage("json","0");
-    print $out;
 }
 #
 # End

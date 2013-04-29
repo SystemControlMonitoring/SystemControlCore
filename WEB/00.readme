@@ -1,10 +1,10 @@
-<!--KERNEL_VERSION:2.130423-->
+<!--KERNEL_VERSION:2.130429-->
 
-<center><h2>kVASy&reg; System Control - Kernel Version 2.130423</h3>
-<p><font size=2>Entwicklungslinie 2 T23 M04 Y13 - Steffen Baresel</font></p></center>
+<center><h2>kVASy&reg; System Control - Core 2.130429</h3>
+<p><font size=2>Entwicklungslinie 2 - Steffen Baresel</font></p></center>
 <div>
 <i><font size=3>Fehler an:</font></i><br>
-<b>Mail: steffen.baresel@siv.de</b><br>
+<b>Mail: kvasysystemcontrol@siv.de</b><br>
 <b>Tel: 0381 - 2524 0</b>
 </div>
 <br></br><br></br>
@@ -16,7 +16,7 @@
 </font>
 <hr>
 <div>
-<i><center>Nachfolgend erhalten Sie eine &Uuml;bersicht der WEB Funktionen der REST Schnittstelle:</center></i>
+<i><center>Nachfolgend eine &Uuml;bersicht der Funktionen der REST Schnittstelle:</center></i>
 </div>
 <hr>
 <br></br>

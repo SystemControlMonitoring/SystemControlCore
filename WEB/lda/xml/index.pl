@@ -1,6 +1,7 @@
 #!/usr/bin/perl
 #
 # Include Library Path
+use FCGI;
 use lib '/kSCcore/MOD/live';
 use lib '/kSCcore/MOD/html';
 use lib '/kSCcore/MOD/basic';
@@ -13,6 +14,7 @@ use kSCpostgre;
 use strict;
 use Data::Dumper;
 #
+my $request = FCGI::Request();
 #
 #
 #
@@ -338,6 +340,8 @@ sub FillLiveticker {
 # Output
 #
 # e = encoded, m = module
+while($request->Accept() >= 0) {
+
 if (kSCbasic::CheckUrlKeyValue("e","1","n") == 0) {
     if (kSCbasic::CheckUrlKeyValue("m","HostFullInfo","y") == 0) {
 	HostFullInfo(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")));
@@ -379,6 +383,8 @@ if (kSCbasic::CheckUrlKeyValue("e","1","n") == 0) {
 } else {
     print kSChtml::ContentType("xml");
     print kSCbasic::ErrorMessage("xml","0");
+}
+
 }
 #
 # End

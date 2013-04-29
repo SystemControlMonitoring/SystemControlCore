@@ -1,6 +1,7 @@
 #!/usr/bin/perl
 #
 # Include Library Path
+use FCGI;
 use lib '/kSCcore/MOD/html';
 use lib '/kSCcore/MOD/basic';
 use lib '/kSCcore/MOD/sysinfo';
@@ -11,6 +12,7 @@ use kSCsysinfo;
 use strict;
 use Data::Dumper;
 #
+my $request = FCGI::Request();
 #
 #
 #
@@ -51,6 +53,8 @@ sub CheckPostgresOpenPorts {
 # Output
 #
 # e = encoded, m = module
+while($request->Accept() >= 0) {
+
 if (kSCbasic::CheckUrlKeyValue("e","1","n") == 0) {
     if (kSCbasic::CheckUrlKeyValue("m","CheckPostgresProcess","y") == 0) {
 	CheckPostgresProcess();
@@ -75,6 +79,8 @@ if (kSCbasic::CheckUrlKeyValue("e","1","n") == 0) {
     my $out = kSChtml::ContentType("json");
     $out.= kSCbasic::ErrorMessage("json","0");
     print $out;
+}
+
 }
 #
 # End
