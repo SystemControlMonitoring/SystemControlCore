@@ -57,19 +57,26 @@ sub AllHosts {
 	$out.="{\"NAME\":\"". $AH[0][$c][0] ."\",\"STATE\":\"". $AH[0][$c][2] ."\",\"CUSTOM_VAR\":\"". uc($AH[0][$c][1][0]) ."\",";
         my @tmp = split(" ", uc($AH[0][$c][1][0]));
         if (kSCbasic::GetHostIcon($AHI{$tmp[0]}) ne "") {
-            $out.="\"ICON\":\"". kSCbasic::GetHostIcon($AHI{$tmp[0]}) ."\"";
+            $out.="\"ICON\":\"". kSCbasic::GetHostIcon($AHI{$tmp[0]}) ."\",";
+            $out.="\"URL\":\"". kSCbasic::GetHostUrl($AHI{$tmp[0]}) ."\"";
         } elsif (kSCbasic::GetHostIcon($AHI{$tmp[1]}) ne "") {
-            $out.="\"ICON\":\"". kSCbasic::GetHostIcon($AHI{$tmp[1]}) ."\"";
+            $out.="\"ICON\":\"". kSCbasic::GetHostIcon($AHI{$tmp[1]}) ."\",";
+            $out.="\"URL\":\"". kSCbasic::GetHostUrl($AHI{$tmp[1]}) ."\"";
         } elsif (kSCbasic::GetHostIcon($AHI{$tmp[2]}) ne "") {
-            $out.="\"ICON\":\"". kSCbasic::GetHostIcon($AHI{$tmp[2]}) ."\"";
+            $out.="\"ICON\":\"". kSCbasic::GetHostIcon($AHI{$tmp[2]}) ."\",";
+            $out.="\"URL\":\"". kSCbasic::GetHostUrl($AHI{$tmp[2]}) ."\"";
         } elsif (kSCbasic::GetHostIcon($AHI{$tmp[3]}) ne "") {
-            $out.="\"ICON\":\"". kSCbasic::GetHostIcon($AHI{$tmp[3]}) ."\"";
+            $out.="\"ICON\":\"". kSCbasic::GetHostIcon($AHI{$tmp[3]}) ."\",";
+            $out.="\"URL\":\"". kSCbasic::GetHostUrl($AHI{$tmp[3]}) ."\"";
         } elsif (kSCbasic::GetHostIcon($AHI{$tmp[4]}) ne "") {
-            $out.="\"ICON\":\"". kSCbasic::GetHostIcon($AHI{$tmp[4]}) ."\"";
+            $out.="\"ICON\":\"". kSCbasic::GetHostIcon($AHI{$tmp[4]}) ."\",";
+            $out.="\"URL\":\"". kSCbasic::GetHostUrl($AHI{$tmp[4]}) ."\"";
         } elsif (kSCbasic::GetHostIcon($AHI{$tmp[5]}) ne "") {
-            $out.="\"ICON\":\"". kSCbasic::GetHostIcon($AHI{$tmp[5]}) ."\"";
+            $out.="\"ICON\":\"". kSCbasic::GetHostIcon($AHI{$tmp[5]}) ."\",";
+            $out.="\"URL\":\"". kSCbasic::GetHostUrl($AHI{$tmp[5]}) ."\"";
         } else {
-            $out.="\"ICON\":\"". kSCbasic::GetHostIcon("ho") ."\"";
+            $out.="\"ICON\":\"". kSCbasic::GetHostIcon("ho") ."\",";
+            $out.="\"URL\":\"". kSCbasic::GetHostUrl("ho") ."\"";
         }
 	$out.=",\"LAST_CHECK_UTIME\":\"". $AH[0][$c][3] ."\",\"LAST_CHECK_ISO\":\"". kSCbasic::ConvertUt2Ts($AH[0][$c][3]) ."\",\"SRV_OK\":\"". $AH[0][$c][4] ."\",\"SRV_WA\":\"". $AH[0][$c][5] ."\",\"SRV_CR\":\"". $AH[0][$c][6] ."\",\"SRV_UN\":\"". $AH[0][$c][7] ."\",\"SRV_PE\":\"". $AH[0][$c][8] ."\",\"ACK\":\"". $AH[0][$c][9] ."\",\"NEXT_CHECK_UTIME\":\"". $AH[0][$c][10] ."\",\"NEXT_CHECK_ISO\":\"". kSCbasic::ConvertUt2Ts($AH[0][$c][10]) ."\"},";
     }

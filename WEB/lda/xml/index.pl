@@ -81,18 +81,25 @@ sub AllHosts {
 	my @tmp = split(" ", uc($AH[0][$c][1][0]));
 	if (kSCbasic::GetHostIcon($AHI{$tmp[0]}) ne "") {
 	    print "      <icon>". kSCbasic::GetHostIcon($AHI{$tmp[0]}) ."</icon>\n";
+	    print "      <icon>". kSCbasic::GetHostUrl($AHI{$tmp[0]}) ."</icon>\n";
 	} elsif (kSCbasic::GetHostIcon($AHI{$tmp[1]}) ne "") {
 	    print "      <icon>". kSCbasic::GetHostIcon($AHI{$tmp[1]}) ."</icon>\n";
+	    print "      <icon>". kSCbasic::GetHostUrl($AHI{$tmp[1]}) ."</icon>\n";
 	} elsif (kSCbasic::GetHostIcon($AHI{$tmp[2]}) ne "") {
 	    print "      <icon>". kSCbasic::GetHostIcon($AHI{$tmp[2]}) ."</icon>\n";
+	    print "      <icon>". kSCbasic::GetHostUrl($AHI{$tmp[2]}) ."</icon>\n";
 	} elsif (kSCbasic::GetHostIcon($AHI{$tmp[3]}) ne "") {
 	    print "      <icon>". kSCbasic::GetHostIcon($AHI{$tmp[3]}) ."</icon>\n";
+	    print "      <icon>". kSCbasic::GetHostUrl($AHI{$tmp[3]}) ."</icon>\n";
 	} elsif (kSCbasic::GetHostIcon($AHI{$tmp[4]}) ne "") {
 	    print "      <icon>". kSCbasic::GetHostIcon($AHI{$tmp[4]}) ."</icon>\n";
+	    print "      <icon>". kSCbasic::GetHostUrl($AHI{$tmp[4]}) ."</icon>\n";
 	} elsif (kSCbasic::GetHostIcon($AHI{$tmp[5]}) ne "") {
 	    print "      <icon>". kSCbasic::GetHostIcon($AHI{$tmp[5]}) ."</icon>\n";
+	    print "      <icon>". kSCbasic::GetHostUrl($AHI{$tmp[5]}) ."</icon>\n";
 	} else {
 	    print "      <icon>". kSCbasic::GetHostIcon("ho") ."</icon>\n";
+	    print "      <icon>". kSCbasic::GetHostUrl("ho") ."</icon>\n";
 	}
 	print "      <last_check_utime>". $AH[0][$c][3] ."</last_check_utime>\n";
 	print "      <last_check_iso>". kSCbasic::ConvertUt2Ts($AH[0][$c][3]) ."</last_check_iso>\n";
