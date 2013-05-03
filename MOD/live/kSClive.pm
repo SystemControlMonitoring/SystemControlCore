@@ -409,6 +409,29 @@ sub CheckIcingaBackendFunction {
     return ($check);
 }
 #
+########################################################
+#                                                      #
+# Get Configurations                                   #
+#                                                      #
+########################################################
+sub AccessHost {
+    my $uid = shift;
+    my $host = shift;
+    my $cc=0;
+    my @check = $ml->selectall_arrayref("GET hosts\nColumns: name\nFilter: name = ". $host ."\nAuthUser: ". $uid);
+    for (my $c=0;$c<scalar(@{$check[0]});$c++) { $cc++; }
+    return ($cc);
+}
+#
+sub GetConfiguredDatabases {
+    my $uid = shift;
+    my $host = shift;
+    my @check = $ml->selectall_arrayref("GET services\nColumns: display_name\nFilter: host_name = ". $host ."\nFilter: display_name ~ DBSTATUS\nFilter: display_name ~ DBST\nOr: 2\nAuthUser: ". $uid);
+    return (@check);
+}
+#
+
+
 close ($CF);
 #
 1;
