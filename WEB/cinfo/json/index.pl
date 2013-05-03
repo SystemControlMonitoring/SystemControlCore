@@ -77,6 +77,26 @@ sub DBINFO {
 
 }
 #
+sub SysJqGrid {
+    my $client = shift;
+    my $uid = shift;
+    my $module = shift;
+    my $search = shift;
+    my $rows = shift;
+    my $page = shift;
+    my $sidx = shift;
+    my $sord = shift;
+    if ( kSClive::AccessHost($uid,$client) == "1" ) {
+	my $info = kSChttp::GetJqGridClientInfo($client,"6555","Wmic.cpl",$module,$search,$rows,$page,$sidx,$sord);
+	print kSChtml::ContentType("json");
+	print $info;
+    } else {
+	my $out = kSChtml::ContentType("json");
+	$out.= kSCbasic::ErrorMessage("json","2");
+	print $out;
+    }
+}
+#
 #
 #
 #
@@ -92,6 +112,8 @@ while($request->Accept() >= 0) {
 	    SYSINFO(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("c")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")));
 	} elsif (kSCbasic::CheckUrlKeyValue("m","DBINFO","y") == 0) {
 	    DBINFO(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("c")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")));
+	} elsif (kSCbasic::CheckUrlKeyValue("m","SysJqGrid","y") == 0) {
+	    SysJqGrid(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("c")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("cm")),kSCbasic::GetUrlKeyValue("_search"),kSCbasic::GetUrlKeyValue("rows"),kSCbasic::GetUrlKeyValue("page"),kSCbasic::GetUrlKeyValue("sidx"),kSCbasic::GetUrlKeyValue("sord"));
 	} else {
 	    my $out = kSChtml::ContentType("json");
 	    $out.= kSCbasic::ErrorMessage("json","1");
@@ -102,6 +124,8 @@ while($request->Accept() >= 0) {
 	    SYSINFO(kSCbasic::GetUrlKeyValue("c"),kSCbasic::GetUrlKeyValue("u"));
 	} elsif (kSCbasic::CheckUrlKeyValue("m","DBINFO","n") == 0) {
 	    DBINFO(kSCbasic::GetUrlKeyValue("c"),kSCbasic::GetUrlKeyValue("u"));
+	} elsif (kSCbasic::CheckUrlKeyValue("m","SysJqGrid","n") == 0) {
+	    SysJqGrid(kSCbasic::GetUrlKeyValue("c"),kSCbasic::GetUrlKeyValue("u"),kSCbasic::GetUrlKeyValue("cm"),kSCbasic::GetUrlKeyValue("_search"),kSCbasic::GetUrlKeyValue("rows"),kSCbasic::GetUrlKeyValue("page"),kSCbasic::GetUrlKeyValue("sidx"),kSCbasic::GetUrlKeyValue("sord"));
 	} elsif (kSCbasic::CheckUrlKeyValue("m","TT","n") == 0) {
 	    TT();
 	} else {
