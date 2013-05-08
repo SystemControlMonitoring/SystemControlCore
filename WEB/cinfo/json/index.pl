@@ -44,6 +44,11 @@ sub SYSINFO {
     if ( kSClive::AccessHost($uid,$client) == "1" ) {
 	my $info = kSChttp::GetClientInfo($client,"6555","Wmic.cpl","SYSINFO");
 	print kSChtml::ContentType("json");
+	if ($info =~ /[Ww][Ii][Nn][Dd][Oo][Ww][Ss]/i || $info =~ /[Mm][Ii][Cc][Rr][Oo][Ss][Oo][Ff][Tt]/i) {
+	    $info =~ s/{\"HOSTNAME\":/{\"TYPE\":\"WIN\",\"HOSTNAME\":/g;
+	} else {
+	    $info =~ s/{\"HOSTNAME\":/{\"TYPE\":\"LIN\",\"HOSTNAME\":/g;
+	}
 	print $info;
     } else {
 	my $out = kSChtml::ContentType("json");
