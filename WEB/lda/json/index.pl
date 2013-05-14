@@ -150,8 +150,12 @@ sub SlimTaov {
 #
 sub ShowCritical {
     my $uid = shift;
-    my $row = shift;
-    my $lns = shift;
+    my $out;
+    #####
+    #
+    # Get Data and fill central array
+    #
+    #####
     my @SCS = kSClive::ShowCriticalServices($uid);
     my @SCH = kSClive::ShowCriticalHosts($uid);
     my @temp;
@@ -162,28 +166,30 @@ sub ShowCritical {
         push @temp, [$SCH[0][$c][0],$SCH[0][$c][1],$SCH[0][$c][2],$SCH[0][$c][3],$SCH[0][$c][4],$SCH[0][$c][5]];
     }
     my @tmp = reverse sort {$a->[0] cmp $b->[0]} @temp;
-    my $cc;
-    my $out;
-    if ($lns > 0) {
-        $cc = $lns;
-    } else {
-        $cc = scalar(@tmp);
-    }
-    for (my $c=0;$c<$cc;$c++) {
-        $out.="{\"TIMESTAMP_UTIME\":\"". $tmp[$c][0] ."\",\"TIMESTAMP_ISO\":\"". kSCbasic::ConvertUt2Ts($tmp[$c][0]) ."\",\"DISPLAY_NAME\":\"". $tmp[$c][1] ."\",\"HOST_NAME\":\"". $tmp[$c][2] ."\",\"SERVICE_STATE\":\"". kSCbasic::GetStatusIcon($tmp[$c][3],"service") ."\",";
-        if ($tmp[$c][4] eq "0") {
-    	    $out.="\"HOST_STATE\":\"HOST ONLINE\",";
-    	} else {
-    	    $out.="\"HOST_STATE\":\"HOST OFFLINE\",";
-    	}
-        if ($row > 0) {
-            $out.="\"OUTPUT\":\"". substr(kSCbasic::EncodeHTML($tmp[$c][5]), 0, $row) ." [...]\"";
+    #####
+    #
+    # Get lines
+    #
+    #####
+    for (my $c=0;$c<scalar(@tmp);$c++) {
+	if ($tmp[$c][1] eq $tmp[$c][2]) {
+    	    $out.="{\"SERVICE_STATUS\":\"". kSCbasic::GetStatusIcon($tmp[$c][3],"host") ."\",\"SERVICE_NAME\":\"\",\"HOST_NAME\":\"<b>". $tmp[$c][2] ."</b>\",\"TIMESTAMP\":\"". $tmp[$c][0] ."\",";
         } else {
-            $out.="\"OUTPUT\":\"". kSCbasic::EncodeHTML($tmp[$c][5]) ."\"";
+    	    $out.="{\"SERVICE_STATUS\":\"". kSCbasic::GetStatusIcon($tmp[$c][3],"service") ."\",\"SERVICE_NAME\":\"". $tmp[$c][1] ."\",\"HOST_NAME\":\"<b>". $tmp[$c][2] ."</b>\",\"TIMESTAMP\":\"". $tmp[$c][0] ."\",";
         }
-        $out.="},";
+        if ($tmp[$c][4] eq "0") {
+    	    $out.="\"HOST_STATUS\":\"<font class=fok>Online-Host</font>\",";
+    	} else {
+    	    $out.="\"HOST_STATUS\":\"<font class=fcr>Offline-Host</font>\",";
+    	}
+        $out.="\"OUTPUT\":\"". kSCbasic::EncodeHTML($tmp[$c][5]) ."\"},";
     }
     $out = substr($out, 0, -1);
+    #####
+    #
+    # Output
+    #
+    #####
     print kSChtml::ContentType("json");
     print "[". $out ."]";
 }
@@ -275,7 +281,7 @@ while($request->Accept() >= 0) {
 	} elsif (kSCbasic::CheckUrlKeyValue("m","SlimTaov","y") == 0) {
     	    SlimTaov(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")));
 	} elsif (kSCbasic::CheckUrlKeyValue("m","ShowCritical","y") == 0) {
-    	    ShowCritical(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("r")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("l")));
+    	    ShowCritical(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")),kSCbasic::GetUrlKeyValue("_search"),kSCbasic::GetUrlKeyValue("rows"),kSCbasic::GetUrlKeyValue("page"),kSCbasic::GetUrlKeyValue("sidx"),kSCbasic::GetUrlKeyValue("sord"));
 	} elsif (kSCbasic::CheckUrlKeyValue("m","SelectLiveticker","y") == 0) {
     	    SelectLiveticker(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")));
 	} elsif (kSCbasic::CheckUrlKeyValue("m","FillLiveticker","y") == 0) {
@@ -295,7 +301,7 @@ while($request->Accept() >= 0) {
 	} elsif (kSCbasic::CheckUrlKeyValue("m","SlimTaov","n") == 0) {
     	    SlimTaov(kSCbasic::GetUrlKeyValue("u"));
 	} elsif (kSCbasic::CheckUrlKeyValue("m","ShowCritical","n") == 0) {
-    	    ShowCritical(kSCbasic::GetUrlKeyValue("u"),kSCbasic::GetUrlKeyValue("r"),kSCbasic::GetUrlKeyValue("l"));
+    	    ShowCritical(kSCbasic::GetUrlKeyValue("u"),kSCbasic::GetUrlKeyValue("_search"),kSCbasic::GetUrlKeyValue("rows"),kSCbasic::GetUrlKeyValue("page"),kSCbasic::GetUrlKeyValue("sidx"),kSCbasic::GetUrlKeyValue("sord"));
 	} elsif (kSCbasic::CheckUrlKeyValue("m","SelectLiveticker","n") == 0) {
     	    SelectLiveticker(kSCbasic::GetUrlKeyValue("u"));
 	} elsif (kSCbasic::CheckUrlKeyValue("m","FillLiveticker","n") == 0) {
