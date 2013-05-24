@@ -173,14 +173,14 @@ sub ShowCritical {
     #####
     for (my $c=0;$c<scalar(@tmp);$c++) {
 	if ($tmp[$c][1] eq $tmp[$c][2]) {
-    	    $out.="{\"SERVICE_STATUS\":\"". kSCbasic::GetStatusIcon($tmp[$c][3],"host") ."\",\"SERVICE_NAME\":\"\",\"HOST_NAME\":\"<b>". $tmp[$c][2] ."</b>\",\"TIMESTAMP\":\"". $tmp[$c][0] ."\",";
+    	    $out.="{\"SERVICE_STATUS_ICON\":\"". kSCbasic::GetStatusIcon($tmp[$c][3],"host") ."\",\"SERVICE_STATUS\":\"". $tmp[$c][3] ."\",\"SERVICE_NAME\":\"\",\"HOST_NAME\":\"". $tmp[$c][2] ."\",\"TIMESTAMP\":\"". $tmp[$c][0] ."\",";
         } else {
-    	    $out.="{\"SERVICE_STATUS\":\"". kSCbasic::GetStatusIcon($tmp[$c][3],"service") ."\",\"SERVICE_NAME\":\"". $tmp[$c][1] ."\",\"HOST_NAME\":\"<b>". $tmp[$c][2] ."</b>\",\"TIMESTAMP\":\"". $tmp[$c][0] ."\",";
+    	    $out.="{\"SERVICE_STATUS_ICON\":\"". kSCbasic::GetStatusIcon($tmp[$c][3],"service") ."\",\"SERVICE_STATUS\":\"". $tmp[$c][3] ."\",\"SERVICE_NAME\":\"". $tmp[$c][1] ."\",\"HOST_NAME\":\"". $tmp[$c][2] ."\",\"TIMESTAMP\":\"". $tmp[$c][0] ."\",";
         }
         if ($tmp[$c][4] eq "0") {
-    	    $out.="\"HOST_STATUS\":\"<font class=fok>Online-Host</font>\",";
+    	    $out.="\"HOST_STATUS\":\"<font class='fok FontBigShowCritical'>Host ist Online.</font>\",";
     	} else {
-    	    $out.="\"HOST_STATUS\":\"<font class=fcr>Offline-Host</font>\",";
+    	    $out.="\"HOST_STATUS\":\"<font class='fcr FontBigShowCritical'>Host ist Offline.</font>\",";
     	}
         $out.="\"OUTPUT\":\"". kSCbasic::EncodeHTML($tmp[$c][5]) ."\"},";
     }
