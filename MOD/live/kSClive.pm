@@ -33,7 +33,7 @@ my $ml = Monitoring::Livestatus->new(
 #########################################################
 sub HostFullInfo {
     my $uid = shift;
-    my $out = $ml->selectall_arrayref("GET hosts\nColumns: host_name address state last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending acknowledged plugin_output next_check\nAuthUser: ". $uid);
+    my $out = $ml->selectall_arrayref("GET hosts\nColumns: host_name custom_variable_values address state last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending acknowledged plugin_output next_check\nAuthUser: ". $uid);
     return ($out);
 }
 #
@@ -63,13 +63,13 @@ sub TaovHosts {
 #
 sub ShowCriticalHosts {
     my $uid = shift;
-    my $out = $ml->selectall_arrayref("GET hosts\nColumns: last_check display_name host_name state host_state plugin_output\nFilter: scheduled_downtime_depth = 0\nFilter: host_scheduled_downtime_depth = 0\nFilter: acknowledged = 0\nFilter: host_acknowledged = 0\nFilter: last_state != 0\nFilter: state > 0\nAuthUser: ". $uid);
+    my $out = $ml->selectall_arrayref("GET hosts\nColumns: last_check display_name host_name state host_state plugin_output\nFilter: state > 0\nAuthUser: ". $uid);
     return ($out);
 }
 #
 sub ShowCriticalServices {
     my $uid = shift;
-    my $out = $ml->selectall_arrayref("GET services\nColumns: last_check display_name host_name state host_state plugin_output\nFilter: scheduled_downtime_depth = 0\nFilter: host_scheduled_downtime_depth = 0\nFilter: acknowledged = 0\nFilter: host_acknowledged = 0\nFilter: last_state != 0\nFilter: state > 0\nAuthUser: ". $uid);
+    my $out = $ml->selectall_arrayref("GET services\nColumns: last_check display_name host_name state host_state plugin_output\nFilter: state > 0\nAuthUser: ". $uid);
     return ($out);
 }
 #
