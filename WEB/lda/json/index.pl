@@ -136,41 +136,43 @@ sub SlimTaov {
     my $uid = shift;
     my @TAOV = kSClive::TaovServices($uid);
     my @HTOV = kSClive::TaovHosts($uid);
-    my $hstok=0; my $hstcr=0; my $hstun=0;
-    my $hstnacr=0; my $hstnaun=0;
-    my $hstacr=0; my $hstaun=0;
-    my $srvok=0; my $srvwa=0; my $srvcr=0; my $srvun=0;
-    my $srvnawa=0; my $srvnacr=0; my $srvnaun=0;
-    my $srvawa=0; my $srvacr=0; my $srvaun=0;
-    my $srvnawaoff=0; my $srvnacroff=0; my $srvnaunoff=0;
-    my $pending=0;
-    for (my $c=0;$c<scalar(@{$HTOV[0]});$c++) {
-        $hstok = $HTOV[0][$c][0] + $hstok;
-        $hstcr = $HTOV[0][$c][1] + $hstcr;
-        $hstnacr = $HTOV[0][$c][2] + $hstnacr;
-        $hstacr = $HTOV[0][$c][3] + $hstacr;
-        $hstun = $HTOV[0][$c][4] + $hstun;
-        $hstnaun = $HTOV[0][$c][5] + $hstnaun;
-        $hstaun = $HTOV[0][$c][6] + $hstaun;
-    }
-    for (my $c=0;$c<scalar(@{$TAOV[0]});$c++) {
-        $srvok = $TAOV[0][$c][0] + $srvok;
-        $srvwa = $TAOV[0][$c][1] + $srvwa;
-        $srvnawa = $TAOV[0][$c][2] + $srvnawa;
-        $srvawa = $TAOV[0][$c][3] + $srvawa;
-        $srvnawaoff = $TAOV[0][$c][4] + $srvnawaoff;
-        $srvcr = $TAOV[0][$c][5] + $srvcr;
-        $srvnacr = $TAOV[0][$c][6] + $srvnacr;
-        $srvacr = $TAOV[0][$c][7] + $srvacr;
-        $srvnacroff = $TAOV[0][$c][8] + $srvnacroff;
-        $srvun = $TAOV[0][$c][9] + $srvun;
-        $srvnaun = $TAOV[0][$c][10] + $srvnaun;
-        $srvaun = $TAOV[0][$c][11] + $srvaun;
-        $srvnaunoff = $TAOV[0][$c][12] + $srvnaunoff;
-        $pending = $TAOV[0][$c][13] + $pending;
-    }
+    my $c=0;
+    # Hosts
+    my $hstok = $HTOV[0][$c][0];
+    my $hstcr = $HTOV[0][$c][1];
+    my $hstnacr = $HTOV[0][$c][2];
+    my $hstacr = $HTOV[0][$c][3];
+    my $hstun = $HTOV[0][$c][4];
+    my $hstnaun = $HTOV[0][$c][5];
+    my $hstaun = $HTOV[0][$c][6];
+    # Services
+    #
+    # Ok
+    my $srvoka = $TAOV[0][$c][0];
+    my $srvok = $TAOV[0][$c][1];
+    # Warning
+    my $srvwaa = $TAOV[0][$c][2];
+    my $srvwa = $TAOV[0][$c][3];
+    my $srvnawa = $TAOV[0][$c][4];
+    my $srvawa = $TAOV[0][$c][5];
+    my $srvnawaoff = $TAOV[0][$c][6];
+    # Critical
+    my $srvcra = $TAOV[0][$c][7];
+    my $srvcr = $TAOV[0][$c][8];
+    my $srvnacr = $TAOV[0][$c][9];
+    my $srvacr = $TAOV[0][$c][10];
+    my $srvnacroff = $TAOV[0][$c][11];
+    # Unknown
+    my $srvuna = $TAOV[0][$c][12];
+    my $srvun = $TAOV[0][$c][13];
+    my $srvnaun = $TAOV[0][$c][14];
+    my $srvaun = $TAOV[0][$c][15];
+    my $srvnaunoff = $TAOV[0][$c][16];
+    # Pending
+    my $pending = $TAOV[0][$c][17];
+    # Output
     print kSChtml::ContentType("json");
-    print "\"HOST\":{\"OK\":{\"COUNT\":\"". $hstok ."\"},\"CRITICAL\":{\"COUNT\":\"". $hstcr ."\",\"NACK\":\"". $hstnacr ."\",\"ACK\":\"". $hstacr ."\"},\"UNREACHABLE\":{\"COUNT\":\"". $hstun ."\",\"NACK\":\"". $hstnaun ."\",\"ACK\":\"". $hstaun ."\"}},\"SERVICE\":{\"OK\":{\"COUNT_ON\":\"". $srvok ."\"},\"WARNING\":{\"COUNT_ON\":\"". $srvwa ."\",\"NACK_ON\":\"". $srvnawa ."\",\"ACK_ON\":\"". $srvawa ."\",\"NACK_OFF\":\"". $srvnawaoff ."\"},\"CRITICAL\":{\"COUNT_ON\":\"". $srvcr ."\",\"NACK_ON\":\"". $srvnacr ."\",\"ACK_ON\":\"". $srvacr ."\",\"NACK_OFF\":\"". $srvnacroff ."\"},\"UNKNOWN\":{\"COUNT_ON\":\"". $srvun ."\",\"NACK_ON\":\"". $srvnaun ."\",\"ACK_ON\":\"". $srvaun ."\",\"NACK_OFF\":\"". $srvnaunoff ."\"},\"PENDING\":{\"COUNT_ON\":\"". $pending ."\"}}";
+    print "\"HOST\":{\"OK\":{\"COUNT\":\"". $hstok ."\"},\"CRITICAL\":{\"COUNT\":\"". $hstcr ."\",\"NACK\":\"". $hstnacr ."\",\"ACK\":\"". $hstacr ."\"},\"UNREACHABLE\":{\"COUNT\":\"". $hstun ."\",\"NACK\":\"". $hstnaun ."\",\"ACK\":\"". $hstaun ."\"}},\"SERVICE\":{\"OK\":{\"COUNT_ALL\":\"". $srvoka ."\",\"COUNT_ON\":\"". $srvok ."\"},\"WARNING\":{\"COUNT_ALL\":\"". $srvwaa ."\",\"COUNT_ON\":\"". $srvwa ."\",\"NACK_ON\":\"". $srvnawa ."\",\"ACK_ON\":\"". $srvawa ."\",\"NACK_OFF\":\"". $srvnawaoff ."\"},\"CRITICAL\":{\"COUNT_ALL\":\"". $srvcra ."\",\"COUNT_ON\":\"". $srvcr ."\",\"NACK_ON\":\"". $srvnacr ."\",\"ACK_ON\":\"". $srvacr ."\",\"NACK_OFF\":\"". $srvnacroff ."\"},\"UNKNOWN\":{\"COUNT_ALL\":\"". $srvuna ."\",\"COUNT_ON\":\"". $srvun ."\",\"NACK_ON\":\"". $srvnaun ."\",\"ACK_ON\":\"". $srvaun ."\",\"NACK_OFF\":\"". $srvnaunoff ."\"},\"PENDING\":{\"COUNT_ON\":\"". $pending ."\"}}";
 }
 #
 sub ShowCritical {
@@ -221,25 +223,15 @@ sub ShowCritical {
 #
 sub SelectLiveticker {
     my $uid = shift;
-    my $row = shift;
-    my $lns = shift;
     my $cut = time;
     my %AHI = kSCpostgre::AllHostIcons();
     my $out;
     my $sth = kSCpostgre::SelectLiveticker($uid);
     while ( (my $hn,my $cv, my $hs,my $sn,my $st,my $ot,my $ts) = $sth->fetchrow_array()) {
-	$out.="{\"TIMESTAMP_UTIME\":\"". $ts ."\",\"TIMESTAMP_ISO\":\"". kSCbasic::ConvertUt2Ts($ts) ."\",";
-        if ( $cut-300 < $ts ) {
-            $out.="\"INCIDENT\":\"NEW\",";
-        } else {
-            $out.="\"INCIDENT\":\"NOTICED\",";
-        }
+	$out.="{\"TIMESTAMP\":\"". $ts ."\",";
+        if ( $cut-300 < $ts ) { $out.="\"INCIDENT\":\"NEW\","; } else { $out.="\"INCIDENT\":\"NOTICED\","; }
         $out.="\"DISPLAY_NAME\":\"". $sn ."\",\"HOST_NAME\":\"". $hn ."\",\"SERVICE_STATE\":\"". kSCbasic::GetStatusIcon($st,"service") ."\",";
-        if ($hs eq "0") {
-            $out.="\"HOST_STATE\":\"HOST ONLINE\",";
-        } else {
-    	    $out.="\"HOST_STATE\":\"HOST OFFLINE\",";
-        }
+        if ($hs eq "0") { $out.="\"HOST_STATE\":\"HOST ONLINE\","; } else { $out.="\"HOST_STATE\":\"HOST OFFLINE\","; }
         $out.="\"CUSTOM_VAR\":\"". uc($cv) ."\",";
         my @tp = split(" ", uc($cv));
         if (kSCbasic::GetHostIcon($AHI{$tp[0]}) ne "") {
@@ -257,11 +249,7 @@ sub SelectLiveticker {
         } else {
             $out.="\"ICON\":\"". kSCbasic::GetHostIcon("ho") ."\",";
         }
-        #if ($row > 0) {
-        #    $out.="\"OUTPUT\":\"". substr(kSCbasic::EncodeHTML($ot), 0, $row) ." [...]\"";
-        #} else {
-            $out.="\"OUTPUT\":\"". kSCbasic::EncodeHTML($ot) ."\"";
-        #}
+        $out.="\"OUTPUT\":\"". kSCbasic::EncodeHTML($ot) ."\"";
         $out.="},";
     }
     $out = substr($out, 0, -1);

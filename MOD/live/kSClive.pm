@@ -51,7 +51,7 @@ sub AllDatabases {
 #
 sub TaovServices {
     my $uid = shift;
-    my $out = $ml->selectall_arrayref("GET services\nStats: state = 0\nStats: host_state = 0\nStatsAnd: 2\nStats: state = 1\nStats: host_state = 0\nStatsAnd: 2\nStats: state = 1\nStats: acknowledged = 0\nStats: host_state = 0\nStatsAnd: 3\nStats: state = 1\nStats: acknowledged = 1\nStats: host_state = 0\nStatsAnd: 3\nStats: state = 1\nStats: acknowledged = 0\nStats: host_state > 0\nStatsAnd: 3\nStats: state = 2\nStats: host_state = 0\nStatsAnd: 2\nStats: state = 2\nStats: acknowledged = 0\nStats: host_state = 0\nStatsAnd: 3\nStats: state = 2\nStats: acknowledged = 1\nStats: host_state = 0\nStatsAnd: 3\nStats: state = 2\nStats: acknowledged = 0\nStats: host_state > 0\nStatsAnd: 3\nStats: state = 3\nStats: host_state = 0\nStatsAnd: 2\nStats: state = 3\nStats: acknowledged = 0\nStats: host_state = 0\nStatsAnd: 3\nStats: state = 3\nStats: acknowledged = 1\nStats: host_state = 0\nStatsAnd: 3\nStats: state = 3\nStats: acknowledged = 0\nStats: host_state > 0\nStatsAnd: 3\nStats: sum host_num_services_pending\nAuthUser: ". $uid);
+    my $out = $ml->selectall_arrayref("GET services\nStats: state = 0\nStats: state = 0\nStats: host_state = 0\nStatsAnd: 2\nStats: state = 1\nStats: state = 1\nStats: host_state = 0\nStatsAnd: 2\nStats: state = 1\nStats: acknowledged = 0\nStats: host_state = 0\nStatsAnd: 3\nStats: state = 1\nStats: acknowledged = 1\nStats: host_state = 0\nStatsAnd: 3\nStats: state = 1\nStats: acknowledged = 0\nStats: host_state > 0\nStatsAnd: 3\nStats: state = 2\nStats: state = 2\nStats: host_state = 0\nStatsAnd: 2\nStats: state = 2\nStats: acknowledged = 0\nStats: host_state = 0\nStatsAnd: 3\nStats: state = 2\nStats: acknowledged = 1\nStats: host_state = 0\nStatsAnd: 3\nStats: state = 2\nStats: acknowledged = 0\nStats: host_state > 0\nStatsAnd: 3\nStats: state = 3\nStats: state = 3\nStats: host_state = 0\nStatsAnd: 2\nStats: state = 3\nStats: acknowledged = 0\nStats: host_state = 0\nStatsAnd: 3\nStats: state = 3\nStats: acknowledged = 1\nStats: host_state = 0\nStatsAnd: 3\nStats: state = 3\nStats: acknowledged = 0\nStats: host_state > 0\nStatsAnd: 3\nStats: sum host_num_services_pending\nAuthUser: ". $uid);
     return ($out);
 }
 #
@@ -214,12 +214,40 @@ sub HostUnAckDt {
     my $out = $ml->selectall_arrayref("GET hosts\nColumns: host_name state last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: state = 2\nFilter: scheduled_downtime_depth > 0\nFilter: acknowledged > 0\nAuthUser: ". $uid); 
     return ($out);
 }
-#
+#########################################################
+#                                                       #
+#                       Search                          #
+#                                                       #
+#########################################################
 sub SearchHost {
     # Alle eingerichteten Hosts 
     my $uid = shift;
     my $searchstring = shift;
-    my $out = $ml->selectall_arrayref("GET hosts\nColumns: host_name state last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: host_name ~~ ". $searchstring ."\nAuthUser: ". $uid);
+    my $out = $ml->selectall_arrayref("GET hosts\nColumns: host_name custom_variable_values address state last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending\nFilter: host_name ~~ ". $searchstring ."\nAuthUser: ". $uid);
+    return ($out);
+}
+#
+sub SearchService {
+    # Liste Alle Services zu einem gesuchten Host
+    my $uid = shift;
+    my $searchstring = shift;
+    my $out = $ml->selectall_arrayref("GET services\nColumns: host_name display_name state last_check plugin_output long_plugin_output acknowledged next_check\nFilter: display_name ~~ ". $searchstring ."\nAuthUser: ". $uid);
+    return ($out);
+}
+#
+sub SearchDatabase {
+    # Liste Alle Datenbanken
+    my $uid = shift;
+    my $searchstring = shift;
+    my $out = $ml->selectall_arrayref("GET services\nColumns: host_name display_name state last_check plugin_output long_plugin_output acknowledged next_check\nFilter: display_name ~~ ". $searchstring ."\nFilter: display_name ~ DBSTATUS\nFilter: display_name ~ DBST\nOr: 2\nAuthUser: ". $uid);
+    return ($out);
+}
+#
+sub SearchHostgroup {
+    # Liste Alle Datenbanken
+    my $uid = shift;
+    my $searchstring = shift;
+    my $out = $ml->selectall_arrayref("GET hostgroups\nColumns: name alias \nFilter: alias != check_mk\nFilter: name ~~ ". $searchstring ."\nAuthUser: ". $uid);
     return ($out);
 }
 #########################################################
