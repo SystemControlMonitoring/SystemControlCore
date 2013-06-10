@@ -48,6 +48,20 @@ sub WhichHostIcon {
     $dbh->disconnect;
 }
 #
+sub WhichHostLongName {
+    my $htypsn = shift;
+    my $HTYPLN;
+    my $dbh = DBConnect();
+    my $sth = $dbh->prepare("select HTYPLN from class_hosttypes where HTYPSN=?");
+    $sth->execute(uc($htypsn));
+    while ( (my $IDen) = $sth->fetchrow_array() ) {
+        $HTYPLN = $IDen;
+    }
+    return ($HTYPLN);
+    $sth->finish;
+    $dbh->disconnect;
+}
+#
 sub AllHostIcons {
     # Assoziatives Array KEY => VALUE
     my $HTYPICON;

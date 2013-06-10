@@ -9,6 +9,8 @@ Format: <i><b>JSON</b></i><br>
     <li><b>SYSINFO</b> - System Information URL: <a href="/cinfo/json/?e=1&m=U1lTSU5GTw==Jkd873&c=ZGJ3aW5kby5zaXYuZGU=Hd783d&u=c2JhcmVzZWw=LKHld3">/cinfo/json/?e=1&m=U1lTSU5GTw==Jkd873&c=ZGJ3aW5kby5zaXYuZGU=Hd783d&u=c2JhcmVzZWw=LKHld3</a></li>
     <li><b>DBINFO</b> - Database Information URL: <a href="/cinfo/json/?e=1&m=REJJTkZPJkd873&c=ZGJ3aW5kby5zaXYuZGU=Hd783d&u=c2JhcmVzZWw=LKHld3">/cinfo/json/?e=1&m=REJJTkZPJkd873&c=ZGJ3aW5kby5zaXYuZGU=Hd783d&u=c2JhcmVzZWw=LKHld3</a></li>
     <li><b>SysJqGrid</b> - JqGrid for Systen Information URL: <a href="/cinfo/json/?e=1&m=U3lzSnFHcmlkJkd873&cm=RlM=JhDQ83&c=ZGJ3aW5kby5zaXYuZGU=Hd783d&u=c2JhcmVzZWw=LKHld3&_search=false&rows=10&page=1&sidx=&sord=asc">/cinfo/json/?e=1&m=U3lzSnFHcmlkJkd873&cm=RlM=JhDQ83&c=ZGJ3aW5kby5zaXYuZGU=Hd783d&u=c2JhcmVzZWw=LKHld3&_search=false&rows=10&page=1&sidx=&sord=asc</a></li>
+    <li><b>ServiceHostList</b> - List Services From Host URL: <a href="/cinfo/json/?e=1&m=U2VydmljZUhvc3RMaXN0KhdU8Z&u=c2JhcmVzZWw=LKHld3&c=ZGJsaW51eC5zaXYuZGU=KjHu88">/cinfo/json/?e=1&m=U2VydmljZUhvc3RMaXN0KhdU8Z&u=c2JhcmVzZWw=LKHld3&c=ZGJsaW51eC5zaXYuZGU=KjHu88</a></li>
+    <li><b>HostSummary</b> - Host Summary URL: <a href="/cinfo/json/?e=1&m=SG9zdFN1bW1hcnk=KhdU8Z&u=c2JhcmVzZWw=LKHld3&c=ZGJsaW51eC5zaXYuZGU=KjHu88">/cinfo/json/?e=1&m=SG9zdFN1bW1hcnk=KhdU8Z&u=c2JhcmVzZWw=LKHld3&c=ZGJsaW51eC5zaXYuZGU=KjHu88</a></li>
 </ul>
 </font>
 <br>
@@ -18,6 +20,8 @@ Format: <i><b>XML</b></i><br>
     <li><b>SYSINFO</b> - System Information URL: <a href="/cinfo/xml/?e=1&m=U1lTSU5GTw==Jkd873&c=ZGJ3aW5kby5zaXYuZGU=Hd783d&u=c2JhcmVzZWw=LKHld3">/cinfo/xml/?e=1&m=U1lTSU5GTw==Jkd873&c=ZGJ3aW5kby5zaXYuZGU=Hd783d&u=c2JhcmVzZWw=LKHld3</a></li>
     <li><b>DBINFO</b> - Database Information URL: <a href="/cinfo/xml/?e=1&m=REJJTkZPJkd873&c=ZGJ3aW5kby5zaXYuZGU=Hd783d&u=c2JhcmVzZWw=LKHld3">/cinfo/xml/?e=1&m=REJJTkZPJkd873&c=ZGJ3aW5kby5zaXYuZGU=Hd783d&u=c2JhcmVzZWw=LKHld3</a></li>
     <li><b>SysJqGrid</b> - JqGrid for System Information URL: <a href="/cinfo/xml/?e=1&m=U3lzSnFHcmlkJkd873&cm=RlM=JhDQ83&c=ZGJ3aW5kby5zaXYuZGU=Hd783d&u=c2JhcmVzZWw=LKHld3&_search=false&rows=10&page=1&sidx=&sord=asc">/cinfo/xml/?e=1&m=U3lzSnFHcmlkJkd873&cm=RlM=JhDQ83&c=ZGJ3aW5kby5zaXYuZGU=Hd783d&u=c2JhcmVzZWw=LKHld3&_search=false&rows=10&page=1&sidx=&sord=asc</a></li>
+    <li><b>ServiceHostList</b> - List Services From Host URL: <a href="/cinfo/xml/?e=1&m=U2VydmljZUhvc3RMaXN0KhdU8Z&u=c2JhcmVzZWw=LKHjd3&c=ZGJsaW51eC5zaXYuZGU=KjHu88">/cinfo/xml/?e=1&m=U2VydmljZUhvc3RMaXN0KhdU8Z&u=c2JhcmVzZWw=LKHjd3&c=ZGJsaW51eC5zaXYuZGU=KjHu88</a></li>
+    <li><b>HostSummary</b> - Host Summary URL: <a href="/cinfo/xml/?e=1&m=SG9zdFN1bW1hcnk=KhdU8Z&u=c2JhcmVzZWw=LKHjd3&c=ZGJsaW51eC5zaXYuZGU=KjHu88">/cinfo/xml/?e=1&m=SG9zdFN1bW1hcnk=KhdU8Z&u=c2JhcmVzZWw=LKHjd3&c=ZGJsaW51eC5zaXYuZGU=KjHu88</a></li>
 </ul>
 </font>
 <br></br>
