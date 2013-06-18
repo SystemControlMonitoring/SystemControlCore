@@ -1,7 +1,7 @@
-<!--LDA_VERSION:2.130329-->
+<!--LDA_VERSION:2.130618-->
 
 Modul: <i><b>Live Data Access</b></i><br>
-Version: <i><b>2.130329</b></i><br>
+Version: <i><b>2.130618</b></i><br>
 Comments:<br>
 <font size=2>
 <ul>
@@ -19,6 +19,9 @@ Format: <i><b>JSON</b></i><br>
     <li><b>SelectLiveticker</b> - Get Current Critical Services and Hosts URL: <a href="/lda/json/?e=1&m=U2VsZWN0TGl2ZXRpY2tlcg==RpKlFs&u=c2JhcmVzZWw=LKHld3">/lda/json/?e=1&m=U2VsZWN0TGl2ZXRpY2tlcg==RpKlFs&u=c2JhcmVzZWw=LKHld3</a></li>
     <li><b>FillLiveticker</b> - Update Critical Services and Hosts in Datasource URL: <a href="/lda/json/?e=1&m=RmlsbExpdmV0aWNrZXI=RpY2Fs&u=c2JhcmVzZWw=LKHld3">/lda/json/?e=1&m=RmlsbExpdmV0aWNrZXI=RpY2Fs&u=c2JhcmVzZWw=LKHld3</a></li>
     <li><b>ServiceStatusSelect</b> - Select different stats of services URL: <a href="/lda/json/?e=1&m=U2VydmljZVN0YXR1c1NlbGVjdA==Ki88uU&u=c2JhcmVzZWw=LKHld3&s=YXBuYW9oKmUh88">/lda/json/?e=1&m=U2VydmljZVN0YXR1c1NlbGVjdA==Ki88uU&u=c2JhcmVzZWw=LKHld3&s=YXBuYW9oKmUh88</a></li>
+    <li><b>ServiceSearchList</b> - Search services URL: <a href="/lda/json/?e=1&m=U2VydmljZVNlYXJjaExpc3Q=Ki88uU&u=c2JhcmVzZWw=LKHld3&searchstring=TE9HKlUu87">/lda/json/?e=1&m=U2VydmljZVNlYXJjaExpc3Q=Ki88uU&u=c2JhcmVzZWw=LKHld3&searchstring=TE9HKlUu87</a></li>
+    <li><b>HostStatusSelect</b> - Select different stats of hosts URL: <a href="/lda/json/?e=1&m=SG9zdFN0YXR1c1NlbGVjdA==Ki88uU&u=c2JhcmVzZWw=LKHld3&s=dXA=KmUh88">/lda/json/?e=1&m=SG9zdFN0YXR1c1NlbGVjdA==Ki88uU&u=c2JhcmVzZWw=LKHld3&s=dXA=KmUh88</a></li>
+    <li><b>HostSearchList</b> - Search hosts URL: <a href="/lda/json/?e=1&m=SG9zdFNlYXJjaExpc3Q=Ki88uU&u=c2JhcmVzZWw=LKHld3&searchstring=dm0=KlUu87">/lda/json/?e=1&m=SG9zdFNlYXJjaExpc3Q=Ki88uU&u=c2JhcmVzZWw=LKHld3&searchstring=dm0=KlUu87</a></li>
 </ul>
 </font>
 <br>
@@ -33,6 +36,9 @@ Format: <i><b>XML</b></i><br>
     <li><b>SelectLiveticker</b> - Get Current Critical Services and Hosts URL: <a href="/lda/xml/?e=1&m=U2VsZWN0TGl2ZXRpY2tlcg==RpKlFs&u=c2JhcmVzZWw=LKHld3">/lda/xml/?e=1&m=U2VsZWN0TGl2ZXRpY2tlcg==RpKlFs&u=c2JhcmVzZWw=LKHld3</a></li>
     <li><b>FillLiveticker</b> - Update Critical Services and Hosts in Datasource URL: <a href="/lda/xml/?e=1&m=RmlsbExpdmV0aWNrZXI=Hzd7UD&u=c2JhcmVzZWw=LKHjd3">/lda/xml/?e=1&m=RmlsbExpdmV0aWNrZXI=Hzd7UD&u=c2JhcmVzZWw=LKHjd3</a></li>
     <li><b>ServiceStatusSelect</b> - Select different stats of services URL: <a href="/lda/xml/?e=1&m=U2VydmljZVN0YXR1c1NlbGVjdA==Ki88uU&u=c2JhcmVzZWw=LKHld3&s=YXBuYW9oKmUh88">/lda/xml/?e=1&m=U2VydmljZVN0YXR1c1NlbGVjdA==Ki88uU&u=c2JhcmVzZWw=LKHld3&s=YXBuYW9oKmUh88</a></li>
+    <li><b>ServiceSearchList</b> - Search services URL: <a href="/lda/xml/?e=1&m=U2VydmljZVNlYXJjaExpc3Q=Ki88uU&u=c2JhcmVzZWw=LKHld3&searchstring=TE9HKlUu87">/lda/xml/?e=1&m=U2VydmljZVNlYXJjaExpc3Q=Ki88uU&u=c2JhcmVzZWw=LKHld3&searchstring=TE9HKlUu87</a></li>
+    <li><b>HostStatusSelect</b> - Select different stats of hosts URL: <a href="/lda/xml/?e=1&m=SG9zdFN0YXR1c1NlbGVjdA==Ki88uU&u=c2JhcmVzZWw=LKHld3&s=dXA=KmUh88">/lda/xml/?e=1&m=SG9zdFN0YXR1c1NlbGVjdA==Ki88uU&u=c2JhcmVzZWw=LKHld3&s=dXA=KmUh88</a></li>
+    <li><b>HostSearchList</b> - Search hosts URL: <a href="/lda/xml/?e=1&m=SG9zdFNlYXJjaExpc3Q=Ki88uU&u=c2JhcmVzZWw=LKHld3&searchstring=dm0=KlUu87">/lda/xml/?e=1&m=SG9zdFNlYXJjaExpc3Q=Ki88uU&u=c2JhcmVzZWw=LKHld3&searchstring=dm0=KlUu87</a></li>
 </ul>
 </font>
 <br></br>

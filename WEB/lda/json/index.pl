@@ -411,7 +411,177 @@ sub ServiceStatusSelect {
     print kSChtml::ContentType("json");
     print "[". $out ."]";
 }
-
+#
+sub ServiceSearchList {
+    my $uid = shift;
+    my $searchstring = shift;
+    my @HIF = kSClive::HostFullInfo($uid);
+    my @SFL = kSClive::ServiceSearchList($uid,$searchstring);
+    # Execution
+    my %AHI = kSCpostgre::AllHostIcons();
+    my $out;
+    for (my $c=0;$c<scalar(@{$HIF[0]});$c++) {
+	my $m=0;
+	#$out.="\"HOST_". $c ."\":{\"NAME\":\"". $HIF[0][$c][0] ."\",\"ADDRESS\":\"". $HIF[0][$c][1] ."\",\"STATE\":\"". $HIF[0][$c][2] ."\",\"LAST_CHECK_UTIME\":\"". $HIF[0][$c][3] ."\",\"LAST_CHECK_ISO\":\"". kSCbasic::ConvertUt2Ts($HIF[0][$c][3]) ."\",\"SRV_OK\":\"". $HIF[0][$c][4] ."\",\"SRV_WA\":\"". $HIF[0][$c][5] ."\",\"SRV_CR\":\"". $HIF[0][$c][6] ."\",\"SRV_UN\":\"". $HIF[0][$c][7] ."\",\"SRV_PE\":\"". $HIF[0][$c][8] ."\",\"ACK\":\"". $HIF[0][$c][9] ."\",\"OUTPUT\":\"". kSCbasic::EncodeHTML($HIF[0][$c][10]) ."\",\"NEXT_CHECK_UTIME\":\"". $HIF[0][$c][11] ."\",\"NEXT_CHECK_ISO\":\"". kSCbasic::ConvertUt2Ts($HIF[0][$c][11]) ."\",\"SERVICELIST\":{";
+	$out.="{\"NAME\":\"". $HIF[0][$c][0] ."\",\"CUSTOM_VAR\":\"". uc($HIF[0][$c][1][0]) ."\",";
+	my @tmp = split(" ", uc($HIF[0][$c][1][0]));
+        if (kSCbasic::GetHostIcon($AHI{$tmp[0]}) ne "") {
+            $out.="\"ICON\":\"". kSCbasic::GetHostIcon($AHI{$tmp[0]}) ."\",";
+            $out.="\"URL\":\"". kSCbasic::GetHostUrl($AHI{$tmp[0]}) ."\"";
+        } elsif (kSCbasic::GetHostIcon($AHI{$tmp[1]}) ne "") {
+            $out.="\"ICON\":\"". kSCbasic::GetHostIcon($AHI{$tmp[1]}) ."\",";
+            $out.="\"URL\":\"". kSCbasic::GetHostUrl($AHI{$tmp[1]}) ."\"";
+        } elsif (kSCbasic::GetHostIcon($AHI{$tmp[2]}) ne "") {
+            $out.="\"ICON\":\"". kSCbasic::GetHostIcon($AHI{$tmp[2]}) ."\",";
+            $out.="\"URL\":\"". kSCbasic::GetHostUrl($AHI{$tmp[2]}) ."\"";
+        } elsif (kSCbasic::GetHostIcon($AHI{$tmp[3]}) ne "") {
+            $out.="\"ICON\":\"". kSCbasic::GetHostIcon($AHI{$tmp[3]}) ."\",";
+            $out.="\"URL\":\"". kSCbasic::GetHostUrl($AHI{$tmp[3]}) ."\"";
+        } elsif (kSCbasic::GetHostIcon($AHI{$tmp[4]}) ne "") {
+            $out.="\"ICON\":\"". kSCbasic::GetHostIcon($AHI{$tmp[4]}) ."\",";
+            $out.="\"URL\":\"". kSCbasic::GetHostUrl($AHI{$tmp[4]}) ."\"";
+        } elsif (kSCbasic::GetHostIcon($AHI{$tmp[5]}) ne "") {
+            $out.="\"ICON\":\"". kSCbasic::GetHostIcon($AHI{$tmp[5]}) ."\",";
+            $out.="\"URL\":\"". kSCbasic::GetHostUrl($AHI{$tmp[5]}) ."\"";
+        } else {
+            $out.="\"ICON\":\"". kSCbasic::GetHostIcon("ho") ."\",";
+            $out.="\"URL\":\"". kSCbasic::GetHostUrl("ho") ."\"";
+        }
+	$out.=",\"ADDRESS\":\"". $HIF[0][$c][2] ."\",\"HOST_STATUS_ICON\":\"". kSCbasic::GetStatusIcon($HIF[0][$c][3],"host") ."\",\"STATUS\":\"". $HIF[0][$c][3] ."\",\"LAST_CHECK_UTIME\":\"". $HIF[0][$c][4] ."\",\"LAST_CHECK_ISO\":\"". kSCbasic::ConvertUt2Ts($HIF[0][$c][4]) ."\",\"SRV_OK\":\"". $HIF[0][$c][5] ."\",\"SRV_WA\":\"". $HIF[0][$c][6] ."\",\"SRV_CR\":\"". $HIF[0][$c][7] ."\",\"SRV_UN\":\"". $HIF[0][$c][8] ."\",\"SRV_PE\":\"". $HIF[0][$c][9] ."\",\"ACK\":\"". $HIF[0][$c][10] ."\",\"OUTPUT\":\"". kSCbasic::EncodeHTML($HIF[0][$c][11]) ."\",\"NEXT_CHECK_UTIME\":\"". $HIF[0][$c][12] ."\",\"NEXT_CHECK_ISO\":\"". kSCbasic::ConvertUt2Ts($HIF[0][$c][12]) ."\",\"SERVICELIST\":[";
+	for (my $k=0;$k<scalar(@{$SFL[0]});$k++) {
+	    if ($SFL[0][$k][0] eq $HIF[0][$c][0]) {
+		#$out.="\"SERVICE_". $m ."\":{\"NAME\":\"". $SFL[0][$k][1] ."\",\"STATE\":\"". $SFL[0][$k][2] ."\",\"LAST_CHECK_UTIME\":\"". $SFL[0][$k][3] ."\",\"LAST_CHECK_ISO\":\"". kSCbasic::ConvertUt2Ts($SFL[0][$k][3]) ."\",\"OUTPUT\":\"". $SFL[0][$k][4] ."\",\"LONG_OUTPUT\":\"". $SFL[0][$k][5] ."\",\"ACK\":\"". $SFL[0][$k][6] ."\",\"NEXT_CHECK_UTIME\":\"". $SFL[0][$k][7] ."\",\"NEXT_CHECK_ISO\":\"". kSCbasic::ConvertUt2Ts($SFL[0][$k][7]) ."\"},";
+		$out.="{\"SERVICE_NAME\":\"". $SFL[0][$k][1] ."\",\"SERVICE_STATUS_ICON\":\"". kSCbasic::GetStatusIcon($SFL[0][$k][2],"service") ."\",\"SERVICE_STATUS\":\"". $SFL[0][$k][2] ."\",\"LAST_CHECK_UTIME\":\"". $SFL[0][$k][3] ."\",\"LAST_CHECK_ISO\":\"". kSCbasic::ConvertUt2Ts($SFL[0][$k][3]) ."\",\"OUTPUT\":\"". kSCbasic::EncodeHTML($SFL[0][$k][4]) ."\",\"LONG_OUTPUT\":\"". kSCbasic::EncodeHTML($SFL[0][$k][5]) ."\",\"ACK\":\"". $SFL[0][$k][6] ."\",\"NEXT_CHECK_UTIME\":\"". $SFL[0][$k][7] ."\",\"NEXT_CHECK_ISO\":\"". kSCbasic::ConvertUt2Ts($SFL[0][$k][7]) ."\"},";
+		$m++;
+	    }
+	}
+	$out = substr($out, 0, -1);
+	$out.="]},";
+    }
+    $out = substr($out, 0, -1);
+    print kSChtml::ContentType("json");
+    print "[". $out ."]";
+}
+#
+sub HostStatusSelect {
+    my $uid = shift;
+    my $status = shift;
+    my @AH;
+    # PreCheck
+    if ($status eq "up") {
+	@AH = kSClive::HostUp($uid);
+    } elsif ($status eq "do") {
+	@AH = kSClive::HostDo($uid);
+    } elsif ($status eq "un") {
+	@AH = kSClive::HostUn($uid);
+    } elsif ($status eq "nok") {
+	@AH = kSClive::HostNok($uid);
+    } elsif ($status eq "noknodt") {
+	@AH = kSClive::HostNokNodt($uid);
+    } elsif ($status eq "nokdt") {
+	@AH = kSClive::HostNokDt($uid);
+    } elsif ($status eq "donoack") {
+	@AH = kSClive::HostDoNoack($uid);
+    } elsif ($status eq "doack") {
+	@AH = kSClive::HostDoAck($uid);
+    } elsif ($status eq "unnoack") {
+	@AH = kSClive::HostUnNoack($uid);
+    } elsif ($status eq "unack") {
+	@AH = kSClive::HostUnAck($uid);
+    } elsif ($status eq "donacknodt") {
+	@AH = kSClive::HostDoNoackNodt($uid);
+    } elsif ($status eq "doacknodt") {
+	@AH = kSClive::HostDoAckNodt($uid);
+    } elsif ($status eq "donackdt") {
+	@AH = kSClive::HostDoNoackDt($uid);
+    } elsif ($status eq "doackdt") {
+	@AH = kSClive::HostDoAckDt($uid);
+    } elsif ($status eq "unnoacknodt") {
+	@AH = kSClive::HostUnNoackNodt($uid);
+    } elsif ($status eq "unacknodt") {
+	@AH = kSClive::HostUnAckNodt($uid);
+    } elsif ($status eq "unnoackdt") {
+	@AH = kSClive::HostUnNoackDt($uid);
+    } elsif ($status eq "unackdt") {
+	@AH = kSClive::HostUnAckDt($uid);
+    } else {
+	@AH = kSClive::HostFullInfo($uid);
+    }
+    # Execution
+    my %AHI = kSCpostgre::AllHostIcons();
+    my $out;
+    for (my $c=0;$c<scalar(@{$AH[0]});$c++) {
+	#$out.="\"HOST_". $c ."\":{\"NAME\":\"". $AH[0][$c][0] ."\",\"STATE\":\"". $AH[0][$c][2] ."\",\"CUSTOM_VAR\":\"". uc($AH[0][$c][1][0]) ."\",";
+	$out.="{\"NAME\":\"". $AH[0][$c][0] ."\",\"STATE\":\"". $AH[0][$c][3] ."\",\"CUSTOM_VAR\":\"". uc($AH[0][$c][1][0]) ."\",\"OUTPUT\":\"". kSCbasic::EncodeHTML($AH[0][$c][11]) ."\",";
+        my @tmp = split(" ", uc($AH[0][$c][1][0]));
+        if (kSCbasic::GetHostIcon($AHI{$tmp[0]}) ne "") {
+            $out.="\"ICON\":\"". kSCbasic::GetHostIcon($AHI{$tmp[0]}) ."\",";
+            $out.="\"URL\":\"". kSCbasic::GetHostUrl($AHI{$tmp[0]}) ."\"";
+        } elsif (kSCbasic::GetHostIcon($AHI{$tmp[1]}) ne "") {
+            $out.="\"ICON\":\"". kSCbasic::GetHostIcon($AHI{$tmp[1]}) ."\",";
+            $out.="\"URL\":\"". kSCbasic::GetHostUrl($AHI{$tmp[1]}) ."\"";
+        } elsif (kSCbasic::GetHostIcon($AHI{$tmp[2]}) ne "") {
+            $out.="\"ICON\":\"". kSCbasic::GetHostIcon($AHI{$tmp[2]}) ."\",";
+            $out.="\"URL\":\"". kSCbasic::GetHostUrl($AHI{$tmp[2]}) ."\"";
+        } elsif (kSCbasic::GetHostIcon($AHI{$tmp[3]}) ne "") {
+            $out.="\"ICON\":\"". kSCbasic::GetHostIcon($AHI{$tmp[3]}) ."\",";
+            $out.="\"URL\":\"". kSCbasic::GetHostUrl($AHI{$tmp[3]}) ."\"";
+        } elsif (kSCbasic::GetHostIcon($AHI{$tmp[4]}) ne "") {
+            $out.="\"ICON\":\"". kSCbasic::GetHostIcon($AHI{$tmp[4]}) ."\",";
+            $out.="\"URL\":\"". kSCbasic::GetHostUrl($AHI{$tmp[4]}) ."\"";
+        } elsif (kSCbasic::GetHostIcon($AHI{$tmp[5]}) ne "") {
+            $out.="\"ICON\":\"". kSCbasic::GetHostIcon($AHI{$tmp[5]}) ."\",";
+            $out.="\"URL\":\"". kSCbasic::GetHostUrl($AHI{$tmp[5]}) ."\"";
+        } else {
+            $out.="\"ICON\":\"". kSCbasic::GetHostIcon("ho") ."\",";
+            $out.="\"URL\":\"". kSCbasic::GetHostUrl("ho") ."\"";
+        }
+	$out.=",\"LAST_CHECK_UTIME\":\"". $AH[0][$c][4] ."\",\"LAST_CHECK_ISO\":\"". kSCbasic::ConvertUt2Ts($AH[0][$c][4]) ."\",\"SRV_OK\":\"". $AH[0][$c][5] ."\",\"SRV_WA\":\"". $AH[0][$c][6] ."\",\"SRV_CR\":\"". $AH[0][$c][7] ."\",\"SRV_UN\":\"". $AH[0][$c][8] ."\",\"SRV_PE\":\"". $AH[0][$c][9] ."\",\"ACK\":\"". $AH[0][$c][10] ."\",\"NEXT_CHECK_UTIME\":\"". $AH[0][$c][12] ."\",\"NEXT_CHECK_ISO\":\"". kSCbasic::ConvertUt2Ts($AH[0][$c][12]) ."\"},";
+    }
+    $out = substr($out, 0, -1);
+    print kSChtml::ContentType("json");
+    print "[". $out ."]";
+}
+#
+sub HostSearchList {
+    my $uid = shift;
+    my $searchstring = shift;
+    my @AH = kSClive::HostSearchList($uid,$searchstring);
+    # Execution
+    my %AHI = kSCpostgre::AllHostIcons();
+    my $out;
+    for (my $c=0;$c<scalar(@{$AH[0]});$c++) {
+	#$out.="\"HOST_". $c ."\":{\"NAME\":\"". $AH[0][$c][0] ."\",\"STATE\":\"". $AH[0][$c][2] ."\",\"CUSTOM_VAR\":\"". uc($AH[0][$c][1][0]) ."\",";
+	$out.="{\"NAME\":\"". $AH[0][$c][0] ."\",\"STATE\":\"". $AH[0][$c][3] ."\",\"CUSTOM_VAR\":\"". uc($AH[0][$c][1][0]) ."\",\"OUTPUT\":\"". kSCbasic::EncodeHTML($AH[0][$c][11]) ."\",";
+        my @tmp = split(" ", uc($AH[0][$c][1][0]));
+        if (kSCbasic::GetHostIcon($AHI{$tmp[0]}) ne "") {
+            $out.="\"ICON\":\"". kSCbasic::GetHostIcon($AHI{$tmp[0]}) ."\",";
+            $out.="\"URL\":\"". kSCbasic::GetHostUrl($AHI{$tmp[0]}) ."\"";
+        } elsif (kSCbasic::GetHostIcon($AHI{$tmp[1]}) ne "") {
+            $out.="\"ICON\":\"". kSCbasic::GetHostIcon($AHI{$tmp[1]}) ."\",";
+            $out.="\"URL\":\"". kSCbasic::GetHostUrl($AHI{$tmp[1]}) ."\"";
+        } elsif (kSCbasic::GetHostIcon($AHI{$tmp[2]}) ne "") {
+            $out.="\"ICON\":\"". kSCbasic::GetHostIcon($AHI{$tmp[2]}) ."\",";
+            $out.="\"URL\":\"". kSCbasic::GetHostUrl($AHI{$tmp[2]}) ."\"";
+        } elsif (kSCbasic::GetHostIcon($AHI{$tmp[3]}) ne "") {
+            $out.="\"ICON\":\"". kSCbasic::GetHostIcon($AHI{$tmp[3]}) ."\",";
+            $out.="\"URL\":\"". kSCbasic::GetHostUrl($AHI{$tmp[3]}) ."\"";
+        } elsif (kSCbasic::GetHostIcon($AHI{$tmp[4]}) ne "") {
+            $out.="\"ICON\":\"". kSCbasic::GetHostIcon($AHI{$tmp[4]}) ."\",";
+            $out.="\"URL\":\"". kSCbasic::GetHostUrl($AHI{$tmp[4]}) ."\"";
+        } elsif (kSCbasic::GetHostIcon($AHI{$tmp[5]}) ne "") {
+            $out.="\"ICON\":\"". kSCbasic::GetHostIcon($AHI{$tmp[5]}) ."\",";
+            $out.="\"URL\":\"". kSCbasic::GetHostUrl($AHI{$tmp[5]}) ."\"";
+        } else {
+            $out.="\"ICON\":\"". kSCbasic::GetHostIcon("ho") ."\",";
+            $out.="\"URL\":\"". kSCbasic::GetHostUrl("ho") ."\"";
+        }
+	$out.=",\"LAST_CHECK_UTIME\":\"". $AH[0][$c][4] ."\",\"LAST_CHECK_ISO\":\"". kSCbasic::ConvertUt2Ts($AH[0][$c][4]) ."\",\"SRV_OK\":\"". $AH[0][$c][5] ."\",\"SRV_WA\":\"". $AH[0][$c][6] ."\",\"SRV_CR\":\"". $AH[0][$c][7] ."\",\"SRV_UN\":\"". $AH[0][$c][8] ."\",\"SRV_PE\":\"". $AH[0][$c][9] ."\",\"ACK\":\"". $AH[0][$c][10] ."\",\"NEXT_CHECK_UTIME\":\"". $AH[0][$c][12] ."\",\"NEXT_CHECK_ISO\":\"". kSCbasic::ConvertUt2Ts($AH[0][$c][12]) ."\"},";
+    }
+    $out = substr($out, 0, -1);
+    print kSChtml::ContentType("json");
+    print "[". $out ."]";
+}
 #
 #
 #
@@ -441,6 +611,12 @@ while($request->Accept() >= 0) {
     	    FillLiveticker(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")));
 	} elsif (kSCbasic::CheckUrlKeyValue("m","ServiceStatusSelect","y") == 0) {
     	    ServiceStatusSelect(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("s")));
+	} elsif (kSCbasic::CheckUrlKeyValue("m","HostStatusSelect","y") == 0) {
+    	    HostStatusSelect(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("s")));
+	} elsif (kSCbasic::CheckUrlKeyValue("m","ServiceSearchList","y") == 0) {
+    	    ServiceSearchList(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("searchstring")));
+	} elsif (kSCbasic::CheckUrlKeyValue("m","HostSearchList","y") == 0) {
+    	    HostSearchList(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("searchstring")));
 	} else {
 	    my $out = kSChtml::ContentType("json");
 	    $out.= kSCbasic::ErrorMessage("json","1");
@@ -463,6 +639,12 @@ while($request->Accept() >= 0) {
     	    FillLiveticker(kSCbasic::GetUrlKeyValue("u"));
 	} elsif (kSCbasic::CheckUrlKeyValue("m","ServiceStatusSelect","n") == 0) {
     	    ServiceStatusSelect(kSCbasic::GetUrlKeyValue("u"),kSCbasic::GetUrlKeyValue("s"));
+	} elsif (kSCbasic::CheckUrlKeyValue("m","HostStatusSelect","n") == 0) {
+    	    HostStatusSelect(kSCbasic::GetUrlKeyValue("u"),kSCbasic::GetUrlKeyValue("s"));
+	} elsif (kSCbasic::CheckUrlKeyValue("m","ServiceSearchList","n") == 0) {
+    	    ServiceSearchList(kSCbasic::GetUrlKeyValue("u"),kSCbasic::GetUrlKeyValue("searchstring"));
+	} elsif (kSCbasic::CheckUrlKeyValue("m","HostSearchList","n") == 0) {
+    	    HostSearchList(kSCbasic::GetUrlKeyValue("u"),kSCbasic::GetUrlKeyValue("searchstring"));
 	} else {
 	    my $out = kSChtml::ContentType("json");
 	    $out.= kSCbasic::ErrorMessage("json","2");
