@@ -28,15 +28,175 @@ my $ml = Monitoring::Livestatus->new(
 );
 #########################################################
 #                                                       #
-#                       Functions                       #
+#                       Databases                       #
 #                                                       #
 #########################################################
 sub AllDatabases {
     my $uid = shift;
-    my $out = $ml->selectall_arrayref("GET services\nColumns: display_name host_name state last_check\nFilter: display_name ~~ DBST\nFilter: display_name ~~ DBSTATUS\nOr: 2\nAuthUser: ". $uid);
+    my $out = $ml->selectall_arrayref("GET services\nColumns: host_name host_state display_name state last_check plugin_output long_plugin_output acknowledged next_check\nFilter: display_name ~~ DBST\nFilter: display_name ~~ DBSTATUS\nOr: 2\nAuthUser: ". $uid);
     return ($out);
 }
 #
+sub DatabaseOK {
+    my $uid = shift;
+    my $out = $ml->selectall_arrayref("GET services\nColumns: host_name host_state display_name state last_check plugin_output long_plugin_output acknowledged next_check\nFilter: display_name ~~ DBST\nFilter: display_name ~~ DBSTATUS\nOr: 2\nFilter: state = 0\nAuthUser: ". $uid);
+    return ($out);
+}
+#
+sub DatabaseWA {
+    my $uid = shift;
+    my $out = $ml->selectall_arrayref("GET services\nColumns: host_name host_state display_name state last_check plugin_output long_plugin_output acknowledged next_check\nFilter: display_name ~~ DBST\nFilter: display_name ~~ DBSTATUS\nOr: 2\nFilter: state = 1\nAuthUser: ". $uid);
+    return ($out);
+}
+#
+sub DatabaseCR {
+    my $uid = shift;
+    my $out = $ml->selectall_arrayref("GET services\nColumns: host_name host_state display_name state last_check plugin_output long_plugin_output acknowledged next_check\nFilter: display_name ~~ DBST\nFilter: display_name ~~ DBSTATUS\nOr: 2\nFilter: state = 2\nAuthUser: ". $uid);
+    return ($out);
+}
+#
+sub DatabaseUN {
+    my $uid = shift;
+    my $out = $ml->selectall_arrayref("GET services\nColumns: host_name host_state display_name state last_check plugin_output long_plugin_output acknowledged next_check\nFilter: display_name ~~ DBST\nFilter: display_name ~~ DBSTATUS\nOr: 2\nFilter: state = 3\nAuthUser: ". $uid);
+    return ($out);
+}
+#
+sub DatabaseNOK {
+    my $uid = shift;
+    my $out = $ml->selectall_arrayref("GET services\nColumns: host_name host_state display_name state last_check plugin_output long_plugin_output acknowledged next_check\nFilter: display_name ~~ DBST\nFilter: display_name ~~ DBSTATUS\nOr: 2\nFilter: state > 0\nAuthUser: ". $uid);
+    return ($out);
+}
+#
+sub DatabaseNOKNOACKOH {
+    my $uid = shift;
+    my $out = $ml->selectall_arrayref("GET services\nColumns: host_name host_state display_name state last_check plugin_output long_plugin_output acknowledged next_check\nFilter: display_name ~~ DBST\nFilter: display_name ~~ DBSTATUS\nOr: 2\nFilter: state > 0\nFilter: host_state = 0\nFilter: scheduled_downtime_depth = 0\nFilter: host_scheduled_downtime_depth = 0\nFilter: acknowledged = 0\nAuthUser: ". $uid);
+    return ($out);
+}
+#
+sub DatabaseNOKOHND {
+    my $uid = shift;
+    my $out = $ml->selectall_arrayref("GET services\nColumns: host_name host_state display_name state last_check plugin_output long_plugin_output acknowledged next_check\nFilter: display_name ~~ DBST\nFilter: display_name ~~ DBSTATUS\nOr: 2\nFilter: state > 0\nFilter: host_state = 0\nFilter: scheduled_downtime_depth = 0\nFilter: host_scheduled_downtime_depth = 0\nAuthUser: ". $uid);
+    return ($out);
+}
+#
+sub DatabaseWAOHND {
+    my $uid = shift;
+    my $out = $ml->selectall_arrayref("GET services\nColumns: host_name host_state display_name state last_check plugin_output long_plugin_output acknowledged next_check\nFilter: display_name ~~ DBST\nFilter: display_name ~~ DBSTATUS\nOr: 2\nFilter: state = 1\nFilter: host_state = 0\nFilter: scheduled_downtime_depth = 0\nFilter: host_scheduled_downtime_depth = 0\nAuthUser: ". $uid);
+    return ($out);
+}
+#
+sub DatabaseCROHND {
+    my $uid = shift;
+    my $out = $ml->selectall_arrayref("GET services\nColumns: host_name host_state display_name state last_check plugin_output long_plugin_output acknowledged next_check\nFilter: display_name ~~ DBST\nFilter: display_name ~~ DBSTATUS\nOr: 2\nFilter: state = 2\nFilter: host_state = 0\nFilter: scheduled_downtime_depth = 0\nFilter: host_scheduled_downtime_depth = 0\nAuthUser: ". $uid);
+    return ($out);
+}
+#
+sub DatabaseUNOHND {
+    my $uid = shift;
+    my $out = $ml->selectall_arrayref("GET services\nColumns: host_name host_state display_name state last_check plugin_output long_plugin_output acknowledged next_check\nFilter: display_name ~~ DBST\nFilter: display_name ~~ DBSTATUS\nOr: 2\nFilter: state = 3\nFilter: host_state = 0\nFilter: scheduled_downtime_depth = 0\nFilter: host_scheduled_downtime_depth = 0\nAuthUser: ". $uid);
+    return ($out);
+}
+#
+sub DatabaseNOKOFFHND {
+    my $uid = shift;
+    my $out = $ml->selectall_arrayref("GET services\nColumns: host_name host_state display_name state last_check plugin_output long_plugin_output acknowledged next_check\nFilter: display_name ~~ DBST\nFilter: display_name ~~ DBSTATUS\nOr: 2\nFilter: state > 0\nFilter: host_state > 0\nFilter: scheduled_downtime_depth = 0\nFilter: host_scheduled_downtime_depth = 0\nAuthUser: ". $uid);
+    return ($out);
+}
+#
+sub DatabaseWAOFFHND {
+    my $uid = shift;
+    my $out = $ml->selectall_arrayref("GET services\nColumns: host_name host_state display_name state last_check plugin_output long_plugin_output acknowledged next_check\nFilter: display_name ~~ DBST\nFilter: display_name ~~ DBSTATUS\nOr: 2\nFilter: state = 1\nFilter: host_state > 0\nFilter: scheduled_downtime_depth = 0\nFilter: host_scheduled_downtime_depth = 0\nAuthUser: ". $uid);
+    return ($out);
+}
+#
+sub DatabaseCROFFHND {
+    my $uid = shift;
+    my $out = $ml->selectall_arrayref("GET services\nColumns: host_name host_state display_name state last_check plugin_output long_plugin_output acknowledged next_check\nFilter: display_name ~~ DBST\nFilter: display_name ~~ DBSTATUS\nOr: 2\nFilter: state = 2\nFilter: host_state > 0\nFilter: scheduled_downtime_depth = 0\nFilter: host_scheduled_downtime_depth = 0\nAuthUser: ". $uid);
+    return ($out);
+}
+#
+sub DatabaseUNOFFHND {
+    my $uid = shift;
+    my $out = $ml->selectall_arrayref("GET services\nColumns: host_name host_state display_name state last_check plugin_output long_plugin_output acknowledged next_check\nFilter: display_name ~~ DBST\nFilter: display_name ~~ DBSTATUS\nOr: 2\nFilter: state = 3\nFilter: host_state > 0\nFilter: scheduled_downtime_depth = 0\nFilter: host_scheduled_downtime_depth = 0\nAuthUser: ". $uid);
+    return ($out);
+}
+#
+sub DatabaseWAOHNOACK {
+    my $uid = shift;
+    my $out = $ml->selectall_arrayref("GET services\nColumns: host_name host_state display_name state last_check plugin_output long_plugin_output acknowledged next_check\nFilter: display_name ~~ DBST\nFilter: display_name ~~ DBSTATUS\nOr: 2\nFilter: state = 1\nFilter: host_state = 0\nFilter: scheduled_downtime_depth = 0\nFilter: host_scheduled_downtime_depth = 0\nFilter: acknowledged = 0\nAuthUser: ". $uid);
+    return ($out);
+}
+#
+sub DatabaseWAOHACK {
+    my $uid = shift;
+    my $out = $ml->selectall_arrayref("GET services\nColumns: host_name host_state display_name state last_check plugin_output long_plugin_output acknowledged next_check\nFilter: display_name ~~ DBST\nFilter: display_name ~~ DBSTATUS\nOr: 2\nFilter: state = 1\nFilter: host_state = 0\nFilter: scheduled_downtime_depth = 0\nFilter: host_scheduled_downtime_depth = 0\nFilter: acknowledged > 0\nAuthUser: ". $uid);
+    return ($out);
+}
+#
+sub DatabaseCROHNOACK {
+    my $uid = shift;
+    my $out = $ml->selectall_arrayref("GET services\nColumns: host_name host_state display_name state last_check plugin_output long_plugin_output acknowledged next_check\nFilter: display_name ~~ DBST\nFilter: display_name ~~ DBSTATUS\nOr: 2\nFilter: state = 2\nFilter: host_state = 0\nFilter: scheduled_downtime_depth = 0\nFilter: host_scheduled_downtime_depth = 0\nFilter: acknowledged = 0\nAuthUser: ". $uid);
+    return ($out);
+}
+#
+sub DatabaseCROHACK {
+    my $uid = shift;
+    my $out = $ml->selectall_arrayref("GET services\nColumns: host_name host_state display_name state last_check plugin_output long_plugin_output acknowledged next_check\nFilter: display_name ~~ DBST\nFilter: display_name ~~ DBSTATUS\nOr: 2\nFilter: state = 2\nFilter: host_state = 0\nFilter: scheduled_downtime_depth = 0\nFilter: host_scheduled_downtime_depth = 0\nFilter: acknowledged > 0\nAuthUser: ". $uid);
+    return ($out);
+}
+#
+sub DatabaseUNOHNOACK {
+    my $uid = shift;
+    my $out = $ml->selectall_arrayref("GET services\nColumns: host_name host_state display_name state last_check plugin_output long_plugin_output acknowledged next_check\nFilter: display_name ~~ DBST\nFilter: display_name ~~ DBSTATUS\nOr: 2\nFilter: state = 3\nFilter: host_state = 0\nFilter: scheduled_downtime_depth = 0\nFilter: host_scheduled_downtime_depth = 0\nFilter: acknowledged = 0\nAuthUser: ". $uid);
+    return ($out);
+}
+#
+sub DatabaseUNOHACK {
+    my $uid = shift;
+    my $out = $ml->selectall_arrayref("GET services\nColumns: host_name host_state display_name state last_check plugin_output long_plugin_output acknowledged next_check\nFilter: display_name ~~ DBST\nFilter: display_name ~~ DBSTATUS\nOr: 2\nFilter: state = 3\nFilter: host_state = 0\nFilter: scheduled_downtime_depth = 0\nFilter: host_scheduled_downtime_depth = 0\nFilter: acknowledged > 0\nAuthUser: ". $uid);
+    return ($out);
+}
+#
+sub DatabaseWAOFFHNOACK {
+    my $uid = shift;
+    my $out = $ml->selectall_arrayref("GET services\nColumns: host_name host_state display_name state last_check plugin_output long_plugin_output acknowledged next_check\nFilter: display_name ~~ DBST\nFilter: display_name ~~ DBSTATUS\nOr: 2\nFilter: state = 1\nFilter: host_state > 0\nFilter: scheduled_downtime_depth = 0\nFilter: host_scheduled_downtime_depth = 0\nFilter: acknowledged = 0\nAuthUser: ". $uid);
+    return ($out);
+}
+#
+sub DatabaseWAOFFHACK {
+    my $uid = shift;
+    my $out = $ml->selectall_arrayref("GET services\nColumns: host_name host_state display_name state last_check plugin_output long_plugin_output acknowledged next_check\nFilter: display_name ~~ DBST\nFilter: display_name ~~ DBSTATUS\nOr: 2\nFilter: state = 1\nFilter: host_state > 0\nFilter: scheduled_downtime_depth = 0\nFilter: host_scheduled_downtime_depth = 0\nFilter: acknowledged > 0\nAuthUser: ". $uid);
+    return ($out);
+}
+#
+sub DatabaseCROFFHNOACK {
+    my $uid = shift;
+    my $out = $ml->selectall_arrayref("GET services\nColumns: host_name host_state display_name state last_check plugin_output long_plugin_output acknowledged next_check\nFilter: display_name ~~ DBST\nFilter: display_name ~~ DBSTATUS\nOr: 2\nFilter: state = 2\nFilter: host_state > 0\nFilter: scheduled_downtime_depth = 0\nFilter: host_scheduled_downtime_depth = 0\nFilter: acknowledged = 0\nAuthUser: ". $uid);
+    return ($out);
+}
+#
+sub DatabaseCROFFHACK {
+    my $uid = shift;
+    my $out = $ml->selectall_arrayref("GET services\nColumns: host_name host_state display_name state last_check plugin_output long_plugin_output acknowledged next_check\nFilter: display_name ~~ DBST\nFilter: display_name ~~ DBSTATUS\nOr: 2\nFilter: state = 2\nFilter: host_state > 0\nFilter: scheduled_downtime_depth = 0\nFilter: host_scheduled_downtime_depth = 0\nFilter: acknowledged > 0\nAuthUser: ". $uid);
+    return ($out);
+}
+#
+sub DatabaseUNOFFHNOACK {
+    my $uid = shift;
+    my $out = $ml->selectall_arrayref("GET services\nColumns: host_name host_state display_name state last_check plugin_output long_plugin_output acknowledged next_check\nFilter: display_name ~~ DBST\nFilter: display_name ~~ DBSTATUS\nOr: 2\nFilter: state = 3\nFilter: host_state > 0\nFilter: scheduled_downtime_depth = 0\nFilter: host_scheduled_downtime_depth = 0\nFilter: acknowledged = 0\nAuthUser: ". $uid);
+    return ($out);
+}
+#
+sub DatabaseUNOFFHACK {
+    my $uid = shift;
+    my $out = $ml->selectall_arrayref("GET services\nColumns: host_name host_state display_name state last_check plugin_output long_plugin_output acknowledged next_check\nFilter: display_name ~~ DBST\nFilter: display_name ~~ DBSTATUS\nOr: 2\nFilter: state = 3\nFilter: host_state > 0\nFilter: scheduled_downtime_depth = 0\nFilter: host_scheduled_downtime_depth = 0\nFilter: acknowledged > 0\nAuthUser: ". $uid);
+    return ($out);
+}
+#########################################################
+#                                                       #
+#                       Functions                       #
+#                                                       #
+#########################################################
 sub TaovServices {
     my $uid = shift;
     my $out = $ml->selectall_arrayref("GET services\nStats: state = 0\nStats: state = 0\nStats: host_state = 0\nStatsAnd: 2\nStats: state = 1\nStats: state = 1\nStats: host_state = 0\nStatsAnd: 2\nStats: state = 1\nStats: acknowledged = 0\nStats: host_state = 0\nStatsAnd: 3\nStats: state = 1\nStats: acknowledged = 1\nStats: host_state = 0\nStatsAnd: 3\nStats: state = 1\nStats: acknowledged = 0\nStats: host_state > 0\nStatsAnd: 3\nStats: state = 2\nStats: state = 2\nStats: host_state = 0\nStatsAnd: 2\nStats: state = 2\nStats: acknowledged = 0\nStats: host_state = 0\nStatsAnd: 3\nStats: state = 2\nStats: acknowledged = 1\nStats: host_state = 0\nStatsAnd: 3\nStats: state = 2\nStats: acknowledged = 0\nStats: host_state > 0\nStatsAnd: 3\nStats: state = 3\nStats: state = 3\nStats: host_state = 0\nStatsAnd: 2\nStats: state = 3\nStats: acknowledged = 0\nStats: host_state = 0\nStatsAnd: 3\nStats: state = 3\nStats: acknowledged = 1\nStats: host_state = 0\nStatsAnd: 3\nStats: state = 3\nStats: acknowledged = 0\nStats: host_state > 0\nStatsAnd: 3\nStats: sum host_num_services_pending\nAuthUser: ". $uid);
@@ -46,6 +206,12 @@ sub TaovServices {
 sub TaovHosts {
     my $uid = shift;
     my $out = $ml->selectall_arrayref("GET hosts\nStats: state = 0\nStats: state = 1\nStats: state = 1\nStats: acknowledged = 0\nStatsAnd: 2\nStats: state = 1\nStats: acknowledged = 1\nStatsAnd: 2\nStats: state = 2\nStats: state = 2\nStats: acknowledged = 0\nStatsAnd: 2\nStats: state = 2\nStats: acknowledged = 1\nStatsAnd: 2\nAuthUser: ". $uid);
+    return ($out);
+}
+#
+sub TaovDatabases {
+    my $uid = shift;
+    my $out = $ml->selectall_arrayref("GET services\nFilter: display_name ~~ DBST\nFilter: display_name ~~ DBSTATUS\nOr: 2\nStats: state = 0\nStats: state = 0\nStats: host_state = 0\nStatsAnd: 2\nStats: state > 0\nStats: state > 0\nStats: host_state = 0\nStatsAnd: 2\nStats: state > 0\nStats: acknowledged = 0\nStats: host_state = 0\nStatsAnd: 3\nStats: state > 0\nStats: acknowledged = 1\nStats: host_state = 0\nStatsAnd: 3\nStats: state > 0\nStats: acknowledged = 0\nStats: host_state > 0\nStatsAnd: 3\nAuthUser: ". $uid);
     return ($out);
 }
 #
@@ -258,6 +424,13 @@ sub HostSearchList {
     my $uid = shift;
     my $searchstring = shift;
     my $out = $ml->selectall_arrayref("GET hosts\nColumns: host_name custom_variable_values address state last_check num_services_ok num_services_warn num_services_crit num_services_unknown num_services_pending acknowledged plugin_output next_check\nFilter: host_name ~~ ". $searchstring ."\nAuthUser: ". $uid);
+    return ($out);
+}
+#
+sub DatabaseSearchList {
+    my $uid = shift;
+    my $searchstring = shift;
+    my $out = $ml->selectall_arrayref("GET services\nColumns: host_name host_state display_name state last_check plugin_output long_plugin_output acknowledged next_check\nFilter: display_name ~~ DBST\nFilter: display_name ~~ DBSTATUS\nOr: 2\nFilter: display_name ~~ ". $searchstring ."\nAuthUser: ". $uid);
     return ($out);
 }
 #########################################################

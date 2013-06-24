@@ -1,7 +1,7 @@
-<!--LDA_VERSION:2.130618-->
+<!--LDA_VERSION:2.130624-->
 
 Modul: <i><b>Live Data Access</b></i><br>
-Version: <i><b>2.130618</b></i><br>
+Version: <i><b>2.130624</b></i><br>
 Comments:<br>
 <font size=2>
 <ul>
@@ -22,6 +22,8 @@ Format: <i><b>JSON</b></i><br>
     <li><b>ServiceSearchList</b> - Search services URL: <a href="/lda/json/?e=1&m=U2VydmljZVNlYXJjaExpc3Q=Ki88uU&u=c2JhcmVzZWw=LKHld3&searchstring=TE9HKlUu87">/lda/json/?e=1&m=U2VydmljZVNlYXJjaExpc3Q=Ki88uU&u=c2JhcmVzZWw=LKHld3&searchstring=TE9HKlUu87</a></li>
     <li><b>HostStatusSelect</b> - Select different stats of hosts URL: <a href="/lda/json/?e=1&m=SG9zdFN0YXR1c1NlbGVjdA==Ki88uU&u=c2JhcmVzZWw=LKHld3&s=dXA=KmUh88">/lda/json/?e=1&m=SG9zdFN0YXR1c1NlbGVjdA==Ki88uU&u=c2JhcmVzZWw=LKHld3&s=dXA=KmUh88</a></li>
     <li><b>HostSearchList</b> - Search hosts URL: <a href="/lda/json/?e=1&m=SG9zdFNlYXJjaExpc3Q=Ki88uU&u=c2JhcmVzZWw=LKHld3&searchstring=dm0=KlUu87">/lda/json/?e=1&m=SG9zdFNlYXJjaExpc3Q=Ki88uU&u=c2JhcmVzZWw=LKHld3&searchstring=dm0=KlUu87</a></li>
+    <li><b>DatabaseStatusSelect</b> - Select different stats of databases URL: <a href="/lda/json/?e=1&m=RGF0YWJhc2VTdGF0dXNTZWxlY3Q=Ki88uU&u=c2JhcmVzZWw=LKHld3&s=YXBuYW9oKmUh88">/lda/json/?e=1&m=RGF0YWJhc2VTdGF0dXNTZWxlY3Q=Ki88uU&u=c2JhcmVzZWw=LKHld3&s=YXBuYW9oKmUh88</a></li>
+    <li><b>DatabaseSearchList</b> - Search databases URL: <a href="/lda/json/?e=1&m=RGF0YWJhc2VTZWFyY2hMaXN0Ki88uU&u=c2JhcmVzZWw=LKHld3&searchstring=VEVTVA==KlUu87">/lda/json/?e=1&m=RGF0YWJhc2VTZWFyY2hMaXN0Ki88uU&u=c2JhcmVzZWw=LKHld3&searchstring=VEVTVA==KlUu87</a></li>
 </ul>
 </font>
 <br>
@@ -39,6 +41,8 @@ Format: <i><b>XML</b></i><br>
     <li><b>ServiceSearchList</b> - Search services URL: <a href="/lda/xml/?e=1&m=U2VydmljZVNlYXJjaExpc3Q=Ki88uU&u=c2JhcmVzZWw=LKHld3&searchstring=TE9HKlUu87">/lda/xml/?e=1&m=U2VydmljZVNlYXJjaExpc3Q=Ki88uU&u=c2JhcmVzZWw=LKHld3&searchstring=TE9HKlUu87</a></li>
     <li><b>HostStatusSelect</b> - Select different stats of hosts URL: <a href="/lda/xml/?e=1&m=SG9zdFN0YXR1c1NlbGVjdA==Ki88uU&u=c2JhcmVzZWw=LKHld3&s=dXA=KmUh88">/lda/xml/?e=1&m=SG9zdFN0YXR1c1NlbGVjdA==Ki88uU&u=c2JhcmVzZWw=LKHld3&s=dXA=KmUh88</a></li>
     <li><b>HostSearchList</b> - Search hosts URL: <a href="/lda/xml/?e=1&m=SG9zdFNlYXJjaExpc3Q=Ki88uU&u=c2JhcmVzZWw=LKHld3&searchstring=dm0=KlUu87">/lda/xml/?e=1&m=SG9zdFNlYXJjaExpc3Q=Ki88uU&u=c2JhcmVzZWw=LKHld3&searchstring=dm0=KlUu87</a></li>
+    <li><b>DatabaseStatusSelect</b> - Select different stats of databases URL: <a href="/lda/xml/?e=1&m=RGF0YWJhc2VTdGF0dXNTZWxlY3Q=Ki88uU&u=c2JhcmVzZWw=LKHld3&s=YXBuYW9oKmUh88">/lda/xml/?e=1&m=RGF0YWJhc2VTdGF0dXNTZWxlY3Q=Ki88uU&u=c2JhcmVzZWw=LKHld3&s=YXBuYW9oKmUh88</a></li>
+    <li><b>DatabaseSearchList</b> - Search databases URL: <a href="/lda/xml/?e=1&m=RGF0YWJhc2VTZWFyY2hMaXN0Ki88uU&u=c2JhcmVzZWw=LKHld3&searchstring=VEVTVA==KlUu87">/lda/xml/?e=1&m=RGF0YWJhc2VTZWFyY2hMaXN0Ki88uU&u=c2JhcmVzZWw=LKHld3&searchstring=VEVTVA==KlUu87</a></li>
 </ul>
 </font>
 <br></br>

@@ -79,7 +79,7 @@ sub AllHosts {
     my $out;
     for (my $c=0;$c<scalar(@{$AH[0]});$c++) {
 	#$out.="\"HOST_". $c ."\":{\"NAME\":\"". $AH[0][$c][0] ."\",\"STATE\":\"". $AH[0][$c][2] ."\",\"CUSTOM_VAR\":\"". uc($AH[0][$c][1][0]) ."\",";
-	$out.="{\"NAME\":\"". $AH[0][$c][0] ."\",\"STATE\":\"". $AH[0][$c][3] ."\",\"CUSTOM_VAR\":\"". uc($AH[0][$c][1][0]) ."\",\"OUTPUT\":\"". kSCbasic::EncodeHTML($AH[0][$c][11]) ."\",";
+	$out.="{\"NAME\":\"". $AH[0][$c][0] ."\",\"STATE\":\"". $AH[0][$c][3] ."\",\"HOST_STATUS_ICON\":\"". kSCbasic::GetStatusIcon($AH[0][$c][3],"host") ."\",\"CUSTOM_VAR\":\"". uc($AH[0][$c][1][0]) ."\",\"OUTPUT\":\"". kSCbasic::EncodeHTML($AH[0][$c][11]) ."\",";
         my @tmp = split(" ", uc($AH[0][$c][1][0]));
         if (kSCbasic::GetHostIcon($AHI{$tmp[0]}) ne "") {
             $out.="\"ICON\":\"". kSCbasic::GetHostIcon($AHI{$tmp[0]}) ."\",";
@@ -115,17 +115,16 @@ sub AllDatabases {
     my @AD = kSClive::AllDatabases($uid);
     my $out;
     for (my $c=0;$c<scalar(@{$AD[0]});$c++) {
-	#$out.="\"DATABASE_". $c ."\":{";
 	$out.="{";
-        if ($AD[0][$c][0] =~ /_DBST_/i) {
-            $out.="\"NAME\":\"". uc(substr($AD[0][$c][0], 10)) ."\"";
-        } elsif ($AD[0][$c][0] =~ /_DBSTATUS/i) {
-            $AD[0][$c][0] =~ s/_DBSTATUS//g;
-            $out.="\"NAME\":\"". uc(substr($AD[0][$c][0],7))  ."\"";
+        if ($AD[0][$c][2] =~ /_DBST_/i) {
+            $out.="\"NAME\":\"". uc(substr($AD[0][$c][2], 10)) ."\"";
+        } elsif ($AD[0][$c][2] =~ /_DBSTATUS/i) {
+            $AD[0][$c][2] =~ s/_DBSTATUS//g;
+            $out.="\"NAME\":\"". uc(substr($AD[0][$c][2],7))  ."\"";
         } else {
-            $out.="\"NAME\":\"". $AD[0][$c][0] ."\"";
+            $out.="\"NAME\":\"". $AD[0][$c][2] ."\"";
         }
-        $out.=",\"HOST\":\"". $AD[0][$c][1] ."\",\"STATE\":\"". $AD[0][$c][2] ."\",\"LAST_CHECK_UTIME\":\"". $AD[0][$c][3] ."\",\"LAST_CHECK_ISO\":\"". kSCbasic::ConvertUt2Ts($AD[0][$c][3]) ."\"},";
+        $out.=",\"HOST\":\"". $AD[0][$c][0] ."\",\"ICON\":\"". kSCbasic::GetHostIcon("db") ."\",\"URL\":\"". kSCbasic::GetHostUrl("db") ."\",\"HOST_STATE\":\"". $AD[0][$c][1] ."\",\"SERVICE_STATE\":\"". $AD[0][$c][3] ."\",\"SERVICE_STATE_ICON\":\"". kSCbasic::GetStatusIcon($AD[0][$c][3],"service") ."\",\"ACK\":\"". $AD[0][$c][7] ."\",\"LAST_CHECK_UTIME\":\"". $AD[0][$c][4] ."\",\"LAST_CHECK_ISO\":\"". kSCbasic::ConvertUt2Ts($AD[0][$c][4]) ."\",\"NEXT_CHECK_UTIME\":\"". $AD[0][$c][8] ."\",\"NEXT_CHECK_ISO\":\"". kSCbasic::ConvertUt2Ts($AD[0][$c][8]) ."\",\"OUTPUT\":\"". kSCbasic::EncodeHTML($AD[0][$c][5]) ."\",\"LONG_OUTPUT\":\"". kSCbasic::EncodeHTML($AD[0][$c][6]) ."\"},";
     }
     $out = substr($out, 0, -1);
     print kSChtml::ContentType("json");
@@ -136,6 +135,7 @@ sub SlimTaov {
     my $uid = shift;
     my @TAOV = kSClive::TaovServices($uid);
     my @HTOV = kSClive::TaovHosts($uid);
+    my @DBOV = kSClive::TaovDatabases($uid);
     my $c=0;
     # Hosts
     my $hstok = $HTOV[0][$c][0];
@@ -170,9 +170,21 @@ sub SlimTaov {
     my $srvnaunoff = $TAOV[0][$c][16];
     # Pending
     my $pending = $TAOV[0][$c][17];
+    #
+    # Datenbanken
+    #
+    # Online
+    my $dboka = $DBOV[0][$c][0];
+    my $dbok = $DBOV[0][$c][1];
+    # Offline
+    my $dbcra = $DBOV[0][$c][2];
+    my $dbcr = $DBOV[0][$c][3];
+    my $dbnacr = $DBOV[0][$c][4];
+    my $dbacr = $DBOV[0][$c][5];
+    my $dbnacroff = $DBOV[0][$c][6];
     # Output
     print kSChtml::ContentType("json");
-    print "\"HOST\":{\"OK\":{\"COUNT\":\"". $hstok ."\"},\"CRITICAL\":{\"COUNT\":\"". $hstcr ."\",\"NACK\":\"". $hstnacr ."\",\"ACK\":\"". $hstacr ."\"},\"UNREACHABLE\":{\"COUNT\":\"". $hstun ."\",\"NACK\":\"". $hstnaun ."\",\"ACK\":\"". $hstaun ."\"}},\"SERVICE\":{\"OK\":{\"COUNT_ALL\":\"". $srvoka ."\",\"COUNT_ON\":\"". $srvok ."\"},\"WARNING\":{\"COUNT_ALL\":\"". $srvwaa ."\",\"COUNT_ON\":\"". $srvwa ."\",\"NACK_ON\":\"". $srvnawa ."\",\"ACK_ON\":\"". $srvawa ."\",\"NACK_OFF\":\"". $srvnawaoff ."\"},\"CRITICAL\":{\"COUNT_ALL\":\"". $srvcra ."\",\"COUNT_ON\":\"". $srvcr ."\",\"NACK_ON\":\"". $srvnacr ."\",\"ACK_ON\":\"". $srvacr ."\",\"NACK_OFF\":\"". $srvnacroff ."\"},\"UNKNOWN\":{\"COUNT_ALL\":\"". $srvuna ."\",\"COUNT_ON\":\"". $srvun ."\",\"NACK_ON\":\"". $srvnaun ."\",\"ACK_ON\":\"". $srvaun ."\",\"NACK_OFF\":\"". $srvnaunoff ."\"},\"PENDING\":{\"COUNT_ON\":\"". $pending ."\"}}";
+    print "\"HOST\":{\"OK\":{\"COUNT\":\"". $hstok ."\"},\"CRITICAL\":{\"COUNT\":\"". $hstcr ."\",\"NACK\":\"". $hstnacr ."\",\"ACK\":\"". $hstacr ."\"},\"UNREACHABLE\":{\"COUNT\":\"". $hstun ."\",\"NACK\":\"". $hstnaun ."\",\"ACK\":\"". $hstaun ."\"}},\"SERVICE\":{\"OK\":{\"COUNT_ALL\":\"". $srvoka ."\",\"COUNT_ON\":\"". $srvok ."\"},\"WARNING\":{\"COUNT_ALL\":\"". $srvwaa ."\",\"COUNT_ON\":\"". $srvwa ."\",\"NACK_ON\":\"". $srvnawa ."\",\"ACK_ON\":\"". $srvawa ."\",\"NACK_OFF\":\"". $srvnawaoff ."\"},\"CRITICAL\":{\"COUNT_ALL\":\"". $srvcra ."\",\"COUNT_ON\":\"". $srvcr ."\",\"NACK_ON\":\"". $srvnacr ."\",\"ACK_ON\":\"". $srvacr ."\",\"NACK_OFF\":\"". $srvnacroff ."\"},\"UNKNOWN\":{\"COUNT_ALL\":\"". $srvuna ."\",\"COUNT_ON\":\"". $srvun ."\",\"NACK_ON\":\"". $srvnaun ."\",\"ACK_ON\":\"". $srvaun ."\",\"NACK_OFF\":\"". $srvnaunoff ."\"},\"PENDING\":{\"COUNT_ON\":\"". $pending ."\"}},\"DATABASE\":{\"ONLINE\":{\"COUNT_ALL\":\"". $dboka ."\",\"COUNT_ON\":\"". $dbok ."\"},\"OFFLINE\":{\"COUNT_ALL\":\"". $dbcra ."\",\"COUNT_ON\":\"". $dbcr ."\",\"NACK_ON\":\"". $dbnacr ."\",\"ACK_ON\":\"". $dbacr ."\",\"NACK_OFF\":\"". $dbnacroff ."\"}}";
 }
 #
 sub ShowCritical {
@@ -512,7 +524,7 @@ sub HostStatusSelect {
     my $out;
     for (my $c=0;$c<scalar(@{$AH[0]});$c++) {
 	#$out.="\"HOST_". $c ."\":{\"NAME\":\"". $AH[0][$c][0] ."\",\"STATE\":\"". $AH[0][$c][2] ."\",\"CUSTOM_VAR\":\"". uc($AH[0][$c][1][0]) ."\",";
-	$out.="{\"NAME\":\"". $AH[0][$c][0] ."\",\"STATE\":\"". $AH[0][$c][3] ."\",\"CUSTOM_VAR\":\"". uc($AH[0][$c][1][0]) ."\",\"OUTPUT\":\"". kSCbasic::EncodeHTML($AH[0][$c][11]) ."\",";
+	$out.="{\"NAME\":\"". $AH[0][$c][0] ."\",\"STATE\":\"". $AH[0][$c][3] ."\",\"HOST_STATUS_ICON\":\"". kSCbasic::GetStatusIcon($AH[0][$c][3],"host") ."\",\"CUSTOM_VAR\":\"". uc($AH[0][$c][1][0]) ."\",\"OUTPUT\":\"". kSCbasic::EncodeHTML($AH[0][$c][11]) ."\",";
         my @tmp = split(" ", uc($AH[0][$c][1][0]));
         if (kSCbasic::GetHostIcon($AHI{$tmp[0]}) ne "") {
             $out.="\"ICON\":\"". kSCbasic::GetHostIcon($AHI{$tmp[0]}) ."\",";
@@ -552,7 +564,7 @@ sub HostSearchList {
     my $out;
     for (my $c=0;$c<scalar(@{$AH[0]});$c++) {
 	#$out.="\"HOST_". $c ."\":{\"NAME\":\"". $AH[0][$c][0] ."\",\"STATE\":\"". $AH[0][$c][2] ."\",\"CUSTOM_VAR\":\"". uc($AH[0][$c][1][0]) ."\",";
-	$out.="{\"NAME\":\"". $AH[0][$c][0] ."\",\"STATE\":\"". $AH[0][$c][3] ."\",\"CUSTOM_VAR\":\"". uc($AH[0][$c][1][0]) ."\",\"OUTPUT\":\"". kSCbasic::EncodeHTML($AH[0][$c][11]) ."\",";
+	$out.="{\"NAME\":\"". $AH[0][$c][0] ."\",\"STATE\":\"". $AH[0][$c][3] ."\",\"HOST_STATUS_ICON\":\"". kSCbasic::GetStatusIcon($AH[0][$c][3],"host") ."\",\"CUSTOM_VAR\":\"". uc($AH[0][$c][1][0]) ."\",\"OUTPUT\":\"". kSCbasic::EncodeHTML($AH[0][$c][11]) ."\",";
         my @tmp = split(" ", uc($AH[0][$c][1][0]));
         if (kSCbasic::GetHostIcon($AHI{$tmp[0]}) ne "") {
             $out.="\"ICON\":\"". kSCbasic::GetHostIcon($AHI{$tmp[0]}) ."\",";
@@ -577,6 +589,107 @@ sub HostSearchList {
             $out.="\"URL\":\"". kSCbasic::GetHostUrl("ho") ."\"";
         }
 	$out.=",\"LAST_CHECK_UTIME\":\"". $AH[0][$c][4] ."\",\"LAST_CHECK_ISO\":\"". kSCbasic::ConvertUt2Ts($AH[0][$c][4]) ."\",\"SRV_OK\":\"". $AH[0][$c][5] ."\",\"SRV_WA\":\"". $AH[0][$c][6] ."\",\"SRV_CR\":\"". $AH[0][$c][7] ."\",\"SRV_UN\":\"". $AH[0][$c][8] ."\",\"SRV_PE\":\"". $AH[0][$c][9] ."\",\"ACK\":\"". $AH[0][$c][10] ."\",\"NEXT_CHECK_UTIME\":\"". $AH[0][$c][12] ."\",\"NEXT_CHECK_ISO\":\"". kSCbasic::ConvertUt2Ts($AH[0][$c][12]) ."\"},";
+    }
+    $out = substr($out, 0, -1);
+    print kSChtml::ContentType("json");
+    print "[". $out ."]";
+}
+#
+sub DatabaseStatusSelect {
+    my $uid = shift;
+    my $status = shift;
+    my @AD;
+    # PreCheck
+    if ($status eq "ao") {
+	@AD = kSClive::DatabaseOK($uid);
+    } elsif ($status eq "aw") {
+	@AD = kSClive::DatabaseWA($uid);
+    } elsif ($status eq "ac") {
+	@AD = kSClive::DatabaseCR($uid);
+    } elsif ($status eq "au") {
+	@AD = kSClive::DatabaseUN($uid);
+    } elsif ($status eq "ap") {
+	@AD = kSClive::DatabaseNOK($uid);
+    } elsif ($status eq "apnaoh") {
+	@AD = kSClive::DatabaseNOKNOACKOH($uid);
+    } elsif ($status eq "apoh") {
+	@AD = kSClive::DatabaseNOKOHND($uid);
+    } elsif ($status eq "woh") {
+	@AD = kSClive::DatabaseWAOHND($uid);
+    } elsif ($status eq "coh") {
+	@AD = kSClive::DatabaseCROHND($uid);
+    } elsif ($status eq "uoh") {
+	@AD = kSClive::DatabaseUNOHND($uid);
+    } elsif ($status eq "apdh") {
+	@AD = kSClive::DatabaseNOKOFFHND($uid);
+    } elsif ($status eq "wnafh") {
+	@AD = kSClive::DatabaseWAOFFHND($uid);
+    } elsif ($status eq "cnafh") {
+	@AD = kSClive::DatabaseCROFFHND($uid);
+    } elsif ($status eq "unafh") {
+	@AD = kSClive::DatabaseUNOFFHND($uid);
+    } elsif ($status eq "wnaoh") {
+	@AD = kSClive::DatabaseWAOHNOACK($uid);
+    } elsif ($status eq "waoh") {
+	@AD = kSClive::DatabaseWAOHACK($uid);
+    } elsif ($status eq "cnaoh") {
+	@AD = kSClive::DatabaseCROHNOACK($uid);
+    } elsif ($status eq "caoh") {
+	@AD = kSClive::DatabaseCROHACK($uid);
+    } elsif ($status eq "unaoh") {
+	@AD = kSClive::DatabaseUNOHNOACK($uid);
+    } elsif ($status eq "uaoh") {
+	@AD = kSClive::DatabaseUNOHACK($uid);
+    } elsif ($status eq "wnafh") {
+	@AD = kSClive::DatabaseWAOFFHNOACK($uid);
+    } elsif ($status eq "wafh") {
+	@AD = kSClive::DatabaseWAOFFHACK($uid);
+    } elsif ($status eq "cnafh") {
+	@AD = kSClive::DatabaseCROFFHNOACK($uid);
+    } elsif ($status eq "cafh") {
+	@AD = kSClive::DatabaseCROFFHACK($uid);
+    } elsif ($status eq "unafh") {
+	@AD = kSClive::DatabaseUNOFFHNOACK($uid);
+    } elsif ($status eq "uafh") {
+	@AD = kSClive::DatabaseUNOFFHACK($uid);
+    } else {
+	@AD = kSClive::AllDatabases($uid);
+    }
+    # Execution
+    my $out;
+    for (my $c=0;$c<scalar(@{$AD[0]});$c++) {
+	$out.="{";
+        if ($AD[0][$c][2] =~ /_DBST_/i) {
+            $out.="\"NAME\":\"". uc(substr($AD[0][$c][2], 10)) ."\"";
+        } elsif ($AD[0][$c][2] =~ /_DBSTATUS/i) {
+            $AD[0][$c][2] =~ s/_DBSTATUS//g;
+            $out.="\"NAME\":\"". uc(substr($AD[0][$c][2],7))  ."\"";
+        } else {
+            $out.="\"NAME\":\"". $AD[0][$c][2] ."\"";
+        }
+        $out.=",\"HOST\":\"". $AD[0][$c][0] ."\",\"ICON\":\"". kSCbasic::GetHostIcon("db") ."\",\"URL\":\"". kSCbasic::GetHostUrl("db") ."\",\"HOST_STATE\":\"". $AD[0][$c][1] ."\",\"SERVICE_STATE\":\"". $AD[0][$c][3] ."\",\"SERVICE_STATE_ICON\":\"". kSCbasic::GetStatusIcon($AD[0][$c][3],"service") ."\",\"ACK\":\"". $AD[0][$c][7] ."\",\"LAST_CHECK_UTIME\":\"". $AD[0][$c][4] ."\",\"LAST_CHECK_ISO\":\"". kSCbasic::ConvertUt2Ts($AD[0][$c][4]) ."\",\"NEXT_CHECK_UTIME\":\"". $AD[0][$c][8] ."\",\"NEXT_CHECK_ISO\":\"". kSCbasic::ConvertUt2Ts($AD[0][$c][8]) ."\",\"OUTPUT\":\"". kSCbasic::EncodeHTML($AD[0][$c][5]) ."\",\"LONG_OUTPUT\":\"". kSCbasic::EncodeHTML($AD[0][$c][6]) ."\"},";
+    }
+    $out = substr($out, 0, -1);
+    print kSChtml::ContentType("json");
+    print "[". $out ."]";
+}
+#
+sub DatabaseSearchList {
+    my $uid = shift;
+    my $searchstring = shift;
+    my @AD = kSClive::DatabaseSearchList($uid,$searchstring);
+    my $out;
+    for (my $c=0;$c<scalar(@{$AD[0]});$c++) {
+	$out.="{";
+        if ($AD[0][$c][2] =~ /_DBST_/i) {
+            $out.="\"NAME\":\"". uc(substr($AD[0][$c][2], 10)) ."\"";
+        } elsif ($AD[0][$c][2] =~ /_DBSTATUS/i) {
+            $AD[0][$c][2] =~ s/_DBSTATUS//g;
+            $out.="\"NAME\":\"". uc(substr($AD[0][$c][2],7))  ."\"";
+        } else {
+            $out.="\"NAME\":\"". $AD[0][$c][2] ."\"";
+        }
+        $out.=",\"HOST\":\"". $AD[0][$c][0] ."\",\"ICON\":\"". kSCbasic::GetHostIcon("db") ."\",\"URL\":\"". kSCbasic::GetHostUrl("db") ."\",\"HOST_STATE\":\"". $AD[0][$c][1] ."\",\"SERVICE_STATE\":\"". $AD[0][$c][3] ."\",\"SERVICE_STATE_ICON\":\"". kSCbasic::GetStatusIcon($AD[0][$c][3],"service") ."\",\"ACK\":\"". $AD[0][$c][7] ."\",\"LAST_CHECK_UTIME\":\"". $AD[0][$c][4] ."\",\"LAST_CHECK_ISO\":\"". kSCbasic::ConvertUt2Ts($AD[0][$c][4]) ."\",\"NEXT_CHECK_UTIME\":\"". $AD[0][$c][8] ."\",\"NEXT_CHECK_ISO\":\"". kSCbasic::ConvertUt2Ts($AD[0][$c][8]) ."\",\"OUTPUT\":\"". kSCbasic::EncodeHTML($AD[0][$c][5]) ."\",\"LONG_OUTPUT\":\"". kSCbasic::EncodeHTML($AD[0][$c][6]) ."\"},";
     }
     $out = substr($out, 0, -1);
     print kSChtml::ContentType("json");
@@ -613,10 +726,14 @@ while($request->Accept() >= 0) {
     	    ServiceStatusSelect(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("s")));
 	} elsif (kSCbasic::CheckUrlKeyValue("m","HostStatusSelect","y") == 0) {
     	    HostStatusSelect(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("s")));
+	} elsif (kSCbasic::CheckUrlKeyValue("m","DatabaseStatusSelect","y") == 0) {
+    	    DatabaseStatusSelect(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("s")));
 	} elsif (kSCbasic::CheckUrlKeyValue("m","ServiceSearchList","y") == 0) {
     	    ServiceSearchList(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("searchstring")));
 	} elsif (kSCbasic::CheckUrlKeyValue("m","HostSearchList","y") == 0) {
     	    HostSearchList(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("searchstring")));
+	} elsif (kSCbasic::CheckUrlKeyValue("m","DatabaseSearchList","y") == 0) {
+    	    DatabaseSearchList(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("searchstring")));
 	} else {
 	    my $out = kSChtml::ContentType("json");
 	    $out.= kSCbasic::ErrorMessage("json","1");
@@ -641,10 +758,14 @@ while($request->Accept() >= 0) {
     	    ServiceStatusSelect(kSCbasic::GetUrlKeyValue("u"),kSCbasic::GetUrlKeyValue("s"));
 	} elsif (kSCbasic::CheckUrlKeyValue("m","HostStatusSelect","n") == 0) {
     	    HostStatusSelect(kSCbasic::GetUrlKeyValue("u"),kSCbasic::GetUrlKeyValue("s"));
+	} elsif (kSCbasic::CheckUrlKeyValue("m","DatabaseStatusSelect","n") == 0) {
+    	    DatabaseStatusSelect(kSCbasic::GetUrlKeyValue("u"),kSCbasic::GetUrlKeyValue("s"));
 	} elsif (kSCbasic::CheckUrlKeyValue("m","ServiceSearchList","n") == 0) {
     	    ServiceSearchList(kSCbasic::GetUrlKeyValue("u"),kSCbasic::GetUrlKeyValue("searchstring"));
 	} elsif (kSCbasic::CheckUrlKeyValue("m","HostSearchList","n") == 0) {
     	    HostSearchList(kSCbasic::GetUrlKeyValue("u"),kSCbasic::GetUrlKeyValue("searchstring"));
+	} elsif (kSCbasic::CheckUrlKeyValue("m","DatabaseSearchList","n") == 0) {
+    	    DatabaseSearchList(kSCbasic::GetUrlKeyValue("u"),kSCbasic::GetUrlKeyValue("searchstring"));
 	} else {
 	    my $out = kSChtml::ContentType("json");
 	    $out.= kSCbasic::ErrorMessage("json","2");
