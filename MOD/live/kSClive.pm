@@ -73,6 +73,12 @@ sub DatabaseNOKNOACKOH {
     return ($out);
 }
 #
+sub DatabaseNOKACKOH {
+    my $uid = shift;
+    my $out = $ml->selectall_arrayref("GET services\nColumns: host_name host_state display_name state last_check plugin_output long_plugin_output acknowledged next_check\nFilter: display_name ~~ DBST\nFilter: display_name ~~ DBSTATUS\nOr: 2\nFilter: state > 0\nFilter: host_state = 0\nFilter: scheduled_downtime_depth = 0\nFilter: host_scheduled_downtime_depth = 0\nFilter: acknowledged = 1\nAuthUser: ". $uid);
+    return ($out);
+}
+#
 sub DatabaseNOKOHND {
     my $uid = shift;
     my $out = $ml->selectall_arrayref("GET services\nColumns: host_name host_state display_name state last_check plugin_output long_plugin_output acknowledged next_check\nFilter: display_name ~~ DBST\nFilter: display_name ~~ DBSTATUS\nOr: 2\nFilter: state > 0\nFilter: host_state = 0\nFilter: scheduled_downtime_depth = 0\nFilter: host_scheduled_downtime_depth = 0\nAuthUser: ". $uid);

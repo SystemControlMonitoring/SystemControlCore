@@ -62,6 +62,24 @@ sub GetJqGridClientInfo {
     return ($info);
 }
 #
+sub GetJqGridODBInfo {
+    my $ipaddr = shift;
+    my $port = shift;
+    my $api = shift;
+    my $module = shift;
+    my $db = shift;
+    my $search = shift;
+    my $rows = shift;
+    my $page = shift;
+    my $sidx = shift;
+    my $sord = shift;
+    #
+    #my $info = "http://". $ipaddr .":". $port ."/api/". $api ."?module=". $module ."&db=". $db ."&_search=". $search ."&rows=". $rows ."&page=". $page ."&sidx=". $sidx ."&sord=". $sord ."";
+    my $info = LWP::Simple::get("http://". $ipaddr .":". $port ."/api/". $api ."?module=". $module ."&db=". $db ."&_search=". $search ."&rows=". $rows ."&page=". $page ."&sidx=". $sidx ."&sord=". $sord ."");
+    #
+    return ($info);
+}
+#
 close ($CF);
 #
 1;

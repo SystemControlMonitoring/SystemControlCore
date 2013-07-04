@@ -612,6 +612,8 @@ sub DatabaseStatusSelect {
 	@AD = kSClive::DatabaseNOK($uid);
     } elsif ($status eq "apnaoh") {
 	@AD = kSClive::DatabaseNOKNOACKOH($uid);
+    } elsif ($status eq "apaoh") {
+	@AD = kSClive::DatabaseNOKACKOH($uid);
     } elsif ($status eq "apoh") {
 	@AD = kSClive::DatabaseNOKOHND($uid);
     } elsif ($status eq "woh") {

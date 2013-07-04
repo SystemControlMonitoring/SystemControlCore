@@ -1,7 +1,7 @@
-<!--CINFO_VERSION:2.130502-->
+<!--CINFO_VERSION:2.130704-->
 
 Modul: <i><b>Client Information Direct Access</b></i><br>
-Version: <i><b>2.130502</b></i><br>
+Version: <i><b>2.130704</b></i><br>
 Comments: -<br>
 Format: <i><b>JSON</b></i><br>
 <font size=2>Query:<br>
@@ -11,6 +11,7 @@ Format: <i><b>JSON</b></i><br>
     <li><b>SysJqGrid</b> - JqGrid for Systen Information URL: <a href="/cinfo/json/?e=1&m=U3lzSnFHcmlkJkd873&cm=RlM=JhDQ83&c=ZGJ3aW5kby5zaXYuZGU=Hd783d&u=c2JhcmVzZWw=LKHld3&_search=false&rows=10&page=1&sidx=&sord=asc">/cinfo/json/?e=1&m=U3lzSnFHcmlkJkd873&cm=RlM=JhDQ83&c=ZGJ3aW5kby5zaXYuZGU=Hd783d&u=c2JhcmVzZWw=LKHld3&_search=false&rows=10&page=1&sidx=&sord=asc</a></li>
     <li><b>ServiceHostList</b> - List Services From Host URL: <a href="/cinfo/json/?e=1&m=U2VydmljZUhvc3RMaXN0KhdU8Z&u=c2JhcmVzZWw=LKHld3&c=ZGJsaW51eC5zaXYuZGU=KjHu88">/cinfo/json/?e=1&m=U2VydmljZUhvc3RMaXN0KhdU8Z&u=c2JhcmVzZWw=LKHld3&c=ZGJsaW51eC5zaXYuZGU=KjHu88</a></li>
     <li><b>HostSummary</b> - Host Summary URL: <a href="/cinfo/json/?e=1&m=SG9zdFN1bW1hcnk=KhdU8Z&u=c2JhcmVzZWw=LKHld3&c=ZGJsaW51eC5zaXYuZGU=KjHu88">/cinfo/json/?e=1&m=SG9zdFN1bW1hcnk=KhdU8Z&u=c2JhcmVzZWw=LKHld3&c=ZGJsaW51eC5zaXYuZGU=KjHu88</a></li>
+    <li><b>OracleDB</b> - JqGrid for Oracle Database Information URL: <a href="/cinfo/json/?e=1&m=T3JhY2xlREI=KjHu88&c=ZGJsaW51eC5zaXYuZGU=WzzU76&cm=VFNJTkZPKLMUHp&db=T1JDTDI=K4KuuZ&u=c2JhcmVzZWw=LKHld3&_search=false&rows=10&page=1&sidx=tsname&sord=asc">/cinfo/json/?e=1&m=T3JhY2xlREI=KjHu88&c=ZGJsaW51eC5zaXYuZGU=WzzU76&cm=VFNJTkZPKLMUHp&db=T1JDTDI=K4KuuZ&u=c2JhcmVzZWw=LKHld3&_search=false&rows=10&page=1&sidx=tsname&sord=asc</a></li>
 </ul>
 </font>
 <br>
@@ -22,6 +23,7 @@ Format: <i><b>XML</b></i><br>
     <li><b>SysJqGrid</b> - JqGrid for System Information URL: <a href="/cinfo/xml/?e=1&m=U3lzSnFHcmlkJkd873&cm=RlM=JhDQ83&c=ZGJ3aW5kby5zaXYuZGU=Hd783d&u=c2JhcmVzZWw=LKHld3&_search=false&rows=10&page=1&sidx=&sord=asc">/cinfo/xml/?e=1&m=U3lzSnFHcmlkJkd873&cm=RlM=JhDQ83&c=ZGJ3aW5kby5zaXYuZGU=Hd783d&u=c2JhcmVzZWw=LKHld3&_search=false&rows=10&page=1&sidx=&sord=asc</a></li>
     <li><b>ServiceHostList</b> - List Services From Host URL: <a href="/cinfo/xml/?e=1&m=U2VydmljZUhvc3RMaXN0KhdU8Z&u=c2JhcmVzZWw=LKHjd3&c=ZGJsaW51eC5zaXYuZGU=KjHu88">/cinfo/xml/?e=1&m=U2VydmljZUhvc3RMaXN0KhdU8Z&u=c2JhcmVzZWw=LKHjd3&c=ZGJsaW51eC5zaXYuZGU=KjHu88</a></li>
     <li><b>HostSummary</b> - Host Summary URL: <a href="/cinfo/xml/?e=1&m=SG9zdFN1bW1hcnk=KhdU8Z&u=c2JhcmVzZWw=LKHjd3&c=ZGJsaW51eC5zaXYuZGU=KjHu88">/cinfo/xml/?e=1&m=SG9zdFN1bW1hcnk=KhdU8Z&u=c2JhcmVzZWw=LKHjd3&c=ZGJsaW51eC5zaXYuZGU=KjHu88</a></li>
+    <li><b>OracleDB</b> - JqGrid for Oracle Database Information URL: <a href="/cinfo/xml/?e=1&m=T3JhY2xlREI=KjHu88&c=ZGJsaW51eC5zaXYuZGU=WzzU76&cm=VFNJTkZPKLMUHp&db=T1JDTDI=K4KuuZ&u=c2JhcmVzZWw=LKHld3&_search=false&rows=10&page=1&sidx=tsname&sord=asc">/cinfo/xml/?e=1&m=T3JhY2xlREI=KjHu88&c=ZGJsaW51eC5zaXYuZGU=WzzU76&cm=VFNJTkZPKLMUHp&db=T1JDTDI=K4KuuZ&u=c2JhcmVzZWw=LKHld3&_search=false&rows=10&page=1&sidx=tsname&sord=asc</a></li>
 </ul>
 </font>
 <br></br>

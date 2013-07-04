@@ -192,6 +192,27 @@ sub HostSummary {
     print $out;
 }
 #
+sub OracleDB {
+    my $client = shift;
+    my $uid = shift;
+    my $module = shift;
+    my $db = shift;
+    my $search = shift;
+    my $rows = shift;
+    my $page = shift;
+    my $sidx = shift;
+    my $sord = shift;
+    if ( kSClive::AccessHost($uid,$client) == "1" ) {
+	my $info = kSChttp::GetJqGridODBInfo($client,"6555","OracleDB.cpl",$module,$db,$search,$rows,$page,$sidx,$sord);
+	print kSChtml::ContentType("json");
+	print $info;
+    } else {
+	my $out = kSChtml::ContentType("json");
+	$out.= kSCbasic::ErrorMessage("json","2");
+	print $out;
+    }
+}
+#
 #
 #
 #
@@ -213,6 +234,8 @@ while($request->Accept() >= 0) {
 	    ServiceHostList(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("c")));
 	} elsif (kSCbasic::CheckUrlKeyValue("m","HostSummary","y") == 0) {
 	    HostSummary(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("c")));
+	} elsif (kSCbasic::CheckUrlKeyValue("m","OracleDB","y") == 0) {
+	    OracleDB(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("c")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("cm")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("db")),kSCbasic::GetUrlKeyValue("_search"),kSCbasic::GetUrlKeyValue("rows"),kSCbasic::GetUrlKeyValue("page"),kSCbasic::GetUrlKeyValue("sidx"),kSCbasic::GetUrlKeyValue("sord"));
 	} else {
 	    my $out = kSChtml::ContentType("json");
 	    $out.= kSCbasic::ErrorMessage("json","1");
@@ -231,6 +254,8 @@ while($request->Accept() >= 0) {
 	    HostSummary(kSCbasic::GetUrlKeyValue("u"),kSCbasic::GetUrlKeyValue("c"));
 	} elsif (kSCbasic::CheckUrlKeyValue("m","TT","n") == 0) {
 	    TT();
+	} elsif (kSCbasic::CheckUrlKeyValue("m","OracleDB","n") == 0) {
+	    OracleDB(kSCbasic::GetUrlKeyValue("c"),kSCbasic::GetUrlKeyValue("u"),kSCbasic::GetUrlKeyValue("cm"),kSCbasic::GetUrlKeyValue("db"),kSCbasic::GetUrlKeyValue("_search"),kSCbasic::GetUrlKeyValue("rows"),kSCbasic::GetUrlKeyValue("page"),kSCbasic::GetUrlKeyValue("sidx"),kSCbasic::GetUrlKeyValue("sord"));
 	} else {
 	    my $out = kSChtml::ContentType("json");
 	    $out.= kSCbasic::ErrorMessage("json","2");
