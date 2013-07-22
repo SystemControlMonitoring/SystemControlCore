@@ -44,7 +44,7 @@ sub SYSINFO {
     my $client = shift;
     my $uid = shift;
     if ( kSClive::AccessHost($uid,$client) == "1" ) {
-	my $info = kSChttp::GetClientInfo($client,"6555","Wmic.cpl","SYSINFO");
+	my $info = kSChttp::GetClientInfo($client,"6555","sysstat","SYSINFO");
 	print kSChtml::ContentType("json");
 	if ($info =~ /[Ww][Ii][Nn][Dd][Oo][Ww][Ss]/i || $info =~ /[Mm][Ii][Cc][Rr][Oo][Ss][Oo][Ff][Tt]/i) {
 	    $info =~ s/{\"HOSTNAME\":/{\"TYPE\":\"WIN\",\"HOSTNAME\":/g;
@@ -69,12 +69,12 @@ sub DBINFO {
 	    my $dbname = substr($check[0][$c][0], index($check[0][$c][0], "_")+1);
 	    $dbname = substr($dbname, 0, index($dbname, "_") );
 	    #print $dbname;
-	    $info .= kSChttp::GetDBInfo($client,"6555","OracleDB.cpl","DBINFO",$dbname) .",";
+	    $info .= kSChttp::GetDBInfo($client,"6555","oracledatabase","DBINFO",$dbname) .",";
 	    $info =~ s/{\"/{\"DBNAME\":\"$dbname\",\"/g;
 	} elsif ( $check[0][$c][0] =~ /_DBST_/i ) {
 	    my $dbname = substr($check[0][$c][0], rindex($check[0][$c][0], "_")+1 );
 	    #print $dbname;
-	    $info .= kSChttp::GetDBInfo($client,"6555","OracleDB.cpl","DBINFO",$dbname) .",";
+	    $info .= kSChttp::GetDBInfo($client,"6555","oracledatabase","DBINFO",$dbname) .",";
 	    $info =~ s/{\"/{\"DBNAME\":\"$dbname\",\"/g;
 	}
     }
@@ -94,7 +94,7 @@ sub SysJqGrid {
     my $sidx = shift;
     my $sord = shift;
     if ( kSClive::AccessHost($uid,$client) == "1" ) {
-	my $info = kSChttp::GetJqGridClientInfo($client,"6555","Wmic.cpl",$module,$search,$rows,$page,$sidx,$sord);
+	my $info = kSChttp::GetJqGridClientInfo($client,"6555","sysstat",$module,$search,$rows,$page,$sidx,$sord);
 	print kSChtml::ContentType("json");
 	print $info;
     } else {
@@ -203,13 +203,31 @@ sub OracleDB {
     my $sidx = shift;
     my $sord = shift;
     if ( kSClive::AccessHost($uid,$client) == "1" ) {
-	my $info = kSChttp::GetJqGridODBInfo($client,"6555","OracleDB.cpl",$module,$db,$search,$rows,$page,$sidx,$sord);
+	my $info = kSChttp::GetJqGridODBInfo($client,"6555","oracledatabase",$module,$db,$search,$rows,$page,$sidx,$sord);
 	print kSChtml::ContentType("json");
 	print $info;
     } else {
 	my $out = kSChtml::ContentType("json");
 	$out.= kSCbasic::ErrorMessage("json","2");
 	print $out;
+    }
+}
+#
+sub ODBA {
+    my $client = shift;
+    my $uid = shift;
+    my $module = shift;
+    my $db = shift;
+    my $datestart = shift;
+    my $dateend = shift;
+    if ( kSClive::AccessHost($uid,$client) == "1" ) {
+	my $info = kSChttp::GetODBAdmin($client,"6555","oracledatabase",$module,$db,$datestart,$dateend);
+	print kSChtml::ContentType("json");
+	print $info;
+    } else {
+	my $out = kSChtml::ContentType("json");
+	$out.= kSCbasic::ErrorMessage("json","2");
+	print "OracleDBAdmin -". $out;
     }
 }
 #
@@ -236,10 +254,12 @@ while($request->Accept() >= 0) {
 	    HostSummary(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("c")));
 	} elsif (kSCbasic::CheckUrlKeyValue("m","OracleDB","y") == 0) {
 	    OracleDB(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("c")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("cm")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("db")),kSCbasic::GetUrlKeyValue("_search"),kSCbasic::GetUrlKeyValue("rows"),kSCbasic::GetUrlKeyValue("page"),kSCbasic::GetUrlKeyValue("sidx"),kSCbasic::GetUrlKeyValue("sord"));
+	} elsif (kSCbasic::CheckUrlKeyValue("m","OracleDBAdmin","y") == 0) {
+	    OracleDBAdmin(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("c")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("cm")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("db")),kSCbasic::GetUrlKeyValue("date_start"),kSCbasic::GetUrlKeyValue("date_end"));
 	} else {
 	    my $out = kSChtml::ContentType("json");
 	    $out.= kSCbasic::ErrorMessage("json","1");
-	    print $out;
+	    print "Main (e1) -". $out;
 	}
     } elsif (kSCbasic::CheckUrlKeyValue("e","0","n") == 0) {
 	if (kSCbasic::CheckUrlKeyValue("m","SYSINFO","n") == 0) {
@@ -256,15 +276,17 @@ while($request->Accept() >= 0) {
 	    TT();
 	} elsif (kSCbasic::CheckUrlKeyValue("m","OracleDB","n") == 0) {
 	    OracleDB(kSCbasic::GetUrlKeyValue("c"),kSCbasic::GetUrlKeyValue("u"),kSCbasic::GetUrlKeyValue("cm"),kSCbasic::GetUrlKeyValue("db"),kSCbasic::GetUrlKeyValue("_search"),kSCbasic::GetUrlKeyValue("rows"),kSCbasic::GetUrlKeyValue("page"),kSCbasic::GetUrlKeyValue("sidx"),kSCbasic::GetUrlKeyValue("sord"));
+	} elsif (kSCbasic::CheckUrlKeyValue("m","ODBA","n") == 0) {
+	    ODBA(kSCbasic::GetUrlKeyValue("c"),kSCbasic::GetUrlKeyValue("u"),kSCbasic::GetUrlKeyValue("cm"),kSCbasic::GetUrlKeyValue("db"),kSCbasic::GetUrlKeyValue("date_start"),kSCbasic::GetUrlKeyValue("date_end"));
 	} else {
 	    my $out = kSChtml::ContentType("json");
 	    $out.= kSCbasic::ErrorMessage("json","2");
-	    print $out;
+	    print "Main (e0) -". $out;
 	}
     } else {
 	my $out = kSChtml::ContentType("json");
 	$out.= kSCbasic::ErrorMessage("json","0");
-	print $out;
+	print " ++ ". $out;
     }
 }
 #
