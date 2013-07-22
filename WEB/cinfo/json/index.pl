@@ -213,21 +213,21 @@ sub OracleDB {
     }
 }
 #
-sub ODBA {
+sub OracleDBAdmin {
     my $client = shift;
     my $uid = shift;
-    my $module = shift;
+    my $cm = shift;
     my $db = shift;
     my $datestart = shift;
     my $dateend = shift;
     if ( kSClive::AccessHost($uid,$client) == "1" ) {
-	my $info = kSChttp::GetODBAdmin($client,"6555","oracledatabase",$module,$db,$datestart,$dateend);
+	my $info = kSChttp::GetODBAdmin($client,"6555","oracledatabase",$cm,$db,$datestart,$dateend);
 	print kSChtml::ContentType("json");
 	print $info;
     } else {
 	my $out = kSChtml::ContentType("json");
-	$out.= kSCbasic::ErrorMessage("json","2");
-	print "OracleDBAdmin -". $out;
+	$out.= kSCbasic::ErrorMessage("json","5");
+	print $out;
     }
 }
 #
@@ -259,7 +259,7 @@ while($request->Accept() >= 0) {
 	} else {
 	    my $out = kSChtml::ContentType("json");
 	    $out.= kSCbasic::ErrorMessage("json","1");
-	    print "Main (e1) -". $out;
+	    print $out;
 	}
     } elsif (kSCbasic::CheckUrlKeyValue("e","0","n") == 0) {
 	if (kSCbasic::CheckUrlKeyValue("m","SYSINFO","n") == 0) {
@@ -276,17 +276,17 @@ while($request->Accept() >= 0) {
 	    TT();
 	} elsif (kSCbasic::CheckUrlKeyValue("m","OracleDB","n") == 0) {
 	    OracleDB(kSCbasic::GetUrlKeyValue("c"),kSCbasic::GetUrlKeyValue("u"),kSCbasic::GetUrlKeyValue("cm"),kSCbasic::GetUrlKeyValue("db"),kSCbasic::GetUrlKeyValue("_search"),kSCbasic::GetUrlKeyValue("rows"),kSCbasic::GetUrlKeyValue("page"),kSCbasic::GetUrlKeyValue("sidx"),kSCbasic::GetUrlKeyValue("sord"));
-	} elsif (kSCbasic::CheckUrlKeyValue("m","ODBA","n") == 0) {
-	    ODBA(kSCbasic::GetUrlKeyValue("c"),kSCbasic::GetUrlKeyValue("u"),kSCbasic::GetUrlKeyValue("cm"),kSCbasic::GetUrlKeyValue("db"),kSCbasic::GetUrlKeyValue("date_start"),kSCbasic::GetUrlKeyValue("date_end"));
+	} elsif (kSCbasic::CheckUrlKeyValue("m","OracleDBAdmin","n") == 0) {
+	    OracleDBAdmin(kSCbasic::GetUrlKeyValue("c"),kSCbasic::GetUrlKeyValue("u"),kSCbasic::GetUrlKeyValue("cm"),kSCbasic::GetUrlKeyValue("db"),kSCbasic::GetUrlKeyValue("date_start"),kSCbasic::GetUrlKeyValue("date_end"));
 	} else {
 	    my $out = kSChtml::ContentType("json");
 	    $out.= kSCbasic::ErrorMessage("json","2");
-	    print "Main (e0) -". $out;
+	    print $out;
 	}
     } else {
 	my $out = kSChtml::ContentType("json");
 	$out.= kSCbasic::ErrorMessage("json","0");
-	print " ++ ". $out;
+	print $out;
     }
 }
 #
