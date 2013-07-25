@@ -95,6 +95,19 @@ sub GetODBAdmin {
     return ($info);
 }
 #
+sub GetLogAdmin {
+    my $ipaddr = shift;
+    my $port = shift;
+    my $api = shift;
+    my $module = shift;
+    my $log = shift;
+    #
+    my $info = LWP::Simple::get("http://". $ipaddr .":". $port ."/api/". $api ."/?module=". $module ."&log=". $log ."");
+    #
+    return ($info);
+    #return ("http://". $ipaddr .":". $port ."/api/". $api ."/?module=". $module ."&log=". $log ."");
+}
+#
 close ($CF);
 #
 1;

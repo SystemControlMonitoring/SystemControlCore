@@ -11,6 +11,7 @@ use MIME::Base64 ();
 use Digest::MD5;
 use Cwd qw(realpath);
 use FileHash::Entry;
+use Date::Parse;
 # Name
 package kSCbasic;
 #########################################################
@@ -31,6 +32,12 @@ sub ConvertUt2Ts {
     my ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) = localtime($ut);
     my $out = sprintf "%04d-%02d-%02d %02d:%02d:%02d", $year+=1900, $mon+=1, $mday, $hour, $min, $sec;
     return($out) ;
+}
+#
+sub ConvertTs2Ut {
+    my $ts = shift;
+    my $time = Date::Parse::str2time($ts);
+    return($time);
 }
 #
 sub ListReadme {

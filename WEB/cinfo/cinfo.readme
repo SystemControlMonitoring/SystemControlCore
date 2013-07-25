@@ -13,6 +13,7 @@ Format: <i><b>JSON</b></i><br>
     <li><b>HostSummary</b> - Host Summary URL: <a href="/cinfo/json/?e=1&m=SG9zdFN1bW1hcnk=KhdU8Z&u=c2JhcmVzZWw=LKHld3&c=ZGJsaW51eC5zaXYuZGU=KjHu88">/cinfo/json/?e=1&m=SG9zdFN1bW1hcnk=KhdU8Z&u=c2JhcmVzZWw=LKHld3&c=ZGJsaW51eC5zaXYuZGU=KjHu88</a></li>
     <li><b>OracleDB</b> - JqGrid for Oracle Database Information URL: <a href="/cinfo/json/?e=1&m=T3JhY2xlREI=KjHu88&c=ZGJsaW51eC5zaXYuZGU=WzzU76&cm=VFNJTkZPKLMUHp&db=T1JDTDI=K4KuuZ&u=c2JhcmVzZWw=LKHld3&_search=false&rows=10&page=1&sidx=tsname&sord=asc">/cinfo/json/?e=1&m=T3JhY2xlREI=KjHu88&c=ZGJsaW51eC5zaXYuZGU=WzzU76&cm=VFNJTkZPKLMUHp&db=T1JDTDI=K4KuuZ&u=c2JhcmVzZWw=LKHld3&_search=false&rows=10&page=1&sidx=tsname&sord=asc</a></li>
     <li><b>OracleDBAdmin</b> - Redirect Oracle Database Admin Options URL: <a href="/cinfo/json/?e=1&m=T3JhY2xlREJBZG1pbg==KhdU8Z&c=ZGJ3aW5kby5zaXYuZGU=Jjd723&u=c2JhcmVzZWw=LKHld3&cm=&date_start=&date_end=">/cinfo/json/?e=1&m=T3JhY2xlREJBZG1pbg==KhdU8Z&c=ZGJ3aW5kby5zaXYuZGU=Jjd723&u=c2JhcmVzZWw=LKHld3&cm=&date_start=&date_end=</a></li>
+    <li><b>LogAdmin</b> - Redirect Log Admin Options URL: <a href="/cinfo/json/?e=1&m=TG9nQWRtaW4=KhdU8Z&c=ZGJ3aW5kby5zaXYuZGU=Jjd723&u=c2JhcmVzZWw=LKHld3&cm=&log=">/cinfo/json/?e=1&m=TG9nQWRtaW4=KhdU8Z&c=ZGJ3aW5kby5zaXYuZGU=Jjd723&u=c2JhcmVzZWw=LKHld3&cm=&log=</a></li>
 </ul>
 </font>
 <br>

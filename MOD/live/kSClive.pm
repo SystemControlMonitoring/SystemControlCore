@@ -834,6 +834,176 @@ sub GetGroupName {
     my $out = $ml->selectall_arrayref("GET hostgroups\nColumns: alias\nFilter: name ~~ ". $searchstring ."");
     return ($out);
 }
+########################################################
+#                                                      #
+# Commands                                             #
+#                                                      #
+########################################################
+sub ScheduleForcedHostCheck {
+    my $hname = shift;
+    my $utime = shift;
+    my $out = $ml->do("COMMAND [". $utime ."] SCHEDULE_FORCED_HOST_CHECK;". $hname .";". $utime ."");
+    return 0;
+}
+#
+sub ScheduleForcedHostSvcCheck {
+    my $hname = shift;
+    my $utime = shift;
+    my $out = $ml->do("COMMAND [". $utime ."] SCHEDULE_FORCED_HOST_SVC_CHECK;". $hname .";". $utime ."");
+    return 0;
+}
+#
+sub ScheduleForcedSvcCheck {
+    my $hname = shift;
+    my $sname = shift;
+    my $utime = shift;
+    my $out = $ml->do("COMMAND [". $utime ."] SCHEDULE_FORCED_SVC_CHECK;". $hname .";". $sname .";". $utime ."");
+    return 0;
+}
+#
+sub ScheduleHostSvcDowntime {
+    my $hname = shift;
+    my $author = shift;
+    my $comment = shift;
+    my $utime = shift;
+    my $stime = shift;
+    my $etime = shift;
+    my $duration = shift;
+    my $out = $ml->do("COMMAND [". $utime ."] SCHEDULE_HOST_SVC_DOWNTIME;". $hname .";". $stime .";". $etime .";1;0;". $duration .";". $author .";". $comment ."");
+    return 0;
+}
+#
+#
+# Service
+#
+sub AcknowledgeSvcProblem {
+    my $hname = shift;
+    my $sname = shift;
+    my $author = shift;
+    my $comment = shift;
+    my $utime = shift;
+    my $out = $ml->do("COMMAND [". $utime ."] ACKNOWLEDGE_SVC_PROBLEM;". $hname .";". $sname .";1;1;1;". $author .";". $comment ."");
+    return 0;
+}
+#
+sub RemoveSvcAcknowledgement {
+    my $hname = shift;
+    my $sname = shift;
+    my $utime = shift;
+    my $out = $ml->do("COMMAND [". $utime ."] REMOVE_SVC_ACKNOWLEDGEMENT;". $hname .";". $sname .";");
+    return 0;
+}
+#
+sub AddSvcComment {
+    my $hname = shift;
+    my $sname = shift;
+    my $author = shift;
+    my $comment = shift;
+    my $utime = shift;
+    my $out = $ml->do("COMMAND [". $utime ."] ADD_SVC_COMMENT;". $hname .";". $sname .";1;". $author .";". $comment ."");
+    return 0;
+}
+#
+sub ScheduleSvcDowntime {
+    my $hname = shift;
+    my $sname = shift;
+    my $author = shift;
+    my $comment = shift;
+    my $utime = shift;
+    my $stime = shift;
+    my $etime = shift;
+    my $duration = shift;
+    my $out = $ml->do("COMMAND [". $utime ."] SCHEDULE_SVC_DOWNTIME;". $hname .";". $sname .";". $stime .";". $etime .";1;0;". $duration .";". $author .";". $comment ."");
+    return 0;
+}
+#
+sub DelSvcDowntime {
+    my $hname = shift;
+    my $sname = shift;
+    my $utime = shift;
+    my $dwtid;
+    my $out = $ml->do("COMMAND [". $utime ."] DEL_SVC_DOWNTIME;". $dwtid ."");
+    return 0;
+}
+#
+sub DisableSvcNotifications {
+    my $hname = shift;
+    my $sname = shift;
+    my $utime = shift;
+    my $out = $ml->do("COMMAND [". $utime ."] DISABLE_SVC_NOTIFICATIONS;". $hname .";". $sname .";". $utime ."");
+    return 0;
+}
+#
+sub EnableSvcNotifications {
+    my $hname = shift;
+    my $sname = shift;
+    my $utime = shift;
+    my $out = $ml->do("COMMAND [". $utime ."] ENABLE_SVC_NOTIFICATIONS;". $hname .";". $sname .";". $utime ."");
+    return 0;
+}
+#
+#
+# Host Commands
+#
+sub AcknowledgeHostProblem {
+    my $hname = shift;
+    my $author = shift;
+    my $comment = shift;
+    my $utime = shift;
+    my $out = $ml->do("COMMAND [". $utime ."] ACKNOWLEDGE_HOST_PROBLEM;". $hname .";1;1;1;". $author .";". $comment ."");
+    return 0;
+}
+#
+sub RemoveHostAcknowledgement {
+    my $hname = shift;
+    my $utime = shift;
+    my $out = $ml->do("COMMAND [". $utime ."] REMOVE_HOST_ACKNOWLEDGEMENT;". $hname ."");
+    return 0;
+}
+#
+sub AddHostComment {
+    my $hname = shift;
+    my $author = shift;
+    my $comment = shift;
+    my $utime = shift;
+    my $out = $ml->do("COMMAND [". $utime ."] ADD_HOST_COMMENT;". $hname .";1;". $author .";". $comment ."");
+    return 0;
+}
+#
+sub ScheduleHostDowntime {
+    my $hname = shift;
+    my $author = shift;
+    my $comment = shift;
+    my $utime = shift;
+    my $stime = shift;
+    my $etime = shift;
+    my $duration = shift;
+    my $out = $ml->do("COMMAND [". $utime ."] SCHEDULE_HOST_DOWNTIME;". $hname .";". $stime .";". $etime .";1;0;". $duration .";". $author .";". $comment ."");
+    return 0;
+}
+#
+sub DelHostDowntime {
+    my $hname = shift;
+    my $utime = shift;
+    my $dwtid;
+    my $out = $ml->do("COMMAND [". $utime ."] DEL_HOST_DOWNTIME;". $dwtid ."");
+    return 0;
+}
+#
+sub EnableHostNotifications {
+    my $hname = shift;
+    my $utime = shift;
+    my $out = $ml->do("COMMAND [". $utime ."] ENABLE_HOST_NOTIFICATIONS;". $hname .";". $utime ."");
+    return 0;
+}
+#
+sub DisableHostNotifications {
+    my $hname = shift;
+    my $utime = shift;
+    my $out = $ml->do("COMMAND [". $utime ."] DISABLE_HOST_NOTIFICATIONS;". $hname .";". $utime ."");
+    return 0;
+}
+#
 #
 close ($CF);
 #
