@@ -27,7 +27,7 @@ Format: <i><b>JSON</b></i><br>
 </ul>
 </font>
 <br>
-Format: <i><b>XML</b></i><br>
+<!--Format: <i><b>XML</b></i><br>
 <font size=2>Query:<br>
 <ul>
     <li><b>HostFullInfo</b> - Overview of hosts with Services URL: <a href="/lda/xml/?e=1&m=SG9zdEZ1bGxJbmZvLkd8n3&u=c2JhcmVzZWw=Lkdi34">/lda/xml/?e=1&m=SG9zdEZ1bGxJbmZvLkd8n3&u=c2JhcmVzZWw=Lkdi34</a></li>
@@ -44,6 +44,6 @@ Format: <i><b>XML</b></i><br>
     <li><b>DatabaseStatusSelect</b> - Select different stats of databases URL: <a href="/lda/xml/?e=1&m=RGF0YWJhc2VTdGF0dXNTZWxlY3Q=Ki88uU&u=c2JhcmVzZWw=LKHld3&s=YXBuYW9oKmUh88">/lda/xml/?e=1&m=RGF0YWJhc2VTdGF0dXNTZWxlY3Q=Ki88uU&u=c2JhcmVzZWw=LKHld3&s=YXBuYW9oKmUh88</a></li>
     <li><b>DatabaseSearchList</b> - Search databases URL: <a href="/lda/xml/?e=1&m=RGF0YWJhc2VTZWFyY2hMaXN0Ki88uU&u=c2JhcmVzZWw=LKHld3&searchstring=VEVTVA==KlUu87">/lda/xml/?e=1&m=RGF0YWJhc2VTZWFyY2hMaXN0Ki88uU&u=c2JhcmVzZWw=LKHld3&searchstring=VEVTVA==KlUu87</a></li>
 </ul>
-</font>
+</font-->
 <br></br>
 <hr><br></br>

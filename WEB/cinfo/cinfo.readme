@@ -17,7 +17,7 @@ Format: <i><b>JSON</b></i><br>
 </ul>
 </font>
 <br>
-Format: <i><b>XML</b></i><br>
+<!--Format: <i><b>XML</b></i><br>
 <font size=2>Query:<br>
 <ul>
     <li><b>SYSINFO</b> - System Information URL: <a href="/cinfo/xml/?e=1&m=U1lTSU5GTw==Jkd873&c=ZGJ3aW5kby5zaXYuZGU=Hd783d&u=c2JhcmVzZWw=LKHld3">/cinfo/xml/?e=1&m=U1lTSU5GTw==Jkd873&c=ZGJ3aW5kby5zaXYuZGU=Hd783d&u=c2JhcmVzZWw=LKHld3</a></li>
@@ -27,6 +27,6 @@ Format: <i><b>XML</b></i><br>
     <li><b>HostSummary</b> - Host Summary URL: <a href="/cinfo/xml/?e=1&m=SG9zdFN1bW1hcnk=KhdU8Z&u=c2JhcmVzZWw=LKHjd3&c=ZGJsaW51eC5zaXYuZGU=KjHu88">/cinfo/xml/?e=1&m=SG9zdFN1bW1hcnk=KhdU8Z&u=c2JhcmVzZWw=LKHjd3&c=ZGJsaW51eC5zaXYuZGU=KjHu88</a></li>
     <li><b>OracleDB</b> - JqGrid for Oracle Database Information URL: <a href="/cinfo/xml/?e=1&m=T3JhY2xlREI=KjHu88&c=ZGJsaW51eC5zaXYuZGU=WzzU76&cm=VFNJTkZPKLMUHp&db=T1JDTDI=K4KuuZ&u=c2JhcmVzZWw=LKHld3&_search=false&rows=10&page=1&sidx=tsname&sord=asc">/cinfo/xml/?e=1&m=T3JhY2xlREI=KjHu88&c=ZGJsaW51eC5zaXYuZGU=WzzU76&cm=VFNJTkZPKLMUHp&db=T1JDTDI=K4KuuZ&u=c2JhcmVzZWw=LKHld3&_search=false&rows=10&page=1&sidx=tsname&sord=asc</a></li>
 </ul>
-</font>
+</font-->
 <br></br>
 <hr><br></br>

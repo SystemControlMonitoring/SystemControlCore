@@ -1,7 +1,7 @@
-<!--COMMAND_VERSION:2.130725-->
+<!--COMMAND_VERSION:2.130726-->
 
 Modul: <i><b>Command Execution to Backend</b></i><br>
-Version: <i><b>2.130725</b></i><br>
+Version: <i><b>2.130726</b></i><br>
 Comments: -<br>
 Format: <i><b>JSON</b></i><br>
 <font size=2>Query:<br>
@@ -14,9 +14,17 @@ Format: <i><b>JSON</b></i><br>
     <li><b>RemDwntmSvc</b> - Remove Downtime for Service URL: <a href="/command/json/?e=1&m=UmVtRHdudG1TdmM=KlU76T&cl=&ch=&u=c2JhcmVzZWw=U7g7ZZ">/command/json/?e=1&m=UmVtRHdudG1TdmM=KlU76T&cl=&ch=&u=c2JhcmVzZWw=U7g7ZZ</a></li>
     <li><b>DeacNotSvc</b> - Disable Notification of Icinga Service Check URL: <a href="/command/json/?e=1&m=RGVhY05vdFN2Yw==KlU76T&cl=&ch=&u=c2JhcmVzZWw=U7g7ZZ">/command/json/?e=1&m=RGVhY05vdFN2Yw==KlU76T&cl=&ch=&u=c2JhcmVzZWw=U7g7ZZ</a></li>
     <li><b>AcNotSvc</b> - Enable Notification of Icinga Service Check URL: <a href="/command/json/?e=1&m=QWNOb3RTdmM=KlU76T&cl=&ch=&u=c2JhcmVzZWw=U7g7ZZ">/command/json/?e=1&m=QWNOb3RTdmM=KlU76T&cl=&ch=&u=c2JhcmVzZWw=U7g7ZZ</a></li>
+    <li><b>ReCheckHost</b> - Re-Check Icinga Host Check URL: <a href="/command/json/?e=1&m=UmVDaGVja0hvc3Q=KlU76T&cl=&u=c2JhcmVzZWw=U7g7ZZ">/command/json/?e=1&m=UmVDaGVja0hvc3Q=KlU76T&cl=&u=c2JhcmVzZWw=U7g7ZZ</a></li>
+    <li><b>AckHost</b> - Acknowledge Host Problems URL: <a href="/command/json/?e=1&m=QWNrSG9zdA==KlU76T&cl=&u=c2JhcmVzZWw=U7g7ZZ&ar=&cm=">/command/json/?e=1&m=QWNrSG9zdA==KlU76T&cl=&u=c2JhcmVzZWw=U7g7ZZ&ar=&cm=</a></li>
+    <li><b>RemAckHost</b> - Remove Acknowledgement of Host Problem URL: <a href="/command/json/?e=1&m=UmVtQWNrSG9zdA==KlU76T&cl=&u=c2JhcmVzZWw=U7g7ZZ">/command/json/?e=1&m=UmVtQWNrSG9zdA==KlU76T&cl=&u=c2JhcmVzZWw=U7g7ZZ</a></li>
+    <li><b>ComHost</b> - Comment Host URL: <a href="/command/json/?e=1&m=Q29tSG9zdA==KlU76T&cl=&u=c2JhcmVzZWw=U7g7ZZ&ar=&cm=">/command/json/?e=1&m=Q29tSG9zdA==KlU76T&cl=&u=c2JhcmVzZWw=U7g7ZZ&ar=&cm=</a></li>
+    <li><b>DwntmHost</b> - Define Downtime for Host URL: <a href="/command/json/?e=1&m=RHdudG1Ib3N0KlU76T&cl=&u=c2JhcmVzZWw=U7g7ZZ&ar=&cm=&ds=&de=">/command/json/?e=1&m=RHdudG1Ib3N0KlU76T&cl=&u=c2JhcmVzZWw=U7g7ZZ&ar=&cm=&ds=&de=</a></li>
+    <li><b>RemDwntmHost</b> - Remove Downtime for Host URL: <a href="/command/json/?e=1&m=UmVtRHdudG1Ib3N0KlU76T&cl=&u=c2JhcmVzZWw=U7g7ZZ">/command/json/?e=1&m=UmVtRHdudG1Ib3N0KlU76T&cl=&u=c2JhcmVzZWw=U7g7ZZ</a></li>
+    <li><b>DeacNotHost</b> - Disable Notification of Host Check URL: <a href="/command/json/?e=1&m=RGVhY05vdEhvc3Q=KlU76T&cl=&u=c2JhcmVzZWw=U7g7ZZ">/command/json/?e=1&m=RGVhY05vdEhvc3Q=KlU76T&cl=&u=c2JhcmVzZWw=U7g7ZZ</a></li>
+    <li><b>AcNotHost</b> - Enable Notification of Host Check URL: <a href="/command/json/?e=1&m=QWNOb3RIb3N0KlU76T&cl=&u=c2JhcmVzZWw=U7g7ZZ">/command/json/?e=1&m=QWNOb3RIb3N0KlU76T&cl=&u=c2JhcmVzZWw=U7g7ZZ</a></li>
 </ul>
 </font>
-Format: <i><b>XML</b></i><br>
+<!--Format: <i><b>XML</b></i><br>
 <font size=2>Query:<br>
 <ul>
     <li><b>ReCheck</b> - Re-Check Icinga Service Check URL: <a href="/command/xml/?e=1&m=UmVDaGVjaw==KlU76T&cl=&ch=&u=c2JhcmVzZWw=U7g7ZZ">/command/xml/?e=1&m=UmVDaGVjaw==KlU76T&cl=&ch=&u=c2JhcmVzZWw=U7g7ZZ</a></li>
@@ -27,7 +35,15 @@ Format: <i><b>XML</b></i><br>
     <li><b>RemDwntmSvc</b> - Remove Downtime for Service URL: <a href="/command/xml/?e=1&m=UmVtRHdudG1TdmM=KlU76T&cl=&ch=&u=c2JhcmVzZWw=U7g7ZZ">/command/xml/?e=1&m=UmVtRHdudG1TdmM=KlU76T&cl=&ch=&u=c2JhcmVzZWw=U7g7ZZ</a></li>
     <li><b>DeacNotSvc</b> - Disable Notification of Icinga Service Check URL: <a href="/command/xml/?e=1&m=RGVhY05vdFN2Yw==KlU76T&cl=&ch=&u=c2JhcmVzZWw=U7g7ZZ">/command/xml/?e=1&m=RGVhY05vdFN2Yw==KlU76T&cl=&ch=&u=c2JhcmVzZWw=U7g7ZZ</a></li>
     <li><b>AcNotSvc</b> - Enable Notification of Icinga Service Check URL: <a href="/command/xml/?e=1&m=QWNOb3RTdmM=KlU76T&cl=&ch=&u=c2JhcmVzZWw=U7g7ZZ">/command/xml/?e=1&m=QWNOb3RTdmM=KlU76T&cl=&ch=&u=c2JhcmVzZWw=U7g7ZZ</a></li>
+    <li><b>ReCheckHost</b> - Re-Check Icinga Host Check URL: <a href="/command/xml/?e=1&m=UmVDaGVja0hvc3Q=KlU76T&cl=&u=c2JhcmVzZWw=U7g7ZZ">/command/xml/?e=1&m=UmVDaGVja0hvc3Q=KlU76T&cl=&u=c2JhcmVzZWw=U7g7ZZ</a></li>
+    <li><b>AckHost</b> - Acknowledge Host Problems URL: <a href="/command/xml/?e=1&m=QWNrSG9zdA==KlU76T&cl=&u=c2JhcmVzZWw=U7g7ZZ&ar=&cm=">/command/xml/?e=1&m=QWNrSG9zdA==KlU76T&cl=&u=c2JhcmVzZWw=U7g7ZZ&ar=&cm=</a></li>
+    <li><b>RemAckHost</b> - Remove Acknowledgement of Host Problem URL: <a href="/command/xml/?e=1&m=UmVtQWNrSG9zdA==KlU76T&cl=&u=c2JhcmVzZWw=U7g7ZZ">/command/xml/?e=1&m=UmVtQWNrSG9zdA==KlU76T&cl=&u=c2JhcmVzZWw=U7g7ZZ</a></li>
+    <li><b>ComHost</b> - Comment Host URL: <a href="/command/xml/?e=1&m=Q29tSG9zdA==KlU76T&cl=&u=c2JhcmVzZWw=U7g7ZZ&ar=&cm=">/command/xml/?e=1&m=Q29tSG9zdA==KlU76T&cl=&u=c2JhcmVzZWw=U7g7ZZ&ar=&cm=</a></li>
+    <li><b>DwntmHost</b> - Define Downtime for Host URL: <a href="/command/xml/?e=1&m=RHdudG1Ib3N0KlU76T&cl=&u=c2JhcmVzZWw=U7g7ZZ&ar=&cm=&ds=&de=">/command/xml/?e=1&m=RHdudG1Ib3N0KlU76T&cl=&u=c2JhcmVzZWw=U7g7ZZ&ar=&cm=&ds=&de=</a></li>
+    <li><b>RemDwntmHost</b> - Remove Downtime for Host URL: <a href="/command/xml/?e=1&m=UmVtRHdudG1Ib3N0KlU76T&cl=&u=c2JhcmVzZWw=U7g7ZZ">/command/xml/?e=1&m=UmVtRHdudG1Ib3N0KlU76T&cl=&u=c2JhcmVzZWw=U7g7ZZ</a></li>
+    <li><b>DeacNotHost</b> - Disable Notification of Host Check URL: <a href="/command/xml/?e=1&m=RGVhY05vdEhvc3Q=KlU76T&cl=&u=c2JhcmVzZWw=U7g7ZZ">/command/xml/?e=1&m=RGVhY05vdEhvc3Q=KlU76T&cl=&u=c2JhcmVzZWw=U7g7ZZ</a></li>
+    <li><b>AcNotHost</b> - Enable Notification of Host Check URL: <a href="/command/xml/?e=1&m=QWNOb3RIb3N0KlU76T&cl=&u=c2JhcmVzZWw=U7g7ZZ">/command/xml/?e=1&m=QWNOb3RIb3N0KlU76T&cl=&u=c2JhcmVzZWw=U7g7ZZ</a></li>
 </ul>
-</font>
+</font-->
 <br></br>
 <hr><br></br>

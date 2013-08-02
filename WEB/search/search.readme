@@ -13,7 +13,7 @@ Format: <i><b>JSON</b></i><br>
 </ul>
 </font>
 <br>
-Format: <i><b>XML</b></i><br>
+<!--Format: <i><b>XML</b></i><br>
 <font size=2>Query:<br>
 <ul>
     <li><b>ListHosts</b> - List Names of Hosts URL: <a href="/search/xml/?e=1&m=TGlzdEhvc3RzHj86Hz&u=c2JhcmVzZWw=Lkdi34">/search/xml/?e=1&m=TGlzdEhvc3RzHj86Hz&u=c2JhcmVzZWw=Lkdi34</a></li>
@@ -21,6 +21,6 @@ Format: <i><b>XML</b></i><br>
     <li><b>ListDatabases</b> - List Names of Databases URL: <a href="/search/xml/?e=1&m=TGlzdERhdGFiYXNlcw==Hj86Hz&u=c2JhcmVzZWw=Lkdi34">/search/xml/?e=1&m=TGlzdERhdGFiYXNlcw==Hj86Hz&u=c2JhcmVzZWw=Lkdi34</a></li>
     <li><b>ListHostgroups</b> - List Names of Hostgroups URL: <a href="/search/xml/?e=1&m=TGlzdEhvc3Rncm91cHM=Hj86Hz&u=c2JhcmVzZWw=Lkdi34">/search/xml/?e=1&m=TGlzdEhvc3Rncm91cHM=Hj86Hz&u=c2JhcmVzZWw=Lkdi34</a></li>
 </ul>
-</font>
+</font-->
 <br></br>
 <hr><br></br>

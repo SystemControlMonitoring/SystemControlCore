@@ -839,6 +839,23 @@ sub GetGroupName {
 # Commands                                             #
 #                                                      #
 ########################################################
+sub GetDwntmID {
+    my $hname = shift;
+    my $sname = shift;
+    my $uid = shift;
+    my $out = $ml->selectall_arrayref("GET downtimes\nColumns: id\nFilter: host_name = ". $hname ."\nFilter: service_display_name = ". $sname ."\nFilter: is_service = 1\nAuthUser: ". $uid);
+    return ($out);
+}
+#
+sub GetDwntmIDHost {
+    my $hname = shift;
+    my $uid = shift;
+    my $out = $ml->selectall_arrayref("GET downtimes\nColumns: id\nFilter: host_name = ". $hname ."\nFilter: is_service = 0\nAuthUser: ". $uid);
+    return ($out);
+}
+#
+#
+#
 sub ScheduleForcedHostCheck {
     my $hname = shift;
     my $utime = shift;
@@ -918,10 +935,8 @@ sub ScheduleSvcDowntime {
 }
 #
 sub DelSvcDowntime {
-    my $hname = shift;
-    my $sname = shift;
+    my $dwtid = shift;
     my $utime = shift;
-    my $dwtid;
     my $out = $ml->do("COMMAND [". $utime ."] DEL_SVC_DOWNTIME;". $dwtid ."");
     return 0;
 }
@@ -983,9 +998,8 @@ sub ScheduleHostDowntime {
 }
 #
 sub DelHostDowntime {
-    my $hname = shift;
+    my $dwtid = shift;
     my $utime = shift;
-    my $dwtid;
     my $out = $ml->do("COMMAND [". $utime ."] DEL_HOST_DOWNTIME;". $dwtid ."");
     return 0;
 }

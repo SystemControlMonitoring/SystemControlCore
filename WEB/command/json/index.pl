@@ -21,7 +21,7 @@ my $request = FCGI::Request();
 #
 #
 #
-# Functions
+# Functions Services
 #
 sub ReCheck {
     #
@@ -165,12 +165,17 @@ sub RemDwntmSvc {
     # Execution
     if ( kSClive::AccessHost($uid,$client) == "1" ) {
 	#
+	# Get Downtime ID
+	my @ID = kSClive::GetDwntmID($client,$check,$uid);
+	my $DwntmID=0;
+	for (my $c=0;$c<scalar(@{$ID[0]});$c++) { $DwntmID = $ID[0][$c][0]; }
+	#
 	# Exec Command
-        my $exec = kSClive::DelSvcDowntime($client,kSCbasic::EncodeHTML($check),$utime);
+        my $exec = kSClive::DelSvcDowntime($DwntmID,$utime);
         #
         # Output
         print kSChtml::ContentType("json");
-	print "{\"HOST_NAME\":\"". $client ."\",\"SERVICE_NAME\":\"". kSCbasic::EncodeHTML($check) ."\",\"CMD\":\"DEL_SVC_DOWNTIME\",\"EXEC\":\"SUCCESS\",\"TS\":\"". kSCbasic::ConvertUt2Ts($utime) ."\"}";
+	print "{\"HOST_NAME\":\"". $client ."\",\"SERVICE_NAME\":\"". kSCbasic::EncodeHTML($check) ."\",\"CMD\":\"DEL_SVC_DOWNTIME\",\"EXEC\":\"SUCCESS\",\"TS\":\"". kSCbasic::ConvertUt2Ts($utime) ."\",\"DOWNTIME_ID\":\"". $DwntmID ."\"}";
     } else {
 	my $out = kSChtml::ContentType("json");
 	$out.= kSCbasic::ErrorMessage("json","5");
@@ -228,6 +233,210 @@ sub AcNotSvc {
 #
 #
 #
+# Functions Hosts
+#
+sub ReCheckHost {
+    #
+    # Parameter
+    my $client = shift;
+    my $uid = shift;
+    my $utime = time;
+    #
+    # Execution
+    if ( kSClive::AccessHost($uid,$client) == "1" ) {
+	#
+	# Exec Command
+        my $exec = kSClive::ScheduleForcedHostCheck($client,$utime);
+        #
+        # Output
+        print kSChtml::ContentType("json");
+	print "{\"HOST_NAME\":\"". $client ."\",\"CMD\":\"SCHEDULE_FORCED_HOST_CHECK\",\"EXEC\":\"SUCCESS\",\"TS\":\"". kSCbasic::ConvertUt2Ts($utime) ."\"}";
+    } else {
+	my $out = kSChtml::ContentType("json");
+	$out.= kSCbasic::ErrorMessage("json","5");
+	print $out;
+    }
+}
+#
+sub AckHost {
+    #
+    # Parameter
+    my $client = shift;
+    my $uid = shift;
+    my $author = shift;
+    my $comment = shift;
+    my $utime = time;
+    #
+    # Execution
+    if ( kSClive::AccessHost($uid,$client) == "1" ) {
+	#
+	# Exec Command
+        my $exec = kSClive::AcknowledgeHostProblem($client,kSCbasic::EncodeHTML($author),kSCbasic::EncodeHTML($comment),$utime);
+        #
+        # Output
+        print kSChtml::ContentType("json");
+        $comment =~ s/[\n]+//g;
+	print "{\"HOST_NAME\":\"". $client ."\",\"CMD\":\"ACKNOWLEDGE_HOST_PROBLEM\",\"EXEC\":\"SUCCESS\",\"TS\":\"". kSCbasic::ConvertUt2Ts($utime) ."\",\"AUTHOR\":\"". kSCbasic::EncodeHTML($author) ."\",\"COMMENT\":\"". kSCbasic::EncodeHTML($comment) ."\"}";
+    } else {
+	my $out = kSChtml::ContentType("json");
+	$out.= kSCbasic::ErrorMessage("json","5");
+	print $out;
+    }
+}
+#
+sub RemAckHost {
+    #
+    # Parameter
+    my $client = shift;
+    my $uid = shift;
+    my $utime = time;
+    #
+    # Execution
+    if ( kSClive::AccessHost($uid,$client) == "1" ) {
+	#
+	# Exec Command
+        my $exec = kSClive::RemoveHostAcknowledgement($client,$utime);
+        #
+        # Output
+        print kSChtml::ContentType("json");
+	print "{\"HOST_NAME\":\"". $client ."\",\"CMD\":\"REMOVE_HOST_ACKNOWLEDGEMENT\",\"EXEC\":\"SUCCESS\",\"TS\":\"". kSCbasic::ConvertUt2Ts($utime) ."\"}";
+    } else {
+	my $out = kSChtml::ContentType("json");
+	$out.= kSCbasic::ErrorMessage("json","5");
+	print $out;
+    }
+}
+#
+sub ComHost {
+    #
+    # Parameter
+    my $client = shift;
+    my $uid = shift;
+    my $author = shift;
+    my $comment = shift;
+    my $utime = time;
+    #
+    # Execution
+    if ( kSClive::AccessHost($uid,$client) == "1" ) {
+	#
+	# Exec Command
+        my $exec = kSClive::AddHostComment($client,kSCbasic::EncodeHTML($author),kSCbasic::EncodeHTML($comment),$utime);
+        #
+        # Output
+        print kSChtml::ContentType("json");
+        $comment =~ s/[\n]+//g;
+	print "{\"HOST_NAME\":\"". $client ."\",\"CMD\":\"ADD_HOST_COMMENT\",\"EXEC\":\"SUCCESS\",\"TS\":\"". kSCbasic::ConvertUt2Ts($utime) ."\",\"AUTHOR\":\"". kSCbasic::EncodeHTML($author) ."\",\"COMMENT\":\"". kSCbasic::EncodeHTML($comment) ."\"}";
+    } else {
+	my $out = kSChtml::ContentType("json");
+	$out.= kSCbasic::ErrorMessage("json","5");
+	print $out;
+    }
+}
+#
+sub DwntmHost {
+    #
+    # Parameter
+    my $client = shift;
+    my $uid = shift;
+    my $author = shift;
+    my $comment = shift;
+    my $datestart = shift;
+    my $dateend = shift;
+    my $utime = time;
+    #
+    # Execution
+    if ( kSClive::AccessHost($uid,$client) == "1" ) {
+	#
+	# Exec Command
+        my $exec = kSClive::ScheduleHostDowntime($client,kSCbasic::EncodeHTML($author),kSCbasic::EncodeHTML($comment),$utime,$datestart,$dateend);
+        #
+        # Output
+        print kSChtml::ContentType("json");
+        $comment =~ s/[\n]+//g;
+	print "{\"HOST_NAME\":\"". $client ."\",\"CMD\":\"SCHEDULE_HOST_DOWNTIME\",\"EXEC\":\"SUCCESS\",\"TS\":\"". kSCbasic::ConvertUt2Ts($utime) ."\",\"AUTHOR\":\"". kSCbasic::EncodeHTML($author) ."\",\"COMMENT\":\"". kSCbasic::EncodeHTML($comment) ."\",\"DATE_START\":\"". kSCbasic::ConvertUt2Ts($datestart) ."\",\"DATE_END\":\"". kSCbasic::ConvertUt2Ts($dateend) ."\"}";
+    } else {
+	my $out = kSChtml::ContentType("json");
+	$out.= kSCbasic::ErrorMessage("json","5");
+	print $out;
+    }
+}
+#
+sub RemDwntmHost {
+    #
+    # Parameter
+    my $client = shift;
+    my $uid = shift;
+    my $utime = time;
+    #
+    # Execution
+    if ( kSClive::AccessHost($uid,$client) == "1" ) {
+	#
+	# Get Downtime ID
+	my @ID = kSClive::GetDwntmIDHost($client,$uid);
+	my $DwntmID=0;
+	for (my $c=0;$c<scalar(@{$ID[0]});$c++) { $DwntmID = $ID[0][$c][0]; }
+	#
+	# Exec Command
+        my $exec = kSClive::DelHostDowntime($DwntmID,$utime);
+        #
+        # Output
+        print kSChtml::ContentType("json");
+	print "{\"HOST_NAME\":\"". $client ."\",\"CMD\":\"DEL_HOST_DOWNTIME\",\"EXEC\":\"SUCCESS\",\"TS\":\"". kSCbasic::ConvertUt2Ts($utime) ."\",\"DOWNTIME_ID\":\"". $DwntmID ."\"}";
+    } else {
+	my $out = kSChtml::ContentType("json");
+	$out.= kSCbasic::ErrorMessage("json","5");
+	print $out;
+    }
+}
+#
+sub DeacNotHost {
+    #
+    # Parameter
+    my $client = shift;
+    my $uid = shift;
+    my $utime = time;
+    #
+    # Execution
+    if ( kSClive::AccessHost($uid,$client) == "1" ) {
+	#
+	# Exec Command
+        my $exec = kSClive::DisableHostNotifications($client,$utime);
+        #
+        # Output
+        print kSChtml::ContentType("json");
+	print "{\"HOST_NAME\":\"". $client ."\",\"CMD\":\"DISABLE_HOST_NOTIFICATIONS\",\"EXEC\":\"SUCCESS\",\"TS\":\"". kSCbasic::ConvertUt2Ts($utime) ."\"}";
+    } else {
+	my $out = kSChtml::ContentType("json");
+	$out.= kSCbasic::ErrorMessage("json","5");
+	print $out;
+    }
+}
+#
+sub AcNotHost {
+    #
+    # Parameter
+    my $client = shift;
+    my $uid = shift;
+    my $utime = time;
+    #
+    # Execution
+    if ( kSClive::AccessHost($uid,$client) == "1" ) {
+	#
+	# Exec Command
+        my $exec = kSClive::EnableHostNotifications($client,$utime);
+        #
+        # Output
+        print kSChtml::ContentType("json");
+	print "{\"HOST_NAME\":\"". $client ."\",\"CMD\":\"ENABLE_HOST_NOTIFICATIONS\",\"EXEC\":\"SUCCESS\",\"TS\":\"". kSCbasic::ConvertUt2Ts($utime) ."\"}";
+    } else {
+	my $out = kSChtml::ContentType("json");
+	$out.= kSCbasic::ErrorMessage("json","5");
+	print $out;
+    }
+}
+#
+#
+#
 #
 #
 #
@@ -255,6 +464,22 @@ if (kSCbasic::CheckUrlKeyValue("e","1","n") == 0) {
 	DeacNotSvc(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("cl")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("ch")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")));
     } elsif (kSCbasic::CheckUrlKeyValue("m","AcNotSvc","y") == 0) {
 	AcNotSvc(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("cl")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("ch")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")));
+    } elsif (kSCbasic::CheckUrlKeyValue("m","ReCheckHost","y") == 0) {
+	ReCheckHost(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("cl")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")));
+    } elsif (kSCbasic::CheckUrlKeyValue("m","AckHost","y") == 0) {
+	AckHost(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("cl")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("ar")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("cm")));
+    } elsif (kSCbasic::CheckUrlKeyValue("m","RemAckHost","y") == 0) {
+	RemAckHost(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("cl")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")));
+    } elsif (kSCbasic::CheckUrlKeyValue("m","ComHost","y") == 0) {
+	ComHost(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("cl")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("ar")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("cm")));
+    } elsif (kSCbasic::CheckUrlKeyValue("m","DwntmHost","y") == 0) {
+	DwntmHost(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("cl")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("ar")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("cm")),kSCbasic::GetUrlKeyValue("ds"),kSCbasic::GetUrlKeyValue("de"));
+    } elsif (kSCbasic::CheckUrlKeyValue("m","RemDwntmHost","y") == 0) {
+	RemDwntmHost(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("cl")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")));
+    } elsif (kSCbasic::CheckUrlKeyValue("m","DeacNotHost","y") == 0) {
+	DeacNotHost(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("cl")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")));
+    } elsif (kSCbasic::CheckUrlKeyValue("m","AcNotHost","y") == 0) {
+	AcNotHost(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("cl")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")));
     } else {
 	my $out = kSChtml::ContentType("json");
 	$out.= kSCbasic::ErrorMessage("json","1");
@@ -277,6 +502,22 @@ if (kSCbasic::CheckUrlKeyValue("e","1","n") == 0) {
 	DeacNotSvc(kSCbasic::GetUrlKeyValue("cl"),kSCbasic::GetUrlKeyValue("ch"),kSCbasic::GetUrlKeyValue("u"));
     } elsif (kSCbasic::CheckUrlKeyValue("m","AcNotSvc","n") == 0) {
 	AcNotSvc(kSCbasic::GetUrlKeyValue("cl"),kSCbasic::GetUrlKeyValue("ch"),kSCbasic::GetUrlKeyValue("u"));
+    } elsif (kSCbasic::CheckUrlKeyValue("m","ReCheckHost","n") == 0) {
+	ReCheckHost(kSCbasic::GetUrlKeyValue("cl"),kSCbasic::GetUrlKeyValue("u"));
+    } elsif (kSCbasic::CheckUrlKeyValue("m","AckHost","n") == 0) {
+	AckHost(kSCbasic::GetUrlKeyValue("cl"),kSCbasic::GetUrlKeyValue("u"),kSCbasic::GetUrlKeyValue("ar"),kSCbasic::GetUrlKeyValue("cm"));
+    } elsif (kSCbasic::CheckUrlKeyValue("m","RemAckHost","n") == 0) {
+	RemAckHost(kSCbasic::GetUrlKeyValue("cl"),kSCbasic::GetUrlKeyValue("u"));
+    } elsif (kSCbasic::CheckUrlKeyValue("m","ComHost","n") == 0) {
+	ComHost(kSCbasic::GetUrlKeyValue("cl"),kSCbasic::GetUrlKeyValue("u"),kSCbasic::GetUrlKeyValue("ar"),kSCbasic::GetUrlKeyValue("cm"));
+    } elsif (kSCbasic::CheckUrlKeyValue("m","DwntmHost","n") == 0) {
+	DwntmHost(kSCbasic::GetUrlKeyValue("cl"),kSCbasic::GetUrlKeyValue("u"),kSCbasic::GetUrlKeyValue("ar"),kSCbasic::GetUrlKeyValue("cm"),kSCbasic::GetUrlKeyValue("ds"),kSCbasic::GetUrlKeyValue("de"));
+    } elsif (kSCbasic::CheckUrlKeyValue("m","RemDwntmHost","n") == 0) {
+	RemDwntmHost(kSCbasic::GetUrlKeyValue("cl"),kSCbasic::GetUrlKeyValue("u"));
+    } elsif (kSCbasic::CheckUrlKeyValue("m","DeacNotHost","n") == 0) {
+	DeacNotHost(kSCbasic::GetUrlKeyValue("cl"),kSCbasic::GetUrlKeyValue("u"));
+    } elsif (kSCbasic::CheckUrlKeyValue("m","AcNotHost","n") == 0) {
+	AcNotHost(kSCbasic::GetUrlKeyValue("cl"),kSCbasic::GetUrlKeyValue("u"));
     } else {
 	my $out = kSChtml::ContentType("json");
 	$out.= kSCbasic::ErrorMessage("json","2");
