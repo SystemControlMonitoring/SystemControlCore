@@ -396,6 +396,10 @@ sub BuildScriptString {
     return ($out);
 }
 #
+sub GetLogwatchPath {
+    return ($properties->getProperty("logwatch.path"));
+}
+#
 close ($CF);
 #
 1;

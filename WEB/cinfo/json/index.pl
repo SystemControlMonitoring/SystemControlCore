@@ -237,9 +237,26 @@ sub LogAdmin {
     my $cm = shift;
     my $log = shift;
     if ( kSClive::AccessHost($uid,$client) == "1" ) {
-	my $info = kSChttp::GetLogAdmin($client,"6555","sysstat",$cm,$log);
-	print kSChtml::ContentType("json");
-	print $info;
+	if ($cm eq "DELOG") {
+	    #
+	    # Delete from remote Client
+	    my $info = kSChttp::GetLogAdmin($client,"6555","sysstat",$cm,$log);
+	    #
+	    # Delete from Icinga Monitoring Logwatch Cache
+	    my $file = kSCbasic::GetLogwatchPath() ."/". $client ."/". $log;
+	    unlink $file;
+	    #
+	    #
+	    $info =~ s/ReturnValue/rrv/g;
+	    $info =~ s/}/,"lrv":"0"}/g;
+	    #
+	    print kSChtml::ContentType("json");
+	    print $info;
+	} else {
+	    my $info = kSChttp::GetLogAdmin($client,"6555","sysstat",$cm,$log);
+	    print kSChtml::ContentType("json");
+	    print $info;
+	}
     } else {
 	my $out = kSChtml::ContentType("json");
 	$out.= kSCbasic::ErrorMessage("json","5");
