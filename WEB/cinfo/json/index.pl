@@ -239,12 +239,12 @@ sub LogAdmin {
     if ( kSClive::AccessHost($uid,$client) == "1" ) {
 	if ($cm eq "DELOG") {
 	    #
-	    # Delete from remote Client
-	    my $info = kSChttp::GetLogAdmin($client,"6555","sysstat",$cm,$log);
-	    #
 	    # Delete from Icinga Monitoring Logwatch Cache
 	    my $file = kSCbasic::GetLogwatchPath() ."/". $client ."/". $log;
 	    unlink $file;
+	    #
+	    # Delete from remote Client
+	    my $info = kSChttp::GetLogAdmin($client,"6555","sysstat",$cm,$log);
 	    #
 	    #
 	    $info =~ s/ReturnValue/rrv/g;
