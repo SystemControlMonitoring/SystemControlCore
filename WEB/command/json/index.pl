@@ -6,11 +6,13 @@ use lib '/kSCcore/MOD/live';
 use lib '/kSCcore/MOD/html';
 use lib '/kSCcore/MOD/basic';
 use lib '/kSCcore/MOD/http';
+use lib '/kSCcore/MOD/postgre';
 # Include Library
 use kSClive;
 use kSChtml;
 use kSCbasic;
 use kSChttp;
+use kSCpostgre;
 use warnings;
 use strict;
 use Data::Dumper;
@@ -62,6 +64,9 @@ sub AckSvc {
 	#
 	# Exec Command
         my $exec = kSClive::AcknowledgeSvcProblem($client,kSCbasic::EncodeHTML($check),kSCbasic::EncodeHTML($author),kSCbasic::EncodeHTML($comment),$utime);
+        #
+        # Clear Liveticker
+        kSCpostgre::DeleteLiveticker($client,$check);
         #
         # Output
         print kSChtml::ContentType("json");

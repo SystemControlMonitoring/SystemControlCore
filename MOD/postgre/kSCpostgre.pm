@@ -111,6 +111,16 @@ sub CleanLiveticker {
     return 0;
 }
 #
+sub DeleteLiveticker {
+    my $hname = shift;
+    my $sname = shift;
+    # Delete entries if acknwoledged
+    my $dbh = DBConnect();
+    $dbh->do("DELETE FROM perf_liveticker WHERE lthn = encode('". $hname ."','base64') AND ltsn = encode('". $sname ."','base64')");
+    $dbh->disconnect;
+    return 0;
+}
+#
 sub SelectLiveticker {
     my $uid = shift;
     my $dbh = DBConnect();

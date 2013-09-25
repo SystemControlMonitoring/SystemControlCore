@@ -1,13 +1,14 @@
-<!--CINFO_VERSION:2.130902-->
+<!--CINFO_VERSION:2.130924-->
 
 Modul: <i><b>Client Information Direct Access</b></i><br>
-Version: <i><b>2.130902</b></i><br>
+Version: <i><b>2.130924</b></i><br>
 Comments: -<br>
 Format: <i><b>JSON</b></i><br>
 <font size=2>Query:<br>
 <ul>
     <li><b>SYSINFO</b> - System Information URL: <a href="/cinfo/json/?e=1&m=U1lTSU5GTw==Jkd873&c=ZGJ3aW5kby5zaXYuZGU=Hd783d&u=c2JhcmVzZWw=LKHld3">/cinfo/json/?e=1&m=U1lTSU5GTw==Jkd873&c=ZGJ3aW5kby5zaXYuZGU=Hd783d&u=c2JhcmVzZWw=LKHld3</a></li>
     <li><b>DBINFO</b> - Database Information URL: <a href="/cinfo/json/?e=1&m=REJJTkZPJkd873&c=ZGJ3aW5kby5zaXYuZGU=Hd783d&u=c2JhcmVzZWw=LKHld3">/cinfo/json/?e=1&m=REJJTkZPJkd873&c=ZGJ3aW5kby5zaXYuZGU=Hd783d&u=c2JhcmVzZWw=LKHld3</a></li>
+    <li><b>GETWLS</b> - WebLogic Information URL: <a href="/cinfo/json/?e=1&m=R0VUV0xTJkd873&c=&u=&port=">/cinfo/json/?e=1&m=R0VUV0xTJkd873&c=&u=&port=</a></li>
     <li><b>SysJqGrid</b> - JqGrid for Systen Information URL: <a href="/cinfo/json/?e=1&m=U3lzSnFHcmlkJkd873&cm=RlM=JhDQ83&c=ZGJ3aW5kby5zaXYuZGU=Hd783d&u=c2JhcmVzZWw=LKHld3&_search=false&rows=10&page=1&sidx=&sord=asc">/cinfo/json/?e=1&m=U3lzSnFHcmlkJkd873&cm=RlM=JhDQ83&c=ZGJ3aW5kby5zaXYuZGU=Hd783d&u=c2JhcmVzZWw=LKHld3&_search=false&rows=10&page=1&sidx=&sord=asc</a></li>
     <li><b>ServiceHostList</b> - List Services From Host URL: <a href="/cinfo/json/?e=1&m=U2VydmljZUhvc3RMaXN0KhdU8Z&u=c2JhcmVzZWw=LKHld3&c=ZGJsaW51eC5zaXYuZGU=KjHu88">/cinfo/json/?e=1&m=U2VydmljZUhvc3RMaXN0KhdU8Z&u=c2JhcmVzZWw=LKHld3&c=ZGJsaW51eC5zaXYuZGU=KjHu88</a></li>
     <li><b>HostSummary</b> - Host Summary URL: <a href="/cinfo/json/?e=1&m=SG9zdFN1bW1hcnk=KhdU8Z&u=c2JhcmVzZWw=LKHld3&c=ZGJsaW51eC5zaXYuZGU=KjHu88">/cinfo/json/?e=1&m=SG9zdFN1bW1hcnk=KhdU8Z&u=c2JhcmVzZWw=LKHld3&c=ZGJsaW51eC5zaXYuZGU=KjHu88</a></li>

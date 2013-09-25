@@ -25,21 +25,6 @@ my $request = FCGI::Request();
 #
 # Functions
 #
-sub TT {
-    print kSChtml::ContentType("text");
-    my @check = kSClive::GetConfiguredDatabases("sbaresel","dbwindo.siv.de");
-    for (my $c=0;$c<scalar(@{$check[0]});$c++) {
-	if ( $check[0][$c][0] =~ /_DBSTATUS/i ) {
-	    my $dbname = substr($check[0][$c][0], index($check[0][$c][0], "_")+1);
-	    $dbname = substr($dbname, 0, index($dbname, "_") );
-	    print $dbname;
-	} elsif ( $check[0][$c][0] =~ /_DBST_/i ) {
-	    my $dbname = substr($check[0][$c][0], rindex($check[0][$c][0], "_")+1 );
-	    print $dbname;
-	}
-    }
-}
-#
 sub SYSINFO {
     my $client = shift;
     my $uid = shift;
@@ -81,7 +66,16 @@ sub DBINFO {
     $info = substr($info, 0, -1);
     print kSChtml::ContentType("json");
     print "[". $info ."]";
-
+}
+#
+sub GetWls {
+    my $module = shift;
+    my $client = shift;
+    my $uid = shift;
+    my $port = shift;
+    my $info = kSChttp::GetWlsInfo($client,"6555","weblogic",$module,$port);
+    print kSChtml::ContentType("json");
+    print $info;
 }
 #
 sub SysJqGrid {
@@ -110,9 +104,15 @@ sub ServiceHostList {
     my @SFL = kSClive::ServiceHostList($uid,$client);
     my $out;
     for (my $k=0;$k<scalar(@{$SFL[0]});$k++) {
-	$out.="{\"SERVICE_NAME\":\"". $SFL[0][$k][1] ."\",\"SERVICE_STATUS_ICON\":\"". kSCbasic::GetStatusIcon($SFL[0][$k][2],"service") ."\",\"SERVICE_STATUS\":\"". $SFL[0][$k][2] ."\",\"LAST_CHECK_UTIME\":\"". $SFL[0][$k][3] ."\",\"LAST_CHECK_ISO\":\"". kSCbasic::ConvertUt2Ts($SFL[0][$k][3]) ."\",\"OUTPUT\":\"". kSCbasic::EncodeHTML($SFL[0][$k][4]) ."\",\"LONG_OUTPUT\":\"". kSCbasic::EncodeHTML($SFL[0][$k][5]) ."\",\"ACK\":\"". $SFL[0][$k][6] ."\",\"NEXT_CHECK_UTIME\":\"". $SFL[0][$k][7] ."\",\"NEXT_CHECK_ISO\":\"". kSCbasic::ConvertUt2Ts($SFL[0][$k][7]) ."\"},";
+	$out.="{\"SERVICE_NAME\":\"". $SFL[0][$k][1] ."\",\"SERVICE_STATUS_ICON\":\"". kSCbasic::GetStatusIcon($SFL[0][$k][2],"service") ."\",\"SERVICE_STATUS\":\"". $SFL[0][$k][2] ."\",\"LAST_CHECK_UTIME\":\"". $SFL[0][$k][3] ."\",\"LAST_CHECK_ISO\":\"". kSCbasic::ConvertUt2Ts($SFL[0][$k][3]) ."\",\"OUTPUT\":\"". kSCbasic::EncodeHTML($SFL[0][$k][4]) ."\",\"LONG_OUTPUT\":\"". kSCbasic::EncodeHTML($SFL[0][$k][5]) ."\",\"ACK\":\"". $SFL[0][$k][6] ."\",\"NEXT_CHECK_UTIME\":\"". $SFL[0][$k][7] ."\",\"NEXT_CHECK_ISO\":\"". kSCbasic::ConvertUt2Ts($SFL[0][$k][7]) ."\",\"CMT\":\"";
+	foreach my $cmt (@{$SFL[0][$k][8]}) {
+	    $out.= $cmt .",";
+	}
+	$out = substr($out, 0, -1);
+	$out.="\"},";
     }
     $out = substr($out, 0, -1);
+    $out =~ s/\"CMT\":\"}/\"CMT\":\"\"}/g;
     print kSChtml::ContentType("json");
     print "[". $out ."]";
 }
@@ -213,6 +213,27 @@ sub OracleDB {
     }
 }
 #
+sub WLS {
+    my $client = shift;
+    my $uid = shift;
+    my $module = shift;
+    my $port = shift;
+    my $search = shift;
+    my $rows = shift;
+    my $page = shift;
+    my $sidx = shift;
+    my $sord = shift;
+    if ( kSClive::AccessHost($uid,$client) == "1" ) {
+	my $info = kSChttp::GetJqGridWlsInfo($client,"6555","weblogic",$module,$port,$search,$rows,$page,$sidx,$sord);
+	print kSChtml::ContentType("json");
+	print $info;
+    } else {
+	my $out = kSChtml::ContentType("json");
+	$out.= kSCbasic::ErrorMessage("json","2");
+	print $out;
+    }
+}
+#
 sub OracleDBAdmin {
     my $client = shift;
     my $uid = shift;
@@ -279,6 +300,10 @@ while($request->Accept() >= 0) {
 	    SYSINFO(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("c")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")));
 	} elsif (kSCbasic::CheckUrlKeyValue("m","DBINFO","y") == 0) {
 	    DBINFO(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("c")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")));
+	} elsif (kSCbasic::CheckUrlKeyValue("m","GETWLS","y") == 0) {
+	    GetWls("GETWLS",kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("c")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("port")));
+	} elsif (kSCbasic::CheckUrlKeyValue("m","WLSINFO","y") == 0) {
+	    GetWls("WLSINFO",kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("c")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("port")));
 	} elsif (kSCbasic::CheckUrlKeyValue("m","SysJqGrid","y") == 0) {
 	    SysJqGrid(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("c")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("cm")),kSCbasic::GetUrlKeyValue("_search"),kSCbasic::GetUrlKeyValue("rows"),kSCbasic::GetUrlKeyValue("page"),kSCbasic::GetUrlKeyValue("sidx"),kSCbasic::GetUrlKeyValue("sord"));
 	} elsif (kSCbasic::CheckUrlKeyValue("m","ServiceHostList","y") == 0) {
@@ -287,6 +312,8 @@ while($request->Accept() >= 0) {
 	    HostSummary(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("c")));
 	} elsif (kSCbasic::CheckUrlKeyValue("m","OracleDB","y") == 0) {
 	    OracleDB(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("c")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("cm")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("db")),kSCbasic::GetUrlKeyValue("_search"),kSCbasic::GetUrlKeyValue("rows"),kSCbasic::GetUrlKeyValue("page"),kSCbasic::GetUrlKeyValue("sidx"),kSCbasic::GetUrlKeyValue("sord"));
+	} elsif (kSCbasic::CheckUrlKeyValue("m","WLS","y") == 0) {
+	    WLS(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("c")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("cm")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("port")),kSCbasic::GetUrlKeyValue("_search"),kSCbasic::GetUrlKeyValue("rows"),kSCbasic::GetUrlKeyValue("page"),kSCbasic::GetUrlKeyValue("sidx"),kSCbasic::GetUrlKeyValue("sord"));
 	} elsif (kSCbasic::CheckUrlKeyValue("m","OracleDBAdmin","y") == 0) {
 	    OracleDBAdmin(kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("c")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("u")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("cm")),kSCbasic::DecodeBase64u6(kSCbasic::GetUrlKeyValue("db")),kSCbasic::GetUrlKeyValue("date_start"),kSCbasic::GetUrlKeyValue("date_end"));
 	} elsif (kSCbasic::CheckUrlKeyValue("m","LogAdmin","y") == 0) {
@@ -301,16 +328,20 @@ while($request->Accept() >= 0) {
 	    SYSINFO(kSCbasic::GetUrlKeyValue("c"),kSCbasic::GetUrlKeyValue("u"));
 	} elsif (kSCbasic::CheckUrlKeyValue("m","DBINFO","n") == 0) {
 	    DBINFO(kSCbasic::GetUrlKeyValue("c"),kSCbasic::GetUrlKeyValue("u"));
+	} elsif (kSCbasic::CheckUrlKeyValue("m","GETWLS","n") == 0) {
+	    GetWls("GETWLS",kSCbasic::GetUrlKeyValue("c"),kSCbasic::GetUrlKeyValue("u"),kSCbasic::GetUrlKeyValue("port"));
+	} elsif (kSCbasic::CheckUrlKeyValue("m","WLSINFO","n") == 0) {
+	    GetWls("WLSINFO",kSCbasic::GetUrlKeyValue("c"),kSCbasic::GetUrlKeyValue("u"),kSCbasic::GetUrlKeyValue("port"));
 	} elsif (kSCbasic::CheckUrlKeyValue("m","SysJqGrid","n") == 0) {
 	    SysJqGrid(kSCbasic::GetUrlKeyValue("c"),kSCbasic::GetUrlKeyValue("u"),kSCbasic::GetUrlKeyValue("cm"),kSCbasic::GetUrlKeyValue("_search"),kSCbasic::GetUrlKeyValue("rows"),kSCbasic::GetUrlKeyValue("page"),kSCbasic::GetUrlKeyValue("sidx"),kSCbasic::GetUrlKeyValue("sord"));
 	} elsif (kSCbasic::CheckUrlKeyValue("m","ServiceHostList","n") == 0) {
 	    ServiceHostList(kSCbasic::GetUrlKeyValue("u"),kSCbasic::GetUrlKeyValue("c"));
 	} elsif (kSCbasic::CheckUrlKeyValue("m","HostSummary","n") == 0) {
 	    HostSummary(kSCbasic::GetUrlKeyValue("u"),kSCbasic::GetUrlKeyValue("c"));
-	} elsif (kSCbasic::CheckUrlKeyValue("m","TT","n") == 0) {
-	    TT();
 	} elsif (kSCbasic::CheckUrlKeyValue("m","OracleDB","n") == 0) {
 	    OracleDB(kSCbasic::GetUrlKeyValue("c"),kSCbasic::GetUrlKeyValue("u"),kSCbasic::GetUrlKeyValue("cm"),kSCbasic::GetUrlKeyValue("db"),kSCbasic::GetUrlKeyValue("_search"),kSCbasic::GetUrlKeyValue("rows"),kSCbasic::GetUrlKeyValue("page"),kSCbasic::GetUrlKeyValue("sidx"),kSCbasic::GetUrlKeyValue("sord"));
+	} elsif (kSCbasic::CheckUrlKeyValue("m","WLS","n") == 0) {
+	    WLS(kSCbasic::GetUrlKeyValue("c"),kSCbasic::GetUrlKeyValue("u"),kSCbasic::GetUrlKeyValue("cm"),kSCbasic::GetUrlKeyValue("port"),kSCbasic::GetUrlKeyValue("_search"),kSCbasic::GetUrlKeyValue("rows"),kSCbasic::GetUrlKeyValue("page"),kSCbasic::GetUrlKeyValue("sidx"),kSCbasic::GetUrlKeyValue("sord"));
 	} elsif (kSCbasic::CheckUrlKeyValue("m","OracleDBAdmin","n") == 0) {
 	    OracleDBAdmin(kSCbasic::GetUrlKeyValue("c"),kSCbasic::GetUrlKeyValue("u"),kSCbasic::GetUrlKeyValue("cm"),kSCbasic::GetUrlKeyValue("db"),kSCbasic::GetUrlKeyValue("date_start"),kSCbasic::GetUrlKeyValue("date_end"));
 	} elsif (kSCbasic::CheckUrlKeyValue("m","LogAdmin","n") == 0) {
