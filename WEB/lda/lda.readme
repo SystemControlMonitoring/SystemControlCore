@@ -1,7 +1,7 @@
-<!--LDA_VERSION:2.130903-->
+<!--LDA_VERSION:2.1.131015-->
 
 Modul: <i><b>Live Data Access</b></i><br>
-Version: <i><b>2.130903</b></i><br>
+Version: <i><b>2.1.131015</b></i><br>
 Comments:<br>
 <font size=2>
 <ul>
@@ -11,20 +11,28 @@ Comments:<br>
 Format: <i><b>JSON</b></i><br>
 <font size=2>Query:<br>
 <ul>
-    <li><b>HostFullInfo</b> - Overview of hosts with Services URL: <a href="/lda/json/?e=1&m=SG9zdEZ1bGxJbmZvHd78h3&u=c2JhcmVzZWw=Adhfg3">/lda/json/?e=1&m=SG9zdEZ1bGxJbmZvHd78h31&u=c2JhcmVzZWw=Adhfg3</a></li>
-    <li><b>AllHosts</b> - Overview of hosts, with ICON Path URL: <a href="/lda/json/?e=1&m=QWxsSG9zdHM=Uhd739&u=c2JhcmVzZWw=Jdn34h">/lda/json/?e=1&m=QWxsSG9zdHM=Uhd739&u=c2JhcmVzZWw=Jdn34h</a></li>
-    <li><b>AllDatabases</b> - Overview of oracle database URL: <a href="/lda/json/?e=1&m=QWxsRGF0YWJhc2VzZhd873&u=c2JhcmVzZWw=Kjd743">/lda/json/?e=1&m=QWsRGF0YWJhc2VzZhd873&u=c2JhcmVzZWw=Kjd743</a></li>
-    <li><b>SlimTaov</b> - Tactival Overview of Host and Service State URL: <a href="/lda/json/?e=1&m=U2xpbVRhb3Y=Hkd83k&u=c2JhcmVzZWw=LKHld3">/lda/json/?e=1&m=U2xpbVRhb3Y=Hkd83k&u=c2JhcmVzZWw=LKHld3</a></li>
-    <li><b>ShowCritical</b> - List all Critical Services and Hosts URL: <a href="/lda/json/?e=1&m=U2hvd0NyaXRpY2FsHjdz6d&u=c2JhcmVzZWw=J9d83D">/lda/json/?e=1&m=U2hvd0NyaXRpY2FsHjdz6d&u=c2JhcmVzZWw=J9d83D</a></li>
-    <li><b>SelectLiveticker</b> - Get Current Critical Services and Hosts URL: <a href="/lda/json/?e=1&m=U2VsZWN0TGl2ZXRpY2tlcg==RpKlFs&u=c2JhcmVzZWw=LKHld3">/lda/json/?e=1&m=U2VsZWN0TGl2ZXRpY2tlcg==RpKlFs&u=c2JhcmVzZWw=LKHld3</a></li>
-    <li><b>FillLiveticker</b> - Update Critical Services and Hosts in Datasource URL: <a href="/lda/json/?e=1&m=RmlsbExpdmV0aWNrZXI=RpY2Fs&u=c2JhcmVzZWw=LKHld3">/lda/json/?e=1&m=RmlsbExpdmV0aWNrZXI=RpY2Fs&u=c2JhcmVzZWw=LKHld3</a></li>
-    <li><b>ServiceStatusSelect</b> - Select different stats of services URL: <a href="/lda/json/?e=1&m=U2VydmljZVN0YXR1c1NlbGVjdA==Ki88uU&u=c2JhcmVzZWw=LKHld3&s=YXBuYW9oKmUh88">/lda/json/?e=1&m=U2VydmljZVN0YXR1c1NlbGVjdA==Ki88uU&u=c2JhcmVzZWw=LKHld3&s=YXBuYW9oKmUh88</a></li>
-    <li><b>ServiceSearchList</b> - Search services URL: <a href="/lda/json/?e=1&m=U2VydmljZVNlYXJjaExpc3Q=Ki88uU&u=c2JhcmVzZWw=LKHld3&searchstring=TE9HKlUu87">/lda/json/?e=1&m=U2VydmljZVNlYXJjaExpc3Q=Ki88uU&u=c2JhcmVzZWw=LKHld3&searchstring=TE9HKlUu87</a></li>
-    <li><b>HostStatusSelect</b> - Select different stats of hosts URL: <a href="/lda/json/?e=1&m=SG9zdFN0YXR1c1NlbGVjdA==Ki88uU&u=c2JhcmVzZWw=LKHld3&s=dXA=KmUh88">/lda/json/?e=1&m=SG9zdFN0YXR1c1NlbGVjdA==Ki88uU&u=c2JhcmVzZWw=LKHld3&s=dXA=KmUh88</a></li>
-    <li><b>HostSearchList</b> - Search hosts URL: <a href="/lda/json/?e=1&m=SG9zdFNlYXJjaExpc3Q=Ki88uU&u=c2JhcmVzZWw=LKHld3&searchstring=dm0=KlUu87">/lda/json/?e=1&m=SG9zdFNlYXJjaExpc3Q=Ki88uU&u=c2JhcmVzZWw=LKHld3&searchstring=dm0=KlUu87</a></li>
-    <li><b>DatabaseStatusSelect</b> - Select different stats of databases URL: <a href="/lda/json/?e=1&m=RGF0YWJhc2VTdGF0dXNTZWxlY3Q=Ki88uU&u=c2JhcmVzZWw=LKHld3&s=YXBuYW9oKmUh88">/lda/json/?e=1&m=RGF0YWJhc2VTdGF0dXNTZWxlY3Q=Ki88uU&u=c2JhcmVzZWw=LKHld3&s=YXBuYW9oKmUh88</a></li>
-    <li><b>DatabaseSearchList</b> - Search databases URL: <a href="/lda/json/?e=1&m=RGF0YWJhc2VTZWFyY2hMaXN0Ki88uU&u=c2JhcmVzZWw=LKHld3&searchstring=VEVTVA==KlUu87">/lda/json/?e=1&m=RGF0YWJhc2VTZWFyY2hMaXN0Ki88uU&u=c2JhcmVzZWw=LKHld3&searchstring=VEVTVA==KlUu87</a></li>
-    <li><b>ShowAllComments</b> - Show all comments URL: <a href="/lda/json/?e=1&m=U2hvd0FsbENvbW1lbnRzKi88uU&u=c2JhcmVzZWw=LKHld3">/lda/json/?e=1&m=U2hvd0FsbENvbW1lbnRzKi88uU&u=c2JhcmVzZWw=LKHld3</a></li>
+    <li><b>HostFullInfo</b> - Overview of hosts with Services URL: <a href="/lda/json/?e=1&m=&u=">/lda/json/?e=1&m=&u=</a></li>
+    <li><b>AllHosts</b> - Overview of hosts, with ICON Path URL: <a href="/lda/json/?e=1&m=&u=">/lda/json/?e=1&m=&u=</a></li>
+    <li><b>AllDatabases</b> - Overview of oracle database URL: <a href="/lda/json/?e=1&m=&u=">/lda/json/?e=1&m=&u=</a></li>
+    <li><b>SlimTaov</b> - Tactival Overview of Host and Service State URL: <a href="/lda/json/?e=1&m=&u=">/lda/json/?e=1&m=&u=</a></li>
+    <li><b>ShowCritical</b> - List all Critical Services and Hosts URL: <a href="/lda/json/?e=1&m=&u=">/lda/json/?e=1&m=&u=</a></li>
+    <li><b>SelectLiveticker</b> - Get Current Critical Services and Hosts URL: <a href="/lda/json/?e=1&m=&u=">/lda/json/?e=1&m=&u=</a></li>
+    <li><b>FillLiveticker</b> - Update Critical Services and Hosts in Datasource URL: <a href="/lda/json/?e=1&m=&u=">/lda/json/?e=1&m=&u=</a></li>
+    <li><b>ServiceStatusSelect</b> - Select different stats of services URL: <a href="/lda/json/?e=1&m=&u=&s=">/lda/json/?e=1&m=&u=&s=</a></li>
+    <li><b>ServiceSearchList</b> - Search services URL: <a href="/lda/json/?e=1&m=&u=&searchstring=">/lda/json/?e=1&m=&u=&searchstring=</a></li>
+    <li><b>HostStatusSelect</b> - Select different stats of hosts URL: <a href="/lda/json/?e=1&m=&u=&s=">/lda/json/?e=1&m=&u=&s=</a></li>
+    <li><b>HostSearchList</b> - Search hosts URL: <a href="/lda/json/?e=1&m=&u=&searchstring=">/lda/json/?e=1&m=&u=&searchstring=</a></li>
+    <li><b>HostFullInfoStatusHost</b> - Select different stats of hosts URL: <a href="/lda/json/?e=1&m=&u=&s=">/lda/json/?e=1&m=&u=&s=</a></li>
+    <li><b>HostFullInfoSearchHost</b> - Search hosts URL: <a href="/lda/json/?e=1&m=&u=&searchstring=">/lda/json/?e=1&m=&u=&searchstring=</a></li>
+    <li><b>DatabaseStatusSelect</b> - Select different stats of databases URL: <a href="/lda/json/?e=1&m=&u=&s=">/lda/json/?e=1&m=&u=&s=</a></li>
+    <li><b>DatabaseSearchList</b> - Search databases URL: <a href="/lda/json/?e=1&m=&u=&searchstring=">/lda/json/?e=1&m=&u=&searchstring=</a></li>
+    <li><b>ShowAllComments</b> - Show all comments URL: <a href="/lda/json/?e=1&m=&u=">/lda/json/?e=1&m=&u=</a></li>
+    <li><b>DatabaseFullInfo</b> - Overview of databases with Services URL: <a href="/lda/json/?e=1&m=&u=">/lda/json/?e=1&m=&u=</a></li>
+    <li><b>DatabaseFullInfoStatusDatabase</b> - Select different stats of database URL: <a href="/lda/json/?e=1&m=&u=&s=">/lda/json/?e=1&m=&u=&s=</a></li>
+    <li><b>DatabaseFullInfoSearchDatabase</b> - Search databases URL: <a href="/lda/json/?e=1&m=&u=&searchstring=">/lda/json/?e=1&m=&u=&searchstring=</a></li>
+    <li><b>MiddlewareFullInfo</b> - Overview of middleware with Services URL: <a href="/lda/json/?e=1&m=&u=">/lda/json/?e=1&m=&u=</a></li>
+    <li><b>MiddlewareFullInfoStatusMiddleware</b> - Select different stats of middleware URL: <a href="/lda/json/?e=1&m=&u=&s=">/lda/json/?e=1&m=&u=&s=</a></li>
+    <li><b>MiddlewareFullInfoSearchMiddleware</b> - Search middleware URL: <a href="/lda/json/?e=1&m=&u=&searchstring=">/lda/json/?e=1&m=&u=&searchstring=</a></li>
 </ul>
 </font>
 <br>

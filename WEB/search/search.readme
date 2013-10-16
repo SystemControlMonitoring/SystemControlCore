@@ -1,15 +1,16 @@
-<!--SEARCH_VERSION:2.130530-->
+<!--SEARCH_VERSION:2.1.131015-->
 
 Modul: <i><b>Search</b></i><br>
-Version: <i><b>2.130530</b></i><br>
+Version: <i><b>2.1.131015</b></i><br>
 Comments: -<br></br>
 Format: <i><b>JSON</b></i><br>
 <font size=2>Query:<br>
 <ul>
-    <li><b>ListHosts</b> - List Names of Hosts URL: <a href="/search/json/?e=1&m=TGlzdEhvc3RzHj86Hz&u=c2JhcmVzZWw=Adhfg3">/search/json/?e=1&m=TGlzdEhvc3RzHj86Hz&u=c2JhcmVzZWw=Adhfg3</a></li>
-    <li><b>ListServices</b> - List Names of Services URL: <a href="/search/json/?e=1&m=TGlzdFNlcnZpY2VzHj86Hz&u=c2JhcmVzZWw=Adhfg3">/search/json/?e=1&m=TGlzdFNlcnZpY2VzHj86Hz&u=c2JhcmVzZWw=Adhfg3</a></li>
-    <li><b>ListDatabases</b> - List Names of Databases URL: <a href="/search/json/?e=1&m=TGlzdERhdGFiYXNlcw==Hj86Hz&u=c2JhcmVzZWw=Adhfg3">/search/json/?e=1&m=TGlzdERhdGFiYXNlcw==Hj86Hz&u=c2JhcmVzZWw=Adhfg3</a></li>
-    <li><b>ListHostgroups</b> - List Names of Hostgroups URL: <a href="/search/json/?e=1&m=TGlzdEhvc3Rncm91cHM=Hj86Hz&u=c2JhcmVzZWw=Adhfg3">/search/json/?e=1&m=TGlzdEhvc3Rncm91cHM=Hj86Hz&u=c2JhcmVzZWw=Adhfg3</a></li>
+    <li><b>ListHosts</b> - List Names of Hosts URL: <a href="/search/json/?e=1&m=&u=">/search/json/?e=1&m=&u=</a></li>
+    <li><b>ListServices</b> - List Names of Services URL: <a href="/search/json/?e=1&m=&u=">/search/json/?e=1&m=&u=</a></li>
+    <li><b>ListDatabases</b> - List Names of Databases URL: <a href="/search/json/?e=1&m=&u=">/search/json/?e=1&m=&u=</a></li>
+    <li><b>ListHostgroups</b> - List Names of Hostgroups URL: <a href="/search/json/?e=1&m=&u=">/search/json/?e=1&m=&u=</a></li>
+    <li><b>ListMiddleware</b> - List Names of Middleware URL: <a href="/search/json/?e=1&m=&u=">/search/json/?e=1&m=&u=</a></li>
 </ul>
 </font>
 <br>
